@@ -1,0 +1,73 @@
+import React from 'react';
+import SectionWithTitle from '../../layout/section-with-title';
+import { BinocularsIcon, FlaskConicalIcon, HandshakeIcon, LeafIcon, StarIcon, TrophyIcon, TruckElectricIcon } from 'lucide-react';
+
+const reasons = [
+  {
+    id: '01',
+    Icon: StarIcon,
+    title: 'Decades of Industry Experience',
+    description: "Proven performance across Africa's most demanding industrial and energy sectors.",
+  },
+  {
+    id: '02',
+    Icon: BinocularsIcon,
+    title: 'Comprehensive Chemical Portfolio',
+    description: 'Industrial, oilfield, and specialty chemicals for diverse operational needs.',
+  },
+  {
+    id: '03',
+    Icon: FlaskConicalIcon,
+    title: 'Strong Technical Capabilities',
+    description: 'Advanced laboratory, engineering, and field technical support.',
+  },
+  {
+    id: '04',
+    Icon: TrophyIcon,
+    title: 'Proven Track Record',
+    description: 'Trusted by IOCs, LOCs, and industrial operators across Africa.',
+  },
+  {
+    id: '05',
+    Icon: HandshakeIcon,
+    title: 'Customer-Focused Delivery',
+    description: "Solution design and delivery tailored to each client's unique requirements.",
+  },
+  {
+    id: '06',
+    Icon: LeafIcon,
+    title: 'Safety, Quality & Sustainability',
+    description: 'International QHSE standards embedded in every operation.',
+  },
+  {
+    id: '07',
+    Icon: TruckElectricIcon,
+    title: 'Reliable Supply Chain',
+    description: 'Responsive logistics and supply chain supporting critical operations.',
+  },
+];
+
+const Why: React.FC = () => {
+  return (
+    <SectionWithTitle
+      legend="Why choose us"
+      title="Why Eunisell Chemicals?"
+      description="Delivering measurable value through technical excellence, a proven track record, and an unwavering commitment to client success across Africa."
+    >
+      <div className="mt-16 grid gap-5 grid-cols-4">
+        {reasons.map((reason) => (
+          <div key={reason.title} className="rounded-sm relative text-left px-7 py-9 border border-t-2 border-secondary overflow-hidden">
+            <div className="w-7 h-7 rounded-full border border-secondary flex items-center justify-center">{<reason.Icon size={12} />}</div>
+
+            <div className="absolute text-secondary-foreground font-black text-[80px] right-3.25 top-4">{reason.id}</div>
+
+            <div className="mt-4 font-bold text-base text-accent">{reason.title}</div>
+            <div className="mt-[7.2px] text-[13px]">{reason.description}</div>
+          </div>
+        ))}
+      </div>
+    </SectionWithTitle>
+  );
+};
+
+export default Why;
