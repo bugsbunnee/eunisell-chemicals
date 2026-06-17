@@ -1,51 +1,7 @@
 import React from 'react';
 import SectionWithTitle from '../../layout/section-with-title';
-import { BinocularsIcon, FlaskConicalIcon, HandshakeIcon, LeafIcon, StarIcon, TrophyIcon, TruckElectricIcon } from 'lucide-react';
 
-const reasons = [
-  {
-    id: '01',
-    Icon: StarIcon,
-    title: 'Decades of Industry Experience',
-    description: "Proven performance across Africa's most demanding industrial and energy sectors.",
-  },
-  {
-    id: '02',
-    Icon: BinocularsIcon,
-    title: 'Comprehensive Chemical Portfolio',
-    description: 'Industrial, oilfield, and specialty chemicals for diverse operational needs.',
-  },
-  {
-    id: '03',
-    Icon: FlaskConicalIcon,
-    title: 'Strong Technical Capabilities',
-    description: 'Advanced laboratory, engineering, and field technical support.',
-  },
-  {
-    id: '04',
-    Icon: TrophyIcon,
-    title: 'Proven Track Record',
-    description: 'Trusted by IOCs, LOCs, and industrial operators across Africa.',
-  },
-  {
-    id: '05',
-    Icon: HandshakeIcon,
-    title: 'Customer-Focused Delivery',
-    description: "Solution design and delivery tailored to each client's unique requirements.",
-  },
-  {
-    id: '06',
-    Icon: LeafIcon,
-    title: 'Safety, Quality & Sustainability',
-    description: 'International QHSE standards embedded in every operation.',
-  },
-  {
-    id: '07',
-    Icon: TruckElectricIcon,
-    title: 'Reliable Supply Chain',
-    description: 'Responsive logistics and supply chain supporting critical operations.',
-  },
-];
+import { reasons } from '../../../lib/data';
 
 const Why: React.FC = () => {
   return (

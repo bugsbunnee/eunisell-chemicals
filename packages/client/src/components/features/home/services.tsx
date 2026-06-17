@@ -1,48 +1,9 @@
 import React from 'react';
 import SectionWithTitle from '../../layout/section-with-title';
 
-import { ArrowRightIcon, Atom, FactoryIcon, CogIcon, FlaskConicalIcon, TestTube2Icon, TruckIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { paths } from '../../../lib/data';
-
-const services = [
-  {
-    Icon: FlaskConicalIcon,
-    title: 'Chemical Blending',
-    description: 'Custom chemical blending solutions engineered for precision and performance.',
-    path: paths.home,
-  },
-  {
-    Icon: TruckIcon,
-    title: 'Chemical Supply & Distribution',
-    description: 'Reliable supply and distribution of industrial and specialty chemicals across Africa.',
-    path: paths.home,
-  },
-  {
-    Icon: TestTube2Icon,
-    title: 'Laboratory Testing',
-    description: 'Advanced analytical testing, compatibility studies, and performance evaluation.',
-    path: paths.home,
-  },
-  {
-    Icon: FactoryIcon,
-    title: 'Production Support',
-    description: 'On-site technical support for production optimization and chemical programme management.',
-    path: paths.home,
-  },
-  {
-    Icon: CogIcon,
-    title: 'Technical Services',
-    description: 'Engineering consultation, process optimization, and custom chemical programme design.',
-    path: paths.home,
-  },
-  {
-    Icon: Atom,
-    title: 'Industrial Process Solutions',
-    description: 'Tailored chemical solutions for industrial processing, plant maintenance, and operations.',
-    path: paths.home,
-  },
-];
+import { ArrowRightIcon } from 'lucide-react';
+import { services } from '../../../lib/data';
 
 const Services: React.FC = () => {
   return (

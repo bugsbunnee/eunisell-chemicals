@@ -8,7 +8,7 @@ const portfolios = [
     title: 'Industrial & Manufacturing Chemicals',
     description: 'Solutions that support production efficiency and product quality across diverse manufacturing operations.',
     image: '/solutions/manufacturing.svg',
-    path: paths.contact,
+    path: paths.industrial,
   },
   {
     id: '02',

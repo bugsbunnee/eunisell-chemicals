@@ -6,7 +6,7 @@ import { specialties } from '../../../lib/data';
 
 const Specialty: React.FC = () => {
   return (
-    <section className="px-20 py-30 gap-x-20 bg-accent grid grid-cols-2">
+    <section className="px-45 py-35 gap-x-20 bg-accent grid grid-cols-2">
       <div className="text-left">
         <div className="text-[10px] uppercase text-secondary font-semibold">Oilfield Chemicals</div>
         <div className="text-4xl font-bold text-primary-foreground">Specialty Chemical Solutions for Production Optimization and Asset Integrity</div>

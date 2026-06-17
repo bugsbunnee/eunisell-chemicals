@@ -1,9 +1,13 @@
 import { createBrowserRouter, type RouteObject } from 'react-router-dom';
 import { paths } from './data';
 
-import HomePage from '../pages/HomePage';
 import type { Option } from './entities';
+
+import AboutPage from '../pages/AboutPage';
+import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
+import IndustrialPage from '../pages/IndustrialPage';
+import OilfieldChemicalsPage from '../pages/OilfieldChemicals';
 
 export const navigation: Option[] = [
   {
@@ -43,6 +47,18 @@ export const routes: RouteObject[] = [
       {
         path: paths.solutions,
         element: <SolutionsPage />,
+      },
+      {
+        path: paths.industrial,
+        element: <IndustrialPage />,
+      },
+      {
+        path: paths.oilfield,
+        element: <OilfieldChemicalsPage />,
+      },
+      {
+        path: paths.aboutUs,
+        element: <AboutPage />,
       },
     ],
   },

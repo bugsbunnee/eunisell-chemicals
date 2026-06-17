@@ -1,7 +1,9 @@
 import React from 'react';
+
 import { Button } from '../ui/button';
 import { navigation } from '../../lib/router';
 import { Link } from 'react-router-dom';
+import { paths } from '../../lib/data';
 
 const NavBar: React.FC = () => {
   return (
@@ -16,7 +18,9 @@ const NavBar: React.FC = () => {
         ))}
       </ul>
 
-      <img src="/logo.svg" alt="Eunisell" className="w-[131px] h-14 object-contain" />
+      <Link to={paths.home}>
+        <img src="/logo.svg" alt="Eunisell" className="w-[131px] h-14 object-contain" />
+      </Link>
     </nav>
   );
 };
