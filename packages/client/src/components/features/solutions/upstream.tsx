@@ -1,12 +1,11 @@
 import React from 'react';
 import { Button } from '../../ui/button';
-import { Separator } from '../../ui/separator';
 import { CircleIcon } from 'lucide-react';
 import { specialties } from '../../../lib/data';
 
 const Upstream: React.FC = () => {
   return (
-    <section className="px-20 py-24 bg-accent grid grid-cols-2 gap-x-[134px]">
+    <section className="px-20 py-24 bg-accent grid grid-cols-2 gap-x-33.5">
       <div className="text-left">
         <div className="text-[15px] font-black text-secondary uppercase leading-0.75">Upstream Portfolio</div>
 
