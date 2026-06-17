@@ -3,6 +3,7 @@ import { paths } from './data';
 
 import HomePage from '../pages/HomePage';
 import type { Option } from './entities';
+import SolutionsPage from '../pages/SolutionsPage';
 
 export const navigation: Option[] = [
   {
@@ -38,6 +39,10 @@ export const routes: RouteObject[] = [
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: paths.solutions,
+        element: <SolutionsPage />,
       },
     ],
   },
