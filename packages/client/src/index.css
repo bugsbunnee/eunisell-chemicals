@@ -61,7 +61,7 @@
 
   --accent-foreground: #4b5563;
 
-  --destructive: oklch(0.577 0.245 27.325);
+  --destructive: #ef4444;
 
   --input: #e8e8e8;
 
@@ -79,11 +79,11 @@
 
   --radius: 0.625rem;
 
-  --sidebar: oklch(0.985 0 0);
+  --sidebar: #f8fafc;
 
-  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-foreground: #9ca3af;
 
-  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary: #00558e;
 
   --sidebar-primary-foreground: oklch(0.985 0 0);
 

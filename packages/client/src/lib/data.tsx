@@ -21,8 +21,11 @@ export const paths = {
   oilfield: '/solutions/oilfield-chemicals',
   industries: '/industries',
   technical: '/technical',
-  knowledge: 'knowledge',
+  knowledge: '/knowledge',
+  brochures: '/knowledge/brochures',
+  partners: '/partners',
   contact: '/contact',
+  csr: '/csr',
 };
 
 export const specialties = [

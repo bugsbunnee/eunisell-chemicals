@@ -11,6 +11,7 @@ import CTA from '../components/features/about/cta';
 import Process from '../components/features/about/process';
 import Why from '../components/features/about/why';
 import Imagery from '../components/features/about/imagery';
+import Footer from '../components/common/footer';
 
 const AboutPage: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const AboutPage: React.FC = () => {
       <Process />
       <Why />
       <CTA />
+      <Footer />
     </React.Fragment>
   );
 };

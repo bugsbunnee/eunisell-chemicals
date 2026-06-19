@@ -42,10 +42,10 @@ const KnowledgeCenter: React.FC = () => {
     >
       <div className="mt-16 border border-border rounded-lg grid grid-cols-4 divide-x divide-border">
         {knowledges.map((knowledge) => (
-          <div className="p-10 text-left" key={knowledge.id}>
+          <div className="p-10 text-left flex flex-col" key={knowledge.id}>
             <div className="text-[9px] uppercase font-bold tracking-[2px] text-secondary">{knowledge.title}</div>
             <div className="text-[52px] font-black leading-13 text-ring">{knowledge.id}</div>
-            <div className="text-[22px] text-accent font-extrabold mb-3.25">{knowledge.title}</div>
+            <div className="text-[22px] flex-1 text-accent font-extrabold mb-3.25">{knowledge.title}</div>
             <div className="text-[13px] text-muted-foreground leading-5.5">{knowledge.description}</div>
 
             <div className="mt-8 border-t border-t-border pt-5">

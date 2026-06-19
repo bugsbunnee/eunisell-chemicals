@@ -8,6 +8,11 @@ import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
 import IndustrialPage from '../pages/IndustrialPage';
 import OilfieldChemicalsPage from '../pages/OilfieldChemicals';
+import KnowledgePage from '../pages/KnowledgePage';
+import BrochuresPage from '../pages/BrochuresPage';
+import PartnersPage from '../pages/PartnersPage';
+import ContactPage from '../pages/ContactPage';
+import CsrPage from '../pages/CsrPage';
 
 export const navigation: Option[] = [
   {
@@ -59,6 +64,26 @@ export const routes: RouteObject[] = [
       {
         path: paths.aboutUs,
         element: <AboutPage />,
+      },
+      {
+        path: paths.knowledge,
+        element: <KnowledgePage />,
+      },
+      {
+        path: paths.brochures,
+        element: <BrochuresPage />,
+      },
+      {
+        path: paths.partners,
+        element: <PartnersPage />,
+      },
+      {
+        path: paths.contact,
+        element: <ContactPage />,
+      },
+      {
+        path: paths.csr,
+        element: <CsrPage />,
       },
     ],
   },
