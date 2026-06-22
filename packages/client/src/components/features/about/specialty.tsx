@@ -37,7 +37,7 @@ const specialties = [
 
 const Specialty: React.FC = () => {
   return (
-    <section className="px-45 py-35 bg-background w-full relative">
+    <section className="px-30 py-35 bg-background w-full relative">
       <div className="font-black text-[15px] leading-4 text-secondary uppercase mb-4">Specialized Knowledge</div>
       <div className="font-bold text-5xl text-accent leading-18">Deep Industry Knowledge. Practical Field Experience.</div>
 

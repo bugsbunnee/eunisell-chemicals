@@ -1,7 +1,7 @@
-import type React from 'react';
+import React, { useState } from 'react';
+import { CheckCircleIcon } from 'lucide-react';
 import { team } from '../../../lib/data';
 import { cn } from '../../../lib/utils';
-import { useState } from 'react';
 
 const Biography: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -30,7 +30,18 @@ const Biography: React.FC = () => {
               <img src={team[activeIndex].src} alt={team[activeIndex].name} className="w-full h-full object-cover" />
             </div>
 
-            <div className="p-8 bg-accent"></div>
+            <div className="p-8 bg-accent mt-8 text-left rounded-[2px]">
+              <div className="text-xl leading-7.5 font-bold text-white">Product Highlights</div>
+
+              <div className="space-y-4 mt-4">
+                {team[activeIndex].highlights.map((highlight) => (
+                  <div key={highlight} className="flex items-start gap-x-3">
+                    <CheckCircleIcon className="text-secondary" />
+                    <div className="font-regular text-sm leading-5.25 text-white">{highlight}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div>

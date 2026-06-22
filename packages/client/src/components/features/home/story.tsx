@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from 'lucide-react';
 import type React from 'react';
 
 const values = [
@@ -16,19 +17,19 @@ const core = ['Safety First', 'Technical Excellence', 'Integrity & Accountabilit
 
 const stories = [
   {
-    image: '/solution.png',
+    image: '/home/laboratory.svg',
     caption: 'laboratory',
   },
   {
-    image: '/solution.png',
+    image: '/home/industrial.svg',
     caption: 'industrial',
   },
   {
-    image: '/solution.png',
+    image: '/home/blending.svg',
     caption: 'blending',
   },
   {
-    image: '/solution.png',
+    image: '/home/oilfield.svg',
     caption: 'oilfield',
   },
 ];
@@ -41,7 +42,7 @@ const Story: React.FC = () => {
           <div className="relative">
             <img src={story.image} className="h-full w-full object-cover" />
 
-            <div className="absolute bottom-5.5 left-5.5 text-muted text-[10px] uppercase">{story.caption}</div>
+            <div className="absolute bottom-5.5 left-5.5 text-white text-[10px] uppercase">{story.caption}</div>
           </div>
         ))}
 
@@ -52,13 +53,16 @@ const Story: React.FC = () => {
       </div>
 
       <div className="text-left">
-        <div className="text-[10px] uppercase font-semibold text-secondary">our story</div>
+        <div className="text-[15px] leading-3.75 uppercase font-black tracking-[3px] text-secondary">our story</div>
+
         <div className="font-bold text-accent text-[42px] leading-12 my-2.75">Driving Performance Through Chemical Innovation</div>
+
         <p className="text-base text-accent-foreground">
           Eunisell Chemicals is a leading provider of specialty chemical solutions, technical services, and production support to the manufacturing,
           industrial, oil and gas, and infrastructure sectors across Africa.
         </p>
-        <p className="text-base text-accent-foreground">
+
+        <p className="text-base text-accent-foreground mt-3.75">
           For decades, we have partnered with operators and industrial organizations to solve complex production, process, and operational challenges
           through innovative chemical technologies, technical expertise, and a commitment to delivering measurable results.
         </p>
@@ -83,6 +87,10 @@ const Story: React.FC = () => {
             ))}
           </div>
         </div>
+
+        <button className="h-13 rounded-[2px] mt-6.25 px-7 text-white flex items-center gap-x-1 bg-secondary font-semibold text-base leading-6">
+          Learn more <ArrowRightIcon size={16} />
+        </button>
       </div>
     </section>
   );

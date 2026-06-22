@@ -31,7 +31,7 @@ const processes = [
 
 const Process: React.FC = () => {
   return (
-    <SectionWithTitle className="px-45 py-35" legend="our process" title="Technical Partnership Approach" description="">
+    <SectionWithTitle className="px-30 py-35" legend="our process" title="Technical Partnership Approach" description="">
       <div className="grid grid-cols-5 mt-24">
         {processes.map((process) => (
           <div key={process.id} className="relative">

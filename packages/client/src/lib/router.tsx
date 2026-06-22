@@ -6,7 +6,7 @@ import type { Option } from './entities';
 import AboutPage from '../pages/AboutPage';
 import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
-import IndustrialPage from '../pages/IndustrialPage';
+import IndustrialManufacturingPage from '../pages/IndustrialManufacturingPage';
 import OilfieldChemicalsPage from '../pages/OilfieldChemicals';
 import KnowledgePage from '../pages/KnowledgePage';
 import BrochuresPage from '../pages/BrochuresPage';
@@ -59,7 +59,7 @@ export const routes: RouteObject[] = [
       },
       {
         path: paths.industrial,
-        element: <IndustrialPage />,
+        element: <IndustrialManufacturingPage />,
       },
       {
         path: paths.industries,

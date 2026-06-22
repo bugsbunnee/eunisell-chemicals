@@ -14,7 +14,7 @@ const Services: React.FC = () => {
     >
       <div className="grid grid-cols-3 border-t border-l mt-15">
         {services.map((service) => (
-          <div key={service.title} className="group hover:bg-primary transition-all p-10 text-left border-b border-r">
+          <div key={service.title} className="group hover:bg-accent transition-all p-10 text-left border-b border-r">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center border border-secondary">
               <service.Icon size={20} className="text-secondary" />
             </div>

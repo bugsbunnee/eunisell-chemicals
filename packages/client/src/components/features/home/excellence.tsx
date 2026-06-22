@@ -40,22 +40,22 @@ const markers = [
   {
     title: 'ph level',
     value: '7.24',
-    className: 'absolute text-left bg-background top-8 left-8 py-1 px-3 border-2 border-secondary rounded-sm',
+    className: 'absolute text-left bg-background top-8 left-8 py-1 px-3 border-2 border-secondary rounded-[2px]',
   },
   {
     title: 'temperature',
     value: '23.5°C',
-    className: 'absolute text-left bg-background top-8 right-8 py-1 px-3 border-2 border-secondary rounded-sm',
+    className: 'absolute text-left bg-background top-8 right-8 py-1 px-3 border-2 border-secondary rounded-[2px]',
   },
   {
     title: 'tds',
     value: '450 mg/L',
-    className: 'absolute text-left bg-background bottom-8 left-8 py-1 px-3 border-2 border-secondary rounded-sm',
+    className: 'absolute text-left bg-background bottom-8 left-8 py-1 px-3 border-2 border-secondary rounded-[2px]',
   },
   {
     title: 'corr rate',
     value: '0.12 mm/yr',
-    className: 'absolute text-left bg-background bottom-8 right-8 py-1 px-3 border-2 border-secondary rounded-sm',
+    className: 'absolute text-left bg-background bottom-8 right-8 py-1 px-3 border-2 border-secondary rounded-[2px]',
   },
 ];
 
@@ -81,6 +81,7 @@ const summary = [
 const TechnicalExcellence: React.FC = () => {
   return (
     <SectionWithTitle
+      className="pt-0"
       legend="Technical Excellence"
       title="Technical Excellence at the Heart of Every Solution"
       description="Our advanced laboratory infrastructure and technical team deliver precision testing, analysis, and support services that underpin every chemical solution we provide."
@@ -100,7 +101,7 @@ const TechnicalExcellence: React.FC = () => {
           ))}
         </div>
 
-        <div className="relative">
+        <div className="relative rounded-[4px]">
           {markers.map((marker) => (
             <div key={marker.title} className={marker.className}>
               <div className="text-[9px] mt-0 text-secondary font-semibold uppercase">{marker.title}</div>
@@ -108,7 +109,7 @@ const TechnicalExcellence: React.FC = () => {
             </div>
           ))}
 
-          <img src="/technical.svg" alt="Technical" />
+          <img src="/home/technical.svg" alt="Technical" className="w-full h-full object-cover" />
         </div>
       </div>
 

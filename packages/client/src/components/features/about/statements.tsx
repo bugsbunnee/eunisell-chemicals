@@ -15,7 +15,7 @@ const statements = [
 
 const Statements: React.FC = () => {
   return (
-    <section className="px-45 py-35 bg-accent w-full grid grid-cols-2 gap-12 relative">
+    <section className="px-30 py-35 bg-accent w-full grid grid-cols-2 gap-12 relative">
       <img src="/about/grid.svg" alt="Grid" className="absolute h-4/5 left-12 opacity-10 z-30" />
 
       {statements.map((statement) => (

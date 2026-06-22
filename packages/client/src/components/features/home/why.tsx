@@ -12,7 +12,7 @@ const Why: React.FC = () => {
     >
       <div className="mt-16 grid gap-5 grid-cols-4">
         {reasons.map((reason) => (
-          <div key={reason.title} className="rounded-sm relative text-left px-7 py-9 border border-t-2 border-secondary overflow-hidden">
+          <div key={reason.title} className="rounded-[2px] relative text-left px-7 py-9 border border-t-2 border-secondary overflow-hidden">
             <div className="w-7 h-7 rounded-full border border-secondary flex items-center justify-center">{<reason.Icon size={12} />}</div>
 
             <div className="absolute text-secondary-foreground font-black text-[80px] right-3.25 top-4">{reason.id}</div>

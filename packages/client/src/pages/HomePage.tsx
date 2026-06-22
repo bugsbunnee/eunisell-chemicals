@@ -2,13 +2,16 @@ import React from 'react';
 
 import NavBar from '../components/layout/navbar';
 import Hero from '../components/features/home/hero';
-import Solutions from '../components/features/home/solutions';
 import Story from '../components/features/home/story';
 import Services from '../components/features/home/services';
 import TechnicalExcellence from '../components/features/home/excellence';
 import CriticalIndustries from '../components/features/home/industries';
 import Why from '../components/features/home/why';
 import Contact from '../components/features/home/contact';
+import OurChemicals from '../components/features/home/our-chemicals';
+import Footer from '../components/common/footer';
+import KnowledgeCenter from '../components/features/about/knowledge-center';
+import Clients from '../components/features/home/clients';
 
 const HomePage: React.FC = () => {
   return (
@@ -17,7 +20,7 @@ const HomePage: React.FC = () => {
 
       <Hero />
 
-      <Solutions />
+      <OurChemicals />
 
       <Story />
 
@@ -27,9 +30,15 @@ const HomePage: React.FC = () => {
 
       <CriticalIndustries />
 
+      <KnowledgeCenter />
+
       <Why />
 
+      <Clients />
+
       <Contact />
+
+      <Footer />
     </React.Fragment>
   );
 };

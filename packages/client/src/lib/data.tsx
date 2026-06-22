@@ -58,7 +58,7 @@ export const services = [
   {
     Icon: FlaskConicalIcon,
     title: 'Chemical Blending',
-    description: 'Custom chemical blending solutions engineered for precision and performance.',
+    description: 'Custom blending solutions engineered for precision and operational scale.',
     path: paths.home,
   },
   {
@@ -87,7 +87,7 @@ export const services = [
   },
   {
     Icon: Atom,
-    title: 'Industrial Process Solutions',
+    title: 'Industrial Solutions',
     description: 'Tailored chemical solutions for industrial processing, plant maintenance, and operations.',
     path: paths.home,
   },
@@ -164,6 +164,7 @@ export const team = [
                 drive Eunisell's expansion into new markets and energy sectors across the continent.
             `,
     ],
+    highlights: ['30+ Years Global Experience', 'Strategic M&A Expert', 'Industrial Chemist Pioneer'],
   },
   {
     src: '/management/kenneth.svg',
@@ -172,6 +173,7 @@ export const team = [
     url: '',
     description: 'Drives operational strategy and regional expansion across West Africa.',
     paragraphs: [],
+    highlights: [],
   },
   {
     src: '/management/lain.svg',
@@ -180,6 +182,7 @@ export const team = [
     url: '',
     description: 'Specialist in complex industrial engineering and large-scale facility management.',
     paragraphs: [],
+    highlights: [],
   },
   {
     src: '/management/odekina.svg',
@@ -188,5 +191,6 @@ export const team = [
     url: '',
     description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
     paragraphs: [],
+    highlights: [],
   },
 ];

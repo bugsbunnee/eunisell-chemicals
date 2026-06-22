@@ -5,7 +5,7 @@ import { paths } from '../../../lib/data';
 const Cta: React.FC = () => {
   return (
     <section className="relative bg-accent overflow-hidden p-30 flex items-center text-left">
-      <div className="absolute right-0 top-0 bottom-0 w-[640px]">
+      <div className="absolute right-0 top-0 bottom-0 w-160">
         <img src="/partners/cta-plant.jpg" alt="" className="w-full h-full object-cover" />
 
         <div className="absolute inset-0 bg-linear-to-r from-accent via-accent/20 to-transparent" />

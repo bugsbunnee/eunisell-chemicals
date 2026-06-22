@@ -5,7 +5,7 @@ import { ArrowRightIcon } from 'lucide-react';
 
 const Services: React.FC = () => {
   return (
-    <section className="px-45 py-35 bg-accent-bg w-full relative">
+    <section className="px-30 py-35 bg-accent-bg w-full relative">
       <div className="flex items-end justify-between text-left">
         <div className="flex-1">
           <div className="font-black text-[15px] leading-4 text-secondary uppercase mb-4">comprehensive solutions</div>

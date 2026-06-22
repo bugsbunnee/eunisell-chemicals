@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const CTA: React.FC = () => {
   return (
-    <section className="relative py-30 px-20 bg-accent flex text-center items-center justify-center w-full">
+    <section className="relative py-30 px-30 bg-accent flex text-center items-center justify-center w-full">
       <div className="w-full text-center z-50">
         <div className="mx-auto leading-15.75 text-[60px] text-primary-foreground max-w-184.75 font-black">
           Partner with Eunisell Chemicals for Your Next Operational Challenge
@@ -17,16 +17,16 @@ const CTA: React.FC = () => {
           <Button className="rounded-xs bg-transparent border border-primary-foreground/40 font-semibold text-base h-13 px-7">Contact Support</Button>
         </div>
 
-        <div className="mt-10 flex gap-x-5.5 items-center justify-center">
-          <Link className="text-[13px] text-primary-foreground/42" to="/">
+        <div className="mt-10 flex gap-x-5.5 items-center justify-center uppercase">
+          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
             Product Enquiries
           </Link>
           <span className="text-primary-foreground/42">·</span>
-          <Link className="text-[13px] text-primary-foreground/42" to="/">
+          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
             Laboratory Services Enquiries
           </Link>
           <span className="text-primary-foreground/42">·</span>
-          <Link className="text-[13px] text-primary-foreground/42" to="/">
+          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
             Emergency Support
           </Link>
         </div>

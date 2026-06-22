@@ -13,12 +13,12 @@ const Team: React.FC = () => {
 
       <div className="mt-20 grid grid-cols-4 gap-x-8">
         {team.map((member) => (
-          <div key={member.title} className="text-left border border-sidebar-accent/20">
+          <div key={member.title} className="text-left border border-sidebar-accent/20 overflow-hidden">
             <div className="h-100 w-full">
               <img src={member.src} alt={member.title} className="w-full h-full object-cover" />
             </div>
 
-            <div className="p-8 bg-background">
+            <div className="p-8 h-full bg-background">
               <div className="flex items-center justify-between">
                 <div className="text-xl leading-7.5 text-accent font-bold">{member.name}</div>
                 <FaLinkedin className="text-[#0076B2]" size={20} />

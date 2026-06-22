@@ -3,11 +3,12 @@ import type React from 'react';
 import { CogIcon, EarthIcon, FlaskConicalIcon, TestTubeIcon } from 'lucide-react';
 import { Button } from '../../ui/button';
 import { Separator } from '../../ui/separator';
+import ScrollDownButton from '../../common/scroll-down-button';
 
 const features = [
   {
     Icon: FlaskConicalIcon,
-    title: 'Industrial & Oil Field',
+    title: 'Industrial',
     description: 'Chemical Solutions',
   },
   {
@@ -29,7 +30,7 @@ const features = [
 
 const Hero: React.FC = () => {
   return (
-    <section className="px-20 py-56.75 bg-[url(/hero-home.svg)] w-screen h-270 bg-cover bg-no-repeat">
+    <section className="relative px-30 py-30.75 bg-[url(/home/hero-home.svg)] w-screen bg-cover bg-no-repeat">
       <div className="w-full text-left">
         <div className="flex items-center justify-start mb-6 gap-x-6">
           <div className="h-0.5 w-10 bg-secondary"></div>
@@ -60,14 +61,18 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-4 gap-x-4 mt-6 items-center">
           {features.map((feature) => (
             <div key={feature.title} className="p-4 bg-primary-foreground/5 border border-primary-foreground/10">
-              <div className="flex items-center gap-x-1 text-[10px] font-bold text-secondary uppercase">
-                <feature.Icon className="text-primary-foreground/50" size={10} />
-                <span>{feature.title}</span>
+              <div className="flex items-center gap-x-1 text-[10px] tracking-[0.5px] font-bold text-secondary uppercase">
+                <span>
+                  {feature.title} <span className="font-normal">{feature.description}</span>
+                </span>
               </div>
-              <div className="text-[13px] text-primary-foreground">{feature.description}</div>
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="fixed bottom-[43px] left-1/2 -translate-x-1/2 z-50">
+        <ScrollDownButton />
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ const knowledges = [
 const KnowledgeCenter: React.FC = () => {
   return (
     <SectionWithTitle
-      className="px-45 py-35"
+      className="px-30 py-35"
       title="Explore Technical Knowledge and Industry Insights"
       description="Technical articles, industry insights, product brochures, and technical bulletins from Eunisell Chemicals."
       legend="knowledge center"

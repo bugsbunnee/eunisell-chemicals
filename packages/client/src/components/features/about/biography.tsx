@@ -2,7 +2,7 @@ import React from 'react';
 
 const Biography: React.FC = () => {
   return (
-    <section className="relative bg-background text-left py-32 px-45 items-center grid grid-cols-2 gap-x-16">
+    <section className="relative bg-background text-left py-32 px-30 items-center grid grid-cols-2 gap-x-16">
       <div>
         <div className="font-bold text-5xl text-accent leading-14.25">A Trusted Chemical Solutions Partner for Industry and Energy</div>
 

@@ -17,12 +17,12 @@ const crumbs = [
 
 const Hero: React.FC = () => {
   return (
-    <section className="px-45 py-37.75 w-screen bg-cover bg-no-repeat relative">
+    <section className="px-30 py-37.75 w-screen bg-cover bg-no-repeat relative">
       <div className="absolute inset-0 opacity-40">
-        <img src="/solutions/solution-hero.svg" alt="" className="w-full h-full object-cover" />
+        <img src="/about/hero.svg" alt="" className="w-full h-full object-cover" />
       </div>
 
-      <div className="absolute inset-0 bg-linear-to-r from-accent via-[rgba(0,32,55,0.8)] via-50% to-transparent" />
+      <div className="absolute inset-0 bg-linear-to-r from-accent via-accent via-30% to-transparent" />
 
       <div className="relative w-full text-left z-50">
         <BreadCrumbNavigation crumbs={crumbs} />
