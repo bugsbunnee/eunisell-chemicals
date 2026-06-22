@@ -21,7 +21,7 @@ const steps = [
 const Nurturing: React.FC = () => {
   return (
     <section className="bg-white p-30 text-left">
-      <div className="max-w-[1560px] px-8 w-full grid grid-cols-2 gap-x-24 items-center">
+      <div className="max-w-[1560px] w-full grid grid-cols-2 gap-x-24 items-center">
         <div className="space-y-8">
           <h2 className="text-5xl font-bold text-accent leading-[57.6px]">Nurturing the Next Generation</h2>
 

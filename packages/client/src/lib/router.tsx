@@ -13,6 +13,10 @@ import BrochuresPage from '../pages/BrochuresPage';
 import PartnersPage from '../pages/PartnersPage';
 import ContactPage from '../pages/ContactPage';
 import CsrPage from '../pages/CsrPage';
+import QHSEPage from '../pages/QHSEPage';
+import IndustriesServedPage from '../pages/IndustriesServedPage';
+import TechnicalServicesPage from '../pages/TechnicalServicesPage';
+import ManagementPage from '../pages/ManagementPage';
 
 export const navigation: Option[] = [
   {
@@ -58,6 +62,10 @@ export const routes: RouteObject[] = [
         element: <IndustrialPage />,
       },
       {
+        path: paths.industries,
+        element: <IndustriesServedPage />,
+      },
+      {
         path: paths.oilfield,
         element: <OilfieldChemicalsPage />,
       },
@@ -84,6 +92,18 @@ export const routes: RouteObject[] = [
       {
         path: paths.csr,
         element: <CsrPage />,
+      },
+      {
+        path: paths.qhse,
+        element: <QHSEPage />,
+      },
+      {
+        path: paths.technical,
+        element: <TechnicalServicesPage />,
+      },
+      {
+        path: paths.management,
+        element: <ManagementPage />,
       },
     ],
   },

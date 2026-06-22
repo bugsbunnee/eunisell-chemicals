@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
   const location = useLocation();
 
   return (
-    <section className="relative bg-background grid grid-cols-2 gap-x-24 text-left py-17.5 px-45 items-center overflow-hidden">
+    <section className="relative bg-background grid grid-cols-2 gap-x-24 text-left py-17.5 px-30 items-center overflow-hidden">
       <div>
         <div className="flex items-center gap-x-2">
           {crumbs.map((crumb, index) => (
@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative min-h-125 h-full w-full">
-        <img src="/contact/hero.svg" alt="Contact" className="w-full h-full rounded-2xl object-fill" />
+        <img src="/contact/hero.svg" alt="Contact" className="w-full h-full rounded-2xl object-cover" />
 
-        <div className="absolute bg-background p-8 rounded-2xl shadow-2xl w-fit">
+        <div className="absolute -bottom-8 -left-8 bg-background p-8 rounded-2xl shadow-2xl w-fit">
           <div className="flex gap-x-4 rounded-lg">
             <div className="rounded-lg bg-secondary/10 w-12 h-12 text-secondary flex items-center justify-center">
               <MicroscopeIcon size={20} />

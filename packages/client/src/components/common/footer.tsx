@@ -104,7 +104,7 @@ const Footer: React.FC = () => {
 
         {navColumns.map((col) => (
           <div key={col.heading} className="flex flex-col gap-6 items-start">
-            <span className="text-[#afb1b3] text-[12px] font-bold tracking-[1.5px] uppercase leading-4.5">{col.heading}</span>
+            <span className="text-sidebar-accent text-[12px] font-bold tracking-[1.5px] uppercase leading-4.5">{col.heading}</span>
 
             <ul className="flex flex-col gap-3">
               {col.links.map((link) => (

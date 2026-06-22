@@ -17,6 +17,7 @@ export const paths = {
   home: '/',
   aboutUs: '/about',
   solutions: '/solutions',
+  qhse: '/qhse',
   industrial: '/solutions/industrial-manufacturing',
   oilfield: '/solutions/oilfield-chemicals',
   industries: '/industries',
@@ -25,6 +26,7 @@ export const paths = {
   brochures: '/knowledge/brochures',
   partners: '/partners',
   contact: '/contact',
+  management: '/management',
   csr: '/csr',
 };
 
@@ -133,5 +135,58 @@ export const reasons = [
     Icon: TruckElectricIcon,
     title: 'Reliable Supply Chain',
     description: 'Responsive logistics and supply chain supporting critical operations.',
+  },
+];
+
+export const team = [
+  {
+    src: '/management/director.svg',
+    name: 'Chika Ikenga',
+    title: 'Group Managing Director',
+    url: '',
+    description: 'Visionary founder with deep expertise in chemical specialty and energy sectors.',
+    paragraphs: [
+      `
+                Chika Ikenga founded Eunisell in 1996 with a clear mission: to provide world-class chemical
+                solutions and specialty chemicals to the Nigerian oil and gas industry. His journey began with a
+                degree in Industrial Chemistry, providing the technical foundation for what would become a
+                major industrial conglomerate.
+            `,
+      `
+                Under his leadership, Eunisell has achieved significant milestones, including becoming a
+                preferred partner for global chemical manufacturers and a key player in offshore production
+                chemicals. His commitment to "The Eunisell Way"—a philosophy of integrity, technical
+                excellence, and client satisfaction—has been the cornerstone of the company's success.
+            `,
+      `
+                Chika is also a dedicated philanthropist and advocate for African sports, famously sponsoring
+                the Eunisell Boot Award to celebrate Nigerian football talent. His strategic vision continues to
+                drive Eunisell's expansion into new markets and energy sectors across the continent.
+            `,
+    ],
+  },
+  {
+    src: '/management/kenneth.svg',
+    name: 'Kenneth Okeiyi',
+    title: 'Chief Executive Officer',
+    url: '',
+    description: 'Drives operational strategy and regional expansion across West Africa.',
+    paragraphs: [],
+  },
+  {
+    src: '/management/lain.svg',
+    name: 'Lain Fraiser',
+    title: 'Director of Projects',
+    url: '',
+    description: 'Specialist in complex industrial engineering and large-scale facility management.',
+    paragraphs: [],
+  },
+  {
+    src: '/management/odekina.svg',
+    name: 'Philip Odekina',
+    title: 'Chief Financial Officer',
+    url: '',
+    description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
+    paragraphs: [],
   },
 ];

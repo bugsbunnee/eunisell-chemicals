@@ -53,7 +53,7 @@ const departments = [
 
 const SpecializedDepartments: React.FC = () => {
   return (
-    <section className="relative bg-sidebar text-left py-17.5 px-45">
+    <section className="relative bg-sidebar text-left py-17.5 px-30">
       <div className="font-bold text-3xl mb-4 text-accent">Specialized Departments</div>
 
       <p className="text-base leading-6 text-primary font-normal max-w-150">
@@ -80,9 +80,24 @@ const SpecializedDepartments: React.FC = () => {
               <department.Icon size={30} />
             </div>
 
-            <div className="text-xl font-bold mb-3.5 mt-8">{department.title}</div>
+            <div
+              className={cn({
+                'text-xl font-bold mb-3.5 mt-8': true,
+                'text-white': department.alternate,
+                'text-accent': !department.alternate,
+              })}
+            >
+              {department.title}
+            </div>
 
-            <p className="text-sm text-primary font-normal">Book a strategic session with our chemical engineers for complex project requirements.</p>
+            <p
+              className={cn({
+                'text-sm text-primary font-normal': true,
+                'text-popover-foreground': department.alternate,
+              })}
+            >
+              Book a strategic session with our chemical engineers for complex project requirements.
+            </p>
 
             <div className="mt-11.5">
               <Link to={department.path} className="uppercase text-xs gap-x-2 text-secondary leading-4 tracking-[1.2px] font-bold flex items-center">

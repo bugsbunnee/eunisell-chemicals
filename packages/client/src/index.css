@@ -43,9 +43,9 @@
 
   --card-foreground: #606060;
 
-  --popover: oklch(1 0 0);
+  --popover: #d2d2d2;
 
-  --popover-foreground: oklch(0.145 0 0);
+  --popover-foreground: #94a3b8;
 
   --primary: #003e61;
 
@@ -85,9 +85,9 @@
 
   --sidebar-primary: #00558e;
 
-  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-primary-foreground: #333333;
 
-  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent: #afb1b3;
 
   --sidebar-accent-foreground: oklch(0.205 0 0);
 
