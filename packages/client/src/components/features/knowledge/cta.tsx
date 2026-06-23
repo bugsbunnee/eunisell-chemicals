@@ -1,53 +1,30 @@
 import React from 'react';
-import { Button } from '../../ui/button';
-import { ArrowRightIcon } from 'lucide-react';
 
 const Cta: React.FC = () => {
   return (
-    <section className="relative py-28 bg-accent overflow-hidden text-center">
-      <div className="absolute right-0 top-0 bottom-0 w-96 opacity-10 pointer-events-none">
-        <svg viewBox="0 0 640 430" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-          <circle cx="320" cy="215" r="322" stroke="white" strokeWidth="1" />
-          <circle cx="320" cy="215" r="215" stroke="white" strokeWidth="1" />
-          <circle cx="320" cy="215" r="108" stroke="white" strokeWidth="1" />
-        </svg>
-      </div>
-      <div className="absolute left-0 top-0 bottom-0 w-96 opacity-10 pointer-events-none scale-x-[-1]">
-        <svg viewBox="0 0 640 430" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full">
-          <circle cx="320" cy="215" r="322" stroke="white" strokeWidth="1" />
-          <circle cx="320" cy="215" r="215" stroke="white" strokeWidth="1" />
-        </svg>
-      </div>
+    <section className="bg-accent py-24 text-center relative overflow-hidden">
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
+          backgroundSize: '28px 28px',
+        }}
+      />
 
-      <div className="relative z-10 px-20 max-w-4xl mx-auto">
-        <div className="text-[10px] font-bold uppercase text-secondary tracking-[2px] mb-5">Stay Informed</div>
-        <h2 className="font-bold text-[52px] text-primary-foreground leading-tight">Access Expert Chemical Knowledge</h2>
-        <p className="mt-6 text-primary-foreground/60 text-xl max-w-2xl mx-auto leading-relaxed">
-          Subscribe to receive the latest technical publications, case studies, and industry insights from Eunisell's engineering team delivered
-          directly to your inbox.
+      <div className="relative max-w-200 mx-auto px-8">
+        <h2 className="font-bold text-white text-[52px] leading-[1.35] mb-6">
+          Need Technical Guidance for
+          <br />
+          Your Operation?
+        </h2>
+
+        <p className="text-white/55 text-[16px] leading-[1.75] max-w-172 mx-auto mb-12">
+          Our engineers are available for specialized consultations to address your specific chemical performance challenges.
         </p>
 
-        <div className="flex items-center justify-center gap-x-4 mt-14">
-          <Button className="rounded-xs bg-secondary font-semibold text-base h-15 px-10 flex items-center gap-x-2">
-            Subscribe to Newsletter <ArrowRightIcon size={16} />
-          </Button>
-          <Button className="rounded-xs bg-transparent border border-primary-foreground/40 font-semibold text-base h-15 px-10">
-            Request Technical Consultation
-          </Button>
-        </div>
-
-        <div className="mt-14 flex items-center justify-center gap-x-16">
-          {[
-            { value: '2,400+', label: 'Active Subscribers' },
-            { value: 'Monthly', label: 'Publication Frequency' },
-            { value: '0', label: 'Spam, Always' },
-          ].map((item) => (
-            <div key={item.label} className="text-center">
-              <div className="text-2xl font-black text-secondary">{item.value}</div>
-              <div className="text-xs text-primary-foreground/50 uppercase tracking-wider mt-1">{item.label}</div>
-            </div>
-          ))}
-        </div>
+        <button className="h-17 w-94 bg-secondary text-white font-bold text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors">
+          Request Technical Consultation
+        </button>
       </div>
     </section>
   );

@@ -7,8 +7,10 @@ import AboutPage from '../pages/AboutPage';
 import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
 import IndustrialManufacturingPage from '../pages/IndustrialManufacturingPage';
+import SolutionDetailPage from '../pages/SolutionDetailPage';
 import OilfieldChemicalsPage from '../pages/OilfieldChemicals';
 import KnowledgePage from '../pages/KnowledgePage';
+import KnowledgeDetailPage from '../pages/KnowledgeDetailPage';
 import BrochuresPage from '../pages/BrochuresPage';
 import PartnersPage from '../pages/PartnersPage';
 import ContactPage from '../pages/ContactPage';
@@ -17,6 +19,8 @@ import QHSEPage from '../pages/QHSEPage';
 import IndustriesServedPage from '../pages/IndustriesServedPage';
 import TechnicalServicesPage from '../pages/TechnicalServicesPage';
 import ManagementPage from '../pages/ManagementPage';
+import CareersPage from '../pages/CareersPage';
+import CareerDetailPage from '../pages/CareerDetailPage';
 
 export const navigation: Option[] = [
   {
@@ -62,6 +66,10 @@ export const routes: RouteObject[] = [
         element: <IndustrialManufacturingPage />,
       },
       {
+        path: paths.industrialDetail,
+        element: <SolutionDetailPage />,
+      },
+      {
         path: paths.industries,
         element: <IndustriesServedPage />,
       },
@@ -76,6 +84,10 @@ export const routes: RouteObject[] = [
       {
         path: paths.knowledge,
         element: <KnowledgePage />,
+      },
+      {
+        path: paths.knowledgeDetail,
+        element: <KnowledgeDetailPage />,
       },
       {
         path: paths.brochures,
@@ -104,6 +116,14 @@ export const routes: RouteObject[] = [
       {
         path: paths.management,
         element: <ManagementPage />,
+      },
+      {
+        path: paths.careers,
+        element: <CareersPage />,
+      },
+      {
+        path: paths.careerDetail,
+        element: <CareerDetailPage />,
       },
     ],
   },

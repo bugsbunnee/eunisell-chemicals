@@ -3,11 +3,11 @@ import NavBar from '../components/layout/navbar';
 import Hero from '../components/features/knowledge/hero';
 import Featured from '../components/features/knowledge/featured';
 import Resources from '../components/features/knowledge/resources';
+import Insights from '../components/features/knowledge/insights';
 import Topics from '../components/features/knowledge/topics';
 import Cta from '../components/features/knowledge/cta';
-import Insights from '../components/features/knowledge/insights';
-import Stats from '../components/features/knowledge/stats';
-import Newsletter from '../components/features/knowledge/newsletter';
+import Footer from '../components/common/footer';
+import NewsletterForm from '../components/features/contact/newsletter-form';
 
 const KnowledgePage: React.FC = () => {
   return (
@@ -16,11 +16,11 @@ const KnowledgePage: React.FC = () => {
       <Hero />
       <Featured />
       <Resources />
-      <Topics />
-      <Cta />
       <Insights />
-      <Stats />
-      <Newsletter />
+      <Topics />
+      <NewsletterForm />
+      <Cta />
+      <Footer />
     </React.Fragment>
   );
 };

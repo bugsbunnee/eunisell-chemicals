@@ -1,85 +1,71 @@
-import React, { useState } from 'react';
-import { ArrowRightIcon, CalendarIcon, ClockIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { ArrowRightIcon, FileTextIcon, TrendingUpIcon, BookOpenIcon, ListOrderedIcon, MicroscopeIcon } from 'lucide-react';
 
-const categories = ['All', 'Case Studies', 'White Papers', 'Technical Notes'];
-
-const featuredArticle = {
-  category: 'Case Study',
-  title: 'Corrosion Inhibition Performance in Deepwater Offshore Applications',
-  excerpt:
-    "This field case study documents the deployment of Eunisell's advanced corrosion inhibitor package in a challenging deepwater environment, achieving a 42% reduction in metal loss rates over a 12-month evaluation period across six production assets.",
-  date: 'March 2025',
-  readTime: '8 min read',
-};
-
-const kpis = [
-  { value: '42%', label: 'Metal Loss Reduction' },
-  { value: '6 Sites', label: 'Field Applications' },
-  { value: '12 Months', label: 'Evaluation Period' },
-  { value: '2,400+', label: 'Resource Downloads' },
+const categories = [
+  {
+    Icon: FileTextIcon,
+    title: 'Technical Articles',
+    description: 'In-depth analysis of chemical applications and performance data.',
+  },
+  {
+    Icon: TrendingUpIcon,
+    title: 'Industry Insights',
+    description: 'Market trends, regulatory updates, and strategic outlooks.',
+  },
+  {
+    Icon: BookOpenIcon,
+    title: 'Product Brochures',
+    description: 'Detailed specifications for our entire chemical portfolio.',
+  },
+  {
+    Icon: ListOrderedIcon,
+    title: 'Technical Bulletins',
+    description: 'Urgent updates and critical product usage guidelines.',
+  },
 ];
 
 const Featured: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState('All');
-
   return (
-    <section className="bg-background py-28 px-20">
-      <div className="grid grid-cols-2 gap-x-24 items-start">
-        <div className="relative w-full overflow-hidden rounded-sm aspect-[5/6]">
-          <img src="/solutions/solution-how.svg" alt="Featured Technical Resource" className="w-full h-full object-cover" />
+    <section className="bg-white py-24 px-30 text-left">
+      <div className="max-w-[1560px] mx-auto">
+        <div className="grid grid-cols-2 gap-18 items-start">
+          <div className="flex flex-col gap-0">
+            <h2 className="font-bold text-[44px] text-accent leading-[1.2] tracking-tight">
+              Insights, Technical Resources
+              <br />
+              and Knowledge for Critical
+              <br />
+              Operations
+            </h2>
 
-          <div className="absolute left-6 bottom-6 bg-background p-5 rounded-xs max-w-xs text-left border-l-4 border-l-secondary">
-            <div className="text-[9px] uppercase font-bold text-secondary tracking-wider mb-1">Highlighted Outcome</div>
-            <p className="text-sm font-bold text-accent leading-snug">42% reduction in corrosion rates across six offshore assets.</p>
-          </div>
-        </div>
+            <p className="text-[#475569] text-lg leading-relaxed mt-8">
+              Eunisell is committed to bridging the gap between chemical innovation and operational reality. Our Knowledge Centre serves as a hub for
+              engineers, procurement specialists, and technical leads to stay ahead of industry trends and regulatory shifts.
+            </p>
 
-        <div className="text-left pt-4">
-          <div className="text-[10px] font-black uppercase text-secondary tracking-[2px] mb-6">Featured Resource</div>
-
-          <div className="flex flex-wrap gap-x-3 gap-y-2 mb-10">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-5 py-1.5 rounded-full text-sm font-medium border transition-all cursor-pointer ${
-                  activeCategory === cat
-                    ? 'bg-secondary text-white border-secondary'
-                    : 'bg-card border-muted text-muted-foreground hover:border-secondary hover:text-secondary'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
-
-          <div className="border-l-4 border-l-secondary pl-8">
-            <div className="text-[9px] uppercase font-bold text-secondary tracking-[1.5px] mb-3">{featuredArticle.category}</div>
-            <h2 className="text-[32px] font-bold text-accent leading-tight mb-6">{featuredArticle.title}</h2>
-            <p className="text-muted-foreground text-base leading-relaxed mb-8">{featuredArticle.excerpt}</p>
-
-            <div className="flex items-center gap-x-6 text-xs text-muted-foreground mb-10">
-              <div className="flex items-center gap-x-2">
-                <CalendarIcon size={11} />
-                <span>{featuredArticle.date}</span>
+            <div className="mt-8 bg-sidebar border border-[#f1f5f9] shadow-sm rounded-sm p-8 flex flex-col gap-4">
+              <div className="flex items-center gap-4">
+                <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                  <MicroscopeIcon size={16} className="text-secondary" />
+                </div>
+                <h4 className="font-bold text-accent text-base">Research-Driven Content</h4>
               </div>
-              <div className="flex items-center gap-x-2">
-                <ClockIcon size={11} />
-                <span>{featuredArticle.readTime}</span>
-              </div>
+              <p className="text-[#64748b] text-base leading-relaxed">
+                Every resource is vetted by our technical committee to ensure accuracy and practical relevance for African industrial contexts.
+              </p>
             </div>
-
-            <Link to="#" className="text-secondary font-bold text-sm flex items-center gap-x-2 hover:gap-x-3 transition-all">
-              Read Full Article <ArrowRightIcon size={14} />
-            </Link>
           </div>
 
-          <div className="mt-14 grid grid-cols-2 gap-4">
-            {kpis.map((kpi) => (
-              <div key={kpi.label} className="p-5 bg-card rounded-xs text-left">
-                <div className="text-2xl font-black text-secondary">{kpi.value}</div>
-                <div className="text-[10px] text-muted-foreground uppercase tracking-wider mt-1">{kpi.label}</div>
+          <div className="grid grid-cols-2 gap-6">
+            {categories.map(({ Icon, title, description }) => (
+              <div key={title} className="border border-border p-8 flex flex-col gap-2.5">
+                <Icon size={24} className="text-secondary" />
+                <h3 className="font-bold text-accent text-xl leading-7 mt-1">{title}</h3>
+                <p className="text-[#64748b] text-sm leading-5 pt-3 flex-1">{description}</p>
+                <div className="flex items-center gap-2 pt-6">
+                  <span className="font-semibold text-secondary text-sm tracking-wide">Explore</span>
+                  <ArrowRightIcon size={12} className="text-secondary" />
+                </div>
               </div>
             ))}
           </div>

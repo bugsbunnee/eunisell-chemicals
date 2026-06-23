@@ -1,65 +1,55 @@
 import React from 'react';
-import { ArrowRightIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { DownloadIcon, FileTextIcon } from 'lucide-react';
 
-const topics = [
+const brochures = [
   {
-    id: '01',
-    title: 'Technical Articles',
-    description:
-      'Peer-reviewed technical insights and chemical engineering articles from our specialist team, covering oilfield, industrial, and specialty chemical applications.',
+    title: 'Upstream Chemicals Portfolio',
+    meta: 'PDF • 4.2 MB • Updated Jan 2024',
   },
   {
-    id: '02',
-    title: 'Industry Insights',
-    description:
-      "Market intelligence, sector analysis, and operational best practices for industrial and energy operators across Africa's evolving chemical landscape.",
+    title: 'Industrial Water Solutions',
+    meta: 'PDF • 3.8 MB • Updated Mar 2024',
   },
   {
-    id: '03',
-    title: 'Product Brochures',
-    description:
-      'Comprehensive product data sheets, technical specifications, SDS documentation, and application guides for our complete chemical portfolio.',
+    title: 'Corrosion Management Programme',
+    meta: 'PDF • 2.9 MB • Updated Feb 2024',
   },
   {
-    id: '04',
-    title: 'Technical Bulletins',
-    description:
-      'Field updates, performance reports, safety advisories, and technical notes from our operations and laboratory teams on emerging chemical challenges.',
+    title: 'Technical Services Overview',
+    meta: 'PDF • 5.1 MB • Updated Apr 2024',
   },
 ];
 
 const Topics: React.FC = () => {
   return (
-    <section className="flex w-full min-h-200">
-      <div className="w-3xl shrink-0 overflow-hidden">
-        <img src="/about/manufacturing.svg" alt="Knowledge Center Topics" className="w-full h-full object-cover" />
-      </div>
+    <section className="bg-[#f8fafc] py-24 px-20 text-left">
+      <div className="max-w-[1560px] mx-auto px-8 flex flex-col gap-12">
+        <div className="flex items-center justify-between">
+          <h2 className="font-bold text-accent text-[30px] leading-9">Product Catalogues &amp; Brochures</h2>
+          <a href="#" className="font-bold text-[#0083ce] text-sm tracking-[0.7px] uppercase">
+            Download Centre
+          </a>
+        </div>
 
-      <div className="flex-1 bg-background flex items-center px-20 py-28">
-        <div className="w-full text-left">
-          <div className="text-[10px] font-black uppercase text-secondary tracking-[2px] mb-4">Explore by Category</div>
-          <h2 className="font-bold text-[40px] text-accent mb-14 max-w-xl leading-tight">Four Core Areas of Chemical Knowledge</h2>
-
-          <div>
-            {topics.map((topic) => (
-              <div key={topic.id} className="border-t border-border pt-8 pb-6">
-                <div className="flex items-start justify-between gap-x-8">
-                  <div className="flex items-start gap-x-8 flex-1">
-                    <span className="font-black text-[40px] leading-none text-secondary/25 shrink-0 w-12">{topic.id}</span>
-                    <div>
-                      <div className="font-bold text-[22px] text-accent mb-3">{topic.title}</div>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{topic.description}</p>
-                    </div>
-                  </div>
-                  <Link to="#" className="text-secondary shrink-0 mt-2">
-                    <ArrowRightIcon size={16} />
-                  </Link>
+        <div className="grid grid-cols-4 gap-6">
+          {brochures.map((brochure) => (
+            <div key={brochure.title} className="bg-background border border-border shadow-[0px_2px_2px_rgba(0,0,0,0.05)] p-8 flex flex-col">
+              <div className="mb-6">
+                <div className="bg-[#f1f5f9] border border-border w-16 h-20 flex items-center justify-center">
+                  <FileTextIcon size={30} className="text-destructive" />
                 </div>
               </div>
-            ))}
-            <div className="border-t border-border" />
-          </div>
+
+              <h4 className="font-bold text-accent text-base leading-6 mb-2">{brochure.title}</h4>
+
+              <p className="text-popover-foreground text-xs leading-4 mb-8">{brochure.meta}</p>
+
+              <button className="bg-accent text-white text-sm font-bold py-3 flex items-center justify-center gap-2 mt-auto">
+                <DownloadIcon size={12} />
+                Download Brochure
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>

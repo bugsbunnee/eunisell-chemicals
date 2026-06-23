@@ -23,34 +23,37 @@ export const paths = {
   industries: '/industries',
   technical: '/technical',
   knowledge: '/knowledge',
+  knowledgeDetail: '/knowledge/:slug',
   brochures: '/knowledge/brochures',
   partners: '/partners',
   contact: '/contact',
   management: '/management',
   csr: '/csr',
+  careers: '/careers',
+  careerDetail: '/careers/:slug',
+  industrialDetail: '/solutions/industrial-manufacturing/detail',
 };
 
 export const specialties = [
   {
-    legend: 'production chemicals',
-    title: 'production optimization',
-    description:
-      'Corrosion Inhibitors · Scale Inhibitors · Demulsifiers · Paraffin Inhibitors · Asphaltene Treatments · H₂S Scavengers · Oxygen Scavengers',
+    legend: 'Production Chemicals',
+    title: 'Production Optimization',
+    description: 'Corrosion Inhibitors · Scale Inhibitors · Demulsifiers · Paraffin Inhibitors · Asphaltene Treatments · H₂S Scavengers',
   },
   {
-    legend: 'Flow Assurance Solutions',
-    title: 'Flow Assurance',
-    description: 'Wax Management · Hydrate Control · Pipeline Integrity Solutions',
+    legend: 'Flow Assurance',
+    title: 'Integrity Solutions',
+    description: 'Wax Management · Hydrate Control · Pipeline Integrity · Drag Reducers · Pour Point Depressants',
   },
   {
-    legend: 'Wellness Intervention Chemicals',
-    title: 'Wellness Intervention',
-    description: 'Acid Systems · Stimulation Chemicals · Specialty Treatments',
+    legend: 'Well Intervention',
+    title: 'Stimulation & Acidizing',
+    description: 'Acid Systems · Stimulation Chemicals · Specialty Treatments · Iron Control · Surfactants',
   },
   {
-    legend: 'WATER TREATMENT CHEMICALS',
-    title: 'Water Treatment',
-    description: 'Produced Water Treatment · Deoiling Chemicals · Clarifiers · Water Quality Management',
+    legend: 'Water Treatment',
+    title: 'Produced Water',
+    description: 'Deoiling Chemicals · Clarifiers · Biocides · Oxygen Scavengers · Reverse Osmosis Solutions',
   },
 ];
 
