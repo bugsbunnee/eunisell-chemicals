@@ -45,15 +45,15 @@ const BlogMoreResources: React.FC = () => {
             <h2 className="font-bold text-accent text-[24px] leading-9 md:text-[32px] md:leading-12">More Resources</h2>
             <div className="w-12 h-1 bg-secondary" />
           </div>
+
           <a href="#" className="hidden md:flex items-center gap-2 font-bold text-secondary text-[16px] leading-6">
             View All Resources
             <ArrowRightIcon size={10} />
           </a>
         </div>
 
-        {/* Mobile: 2-item list with left border */}
         <div className="flex flex-col gap-6 md:hidden">
-          {resources.slice(0, 2).map(({ Icon, title, description, accentColor, iconColor, link }) => (
+          {resources.slice(0, 2).map(({ Icon, title, description, accentColor, iconColor }) => (
             <div key={title} className={`bg-card ${accentColor} border-l-4 flex items-center gap-6 p-6`}>
               <Icon size={28} className={iconColor} />
               <div className="flex flex-col gap-1 flex-1">
@@ -65,7 +65,6 @@ const BlogMoreResources: React.FC = () => {
           ))}
         </div>
 
-        {/* Desktop: 4-col card grid */}
         <div className="hidden md:grid grid-cols-4 gap-6">
           {resources.map(({ Icon, title, description, iconColor, link }) => (
             <div key={title} className="bg-white border border-[#e8e8e8] shadow-[0px_2px_2px_rgba(0,0,0,0.05)] flex flex-col gap-5 p-8">

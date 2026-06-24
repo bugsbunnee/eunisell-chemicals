@@ -82,9 +82,9 @@ const BlogArticles: React.FC = () => {
     <section id="articles" className="bg-white py-12 px-6 md:py-16 md:px-30 text-left">
       <div className="flex flex-col gap-12 md:gap-20">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
-          {articles.map(({ image, category, categoryColor, subcategory, title, description, date, meta }) => (
+          {articles.map(({ image, category, categoryColor, subcategory, title, description, date }) => (
             <div key={title} className="flex flex-col">
-              <div className="h-[220px] md:h-65 overflow-hidden mb-5 md:mb-7 rounded-sm">
+              <div className="h-55 md:h-65 overflow-hidden mb-5 md:mb-7 rounded-sm">
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               </div>
 
@@ -94,7 +94,7 @@ const BlogArticles: React.FC = () => {
                 <span className="font-bold text-[#afb1b3] text-[11px] uppercase tracking-[1.1px] md:tracking-[0.55px]">{subcategory}</span>
               </div>
 
-              <h3 className="font-bold text-accent text-[20px] leading-[25px] md:leading-[27.5px] mb-3 md:mb-5">{title}</h3>
+              <h3 className="font-bold text-accent text-[20px] leading-6.25 md:leading-[27.5px] mb-3 md:mb-5">{title}</h3>
 
               <p className="text-[#777] text-sm leading-[22.75px] mb-4 md:mb-5 flex-1 line-clamp-3">{description}</p>
 
@@ -109,15 +109,13 @@ const BlogArticles: React.FC = () => {
           ))}
         </div>
 
-        {/* Mobile: Load More button */}
         <div className="flex md:hidden">
-          <button className="w-full border border-[#e8e8e8] bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.05)] h-[64px] flex items-center justify-center gap-3 font-bold text-accent text-[15px] uppercase tracking-[1.5px] hover:bg-card transition-colors">
+          <button className="w-full border border-[#e8e8e8] bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.05)] h-16 flex items-center justify-center gap-3 font-bold text-accent text-[15px] uppercase tracking-[1.5px] hover:bg-card transition-colors">
             Load More Articles
             <RefreshCwIcon size={14} className="text-secondary" />
           </button>
         </div>
 
-        {/* Desktop: pagination */}
         <div className="hidden md:flex items-center justify-center gap-4">
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
@@ -126,6 +124,7 @@ const BlogArticles: React.FC = () => {
           >
             <ArrowLeftIcon size={10} className="text-accent" />
           </button>
+
           {Array.from({ length: TOTAL_PAGES }, (_, i) => i + 1).map((num) => (
             <button
               key={num}
@@ -137,6 +136,7 @@ const BlogArticles: React.FC = () => {
               {num}
             </button>
           ))}
+
           <button
             onClick={() => setPage((p) => Math.min(TOTAL_PAGES, p + 1))}
             disabled={page === TOTAL_PAGES}
