@@ -14,14 +14,14 @@ const ContactCta: React.FC = () => (
       <div className="flex items-center gap-4 pt-4">
         <Link
           to={paths.contact}
-          className="flex items-center gap-3 bg-secondary text-white font-bold text-[14px] uppercase tracking-[1.4px] px-8 py-4 hover:bg-secondary/90 transition-colors"
+          className="flex items-center gap-3 bg-secondary text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-secondary/90 transition-colors"
         >
           Request Technical Consultation
           <ArrowRightIcon size={12} />
         </Link>
         <Link
           to={paths.contact}
-          className="border border-white text-white font-bold text-[14px] uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-colors"
+          className="border border-white text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-colors"
         >
           Contact Our Sales Team
         </Link>

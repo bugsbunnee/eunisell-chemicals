@@ -5,7 +5,7 @@ const CareersHero: React.FC = () => (
   <section className="bg-white py-24 px-30 text-left">
     <div className="grid grid-cols-2 gap-12 max-w-[1776px]">
       <div className="flex flex-col gap-0 shrink-0">
-        <nav className="flex items-center gap-2 text-[14px] text-card-foreground mb-6">
+        <nav className="flex items-center gap-2 text-sm text-card-foreground mb-6">
           <a href="/" className="hover:text-foreground transition-colors">
             Home
           </a>
@@ -13,7 +13,7 @@ const CareersHero: React.FC = () => (
           <span className="font-medium text-secondary">Careers</span>
         </nav>
 
-        <p className="font-bold text-secondary text-[14px] uppercase tracking-[1.4px] mb-4">Careers</p>
+        <p className="font-bold text-secondary text-sm uppercase tracking-[1.4px] mb-4">Careers</p>
 
         <h1 className="font-bold text-accent text-[64px] leading-[1.1] mb-6">
           Build a Career That

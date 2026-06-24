@@ -27,8 +27,15 @@ const faqs = [
 
 const FAQ: React.FC = () => {
   return (
-    <section className="px-30 py-24 bg-background relative grid grid-cols-[1fr_2fr] gap-x-24">
-      <div className="space-y-6 text-left">
+    <section className="px-6 py-16 md:px-30 md:py-24 bg-card relative flex flex-col md:grid md:grid-cols-[1fr_2fr] md:gap-x-24">
+      {/* Mobile heading */}
+      <div className="md:hidden text-center mb-8">
+        <h2 className="text-[24px] font-bold text-accent leading-8">Frequently Asked</h2>
+        <div className="w-12 h-1 bg-secondary mx-auto mt-3" />
+      </div>
+
+      {/* Desktop left column */}
+      <div className="hidden md:block space-y-6 text-left">
         <div className="text-[36px] leading-10 text-accent font-bold">Common Enquiries</div>
         <p className="text-primary text-base leading-6 font-normal">
           Quick answers to procedural questions regarding our chemical supply and technical services.
@@ -38,7 +45,18 @@ const FAQ: React.FC = () => {
         </button>
       </div>
 
-      <Accordion type="single" collapsible className="w-full text-left">
+      {/* Mobile: simple stacked cards */}
+      <div className="md:hidden flex flex-col gap-4">
+        {faqs.slice(0, 3).map((faq, index) => (
+          <div key={index} className="bg-background border border-border rounded-[2px] p-6">
+            <div className="text-accent font-bold text-[16px] leading-6">{faq.question}</div>
+            <p className="text-primary text-sm leading-5 mt-3">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Desktop: accordion */}
+      <Accordion type="single" collapsible className="hidden md:block w-full text-left">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`faq-${index}`}>
             <AccordionTrigger className="text-accent font-bold text-xl leading-7 hover:no-underline">{faq.question}</AccordionTrigger>

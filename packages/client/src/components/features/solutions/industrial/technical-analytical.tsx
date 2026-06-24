@@ -46,7 +46,7 @@ const TechnicalAnalytical: React.FC = () => (
               </div>
               <div className="flex flex-col gap-1">
                 <h6 className="font-bold text-accent text-[16px] leading-6">{title}</h6>
-                <p className="text-[#777] text-[14px] leading-5">{description}</p>
+                <p className="text-[#777] text-sm leading-5">{description}</p>
               </div>
             </div>
           ))}

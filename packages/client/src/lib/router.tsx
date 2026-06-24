@@ -3,6 +3,7 @@ import { paths } from './data';
 
 import type { Option } from './entities';
 
+import Layout from '../pages/Layout';
 import AboutPage from '../pages/AboutPage';
 import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
@@ -22,6 +23,8 @@ import ManagementPage from '../pages/ManagementPage';
 import CareersPage from '../pages/CareersPage';
 import CareerDetailPage from '../pages/CareerDetailPage';
 import BlogPage from '../pages/BlogPage';
+import BlogDetailPage from '../pages/BlogDetailPage';
+import ChemicalsPage from '../pages/ChemicalsPage';
 
 export const navigation: Option[] = [
   {
@@ -53,6 +56,7 @@ export const navigation: Option[] = [
 export const routes: RouteObject[] = [
   {
     path: '/',
+    element: <Layout />,
     children: [
       {
         index: true,
@@ -129,6 +133,14 @@ export const routes: RouteObject[] = [
       {
         path: paths.blog,
         element: <BlogPage />,
+      },
+      {
+        path: paths.blogDetail,
+        element: <BlogDetailPage />,
+      },
+      {
+        path: paths.chemicals,
+        element: <ChemicalsPage />,
       },
     ],
   },

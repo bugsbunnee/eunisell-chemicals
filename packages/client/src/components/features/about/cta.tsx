@@ -5,28 +5,31 @@ import { Link } from 'react-router-dom';
 
 const CTA: React.FC = () => {
   return (
-    <section className="relative py-30 px-30 bg-accent flex text-center items-center justify-center w-full">
-      <div className="w-full text-center z-50">
-        <div className="mx-auto leading-15.75 text-[60px] text-primary-foreground max-w-184.75 font-black">
+    <section className="relative py-20 px-6 md:py-30 md:px-30 bg-accent flex text-center items-center justify-center w-full overflow-hidden">
+      <div className="w-full text-center z-40">
+        <div className="mx-auto text-[30px] md:text-[60px] leading-9 md:leading-15.75 text-primary-foreground max-w-full md:max-w-184.75 font-black">
           Partner with Eunisell Chemicals for Your Next Operational Challenge
         </div>
 
-        <div className="flex items-center justify-center mt-10 gap-x-4">
-          <Button className="rounded-xs bg-secondary font-semibold text-base h-13 px-7">Request a Consultation</Button>
-
-          <Button className="rounded-xs bg-transparent border border-primary-foreground/40 font-semibold text-base h-13 px-7">Contact Support</Button>
+        <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center mt-8 md:mt-10 gap-4 md:gap-x-4">
+          <Button className="w-full md:w-auto h-15 md:h-13 rounded-xs bg-secondary font-bold md:font-semibold text-[16px] md:text-base md:px-7">
+            Request a Consultation
+          </Button>
+          <Button className="w-full md:w-auto h-15 md:h-13 rounded-xs bg-transparent border border-primary-foreground/40 font-bold md:font-semibold text-[16px] md:text-base md:px-7">
+            Contact Support
+          </Button>
         </div>
 
-        <div className="mt-10 flex gap-x-5.5 items-center justify-center uppercase">
-          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
+        <div className="mt-8 md:mt-10 flex flex-col md:flex-row gap-4 md:gap-x-5.5 items-center justify-center uppercase">
+          <Link className="text-[10px] md:text-sm md:leading-5 tracking-[2px] text-muted/60" to="/">
             Product Enquiries
           </Link>
-          <span className="text-primary-foreground/42">·</span>
-          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
+          <span className="text-primary-foreground/42 hidden md:block">·</span>
+          <Link className="text-[10px] md:text-sm md:leading-5 tracking-[2px] text-muted/60" to="/">
             Laboratory Services Enquiries
           </Link>
-          <span className="text-primary-foreground/42">·</span>
-          <Link className="text-sm leading-5 tracking-[2px] text-muted/60" to="/">
+          <span className="text-primary-foreground/42 hidden md:block">·</span>
+          <Link className="text-[10px] md:text-sm md:leading-5 tracking-[2px] text-muted/60" to="/">
             Emergency Support
           </Link>
         </div>

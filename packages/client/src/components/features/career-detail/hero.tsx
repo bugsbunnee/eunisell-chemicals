@@ -55,24 +55,24 @@ const CareerDetailHero: React.FC<CareerDetailHeroProps> = ({
       </p>
 
       <div className="flex flex-wrap gap-4 mb-10">
-        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-[14px] font-medium text-accent">
+        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-sm font-medium text-accent">
           <BriefcaseIcon size={14} className="text-secondary shrink-0" />
           {department}
         </span>
-        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-[14px] font-medium text-accent">
+        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-sm font-medium text-accent">
           <MapPinIcon size={14} className="text-secondary shrink-0" />
           {location}
         </span>
-        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-[14px] font-medium text-accent">
+        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-sm font-medium text-accent">
           <ClockIcon size={14} className="text-secondary shrink-0" />
           {type}
         </span>
-        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-[14px] font-medium text-accent">
+        <span className="flex items-center gap-2 bg-white border border-border rounded-full px-4 py-2 text-sm font-medium text-accent">
           <BarChart2Icon size={14} className="text-secondary shrink-0" />
           {level}
         </span>
         <span
-          className={`flex items-center gap-2 rounded-full px-4 py-2 text-[14px] font-bold ${isDeadlineSoon ? 'bg-red-50 border border-red-200 text-[#d00416]' : 'bg-white border border-border text-accent'}`}
+          className={`flex items-center gap-2 rounded-full px-4 py-2 text-sm font-bold ${isDeadlineSoon ? 'bg-red-50 border border-red-200 text-[#d00416]' : 'bg-white border border-border text-accent'}`}
         >
           <CalendarXIcon size={14} className="shrink-0" />
           Closing: {deadline}

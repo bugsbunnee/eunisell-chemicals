@@ -23,7 +23,7 @@ interface Props {
 const BrochureCard: React.FC<Props> = ({ brochure }) => {
   return (
     <div className="bg-white border border-border rounded-md shadow-[0px_16px_16px_rgba(0,0,0,0.08)] flex flex-col isolate overflow-hidden p-2">
-      <div className="relative bg-[#f1f5f9] rounded-[4px] h-70 overflow-hidden shrink-0">
+      <div className="relative bg-[#f1f5f9] rounded-[4px] h-[220px] md:h-70 overflow-hidden shrink-0">
         <img src={brochure.image} alt={brochure.title} className="absolute inset-0 w-full h-full object-cover" />
 
         <span

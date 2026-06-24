@@ -22,28 +22,28 @@ const Clients: React.FC = () => {
   const activeBatch = Math.floor(currentSlide / SLIDES_TO_SHOW);
 
   return (
-    <section className="py-16 px-30 border-t border-t-border">
-      <div className="flex items-end justify-between mb-12">
+    <section className="py-16 px-6 md:px-30 border-t border-t-border">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4 md:gap-0">
         <div className="text-left">
           <div className="font-black text-[15px] tracking-[1.4px] leading-5 text-secondary uppercase">Clients</div>
-          <div className="font-semibold text-3xl leading-9 text-accent mt-7">Our Global Network</div>
+          <div className="font-semibold text-[24px] md:text-3xl leading-8 md:leading-9 text-accent mt-4 md:mt-7">Our Global Network</div>
         </div>
 
         <div className="flex items-center gap-x-3">
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             aria-label="Previous"
-            className="w-12 h-12 rounded-full flex items-center justify-center border border-muted text-accent hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-muted text-accent hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
           >
-            <ChevronLeftIcon size={20} />
+            <ChevronLeftIcon size={18} />
           </button>
 
           <button
             onClick={() => sliderRef.current?.slickNext()}
             aria-label="Next"
-            className="w-12 h-12 rounded-full flex items-center justify-center border border-secondary text-secondary hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-secondary text-secondary hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
           >
-            <ChevronRightIcon size={20} />
+            <ChevronRightIcon size={18} />
           </button>
         </div>
       </div>

@@ -34,10 +34,10 @@ const WhereYouFit: React.FC = () => (
           <div key={role.title} className="bg-white/5 rounded-[4px] p-8 flex flex-col gap-0">
             <img src={role.icon} alt={role.title} className="w-[30px] h-6 object-contain mb-4" />
             <h4 className="font-bold text-white text-[20px] leading-[30px] mb-4">{role.title}</h4>
-            <p className="text-[#afb1b3] text-[14px] leading-[21px] mb-0 flex-1">{role.description}</p>
+            <p className="text-[#afb1b3] text-sm leading-[21px] mb-0 flex-1">{role.description}</p>
             <a
               href="#open-positions"
-              className="flex items-center gap-2 mt-6 text-secondary font-semibold text-[14px] hover:text-secondary/80 transition-colors"
+              className="flex items-center gap-2 mt-6 text-secondary font-semibold text-sm hover:text-secondary/80 transition-colors"
             >
               Explore Roles
               <ArrowRightIcon size={12} />

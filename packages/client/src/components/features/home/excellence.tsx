@@ -86,11 +86,23 @@ const TechnicalExcellence: React.FC = () => {
       title="Technical Excellence at the Heart of Every Solution"
       description="Our advanced laboratory infrastructure and technical team deliver precision testing, analysis, and support services that underpin every chemical solution we provide."
     >
-      <div className="mt-16 grid grid-cols-2 gap-x-18">
-        <div className="grid grid-cols-2 gap-8">
+      <div className="mt-10 md:mt-16 flex flex-col md:grid md:grid-cols-2 md:gap-x-18 gap-8 md:gap-0">
+        {/* Lab image — shown first on mobile */}
+        <div className="order-1 md:order-2 relative rounded-[4px] h-[240px] md:h-auto">
+          {markers.map((marker) => (
+            <div key={marker.title} className={marker.className}>
+              <div className="text-[9px] mt-0 text-secondary font-semibold uppercase">{marker.title}</div>
+              <div className="text-accent font-bold text-sm">{marker.value}</div>
+            </div>
+          ))}
+          <img src="/home/technical.svg" alt="Technical" className="w-full h-full object-cover" />
+        </div>
+
+        {/* Feature list — shown below image on mobile */}
+        <div className="order-2 md:order-1 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {technicalities.map((technicality) => (
             <div key={technicality.title} className="flex items-start gap-x-4">
-              <div className="w-10 h-10 border border-border flex items-center justify-center rounded-full text-secondary">
+              <div className="w-10 h-10 border border-border flex items-center justify-center rounded-full text-secondary shrink-0">
                 <technicality.Icon size={14} />
               </div>
               <div className="text-left flex-1">
@@ -100,27 +112,16 @@ const TechnicalExcellence: React.FC = () => {
             </div>
           ))}
         </div>
-
-        <div className="relative rounded-[4px]">
-          {markers.map((marker) => (
-            <div key={marker.title} className={marker.className}>
-              <div className="text-[9px] mt-0 text-secondary font-semibold uppercase">{marker.title}</div>
-              <div className="text-accent font-bold text-sm">{marker.value}</div>
-            </div>
-          ))}
-
-          <img src="/home/technical.svg" alt="Technical" className="w-full h-full object-cover" />
-        </div>
       </div>
 
-      <div className="border-t border-border my-16" />
+      <div className="border-t border-border my-10 md:my-16" />
 
-      <div className="grid grid-cols-4 divide-x divide-border">
-        {summary.map((summary) => (
-          <div key={summary.label} className="flex items-center justify-center">
+      <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
+        {summary.map((s) => (
+          <div key={s.label} className="flex items-center justify-center py-2 md:py-0">
             <div>
-              <div className="font-extrabold text-[52px] text-secondary">{summary.value}</div>
-              <div className="tracking-[1px] uppercase text-xs mt-4 text-muted">{summary.label}</div>
+              <div className="font-extrabold text-[36px] md:text-[52px] text-secondary">{s.value}</div>
+              <div className="tracking-[1px] uppercase text-[10px] md:text-xs mt-2 md:mt-4 text-muted">{s.label}</div>
             </div>
           </div>
         ))}

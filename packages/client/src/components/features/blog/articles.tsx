@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
+import { ArrowLeftIcon, ArrowRightIcon, RefreshCwIcon } from 'lucide-react';
 
 const img1 = 'https://www.figma.com/api/mcp/asset/08c4f6bf-5249-4020-b9e1-f7a3231e68de';
 const img2 = 'https://www.figma.com/api/mcp/asset/5523c26b-d50f-4413-a605-dd308a5da4fb';
@@ -17,6 +17,7 @@ const articles = [
     title: 'Optimizing Water Treatment in Centralized Cooling Systems',
     description:
       'Discover how modern chemical filtration and treatment protocols are extending the life of industrial cooling infrastructure across the sub-region.',
+    date: 'May 5, 2024',
     meta: '6 min read • May 5, 2024',
   },
   {
@@ -27,6 +28,7 @@ const articles = [
     title: 'The Future of EOR: Chemical Innovations in Mature Fields',
     description:
       'Enhanced Oil Recovery (EOR) techniques are evolving. We look at the polymers and surfactants driving production efficiency in West African fields.',
+    date: 'Apr 28, 2024',
     meta: '10 min read • Apr 28, 2024',
   },
   {
@@ -36,6 +38,7 @@ const articles = [
     subcategory: 'Logistics',
     title: 'Eunisell Expands Distribution Hub in Port Harcourt',
     description: 'Our new state-of-the-art storage and mixing facility is now fully operational, increasing our capacity to serve the energy sector.',
+    date: 'Apr 20, 2024',
     meta: '4 min read • Apr 20, 2024',
   },
   {
@@ -45,6 +48,7 @@ const articles = [
     subcategory: 'Integrity',
     title: 'Corrosion Control in High-H2S Environments',
     description: 'Detailed analysis of inhibitor performance under extreme sour gas conditions and long-term asset protection strategies.',
+    date: 'Apr 15, 2024',
     meta: '12 min read • Apr 15, 2024',
   },
   {
@@ -54,6 +58,7 @@ const articles = [
     subcategory: 'Digitalization',
     title: 'Digital Transformation in Chemical Supply Chains',
     description: 'How real-time data and IoT are revolutionizing chemical inventory management and demand forecasting for energy leaders.',
+    date: 'Apr 08, 2024',
     meta: '7 min read • Apr 08, 2024',
   },
   {
@@ -63,6 +68,7 @@ const articles = [
     subcategory: 'Leadership',
     title: 'Highlights from the 2024 Industrial Leadership Summit',
     description: "Key takeaways from Eunisell's participation in the annual forum on sustainable chemical engineering practices.",
+    date: 'Apr 02, 2024',
     meta: '5 min read • Apr 02, 2024',
   },
 ];
@@ -73,28 +79,28 @@ const BlogArticles: React.FC = () => {
   const [page, setPage] = useState(1);
 
   return (
-    <section className="bg-white py-16 px-30 text-left">
-      <div className="flex flex-col gap-20">
-        <div className="grid grid-cols-3 gap-x-8 gap-y-16">
-          {articles.map(({ image, category, categoryColor, subcategory, title, description, meta }) => (
+    <section id="articles" className="bg-white py-12 px-6 md:py-16 md:px-30 text-left">
+      <div className="flex flex-col gap-12 md:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-16">
+          {articles.map(({ image, category, categoryColor, subcategory, title, description, date, meta }) => (
             <div key={title} className="flex flex-col">
-              <div className="h-65 overflow-hidden mb-7">
+              <div className="h-[220px] md:h-65 overflow-hidden mb-5 md:mb-7 rounded-sm">
                 <img src={image} alt={title} className="w-full h-full object-cover" />
               </div>
 
-              <div className="flex items-center gap-3 mb-3">
-                <span className={`font-bold text-[11px] uppercase tracking-[0.55px] ${categoryColor}`}>{category}</span>
+              <div className="flex items-center gap-2 md:gap-3 mb-3">
+                <span className={`font-bold text-[11px] uppercase tracking-[1.1px] md:tracking-[0.55px] ${categoryColor}`}>{category}</span>
                 <span className="text-[#afb1b3] text-[11px]">•</span>
-                <span className="font-medium text-[#afb1b3] text-[11px] uppercase tracking-[0.55px]">{subcategory}</span>
+                <span className="font-bold text-[#afb1b3] text-[11px] uppercase tracking-[1.1px] md:tracking-[0.55px]">{subcategory}</span>
               </div>
 
-              <h3 className="font-bold text-accent text-[20px] leading-[27.5px] mb-5">{title}</h3>
+              <h3 className="font-bold text-accent text-[20px] leading-[25px] md:leading-[27.5px] mb-3 md:mb-5">{title}</h3>
 
-              <p className="text-[#777] text-[14px] leading-[22.75px] mb-5 flex-1">{description}</p>
+              <p className="text-[#777] text-sm leading-[22.75px] mb-4 md:mb-5 flex-1 line-clamp-3">{description}</p>
 
-              <div className="border-t border-[#f0f0f0] pt-5 flex items-center justify-between">
-                <span className="text-[#afb1b3] text-[12px]">{meta}</span>
-                <a href="#" className="font-bold text-secondary text-[12px] uppercase tracking-[1.2px] flex items-center gap-1">
+              <div className="border-t border-[#f0f0f0] pt-4 md:pt-5 flex items-center justify-between">
+                <span className="text-[#afb1b3] text-[12px] uppercase">{date}</span>
+                <a href="#" className="font-bold text-secondary text-[12px] uppercase tracking-[1.2px] flex items-center gap-1.5">
                   Read More
                   <ArrowRightIcon size={8} />
                 </a>
@@ -103,7 +109,16 @@ const BlogArticles: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-center gap-4">
+        {/* Mobile: Load More button */}
+        <div className="flex md:hidden">
+          <button className="w-full border border-[#e8e8e8] bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.05)] h-[64px] flex items-center justify-center gap-3 font-bold text-accent text-[15px] uppercase tracking-[1.5px] hover:bg-card transition-colors">
+            Load More Articles
+            <RefreshCwIcon size={14} className="text-secondary" />
+          </button>
+        </div>
+
+        {/* Desktop: pagination */}
+        <div className="hidden md:flex items-center justify-center gap-4">
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}

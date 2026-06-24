@@ -13,11 +13,11 @@ enum FilterCategory {
   Oilfield = 'oilfield',
 }
 
-const filters: { id: FilterCategory; label: string }[] = [
-  { id: FilterCategory.All, label: 'All Brochures' },
-  { id: FilterCategory.Corporate, label: 'Corporate Brochures' },
-  { id: FilterCategory.Industrial, label: 'Industrial Brochures' },
-  { id: FilterCategory.Oilfield, label: 'Oilfield Chemical Brochures' },
+const filters: { id: FilterCategory; label: string; shortLabel: string }[] = [
+  { id: FilterCategory.All, label: 'All Brochures', shortLabel: 'All' },
+  { id: FilterCategory.Corporate, label: 'Corporate Brochures', shortLabel: 'Corporate' },
+  { id: FilterCategory.Industrial, label: 'Industrial Brochures', shortLabel: 'Industrial' },
+  { id: FilterCategory.Oilfield, label: 'Oilfield Chemical Brochures', shortLabel: 'Oilfield' },
 ];
 
 const brochures: Brochure[] = [
@@ -70,18 +70,21 @@ const BrochureLibrary: React.FC = () => {
 
   return (
     <React.Fragment>
-      <section className="bg-white px-30 py-26.25 flex justify-center">
-        <div className="w-full flex flex-col gap-10">
-          <div className="flex items-end justify-between">
-            <div className="space-y-4 text-left">
-              <span className="font-bold text-secondary text-sm uppercase tracking-[1.4px] leading-5">Brochure Library</span>
-
-              <h2 className="font-bold text-4xl text-accent leading-10">Find the Right Brochure for Your Operation</h2>
+      <section className="bg-white px-6 py-10 md:px-30 md:py-26.25 md:pb-7.75 flex justify-center">
+        <div className="w-full flex flex-col gap-6 md:gap-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div className="space-y-3 md:space-y-4 text-left md:max-w-[50%]">
+              <span className="font-bold text-secondary text-xs md:text-sm uppercase tracking-[1.2px] md:tracking-[1.4px] leading-[18px] md:leading-5">
+                Brochure Library
+              </span>
+              <h2 className="font-bold text-2xl md:text-4xl text-accent leading-8 md:leading-10 md:max-w-186">
+                <span className="md:hidden">Find Resources</span>
+                <span className="hidden md:inline">Find the Right Brochure for Your Operation</span>
+              </h2>
             </div>
 
-            <div className="relative w-90">
+            <div className="relative w-full md:w-90">
               <SearchIcon size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground" />
-
               <input
                 type="text"
                 placeholder="Search brochures..."
@@ -92,7 +95,22 @@ const BrochureLibrary: React.FC = () => {
             </div>
           </div>
 
-          <div className="bg-card rounded-md p-2 flex gap-2 w-fit">
+          <div className="flex gap-3 overflow-x-auto pb-1 -mx-6 px-6 md:hidden [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {filters.map((filter) => (
+              <button
+                key={filter.id}
+                onClick={() => setActiveFilter(filter.id)}
+                className={cn(
+                  'shrink-0 px-6 py-2 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                  activeFilter === filter.id ? 'bg-secondary text-white font-semibold' : 'bg-card border border-input text-accent'
+                )}
+              >
+                {filter.shortLabel}
+              </button>
+            ))}
+          </div>
+
+          <div className="hidden md:flex bg-card rounded-md p-2 gap-2 w-fit">
             {filters.map((filter) => (
               <button
                 key={filter.id}
@@ -110,20 +128,22 @@ const BrochureLibrary: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-card px-30 py-25 flex justify-center">
-        <div className="w-full max-w-360 flex flex-col gap-16">
-          <div className="grid grid-cols-3 gap-8">
+      <section className="bg-white md:bg-card px-6 py-10 md:px-30 md:py-25 flex justify-center">
+        <div className="w-full max-w-360 flex flex-col gap-8 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
             {visible.map((brochure) => (
               <BrochureCard key={brochure.id} brochure={brochure} />
             ))}
 
             {visible.length === 0 && (
-              <div className="col-span-3 text-center py-20 text-muted-foreground text-sm">No brochures match your search.</div>
+              <div className="col-span-1 md:col-span-3 text-center py-20 text-muted-foreground text-sm">No brochures match your search.</div>
             )}
           </div>
 
           <div className="flex justify-center">
-            <button className="border-2 border-accent text-accent font-bold text-base px-12 py-4 rounded-[4px] leading-6">Load More Brochures</button>
+            <button className="w-full md:w-auto border-2 border-accent text-accent font-bold text-sm md:text-base py-4 md:px-12 rounded-[4px] leading-5 md:leading-6">
+              Load More Brochures
+            </button>
           </div>
         </div>
       </section>

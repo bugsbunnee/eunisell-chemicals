@@ -69,9 +69,9 @@ const ContactForm: React.FC = () => {
   );
 
   return (
-    <div className="bg-white border border-[#E2E8F0] p-12 rounded-[4px] shadow-xl">
+    <div className="bg-white border border-[#E2E8F0] p-6 md:p-12 rounded-[4px] shadow-xl">
       <form onSubmit={onSubmit} className="space-y-6">
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <form.AppField
             name="fullName"
             validators={{ onChange: z.string().min(2, 'Full name is required') }}
@@ -85,7 +85,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <form.AppField
             name="jobTitle"
             validators={{ onChange: z.string() }}
@@ -99,7 +99,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
 
-        <div className="grid grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <form.AppField
             name="phone"
             validators={{
@@ -115,7 +115,7 @@ const ContactForm: React.FC = () => {
           />
         </div>
 
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <form.AppField
             name="industry"
             validators={{ onChange: z.string().min(1, 'Please select an industry') }}

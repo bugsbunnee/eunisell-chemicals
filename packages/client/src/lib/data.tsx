@@ -33,6 +33,8 @@ export const paths = {
   careerDetail: '/careers/:slug',
   industrialDetail: '/solutions/industrial-manufacturing/detail',
   blog: '/blog',
+  blogDetail: '/blog/:slug',
+  chemicals: '/chemicals',
 };
 
 export const specialties = [
@@ -140,6 +142,99 @@ export const reasons = [
     title: 'Reliable Supply Chain',
     description: 'Responsive logistics and supply chain supporting critical operations.',
   },
+];
+
+export enum NavDropdown {
+  Company = 'Company',
+  Solutions = 'Solutions',
+  KnowledgeCentre = 'Knowledge Centre',
+  OurChemicals = 'Our Chemicals',
+}
+
+export interface NavLink {
+  label: string;
+  path: string;
+  semibold?: boolean;
+}
+
+export const companyLinks: NavLink[] = [
+  { label: 'About Us', path: paths.aboutUs },
+  { label: 'Executive Management', path: paths.management },
+  { label: 'Careers', path: paths.careers },
+  { label: 'Partners', path: paths.partners },
+];
+
+export const responsibilityLinks: NavLink[] = [
+  { label: 'QHSE Standards', path: paths.qhse },
+  { label: 'Corporate Social Responsibility', path: paths.csr },
+];
+
+export const coreSolutionLinks: NavLink[] = [
+  { label: 'Our Solutions Overview', path: paths.solutions, semibold: true },
+  { label: 'Industrial & Manufacturing Chemicals', path: paths.industrial },
+  { label: 'Oilfield Chemicals', path: paths.oilfield },
+];
+
+export const technicalCapabilityLinks: NavLink[] = [
+  { label: 'Technical Services', path: paths.technical, semibold: true },
+  { label: 'Laboratory Services', path: paths.technical },
+  { label: 'Chemical Blending', path: paths.chemicals },
+];
+
+export const resourceLinks: NavLink[] = [
+  { label: 'Knowledge Centre Hub', path: paths.knowledge, semibold: true },
+  { label: 'Technical Articles', path: paths.knowledge },
+  { label: 'Industry Insights', path: paths.knowledge },
+  { label: 'Our Blog', path: paths.blog },
+];
+
+export const downloadLinks: NavLink[] = [
+  { label: 'Brochures', path: paths.brochures, semibold: true },
+  { label: 'Corporate Brochures', path: paths.brochures },
+  { label: 'Technical Bulletins', path: paths.brochures },
+  { label: 'Product Catalogues', path: paths.brochures },
+];
+
+export const knowledgeTopics: string[] = ['Oilfield', 'Industrial', 'Laboratory', 'Water', 'Sustainability', 'QHSE'];
+
+export const chemicalsPrimaryLinks: NavLink[] = [
+  { label: 'Industrial Process Fluids', path: paths.chemicals },
+  { label: 'Cleaning & Hygiene', path: paths.chemicals },
+  { label: 'Water Solutions', path: paths.chemicals },
+];
+
+export const chemicalsSecondaryLinks: NavLink[] = [
+  { label: 'Oilfield Chemicals', path: paths.oilfield },
+  { label: 'Fluid Condition Monitoring', path: paths.chemicals },
+];
+
+export const dropdownNav = [
+  { label: NavDropdown.Company, items: companyLinks },
+  {
+    label: NavDropdown.Solutions,
+    items: [
+      { label: 'Industrial Manufacturing', path: paths.industrial },
+      { label: 'Oilfield Chemicals', path: paths.oilfield },
+      { label: 'All Solutions', path: paths.solutions },
+    ],
+  },
+  {
+    label: NavDropdown.KnowledgeCentre,
+    items: [
+      { label: 'Articles & Insights', path: paths.knowledge },
+      { label: 'Brochures', path: paths.brochures },
+    ],
+  },
+  {
+    label: NavDropdown.OurChemicals,
+    items: [{ label: 'View All Chemicals', path: paths.chemicals }],
+  },
+];
+
+export const plainLinks = [
+  { label: 'Industries Served', path: paths.industries },
+  { label: 'Technical Services', path: paths.technical },
+  { label: 'Contact', path: paths.contact },
 ];
 
 export const team = [

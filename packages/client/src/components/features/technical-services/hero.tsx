@@ -19,14 +19,14 @@ const crumbs = [
 
 const Hero: React.FC = () => {
   return (
-    <section className="bg-white px-30 py-24 grid grid-cols-2 gap-x-18 text-left items-stretch">
-      <div className="space-y-8">
-        <div className="flex items-center gap-x-2 max-w-2xl">
+    <section className="bg-white px-6 py-12 md:px-30 md:py-24 flex flex-col md:grid md:grid-cols-2 md:gap-x-18 text-left md:items-stretch gap-8">
+      <div className="space-y-6 md:space-y-8">
+        <div className="flex items-center gap-x-2">
           {crumbs.map((crumb, index) => (
             <React.Fragment key={crumb.path}>
               <Link
                 className={cn({
-                  'font-medium uppercase text-sm tracking-[0.7px]': true,
+                  'font-medium uppercase text-[12px] md:text-sm tracking-[0.7px]': true,
                   'text-secondary': location.pathname !== crumb.path,
                   'text-muted': location.pathname === crumb.path,
                 })}
@@ -35,38 +35,32 @@ const Hero: React.FC = () => {
                 {crumb.label}
               </Link>
 
-              {index !== crumbs.length - 1 && <ChevronRightIcon size={14} className="text-secondary" />}
+              {index !== crumbs.length - 1 && <ChevronRightIcon size={12} className="text-secondary" />}
             </React.Fragment>
           ))}
         </div>
 
-        <h1 className="font-bold text-accent text-6xl leading-16.5">
+        <h1 className="font-bold text-accent text-[32px] md:text-6xl leading-[38.4px] md:leading-16.5">
           Technical Expertise That Drives <span className="text-secondary">Better Operational Decisions</span>
         </h1>
 
-        <p className="max-w-124 font-normal text-card-foreground text-xl leading-[32.5px] m-0">
-          Eunisell's technical services bridge the gap between
-          <br />
-          complex chemical science and field application,
-          <br />
-          ensuring your assets perform at their peak while
-          <br />
-          minimizing operational risk.
+        <p className="font-normal text-card-foreground text-[16px] md:text-xl leading-[26px] md:leading-[32.5px] m-0">
+          Eunisell's technical services bridge the gap between complex chemical science and field application, ensuring your assets perform at their
+          peak while minimizing operational risk.
         </p>
 
-        <div className="mt-12 flex gap-x-4">
-          <Button className="py-4 px-8 bg-secondary text-primary-foreground h-15 text-lg font-semibold rounded-[4px] items-center flex gap-x-2">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-x-4">
+          <Button className="h-[56px] md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary text-primary-foreground text-sm md:text-lg font-semibold rounded-[4px]">
             Request Technical Consultation
           </Button>
-
-          <Button className="py-4 px-8 border-2 border-secondary bg-transparent text-secondary h-15 text-lg font-semibold rounded-[4px]">
+          <Button className="h-[56px] md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-secondary bg-transparent text-secondary text-sm md:text-lg font-semibold rounded-[4px]">
             Explore Capabilities
           </Button>
         </div>
       </div>
 
-      <div className="w-full min-h-[500px]">
-        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[16px] object-cover" />
+      <div className="w-full h-[260px] md:h-auto md:min-h-[500px]">
+        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[8px] md:rounded-[16px] object-cover" />
       </div>
     </section>
   );

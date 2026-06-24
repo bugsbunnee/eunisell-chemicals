@@ -21,13 +21,13 @@ const IndustrialHero: React.FC = () => (
         <nav className="flex items-center gap-2">
           {crumbs.map(({ label, to }) => (
             <React.Fragment key={label}>
-              <Link to={to} className="text-[#afb1b3] text-[14px] font-medium hover:text-white transition-colors">
+              <Link to={to} className="text-[#afb1b3] text-sm font-medium hover:text-white transition-colors">
                 {label}
               </Link>
               <ChevronRightIcon size={10} className="text-[#afb1b3]" />
             </React.Fragment>
           ))}
-          <span className="text-secondary text-[14px] font-medium">Industrial &amp; Manufacturing Chemicals</span>
+          <span className="text-secondary text-sm font-medium">Industrial &amp; Manufacturing Chemicals</span>
         </nav>
 
         <h1 className="font-bold text-white text-[72px] leading-18 tracking-[-1.8px] max-w-4xl">
@@ -44,12 +44,12 @@ const IndustrialHero: React.FC = () => (
         <div className="flex items-center gap-4 pt-4">
           <Link
             to={paths.contact}
-            className="flex items-center gap-3 bg-secondary text-white font-bold text-[14px] uppercase tracking-[1.4px] px-8 py-[17px] hover:bg-secondary/90 transition-colors"
+            className="flex items-center gap-3 bg-secondary text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-[17px] hover:bg-secondary/90 transition-colors"
           >
             Talk to an Expert
             <ArrowRightIcon size={12} />
           </Link>
-          <button className="border border-white/30 text-white font-bold text-[14px] uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-colors">
+          <button className="border border-white/30 text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-colors">
             Download Brochure
           </button>
         </div>

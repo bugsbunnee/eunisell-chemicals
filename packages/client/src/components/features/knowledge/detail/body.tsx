@@ -1,112 +1,54 @@
 import React from 'react';
-import { CheckIcon, ArrowRightIcon } from 'lucide-react';
+import { ArrowRightIcon } from 'lucide-react';
+import type { ArticleDetail } from '../../../../lib/entities';
 
-const ArticleBody: React.FC = () => {
+type ArticleBodyProps = Pick<ArticleDetail, 'content' | 'resourceDetails' | 'relatedSolution'>;
+
+const ArticleBody: React.FC<ArticleBodyProps> = ({ content, resourceDetails, relatedSolution }) => {
   return (
-    <div className="w-full mx-auto px-30 py-20 text-left">
-      <div className="grid items-start" style={{ gridTemplateColumns: '744px 1fr', gap: '72px' }}>
-        <article>
-          <h2 className="font-bold text-foreground text-[32px] leading-[1.2] mb-6">The Evolution of Industrial Chemical Management</h2>
+    <div className="w-full mx-auto px-5 py-10 md:px-30 md:py-20 text-left">
+      <div className="flex flex-col md:grid md:items-start" style={{ gridTemplateColumns: '744px 1fr', gap: '72px' }}>
+        {/* Article content */}
+        <article>{content}</article>
 
-          <p className="text-muted-foreground text-[16px] leading-[1.75]">
-            In the modern industrial landscape, chemical management has moved far beyond simple procurement. It has become a strategic lever for
-            operational excellence. At Eunisell Chemicals, we recognize that every facility has a unique fingerprint—varying temperatures, pressures,
-            and mechanical stresses that demand more than off-the-shelf solutions.
-          </p>
-
-          <h3 className="font-bold text-accent text-[22px] leading-[1.3] mt-11 mb-4">Optimizing Through Precision Chemistry</h3>
-
-          <p className="text-muted-foreground text-[16px] leading-[1.75]">
-            Our approach begins with deep technical diagnostics. By analyzing the specific friction points within a production line, we can engineer
-            additives and process chemicals that not only solve immediate issues like scaling or corrosion but actively improve the thermodynamic
-            efficiency of the entire system.
-          </p>
-
-          {/* Blockquote */}
-          <blockquote className="mt-10 mb-10 border-l-4 border-secondary bg-[#f8fafc] pl-8 pr-8 py-[30px]">
-            <p className="text-foreground text-[18px] leading-[1.7] italic">
-              "The integration of IoT sensors with chemical dosing systems is no longer the future—it is the baseline for competitive manufacturing."
-            </p>
-            <cite className="block mt-4 text-secondary text-[14px] font-medium not-italic">— Dr. Marcus Chen, Chief Technical Officer</cite>
-          </blockquote>
-
-          <h3 className="font-bold text-secondary text-[22px] leading-[1.3] mt-11 mb-5">Key Operational Benefits</h3>
-
-          <ul className="flex flex-col gap-4">
-            {[
-              {
-                label: 'Extended Asset Life:',
-                text: 'Reducing oxidative stress on machinery through superior lubrication and coating chemistry.',
-              },
-              {
-                label: 'Energy Conservation:',
-                text: 'Lowering surface tension in heat exchangers to maximize thermal transfer.',
-              },
-              {
-                label: 'Compliance Assurance:',
-                text: 'Formulations designed to exceed environmental regulations without sacrificing potency.',
-              },
-            ].map(({ label, text }) => (
-              <li key={label} className="flex items-start gap-3">
-                <CheckIcon size={14} className="text-secondary mt-[5px] shrink-0" />
-                <span className="text-muted-foreground text-[16px] leading-[1.75]">
-                  <strong className="text-foreground font-bold">{label}</strong> {text}
-                </span>
-              </li>
-            ))}
-          </ul>
-
-          {/* In-article image */}
-          <div className="mt-10 mb-10 h-[417px] overflow-hidden">
-            <img src="/solutions/lab.svg" alt="Chemical laboratory analysis" className="w-full h-full object-cover" />
-          </div>
-
-          <h3 className="font-bold text-secondary text-[22px] leading-[1.3] mb-4">Future-Proofing Your Operations</h3>
-
-          <p className="text-muted-foreground text-[16px] leading-[1.75]">
-            Sustainability is the new cornerstone of industrial chemical performance. Tailored programmes now include biodegradable options and
-            closed-loop systems that minimize waste stream impact while maintaining the high performance required for heavy industry.
-          </p>
-        </article>
-
-        {/* ── Sidebar ── */}
-        <aside className="flex flex-col gap-8 sticky top-8">
-          {/* Resource Details */}
+        {/* Sidebar — stacks below content on mobile */}
+        <aside className="flex flex-col gap-6 md:gap-8 md:sticky md:top-8 mt-8 md:mt-0">
           <div className="border border-border p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[1.8px] text-muted-foreground pb-5 border-b border-border mb-5">
+            <p className="text-[11px] font-bold uppercase tracking-[1.4px] md:tracking-[1.8px] text-muted-foreground pb-4 md:pb-5 border-b border-border mb-4 md:mb-5">
               Resource Details
             </p>
-            <div className="flex flex-col gap-4">
+            <div className="grid grid-cols-2 md:flex md:flex-col gap-4">
               {[
-                { label: 'Type', value: 'Technical Paper' },
-                { label: 'Sector', value: 'Industrial & Manufacturing' },
-                { label: 'Subject', value: 'Chemical Engineering' },
+                { label: 'Type', value: resourceDetails.type },
+                { label: 'Sector', value: resourceDetails.sector },
+                { label: 'Subject', value: resourceDetails.subject },
               ].map(({ label, value }) => (
                 <div key={label}>
-                  <p className="text-[11px] uppercase tracking-[1.4px] text-muted-foreground/70 mb-0.5">{label}</p>
-                  <p className="font-semibold text-foreground text-[15px] leading-snug">{value}</p>
+                  <p className="text-[10px] md:text-[11px] uppercase tracking-[1.4px] text-muted-foreground/70 mb-0.5">{label}</p>
+                  <p className="font-semibold text-foreground text-sm md:text-[15px] leading-snug">{value}</p>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Related Solution */}
-          <div className="bg-accent p-6">
-            <p className="text-[11px] font-bold uppercase tracking-[1.8px] text-secondary mb-3">Related Solution</p>
-            <h4 className="font-bold text-white text-[22px] leading-[1.25] mb-3">Industrial &amp; Manufacturing Chemicals</h4>
-            <p className="text-white/55 text-[14px] leading-[1.6] mb-6">
-              Comprehensive chemical solutions designed for high-intensity industrial applications.
-            </p>
-            <a href="#" className="inline-flex items-center gap-2 font-bold text-white text-[15px] hover:gap-3 transition-all">
-              Learn More
-              <ArrowRightIcon size={14} />
-            </a>
-          </div>
+          {relatedSolution && (
+            <div className="bg-accent p-6">
+              <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[1.8px] text-secondary mb-3">Related Solution</p>
+              <h4 className="font-bold text-white text-[20px] md:text-[22px] leading-[1.25] mb-3">{relatedSolution.title}</h4>
+              <p className="text-muted text-sm leading-[1.6] mb-6">{relatedSolution.description}</p>
+              <a
+                href={relatedSolution.href}
+                className="inline-flex items-center gap-2 font-bold text-white text-sm md:text-[15px] hover:gap-3 transition-all"
+              >
+                Learn More
+                <ArrowRightIcon size={14} />
+              </a>
+            </div>
+          )}
 
-          {/* Share */}
-          <div className="flex items-center justify-between pt-1 border-t border-border">
-            <span className="text-foreground text-[14px]">Share this article:</span>
-            <div className="flex items-center gap-3">
+          <div className="flex items-center justify-between pt-4 md:pt-1 border-t border-border">
+            <span className="font-bold text-foreground text-sm">Share this article:</span>
+            <div className="flex items-center gap-4 md:gap-3">
               {[
                 { label: 'in', color: '#0A66C2' },
                 { label: 'f', color: '#1877F2' },
@@ -115,7 +57,7 @@ const ArticleBody: React.FC = () => {
                 <button
                   key={label}
                   style={{ color }}
-                  className="w-5 h-5 flex items-center justify-center text-[13px] font-bold hover:opacity-70 transition-opacity"
+                  className="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center text-sm md:text-[13px] font-bold hover:opacity-70 transition-opacity"
                 >
                   {label}
                 </button>

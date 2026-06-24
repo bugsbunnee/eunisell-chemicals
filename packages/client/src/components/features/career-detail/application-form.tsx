@@ -8,7 +8,7 @@ const steps = ['Personal Details', 'Experience & Education', 'Documents'];
 const inputClass =
   'w-full bg-card border border-[rgba(175,177,179,0.3)] rounded px-5 py-[18px] text-[16px] text-foreground placeholder:text-[#9ca3af] outline-none focus:border-secondary transition-colors';
 
-const labelClass = 'font-bold text-accent text-[14px] leading-[21px] text-left';
+const labelClass = 'font-bold text-accent text-sm leading-[21px] text-left';
 
 interface ApplicationFormProps {
   jobTitle: string;
@@ -50,7 +50,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
             <React.Fragment key={step}>
               <div className="flex items-center gap-3 shrink-0">
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center text-[14px] font-bold shrink-0 ${
+                  className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold shrink-0 ${
                     i === 0 ? 'bg-secondary text-white' : 'border border-white/40 text-white/40'
                   }`}
                 >
@@ -162,7 +162,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
                         key={option}
                         type="button"
                         onClick={() => field.handleChange(option)}
-                        className={`flex items-center justify-between p-4 rounded border font-semibold text-[14px] transition-colors ${
+                        className={`flex items-center justify-between p-4 rounded border font-semibold text-sm transition-colors ${
                           field.state.value === option
                             ? 'bg-secondary/5 border-secondary text-secondary'
                             : 'bg-white border-[rgba(175,177,179,0.3)] text-accent'
@@ -239,7 +239,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
                     onBlur={field.handleBlur}
                     className="w-5 h-5 border border-[#767676] rounded-[2.5px] accent-secondary cursor-pointer"
                   />
-                  <label htmlFor="agree" className="text-[#606060] text-[14px] leading-[21px] cursor-pointer">
+                  <label htmlFor="agree" className="text-[#606060] text-sm leading-[21px] cursor-pointer">
                     I confirm that all information provided is true and accurate. I agree to the{' '}
                     <a href="/privacy-policy" className="text-secondary underline hover:text-secondary/80">
                       Privacy Policy

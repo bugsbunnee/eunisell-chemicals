@@ -37,7 +37,7 @@ const DeliveryFramework: React.FC = () => (
       </div>
 
       <div className="relative pt-12">
-        <div className="absolute left-0 right-0 top-8 h-px bg-[#e5e7eb]" />
+        <div className="absolute left-0 right-0 top-8 h-px bg-border" />
 
         <div className="grid grid-cols-5 gap-8 relative">
           {steps.map(({ number, title, description }) => (

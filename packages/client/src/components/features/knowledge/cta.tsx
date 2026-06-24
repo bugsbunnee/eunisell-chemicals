@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cta: React.FC = () => {
   return (
-    <section className="bg-accent py-24 text-center relative overflow-hidden">
+    <section className="bg-accent py-16 px-6 md:py-24 md:px-8 text-center relative overflow-hidden">
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
         style={{
@@ -11,18 +11,16 @@ const Cta: React.FC = () => {
         }}
       />
 
-      <div className="relative max-w-200 mx-auto px-8">
-        <h2 className="font-bold text-white text-[52px] leading-[1.35] mb-6">
-          Need Technical Guidance for
-          <br />
-          Your Operation?
+      <div className="relative max-w-200 mx-auto">
+        <h2 className="font-bold text-white text-[24px] md:text-[52px] leading-8 md:leading-[1.35] mb-4 md:mb-6">
+          Need Technical Guidance for Your Operation?
         </h2>
 
-        <p className="text-white/55 text-[16px] leading-[1.75] max-w-172 mx-auto mb-12">
-          Our engineers are available for specialized consultations to address your specific chemical performance challenges.
+        <p className="text-[#cbd5e1] text-sm md:text-[16px] leading-5 md:leading-[1.75] max-w-172 mx-auto mb-4 md:mb-12">
+          Our engineers are available for specialized consultations on your performance challenges.
         </p>
 
-        <button className="h-17 w-94 bg-secondary text-white font-bold text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors">
+        <button className="w-full md:w-auto md:h-17 md:px-12 h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors">
           Request Technical Consultation
         </button>
       </div>

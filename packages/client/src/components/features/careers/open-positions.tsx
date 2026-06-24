@@ -62,11 +62,11 @@ const OpenPositions: React.FC = () => {
               <div className="flex flex-col gap-2">
                 <h4 className="font-bold text-accent text-[20px] leading-[30px]">{pos.title}</h4>
                 <div className="flex items-center gap-6">
-                  <span className="flex items-center gap-2 text-[#606060] text-[14px]">
+                  <span className="flex items-center gap-2 text-[#606060] text-sm">
                     <MapPinIcon size={11} className="text-[#606060]" />
                     {pos.location}
                   </span>
-                  <span className="flex items-center gap-2 text-[#606060] text-[14px]">
+                  <span className="flex items-center gap-2 text-[#606060] text-sm">
                     <BriefcaseIcon size={14} className="text-[#606060]" />
                     {pos.type}
                   </span>

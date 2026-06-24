@@ -11,11 +11,15 @@ interface Props extends PropsWithChildren {
 const SectionWithTitle: React.FC<Props> = ({ children, className, legend, title, description }) => {
   return (
     <React.Fragment>
-      <section className={cn('bg-background py-28 px-20', className)}>
+      <section className={cn('bg-background py-16 px-6 md:py-28 md:px-30', className)}>
         <div className="flex flex-col items-center justify-center">
-          <div className="text-[15px] font-black text-secondary uppercase tracking-[3px]">{legend}</div>
-          <h2 className="max-w-213 text-accent font-bold capitalize text-5xl my-4">{title}</h2>
-          {description && <p className="text-muted-foreground text-base max-w-145">{description}</p>}
+          <div className="text-[13px] md:text-[15px] font-black text-secondary uppercase tracking-[3px]">{legend}</div>
+          <h2 className="max-w-full md:max-w-213 text-accent font-bold capitalize text-[28px] md:text-5xl leading-8 md:leading-normal text-center my-3 md:my-4">
+            {title}
+          </h2>
+          {description && (
+            <p className="text-muted-foreground text-sm md:text-base max-w-full md:max-w-145 text-center px-2 md:px-0">{description}</p>
+          )}
         </div>
 
         <div className="w-full">{children}</div>

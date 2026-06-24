@@ -36,24 +36,26 @@ const philosophies = [
 
 const Philosophy: React.FC = () => {
   return (
-    <section className="py-24 px-30 bg-accent">
-      <div className="mx-auto space-y-4">
-        <div className="text-xs leading-4.5 tracking-[3.6px] text-secondary uppercase">Our Foundation</div>
-        <div className="text-5xl font-bold leading-18 text-white text-center">Leadership Philosophy</div>
-        <div className="w-30 h-1 bg-secondary mx-auto"></div>
+    <section className="py-16 px-6 md:py-24 md:px-30 bg-accent">
+      <div className="flex flex-col items-center space-y-3 md:space-y-4">
+        <div className="text-[10px] leading-[15px] tracking-[2px] md:text-xs md:tracking-[3.6px] text-secondary uppercase">Our Foundation</div>
+        <div className="text-[32px] md:text-5xl font-bold leading-[48px] md:leading-18 text-white text-center">Leadership Philosophy</div>
+        <div className="w-16 md:w-30 h-1 bg-secondary"></div>
       </div>
 
-      <div className="mt-20 grid grid-cols-5 gap-x-6">
+      <div className="mt-10 md:mt-20 flex flex-col md:grid md:grid-cols-5 gap-4 md:gap-x-6">
         {philosophies.map((philosophy) => (
-          <div key={philosophy.title} className="text-left border border-white/10 p-8 space-y-6 overflow-hidden">
+          <div key={philosophy.title} className="text-left border border-white/10 p-6 md:p-8 space-y-4 md:space-y-6 overflow-hidden">
             <div className="flex items-center justify-between">
-              <philosophy.Icon className="text-secondary" size={24} />
-              <div className="text-[32px] leading-12 text-white/20 font-light">{philosophy.id}</div>
+              <philosophy.Icon className="text-secondary" size={20} />
+              <div className="text-[24px] leading-[36px] text-white/20 font-light">{philosophy.id}</div>
             </div>
 
-            <div className="text-xl text-white font-bold leading-7.5">{philosophy.title}</div>
+            <div className="text-[18px] md:text-xl text-white font-bold leading-[27px] md:leading-7.5">{philosophy.title}</div>
 
-            <div className="text-sm font-normal leading-[22.8px] text-white/50">{philosophy.description}</div>
+            <div className="text-[13px] md:text-sm font-normal leading-[21px] md:leading-[22.8px] text-white/70 md:text-white/50">
+              {philosophy.description}
+            </div>
           </div>
         ))}
       </div>

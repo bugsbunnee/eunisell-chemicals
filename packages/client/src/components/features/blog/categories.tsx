@@ -27,25 +27,27 @@ const categories = [
 
 const BlogCategories: React.FC = () => {
   return (
-    <section className="bg-card p-30 text-left">
-      <div className="grid grid-cols-[1fr_2fr] gap-18 items-start">
-        <div className="flex flex-col gap-6">
-          <div className="w-6 h-6 rounded-full border border-accent/25 shrink-0" />
-          <h2 className="font-bold text-accent text-[40px] leading-12.5">Technical Perspectives for Better Operational Decisions</h2>
-          <p className="text-[#777] text-[18px] leading-7.25">
+    <section className="bg-card px-6 py-16 md:p-30 text-left">
+      <div className="flex flex-col gap-8 md:grid md:grid-cols-[1fr_2fr] md:gap-18 md:items-start">
+        <div className="flex flex-col gap-4 md:gap-6">
+          <div className="w-6 h-6 rounded-full border border-accent/25 shrink-0 hidden md:block" />
+          <h2 className="font-bold text-accent text-[28px] leading-[42px] md:text-[40px] md:leading-12.5">
+            Technical Perspectives for Better Operational Decisions
+          </h2>
+          <p className="text-[#777] text-[15px] leading-[22.5px] md:text-[18px] md:leading-7.25">
             Our editorial mission is to bridge the gap between complex chemical engineering and practical field application, providing actionable
             insights for the West African industrial sector.
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-3">
           {categories.map(({ Icon, title, description, borderColor, iconColor }) => (
-            <div key={title} className={`bg-white ${borderColor} border-b-4 shadow-[0px_2px_2px_rgba(0,0,0,0.05)] flex flex-col gap-4 p-8`}>
+            <div key={title} className={`bg-white ${borderColor} border-b-4 shadow-[0px_2px_2px_rgba(0,0,0,0.05)] flex flex-col gap-4 p-6 md:p-8`}>
               <div className="bg-[#f0f7ff] w-12 h-12 flex items-center justify-center shrink-0">
                 <Icon size={20} className={iconColor} />
               </div>
-              <h3 className="font-bold text-accent text-[20px] leading-[30px]">{title}</h3>
-              <p className="text-[#777] text-[14px] leading-[21px]">{description}</p>
+              <h3 className="font-bold text-accent text-[18px] leading-[27px] md:text-[20px] md:leading-[30px]">{title}</h3>
+              <p className="text-[#777] text-sm leading-[21px]">{description}</p>
             </div>
           ))}
         </div>

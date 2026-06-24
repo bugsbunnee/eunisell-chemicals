@@ -27,7 +27,7 @@ const CareerCta: React.FC = () => (
 
         <div className="flex items-center gap-12 mt-6">
           {['Our Locations', 'Internship Programs', 'Expertise Areas'].map((label) => (
-            <a key={label} href="#" className="text-[#afb1b3] text-[14px] leading-5.25 hover:text-white transition-colors">
+            <a key={label} href="#" className="text-[#afb1b3] text-sm leading-5.25 hover:text-white transition-colors">
               {label}
             </a>
           ))}

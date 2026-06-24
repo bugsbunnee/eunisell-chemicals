@@ -35,16 +35,16 @@ const values = [
 
 const LeadershipValue: React.FC = () => {
   return (
-    <section className="py-24 px-30 bg-card">
-      <div className="font-bold text-accent text-[32px] leading-12 text-center">The Value of Expert Leadership</div>
+    <section className="py-16 px-6 md:py-24 md:px-30 bg-card">
+      <div className="font-bold text-accent text-[24px] md:text-[32px] leading-[36px] md:leading-12 text-center">Value of Expert Leadership</div>
 
-      <div className="mt-16 grid grid-cols-2 gap-12">
+      <div className="mt-10 md:mt-16 flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-12">
         {values.map((value) => (
-          <div className="flex items-start gap-x-6 text-left">
-            <div className="font-bold text-secondary/30 text-[40px] leading-15">{value.id}</div>
+          <div key={value.id} className="flex items-start gap-x-4 md:gap-x-6 text-left">
+            <div className="font-bold text-secondary/20 text-[32px] leading-[32px] shrink-0">{value.id}</div>
             <div className="flex-1 space-y-1">
-              <div className="text-xl leading-7.5 font-bold text-accent">{value.title}</div>
-              <div className="font-regular text-[15px] leading-[22.5px] text-card-foreground">{value.description}</div>
+              <div className="text-[16px] md:text-xl leading-[24px] md:leading-7.5 font-bold text-accent">{value.title}</div>
+              <div className="text-sm md:text-[15px] leading-[21px] md:leading-[22.5px] text-card-foreground">{value.description}</div>
             </div>
           </div>
         ))}

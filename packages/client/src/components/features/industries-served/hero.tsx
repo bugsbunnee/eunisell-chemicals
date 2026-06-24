@@ -6,12 +6,12 @@ const Hero: React.FC = () => {
     <section className="py-26.25 px-30 bg-accent relative text-left">
       <div>
         <div className="absolute inset-0 opacity-40">
-          <img src="/industries-served/hero.svg" alt="" className="w-full h-full object-cover" />
+          <img src="/industries-served/hero.svg" alt="Industries Served" className="w-full h-full object-cover" />
         </div>
 
         <div className="absolute inset-0 bg-linear-to-r from-accent via-accent via-30% to-transparent" />
 
-        <div className="z-50 relative">
+        <div className="z-40 relative">
           <h1 className="text-[64px] leading-[70.4px] font-extrabold text-primary-foreground max-w-200">
             Chemical Solutions for Critical Industries Across Africa
           </h1>

@@ -26,35 +26,39 @@ const industries = [
 
 const IndustriesSupported: React.FC = () => {
   return (
-    <section className="px-30 py-24 bg-card">
-      <div className="flex items-end justify-between">
+    <section className="px-6 py-16 md:px-30 md:py-24 bg-card">
+      {/* Header */}
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-0">
         <div className="text-left">
-          <div className="text-3xl leading-9 font-bold text-accent">Industries Supported</div>
-          <div className="text-base leading-6 font-normal text-card-foreground mt-4">
+          <div className="text-[26px] md:text-3xl leading-8 md:leading-9 font-bold text-accent">Industries Supported</div>
+          <div className="hidden md:block text-base leading-6 font-normal text-card-foreground mt-4">
             Tailored technical services for diverse industrial applications.
           </div>
         </div>
-        <div>
-          <button className="text-base leading-6 text-secondary font-bold uppercase flex items-center gap-x-2">
-            VIEW ALL SECTORS <ArrowRightIcon />{' '}
-          </button>
-        </div>
+        {/* Desktop "View All" alongside header */}
+        <button className="hidden md:flex text-base leading-6 text-secondary font-bold uppercase items-center gap-x-2">
+          VIEW ALL SECTORS <ArrowRightIcon size={16} />
+        </button>
       </div>
 
-      <div className="mt-16 grid grid-cols-4 gap-x-6">
+      {/* Cards: 1-col on mobile, 4-col on desktop */}
+      <div className="mt-6 md:mt-16 flex flex-col md:grid md:grid-cols-4 gap-4 md:gap-x-6">
         {industries.map((industry) => (
-          <div key={industry.title} className="h-100 rounded-[8px] overflow-hidden relative">
-            <div className="absolute top-0 right-0 left-0 bottom-0 bg-accent/30"></div>
-
-            <div className="absolute space-y-2 text-left bottom-8 left-8 right-8">
-              <div className="font-bold text-white text-xl leading-7">{industry.title}</div>
-              <div className="font-regular text-white/70 text-sm leading-5">{industry.description}</div>
+          <div key={industry.title} className="h-[200px] md:h-100 rounded-[8px] overflow-hidden relative">
+            <div className="absolute inset-0 bg-accent/30" />
+            <div className="absolute space-y-1 md:space-y-2 text-left bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8">
+              <div className="font-bold text-white text-[16px] md:text-xl leading-6 md:leading-7">{industry.title}</div>
+              <div className="text-white/70 text-[13px] md:text-sm leading-4 md:leading-5">{industry.description}</div>
             </div>
-
-            <img src={industry.src} className="w-full h-full object-cover" />
+            <img src={industry.src} className="w-full h-full object-cover" alt={industry.title} />
           </div>
         ))}
       </div>
+
+      {/* Mobile "View All" at bottom */}
+      <button className="md:hidden mt-6 text-[13px] leading-5 text-secondary font-bold uppercase flex items-center gap-x-2">
+        VIEW ALL SECTORS <ArrowRightIcon size={14} />
+      </button>
     </section>
   );
 };

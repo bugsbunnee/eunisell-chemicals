@@ -26,24 +26,20 @@ const categories = [
 
 const Featured: React.FC = () => {
   return (
-    <section className="bg-white py-24 px-30 text-left">
+    <section className="bg-white py-16 px-6 md:py-24 md:px-30 text-left">
       <div className="max-w-[1560px] mx-auto">
-        <div className="grid grid-cols-2 gap-18 items-start">
+        <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-18 md:items-start">
+          {/* Left — heading, body, research card */}
           <div className="flex flex-col gap-0">
-            <h2 className="font-bold text-[44px] text-accent leading-[1.2] tracking-tight">
-              Insights, Technical Resources
-              <br />
-              and Knowledge for Critical
-              <br />
-              Operations
+            <h2 className="font-bold text-[24px] md:text-[44px] text-accent leading-8 md:leading-[1.2] md:tracking-tight">
+              Insights and Technical Resources
             </h2>
 
-            <p className="text-[#475569] text-lg leading-relaxed mt-8">
-              Eunisell is committed to bridging the gap between chemical innovation and operational reality. Our Knowledge Centre serves as a hub for
-              engineers, procurement specialists, and technical leads to stay ahead of industry trends and regulatory shifts.
+            <p className="text-[#475569] text-sm md:text-lg leading-[22.75px] md:leading-relaxed mt-4 md:mt-8">
+              Eunisell bridges the gap between chemical innovation and operational reality for African industrial contexts.
             </p>
 
-            <div className="mt-8 bg-sidebar border border-[#f1f5f9] shadow-sm rounded-sm p-8 flex flex-col gap-4">
+            <div className="hidden md:flex mt-8 bg-sidebar border border-[#f1f5f9] shadow-sm rounded-sm p-8 flex-col gap-4">
               <div className="flex items-center gap-4">
                 <div className="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
                   <MicroscopeIcon size={16} className="text-secondary" />
@@ -56,14 +52,15 @@ const Featured: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
+          {/* Right — 2×2 category cards */}
+          <div className="grid grid-cols-2 gap-4 md:gap-6 pt-4 md:pt-0">
             {categories.map(({ Icon, title, description }) => (
-              <div key={title} className="border border-border p-8 flex flex-col gap-2.5">
+              <div key={title} className="border border-border p-6 md:p-8 flex flex-col gap-2">
                 <Icon size={24} className="text-secondary" />
-                <h3 className="font-bold text-accent text-xl leading-7 mt-1">{title}</h3>
-                <p className="text-[#64748b] text-sm leading-5 pt-3 flex-1">{description}</p>
-                <div className="flex items-center gap-2 pt-6">
-                  <span className="font-semibold text-secondary text-sm tracking-wide">Explore</span>
+                <h3 className="font-bold text-accent text-[18px] md:text-xl leading-7 mt-1">{title}</h3>
+                <p className="text-[#64748b] text-[12px] md:text-sm leading-4 md:leading-5 pt-2 md:pt-3 flex-1">{description}</p>
+                <div className="flex items-center gap-2 pt-4 md:pt-6">
+                  <span className="font-semibold text-secondary text-[12px] md:text-sm tracking-wide">Explore</span>
                   <ArrowRightIcon size={12} className="text-secondary" />
                 </div>
               </div>

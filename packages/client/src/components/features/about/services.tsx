@@ -5,31 +5,38 @@ import { ArrowRightIcon } from 'lucide-react';
 
 const Services: React.FC = () => {
   return (
-    <section className="px-30 py-35 bg-accent-bg w-full relative">
-      <div className="flex items-end justify-between text-left">
-        <div className="flex-1">
-          <div className="font-black text-[15px] leading-4 text-secondary uppercase mb-4">comprehensive solutions</div>
-
-          <div className="max-w-150 font-bold text-5xl text-accent leading-18">End to End Service Offerings</div>
+    <section className="px-6 py-20 md:px-30 md:py-35 bg-accent-bg w-full relative">
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between text-left">
+        <div className="md:flex-1">
+          <div className="font-black text-[10px] md:text-[15px] leading-[15px] md:leading-4 text-secondary uppercase mb-3 md:mb-4 tracking-[3px]">
+            comprehensive solutions
+          </div>
+          <div className="font-bold text-[30px] md:text-5xl text-accent leading-[36px] md:leading-18 md:max-w-150">End-to-End Service Offerings</div>
         </div>
 
-        <div className="text-base text-muted-foreground leading-6 max-w-100">
+        <div className="text-sm md:text-base text-muted-foreground leading-[20px] md:leading-6 md:max-w-100 mt-3 md:mt-0">
           Supporting every phase of your operational and production requirements with precision and excellence.
         </div>
       </div>
 
-      <div className="grid grid-cols-3 border-t border-l mt-16">
+      <div className="flex flex-col md:grid md:grid-cols-3 md:border-t md:border-l gap-4 md:gap-0 mt-8 md:mt-16">
         {services.map((service) => (
-          <div key={service.title} className="bg-background transition-all p-10 text-left border-b border-r">
+          <div
+            key={service.title}
+            className="bg-background p-8 md:p-10 text-left border border-border md:border-0 md:border-b md:border-r rounded-[2px] md:rounded-none"
+          >
             <service.Icon size={40} className="text-secondary" />
 
-            <div className="mt-8 text-xl font-bold text-accent leading-7">{service.title}</div>
+            <div className="mt-4 md:mt-8 text-[18px] md:text-xl font-bold text-accent leading-7">{service.title}</div>
 
-            <p className="text-base text-muted-foreground mt-4 leading-6">{service.description}</p>
+            <p className="text-sm md:text-base text-muted-foreground mt-3 md:mt-4 leading-[20px] md:leading-6">{service.description}</p>
 
-            <div className="mt-5">
-              <Link to={service.path} className="text-xs font-bold uppercase text-secondary flex items-center gap-x-1">
-                Explore <ArrowRightIcon size={15} />
+            <div className="mt-4 md:mt-5">
+              <Link
+                to={service.path}
+                className="text-[12px] md:text-xs font-bold uppercase text-secondary flex items-center gap-x-1 tracking-[0.6px]"
+              >
+                Explore <ArrowRightIcon size={14} />
               </Link>
             </div>
           </div>

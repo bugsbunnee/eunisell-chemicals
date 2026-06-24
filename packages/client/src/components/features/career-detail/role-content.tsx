@@ -70,7 +70,7 @@ const RoleContent: React.FC<RoleContentProps> = ({ aboutText, responsibilities, 
             {whyPoints.map((point) => (
               <div key={point.text} className="flex items-center gap-3">
                 <span className="w-1 h-1 rounded-full bg-secondary shrink-0" />
-                <span className="font-medium text-white text-[14px] leading-[20px]">{point.text}</span>
+                <span className="font-medium text-white text-sm leading-[20px]">{point.text}</span>
               </div>
             ))}
           </div>

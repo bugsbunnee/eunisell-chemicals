@@ -35,14 +35,17 @@ const knowledges = [
 const KnowledgeCenter: React.FC = () => {
   return (
     <SectionWithTitle
-      className="px-30 py-35"
+      className="md:px-30 md:py-35"
       title="Explore Technical Knowledge and Industry Insights"
       description="Technical articles, industry insights, product brochures, and technical bulletins from Eunisell Chemicals."
       legend="knowledge center"
     >
-      <div className="mt-16 border border-border rounded-lg grid grid-cols-4 divide-x divide-border">
+      <div className="mt-10 md:mt-16 flex flex-col gap-4 md:gap-0 md:border md:border-border md:rounded-lg md:grid md:grid-cols-4 md:divide-x divide-border">
         {knowledges.map((knowledge) => (
-          <div className="p-10 text-left flex flex-col" key={knowledge.id}>
+          <div
+            className="p-6 md:p-10 text-left flex flex-col border border-border rounded-[4px] shadow-[0px_2px_2px_rgba(0,0,0,0.05)] md:border-0 md:rounded-none md:shadow-none"
+            key={knowledge.id}
+          >
             <div className="text-[9px] uppercase font-bold tracking-[2px] text-secondary">{knowledge.title}</div>
             <div className="text-[52px] font-black leading-13 text-ring">{knowledge.id}</div>
             <div className="text-[22px] flex-1 text-accent font-extrabold mb-3.25">{knowledge.title}</div>
@@ -57,12 +60,12 @@ const KnowledgeCenter: React.FC = () => {
         ))}
       </div>
 
-      <div className="mt-16 text-center flex items-center justify-center">
+      <div className="mt-8 md:mt-16 flex items-center justify-center">
         <Link
           to={paths.aboutUs}
-          className="px-8 py-3.5 border border-secondary rounded-xs mx-auto text-sm leading-5 text-secondary font-medium  flex items-center gap-x-1"
+          className="w-full md:w-auto px-8 py-3.5 border border-secondary rounded-xs text-sm leading-5 text-secondary font-medium flex items-center justify-center gap-x-1"
         >
-          Visit Knowledge Center <ArrowRightIcon size={14} />
+          Visit Knowledge Centre <ArrowRightIcon size={14} />
         </Link>
       </div>
     </SectionWithTitle>

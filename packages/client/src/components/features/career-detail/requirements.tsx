@@ -35,7 +35,7 @@ const Requirements: React.FC = () => (
           <div key={title} className="bg-white border border-[#e8e8e8] rounded-[8px] p-8 flex flex-col gap-4">
             <Icon size={30} className="text-secondary" />
             <h4 className="font-bold text-accent text-[18px] leading-7">{title}</h4>
-            <p className="text-muted-foreground text-[14px] leading-5.5">{description}</p>
+            <p className="text-muted-foreground text-sm leading-5.5">{description}</p>
           </div>
         ))}
       </div>

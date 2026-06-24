@@ -55,20 +55,25 @@ const industries = [
 
 const CriticalIndustries: React.FC = () => {
   return (
-    <section className="bg-accent-bg py-24 px-20">
+    <section className="bg-accent-bg py-20 px-6 md:py-24 md:px-30">
       <div className="flex flex-col items-center justify-center">
         <div className="text-[15px] font-black text-secondary uppercase tracking-[3px]">our industries</div>
-        <h2 className="max-w-213 text-accent font-bold capitalize text-[44px] my-4">Serving Critical Industries Across Africa</h2>
+        <h2 className="text-center max-w-full md:max-w-213 text-accent font-bold capitalize text-[28px] md:text-[44px] leading-8 md:leading-normal my-3 md:my-4">
+          Serving Critical Industries Across Africa
+        </h2>
       </div>
 
-      <div className="w-full mt-16 grid grid-cols-4 gap-4">
+      <div className="w-full mt-10 md:mt-16 flex flex-col md:grid md:grid-cols-4 gap-4">
         {industries.map((industry) => (
-          <div key={industry.title} className={cn('p-7 bg-accent text-left rounded-[4px]', industry.bg)}>
+          <div
+            key={industry.title}
+            className={cn('h-[180px] md:h-auto flex flex-col justify-between p-6 md:p-7 text-left rounded-[4px]', industry.bg)}
+          >
             <industry.Icon className="text-primary-foreground/40" size={18} />
 
-            <div className="mt-13.75">
-              <div className="text-[17px] text-primary-foreground capitalize font-bold">{industry.title}</div>
-              <p className="mt-1.5 text-primary-foreground/50 text-xs">{industry.description}</p>
+            <div>
+              <div className="text-[18px] md:text-[17px] text-primary-foreground capitalize font-bold">{industry.title}</div>
+              <p className="mt-1.5 text-primary-foreground/50 text-[12px] md:text-xs">{industry.description}</p>
               <div className="w-8 h-0.5 bg-secondary mt-3"></div>
             </div>
           </div>

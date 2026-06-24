@@ -67,7 +67,7 @@ const ApplicationAreas: React.FC = () => {
                   <h6 className="font-bold text-accent text-[20px] leading-7">{title}</h6>
                   <a
                     href="#"
-                    className="flex items-center gap-2 text-secondary font-bold text-[14px] uppercase tracking-[0.082px] hover:text-secondary/80 transition-colors"
+                    className="flex items-center gap-2 text-secondary font-bold text-sm uppercase tracking-[0.082px] hover:text-secondary/80 transition-colors"
                   >
                     Learn More
                     <ArrowRightIcon size={12} />

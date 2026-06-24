@@ -26,7 +26,7 @@ const RelatedSolutions: React.FC = () => (
             </div>
             <div className="p-6 flex flex-col gap-2">
               <h6 className="font-bold text-accent text-[16px] leading-6">{title}</h6>
-              <p className="text-[#777] text-[14px] leading-5">{description}</p>
+              <p className="text-[#777] text-sm leading-5">{description}</p>
               <a
                 href={href}
                 className="flex items-center gap-2 text-secondary font-bold text-[12px] uppercase tracking-[0.082px] mt-2 hover:text-secondary/80 transition-colors"
