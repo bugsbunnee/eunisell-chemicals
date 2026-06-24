@@ -32,6 +32,7 @@ export const paths = {
   careers: '/careers',
   careerDetail: '/careers/:slug',
   industrialDetail: '/solutions/industrial-manufacturing/detail',
+  blog: '/blog',
 };
 
 export const specialties = [

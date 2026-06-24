@@ -21,6 +21,7 @@ import TechnicalServicesPage from '../pages/TechnicalServicesPage';
 import ManagementPage from '../pages/ManagementPage';
 import CareersPage from '../pages/CareersPage';
 import CareerDetailPage from '../pages/CareerDetailPage';
+import BlogPage from '../pages/BlogPage';
 
 export const navigation: Option[] = [
   {
@@ -124,6 +125,10 @@ export const routes: RouteObject[] = [
       {
         path: paths.careerDetail,
         element: <CareerDetailPage />,
+      },
+      {
+        path: paths.blog,
+        element: <BlogPage />,
       },
     ],
   },
