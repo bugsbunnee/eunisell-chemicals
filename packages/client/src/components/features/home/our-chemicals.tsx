@@ -19,7 +19,6 @@ const hygienes = ['General Cleaning', 'Disinfection', 'Food & Beverage', 'Health
 const OurChemicals: React.FC = () => {
   return (
     <section className="px-6 py-12 md:p-30 bg-background text-left">
-      {/* Header */}
       <div>
         <div className="flex items-center gap-x-3 md:gap-x-4">
           <div className="h-0.5 w-6 md:h-1 md:w-10 bg-secondary shrink-0"></div>
@@ -30,48 +29,49 @@ const OurChemicals: React.FC = () => {
           Specialty Chemical Solutions
         </div>
 
-        <p className="text-[16px] md:text-lg leading-[26px] md:leading-8 font-normal text-accent/70 max-w-full md:max-w-[50%] mt-4 md:mt-7">
+        <p className="text-[16px] md:text-lg leading-6.5 md:leading-8 font-normal text-accent/70 max-w-full md:max-w-[50%] mt-4 md:mt-7">
           Explore our portfolio of industrial process fluids, cleaning and hygiene chemicals, oilfield chemicals, and fluid monitoring services
           designed for operational excellence.
         </p>
       </div>
 
-      {/* Main grid: Oilfield (large) + Industrial Process Fluids */}
       <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] gap-6 md:gap-x-8 mt-6 md:mt-20">
-        <div className="min-h-[520px] md:min-h-180 rounded-[4px] overflow-hidden relative">
-          <img src="/home/oilfield-chemicals.svg" alt="Oilfield Chemicals" className="h-full w-full object-cover z-10 relative" />
+        <div className="min-h-130 md:min-h-180 rounded-[4px] overflow-hidden relative bg-accent flex flex-col justify-end">
+          <div className="absolute inset-0 opacity-40 pointer-events-none">
+            <img src="/home/oilfield-chemicals.svg" alt="" className="h-full w-full object-cover" />
+          </div>
 
-          <div className="absolute top-0 bottom-0 left-0 right-0 bg-accent/75 z-20"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-accent via-accent/40 to-accent/0 pointer-events-none" />
 
-          <div className="absolute bottom-4 z-50 ml-8 md:ml-15 mb-8 md:mb-15">
+          <div className="relative z-10 p-6 md:p-15 flex flex-col gap-6">
             <div className="flex items-center gap-x-3">
-              <div className="w-11 h-11 bg-background border border-secondary/30 rounded-[4px] flex items-center justify-center">
-                <CircleIcon className="text-secondary/30" />
+              <div className="w-11 h-11 bg-white/10 backdrop-blur-[6px] border border-secondary/30 rounded-[4px] flex items-center justify-center">
+                <CircleIcon className="text-secondary/40" />
               </div>
               <div className="text-xs leading-4.5 tracking-[2px] text-secondary uppercase font-bold">Energy Sector</div>
             </div>
 
-            <div className="font-bold text-[28px] md:text-[42px] leading-[34px] md:leading-12 mt-5 md:mt-6 text-white">Oilfield Chemicals</div>
+            <div className="font-bold text-[28px] md:text-[42px] leading-8.5 md:leading-12 text-white">Oilfield Chemicals</div>
 
-            <div className="mt-5 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[12.5px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-[10px] md:gap-[12.5px]">
               {chemicals.map((tag) => (
-                <div key={tag} className="flex items-center gap-x-2.5">
+                <div key={tag} className="flex items-center gap-x-2.5 md:gap-x-4">
                   <div className="w-1.5 h-1.5 bg-secondary rounded-full shrink-0"></div>
-                  <div className="font-normal text-sm md:text-[15px] leading-[21px] md:leading-[22.5px] text-white/80 capitalize">{tag}</div>
+                  <div className="font-normal text-sm md:text-[15px] leading-5.25 md:leading-[22.5px] text-white/80 capitalize">{tag}</div>
                 </div>
               ))}
             </div>
 
-            <div className="mt-8 md:mt-11">
-              <Link to="" className="text-sm md:text-base leading-6 uppercase font-semibold text-white flex items-center gap-x-2">
-                Explore Solutions <ChevronRightIcon size={20} />
+            <div className="pt-5">
+              <Link to={paths.oilfield} className="text-sm md:text-base leading-6 uppercase font-semibold text-white flex items-center gap-x-2">
+                Explore Energy Solutions <ChevronRightIcon size={20} />
               </Link>
             </div>
           </div>
         </div>
 
         <div className="border border-border bg-accent-bg rounded-[4px] overflow-hidden">
-          <div className="h-[200px] md:h-77.25">
+          <div className="h-50 md:h-77.25">
             <img src="/home/industrial-process-fluids.svg" alt="Industrial Process Fluids" className="w-full h-full object-cover" />
           </div>
 
@@ -84,7 +84,7 @@ const OurChemicals: React.FC = () => {
 
             <ul className="mt-4 md:mt-5 space-y-2 md:space-y-3 list-disc ml-4 mb-6 md:mb-[35.5px]">
               {tags.map((tag) => (
-                <li key={tag} className="text-sm md:text-sm font-normal text-accent/60 leading-[21px] md:leading-5.25">
+                <li key={tag} className="text-sm md:text-sm font-normal text-accent/60 leading-5.25 md:leading-5.25">
                   {tag}
                 </li>
               ))}
@@ -100,16 +100,15 @@ const OurChemicals: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom grid: Cleaning + Water + Monitoring */}
       <div className="flex flex-col md:grid md:grid-cols-3 mt-6 md:mt-8 gap-6 md:gap-x-8">
         <div className="border border-border flex flex-col rounded-sm overflow-hidden">
-          <div className="h-[200px] md:h-60">
+          <div className="h-50 md:h-60">
             <img src="/home/cleaning-hygiene.svg" className="h-full w-full object-cover" />
           </div>
 
           <div className="p-6 md:p-8 text-left flex flex-col flex-1">
             <div className="flex-1">
-              <div className="text-[22px] md:text-2xl leading-[33px] md:leading-9 font-bold capitalize text-accent text-left">
+              <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left">
                 Cleaning &amp; Hygiene
               </div>
 
@@ -124,7 +123,7 @@ const OurChemicals: React.FC = () => {
                 ))}
               </div>
 
-              <p className="mt-4 md:mt-6 text-accent/60 font-normal text-sm md:text-sm leading-[22px] md:leading-6 mb-4 md:mb-6">
+              <p className="mt-4 md:mt-6 text-accent/60 font-normal text-sm md:text-sm leading-5.5 md:leading-6 mb-4 md:mb-6">
                 Comprehensive hygiene solutions for high-risk industrial and healthcare environments.
               </p>
             </div>
@@ -147,7 +146,7 @@ const OurChemicals: React.FC = () => {
             <DropletIcon className="text-white" />
           </div>
 
-          <div className="my-5 md:my-6 text-[22px] md:text-2xl leading-[33px] md:leading-9 text-white font-bold z-50 relative">Water Solutions</div>
+          <div className="my-5 md:my-6 text-[22px] md:text-2xl leading-8.25 md:leading-9 text-white font-bold z-50 relative">Water Solutions</div>
 
           <div className="bg-white/18 z-50 relative border border-white/38 rounded-[4px] p-4">
             <div className="font-semibold text-[13px] md:text-sm leading-5.25 text-white">Boiler & Cooling Water</div>
@@ -168,7 +167,7 @@ const OurChemicals: React.FC = () => {
         </div>
 
         <div className="border border-border rounded-sm overflow-hidden">
-          <div className="h-[200px] md:h-60">
+          <div className="h-50 md:h-60">
             <img src="/home/monitoring.svg" className="h-full w-full object-cover" />
           </div>
 
@@ -178,11 +177,11 @@ const OurChemicals: React.FC = () => {
               <div className="uppercase font-bold text-[10px] md:text-[11px] tracking-[1px] leading-[16.5px] text-accent/40">Live Diagnostics</div>
             </div>
 
-            <div className="text-[22px] md:text-2xl leading-[33px] md:leading-9 font-bold capitalize text-accent text-left mt-3">
+            <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left mt-3">
               Fluid Condition Monitoring
             </div>
 
-            <p className="mt-4 md:mt-6 text-accent/60 font-normal text-sm md:text-sm leading-[22px] md:leading-6 mb-4 md:mb-6 pb-4 md:pb-6 border-b border-b-border">
+            <p className="mt-4 md:mt-6 text-accent/60 font-normal text-sm md:text-sm leading-5.5 md:leading-6 mb-4 md:mb-6 pb-4 md:pb-6 border-b border-b-border">
               Real-time analysis and predictive maintenance through advanced laboratory testing.
             </p>
 

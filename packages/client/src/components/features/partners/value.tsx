@@ -5,19 +5,19 @@ import { cn } from '../../../lib/utils';
 const stats = [
   { value: '25+', label: 'Global Partners' },
   { value: '150+', label: 'Technical Audits' },
-  { value: '100%', label: 'Quality Compliance' },
-  { value: '24/7', label: 'Supply Chain Support' },
+  { value: '100%', label: 'Compliance' },
+  { value: '24/7', label: 'Supply Chain' },
 ];
 
 const benefits = [
   {
     Icon: BookOpenIcon,
-    title: 'Technical Knowledge Transfer',
+    title: 'Knowledge Transfer',
     description: 'Empowering regional teams through direct training and shared IP from global chemical leaders.',
   },
   {
     Icon: PackageIcon,
-    title: 'Broader Product Access',
+    title: 'Product Access',
     description: 'Exclusive distribution rights for premium chemical formulations and innovative new molecules.',
   },
   {
@@ -29,11 +29,43 @@ const benefits = [
 
 const Value: React.FC = () => {
   return (
-    <section className="bg-card py-30 px-30">
-      <div className="grid grid-cols-2 gap-20 text-left">
+    <section className="bg-card py-16 px-6 md:py-30 md:px-30 text-left">
+      {/* Mobile layout */}
+      <div className="flex flex-col gap-10 md:hidden">
+        <div className="flex flex-col gap-3">
+          <span className="font-bold text-secondary text-[12px] uppercase tracking-[2.4px]">Unmatched Value</span>
+          <h2 className="font-bold text-[28px] text-accent leading-[35px]">The Gold Standard in Chemical Alliances</h2>
+        </div>
+
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 pt-7">
+          {stats.map(({ value, label }) => (
+            <div key={label} className="flex flex-col gap-1">
+              <span className="font-bold text-[28px] text-secondary leading-[42px]">{value}</span>
+              <span className="font-bold text-[11px] text-accent uppercase">{label}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className="flex flex-col gap-4 pt-9">
+          {benefits.slice(0, 2).map(({ Icon, title, description }) => (
+            <div
+              key={title}
+              className="flex items-start gap-4 p-6 bg-background border-l-4 border-secondary rounded-[1px] shadow-[0px_2px_2px_rgba(0,0,0,0.05)]"
+            >
+              <Icon size={20} className="text-secondary shrink-0 mt-1" />
+              <div className="flex flex-col gap-1">
+                <h4 className="font-bold text-[18px] text-accent leading-[28px]">{title}</h4>
+                <p className="text-[14px] text-card-foreground leading-5">{description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop layout */}
+      <div className="hidden md:grid grid-cols-2 gap-20">
         <div className="space-y-4">
           <span className="font-bold text-secondary text-[13px] uppercase tracking-[2px]">Unmatched Value</span>
-
           <h2 className="font-bold text-[44px] text-accent leading-13.75">Defining the Gold Standard in Strategic Chemical Alliances</h2>
 
           <div className="grid grid-cols-2 gap-x-0 gap-y-0">
@@ -56,7 +88,6 @@ const Value: React.FC = () => {
               })}
             >
               <Icon size={56} className="text-secondary" />
-
               <div className="space-y-2">
                 <h4 className="font-bold text-xl text-accent leading-7">{title}</h4>
                 <p className="text-sm text-card-foreground leading-5">{description}</p>

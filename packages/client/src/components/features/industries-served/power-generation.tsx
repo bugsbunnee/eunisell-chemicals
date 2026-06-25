@@ -17,37 +17,61 @@ const utilities = [
 
 const PowerGeneration: React.FC = () => {
   return (
-    <section className="bg-card p-30 gap-x-16 items-center text-left grid grid-cols-2">
-      <div className="space-y-6">
-        <div className="text-[40px] leading-15 text-accent font-bold">Utilities & Power Generation</div>
+    <section className="bg-card text-left">
+      {/* Mobile layout */}
+      <div className="md:hidden px-6 py-16 flex flex-col gap-4">
+        <h2 className="font-bold text-[28px] leading-[42px] text-accent">Utilities & Power Generation</h2>
 
-        <p className="text-base text-card-foreground leading-6 font-normal">
-          Supporting the infrastructure that provides essential services to millions. Our chemical programs are designed for reliability and
-          environmental compliance.
-        </p>
+        <p className="text-[14px] leading-[20px] text-card-foreground">Supporting the infrastructure that provides essential services to millions.</p>
 
-        <div className="grid grid-cols-2 bg-background border border-popover rounded-[4px]">
+        <div className="grid grid-cols-2 bg-background border border-border rounded-[4px] mt-4">
           {utilities.map((util, index) => (
             <div
               key={util.title}
               className={cn({
-                'space-y-2 p-8': true,
-                'pr-0': index % 2 === 0,
-                'pl-0': index % 2 !== 0,
+                'space-y-2 p-6': true,
+                'border-r border-border': index % 2 === 0,
               })}
             >
-              <util.Icon size={34} className="text-secondary" />
-
-              <div className="text-base leading-6 text-accent font-bold">{util.title}</div>
-
-              <div className="text-sm text-card-foreground">{util.description}</div>
+              <util.Icon size={28} className="text-secondary" />
+              <div className="text-[14px] leading-[20px] text-accent font-bold">{util.title}</div>
+              <div className="text-[12px] leading-[16px] text-card-foreground">{util.description}</div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="">
-        <img src="/industries-served/chart.svg" alt="Bar Chart" />
+      {/* Desktop layout */}
+      <div className="hidden md:grid grid-cols-2 p-30 gap-x-16 items-center">
+        <div className="space-y-6">
+          <div className="text-[40px] leading-15 text-accent font-bold">Utilities & Power Generation</div>
+
+          <p className="text-base text-card-foreground leading-6 font-normal">
+            Supporting the infrastructure that provides essential services to millions. Our chemical programs are designed for reliability and
+            environmental compliance.
+          </p>
+
+          <div className="grid grid-cols-2 bg-background border border-popover rounded-[4px]">
+            {utilities.map((util, index) => (
+              <div
+                key={util.title}
+                className={cn({
+                  'space-y-2 p-8': true,
+                  'pr-0': index % 2 === 0,
+                  'pl-0': index % 2 !== 0,
+                })}
+              >
+                <util.Icon size={34} className="text-secondary" />
+                <div className="text-base leading-6 text-accent font-bold">{util.title}</div>
+                <div className="text-sm text-card-foreground">{util.description}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <img src="/industries-served/chart.svg" alt="Bar Chart" />
+        </div>
       </div>
     </section>
   );

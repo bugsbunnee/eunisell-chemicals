@@ -29,7 +29,6 @@ const Featured: React.FC = () => {
     <section className="bg-white py-16 px-6 md:py-24 md:px-30 text-left">
       <div className="max-w-[1560px] mx-auto">
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-18 md:items-start">
-          {/* Left — heading, body, research card */}
           <div className="flex flex-col gap-0">
             <h2 className="font-bold text-[24px] md:text-[44px] text-accent leading-8 md:leading-[1.2] md:tracking-tight">
               Insights and Technical Resources
@@ -52,8 +51,7 @@ const Featured: React.FC = () => {
             </div>
           </div>
 
-          {/* Right — 2×2 category cards */}
-          <div className="grid grid-cols-2 gap-4 md:gap-6 pt-4 md:pt-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 pt-4 md:pt-0">
             {categories.map(({ Icon, title, description }) => (
               <div key={title} className="border border-border p-6 md:p-8 flex flex-col gap-2">
                 <Icon size={24} className="text-secondary" />

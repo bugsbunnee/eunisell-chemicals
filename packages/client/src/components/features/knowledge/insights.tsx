@@ -70,24 +70,26 @@ const Insights: React.FC = () => {
           </button>
         </div>
 
-        <div className="flex md:hidden overflow-x-auto -mx-6 px-6 gap-1 [&::-webkit-scrollbar]:hidden">
-          {TABS.map((tab) => (
-            <button
-              key={tab}
-              onClick={() => setActiveTab(tab)}
-              className={cn({
-                'text-sm shrink-0 cursor-pointer transition-colors whitespace-nowrap px-2 py-2': true,
-                'font-bold text-accent border-b-2 border-secondary': activeTab === tab,
-                'font-medium text-[#94a3b8]': activeTab !== tab,
-              })}
-            >
-              {tab}
-            </button>
-          ))}
+        <div className="md:hidden -mx-6 overflow-x-auto [&::-webkit-scrollbar]:hidden">
+          <div className="flex gap-1 px-6">
+            {TABS.map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={cn({
+                  'text-sm shrink-0 cursor-pointer transition-colors whitespace-nowrap px-2 py-2': true,
+                  'font-bold text-accent border-b-2 border-secondary': activeTab === tab,
+                  'font-medium text-[#94a3b8]': activeTab !== tab,
+                })}
+              >
+                {tab}
+              </button>
+            ))}
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center justify-between max-w-[1560px]">
-          <div className="flex gap-8 items-center">
+        <div className="hidden md:flex items-center justify-between max-w-[1560px] gap-6">
+          <div className="flex gap-8 items-center overflow-x-auto [&::-webkit-scrollbar]:hidden min-w-0">
             {TABS.map((tab) => (
               <button
                 key={tab}
@@ -103,7 +105,7 @@ const Insights: React.FC = () => {
             ))}
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 shrink-0">
             <div className="relative w-75">
               <SearchIcon size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-sidebar-foreground" />
               <input
@@ -155,7 +157,7 @@ const Insights: React.FC = () => {
           <div className="flex items-center justify-between">
             <h2 className="font-bold text-accent text-[20px] md:text-[30px] leading-7 md:leading-9">Latest Articles</h2>
             <Link to={paths.knowledge} className="font-bold text-secondary text-[12px] md:text-sm tracking-[0.6px] md:tracking-[0.7px] uppercase">
-              View All
+              View All Articles
             </Link>
           </div>
 
@@ -165,7 +167,7 @@ const Insights: React.FC = () => {
             <div className="flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-8">
               {filtered.map((article) => (
                 <div key={article.title} className="flex flex-col gap-3 md:gap-4">
-                  <div className="h-[208px] md:h-64 bg-[#f1f5f9] overflow-hidden shrink-0">
+                  <div className="h-52 md:h-64 bg-[#f1f5f9] overflow-hidden shrink-0">
                     <img
                       src={article.image}
                       alt={article.title}

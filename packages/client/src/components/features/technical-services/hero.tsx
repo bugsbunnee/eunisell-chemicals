@@ -60,7 +60,11 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="w-full h-65 md:h-auto md:min-h-125">
-        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[8px] md:rounded-[16px] object-fill" />
+        <img
+          src="/technical-services/hero.svg"
+          alt="Technical Services"
+          className="w-full h-full rounded-[8px] md:rounded-[16px] object-cover md:object-fill"
+        />
       </div>
     </section>
   );
