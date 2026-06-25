@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const ChemicalsHero: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative h-180 px-30 text-left bg-accent overflow-hidden flex items-center">
       <div className="absolute inset-0 opacity-40">
@@ -34,11 +37,17 @@ const ChemicalsHero: React.FC = () => {
           </p>
 
           <div className="flex items-center gap-4 pt-3">
-            <button className="bg-secondary text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-secondary/90 transition-colors">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="bg-secondary text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-secondary/90 transition-colors"
+            >
               Request Product Consultation
             </button>
 
-            <button className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-white/10 transition-colors">
+            <button
+              onClick={() => navigate(paths.chemicals)}
+              className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-white/10 transition-colors"
+            >
               Explore Chemical Categories
             </button>
           </div>

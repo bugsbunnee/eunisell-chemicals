@@ -65,37 +65,37 @@ export const services = [
     Icon: FlaskConicalIcon,
     title: 'Chemical Blending',
     description: 'Custom blending solutions engineered for precision and operational scale.',
-    path: paths.home,
+    path: paths.chemicals,
   },
   {
     Icon: TruckIcon,
     title: 'Chemical Supply & Distribution',
     description: 'Reliable supply and distribution of industrial and specialty chemicals across Africa.',
-    path: paths.home,
+    path: paths.chemicals,
   },
   {
     Icon: TestTube2Icon,
     title: 'Laboratory Testing',
     description: 'Advanced analytical testing, compatibility studies, and performance evaluation.',
-    path: paths.home,
+    path: paths.technical,
   },
   {
     Icon: FactoryIcon,
     title: 'Production Support',
     description: 'On-site technical support for production optimization and chemical programme management.',
-    path: paths.home,
+    path: paths.technical,
   },
   {
     Icon: CogIcon,
     title: 'Technical Services',
     description: 'Engineering consultation, process optimization, and custom chemical programme design.',
-    path: paths.home,
+    path: paths.technical,
   },
   {
     Icon: Atom,
     title: 'Industrial Solutions',
     description: 'Tailored chemical solutions for industrial processing, plant maintenance, and operations.',
-    path: paths.home,
+    path: paths.industrial,
   },
 ];
 

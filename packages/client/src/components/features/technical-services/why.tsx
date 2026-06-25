@@ -1,5 +1,7 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { DiamondIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const reasons = [
   {
@@ -40,6 +42,7 @@ const alernate = [
 ];
 
 const Why: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-background text-center py-16 px-6 md:py-17.5 md:px-30">
       <div className="text-[24px] md:text-3xl leading-8 md:leading-11.25 font-bold text-accent">Why Eunisell Technical Services?</div>
@@ -48,7 +51,12 @@ const Why: React.FC = () => {
         <div className="bg-secondary rounded-[12px] p-6 text-center flex flex-col items-center justify-center gap-4 row-span-1">
           <div className="text-[20px] font-bold text-white leading-7">Ready to Optimize?</div>
           <div className="text-[12px] leading-4 font-normal text-white/80">Speak with a specialist today for a technical assessment.</div>
-          <button className="w-full bg-white text-secondary text-sm font-bold leading-5 py-3 px-6 rounded-[4px]">Contact Us</button>
+          <button
+            onClick={() => navigate(paths.contact)}
+            className="w-full bg-white text-secondary text-sm font-bold leading-5 py-3 px-6 rounded-[4px]"
+          >
+            Contact Us
+          </button>
         </div>
 
         <div className="bg-card border border-border rounded-[12px] p-6 relative text-left self-start">
@@ -91,7 +99,9 @@ const Why: React.FC = () => {
           <div className="bg-secondary rounded-[12px] p-10 text-center space-y-4">
             <div className="text-2xl leading-8 font-bold text-white capitalize">Ready to Optimize?</div>
             <div className="text-base leading-6 font-normal text-white/80">Speak with a specialist today for a technical assessment.</div>
-            <button className="text-secondary text-base leading-6 font-bold py-3 px-6 bg-white rounded-[4px]">Contact Us</button>
+            <button onClick={() => navigate(paths.contact)} className="text-secondary text-base leading-6 font-bold py-3 px-6 bg-white rounded-[4px]">
+              Contact Us
+            </button>
           </div>
         </div>
       </div>

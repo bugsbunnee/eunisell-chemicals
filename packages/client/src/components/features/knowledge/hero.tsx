@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-accent overflow-hidden text-left">
       <div className="relative px-6 pt-16 pb-10 md:py-[58.55px] md:px-30 flex items-center">
@@ -35,10 +38,16 @@ const Hero: React.FC = () => {
             </p>
 
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4 pt-2 md:pt-4">
-              <button className="h-12 md:h-auto bg-secondary text-white font-semibold text-base md:text-base px-8 md:py-4.25 rounded-xs">
+              <button
+                onClick={() => navigate(paths.knowledge)}
+                className="h-12 md:h-auto bg-secondary text-white font-semibold text-base md:text-base px-8 md:py-4.25 rounded-xs"
+              >
                 Browse Resources
               </button>
-              <button className="h-12 md:h-auto border border-white/30 text-white font-semibold text-[16px] md:text-base px-8 md:py-4 rounded-xs">
+              <button
+                onClick={() => navigate(paths.knowledge)}
+                className="h-12 md:h-auto border border-white/30 text-white font-semibold text-[16px] md:text-base px-8 md:py-4 rounded-xs"
+              >
                 Search Library
               </button>
             </div>

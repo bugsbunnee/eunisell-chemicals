@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
+import { paths } from '../../../../lib/data';
 
 const waterTreatmentImg = 'https://www.figma.com/api/mcp/asset/3e7601d3-33d3-48e7-824e-abdadc8408ee';
 const plantMaintenanceImg = 'https://www.figma.com/api/mcp/asset/23dbeef2-4774-4f7f-bd44-8836d4c650ef';
@@ -65,13 +67,12 @@ const ApplicationAreas: React.FC = () => {
                 </div>
                 <div className="p-8 flex flex-col gap-4">
                   <h6 className="font-bold text-accent text-[20px] leading-7">{title}</h6>
-                  <a
-                    href="#"
+                  <Link
+                    to={paths.industrial}
                     className="flex items-center gap-2 text-secondary font-bold text-sm uppercase tracking-[0.082px] hover:text-secondary/80 transition-colors"
                   >
-                    Learn More
-                    <ArrowRightIcon size={12} />
-                  </a>
+                    Learn More <ArrowRightIcon size={12} />
+                  </Link>
                 </div>
               </div>
             ))}

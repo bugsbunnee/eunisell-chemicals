@@ -1,4 +1,6 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const products = [
   { title: 'Heat Transfer Fluids', desc: 'Synthetic and mineral-based media for thermal stability.' },
@@ -8,6 +10,7 @@ const products = [
 ];
 
 const ChemicalsIndustrialFluids: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-background p-30 text-left">
       <div className="max-w-360 mx-auto flex gap-18 items-center">
@@ -40,7 +43,10 @@ const ChemicalsIndustrialFluids: React.FC = () => {
           </div>
 
           <div className="pt-4">
-            <button className="bg-accent text-white font-semibold text-[16px] px-8 py-4 rounded-[4px] hover:bg-accent/90 transition-colors">
+            <button
+              onClick={() => navigate(paths.chemicals)}
+              className="bg-accent text-white font-semibold text-[16px] px-8 py-4 rounded-[4px] hover:bg-accent/90 transition-colors"
+            >
               View Full Product List
             </button>
           </div>

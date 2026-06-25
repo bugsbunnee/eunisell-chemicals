@@ -1,5 +1,7 @@
 import { ArrowRightIcon } from 'lucide-react';
 import type React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const values = [
   {
@@ -35,6 +37,7 @@ const stories = [
 ];
 
 const Story: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="flex flex-col md:grid md:grid-cols-2 md:gap-x-20 py-20 px-6 md:py-30 md:px-30 bg-accent-bg">
       {/* Image grid — desktop only */}
@@ -90,7 +93,10 @@ const Story: React.FC = () => {
           </div>
         </div>
 
-        <button className="hidden md:flex h-13 rounded-[2px] mt-6.25 px-7 text-white items-center gap-x-1 bg-secondary font-semibold text-base leading-6">
+        <button
+          onClick={() => navigate(paths.aboutUs)}
+          className="hidden md:flex h-13 rounded-[2px] mt-6.25 px-7 text-white items-center gap-x-1 bg-secondary font-semibold text-base leading-6"
+        >
           Learn more <ArrowRightIcon size={16} />
         </button>
       </div>

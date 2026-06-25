@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from 'lucide-react';
+import { paths } from '../../../../lib/data';
 import type { ArticleDetail } from '../../../../lib/entities';
 
 type ArticleResourcesProps = Pick<ArticleDetail, 'relatedResources'>;
@@ -16,13 +18,13 @@ const ArticleResources: React.FC<ArticleResourcesProps> = ({ relatedResources })
               <p className="text-secondary text-[10px] md:text-[11px] font-bold uppercase tracking-[1.8px] mb-2 md:mb-4">{category}</p>
               <h4 className="font-bold text-foreground text-[16px] md:text-[19px] leading-[1.35] mb-2 md:mb-3">{title}</h4>
               <p className="text-muted-foreground text-[13px] md:text-sm leading-[1.65] flex-1">{body}</p>
-              <a
-                href="#"
+              <Link
+                to={paths.knowledge}
                 className="inline-flex items-center gap-2 font-bold text-foreground text-[13px] md:text-sm mt-5 md:mt-6 hover:text-secondary transition-colors"
               >
                 Read More
                 <ArrowRightIcon size={10} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

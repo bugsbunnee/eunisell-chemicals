@@ -22,11 +22,11 @@ const LaboratoryInsight: React.FC = () => {
   return (
     <section className="bg-white flex flex-col md:grid md:grid-cols-2 md:gap-16 px-6 py-16 md:px-30 md:pb-24 md:pt-0 text-left gap-10">
       <div className="space-y-6 md:space-y-8 items-start">
-        <h2 className="font-bold text-[#002037] text-[28px] md:text-4xl leading-[35px] md:leading-11.45 m-0">
+        <h2 className="font-bold text-[#002037] text-[28px] md:text-4xl leading-[35px] md:leading-[45px] m-0">
           From Laboratory Insight to Field Performance
         </h2>
 
-        <div className="bg-secondary h-1.5 w-16 md:w-20" />
+        <div className="bg-secondary h-1.5 w-16 md:w-20 mt-8" />
 
         <p className="font-normal text-card-foreground text-[16px] md:text-lg leading-[26px] md:leading-[29.25px] m-0">
           Our technical capabilities are built on decades of chemical expertise. We don't just provide products; we provide the scientific validation

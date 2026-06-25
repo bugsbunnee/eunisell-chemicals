@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { MapPinIcon, BriefcaseIcon, SearchIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const positions = [
-  { title: 'Technical Services Specialist', location: 'Lagos, Nigeria', type: 'Full-time' },
-  { title: 'Laboratory Analyst', location: 'Port Harcourt', type: 'Full-time' },
-  { title: 'Graduate Trainee - Engineering', location: 'Abuja', type: 'Contract' },
-  { title: 'QHSE Lead', location: 'Lagos, Nigeria', type: 'Full-time' },
+  { title: 'Technical Services Specialist', location: 'Lagos, Nigeria', type: 'Full-time', slug: 'technical-services-specialist' },
+  { title: 'Laboratory Analyst', location: 'Port Harcourt', type: 'Full-time', slug: 'laboratory-analyst' },
+  { title: 'Graduate Trainee - Engineering', location: 'Abuja', type: 'Contract', slug: 'graduate-trainee-engineering' },
+  { title: 'QHSE Lead', location: 'Lagos, Nigeria', type: 'Full-time', slug: 'qhse-lead' },
 ];
 
 const departments = ['All Departments', 'Technical Services', 'Laboratory', 'Engineering', 'QHSE'];
 
 const OpenPositions: React.FC = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [department, setDepartment] = useState('All Departments');
 
@@ -72,7 +75,10 @@ const OpenPositions: React.FC = () => {
                   </span>
                 </div>
               </div>
-              <button className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-colors shrink-0">
+              <button
+                onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
+                className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-colors shrink-0"
+              >
                 View Role
               </button>
             </div>

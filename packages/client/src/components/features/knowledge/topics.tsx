@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { DownloadIcon, FileTextIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const brochures = [
   {
@@ -26,9 +28,9 @@ const Topics: React.FC = () => {
       <div className="max-w-[1560px] mx-auto md:px-8 flex flex-col gap-8 md:gap-12">
         <div className="flex items-center justify-between">
           <h2 className="font-bold text-accent text-[20px] md:text-[30px] leading-7 md:leading-9">Catalogues &amp; Brochures</h2>
-          <a href="#" className="font-bold text-[#0083ce] text-[12px] md:text-sm tracking-[0.6px] md:tracking-[0.7px] uppercase">
+          <Link to={paths.brochures} className="font-bold text-[#0083ce] text-[12px] md:text-sm tracking-[0.6px] md:tracking-[0.7px] uppercase">
             Download Centre
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-4 md:grid md:grid-cols-4 md:gap-6">

@@ -7,6 +7,8 @@ const useLocationChange = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
+
+  return location;
 };
 
 export default useLocationChange;

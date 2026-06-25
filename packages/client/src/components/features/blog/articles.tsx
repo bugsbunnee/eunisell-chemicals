@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon, RefreshCwIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const img1 = 'https://www.figma.com/api/mcp/asset/08c4f6bf-5249-4020-b9e1-f7a3231e68de';
 const img2 = 'https://www.figma.com/api/mcp/asset/5523c26b-d50f-4413-a605-dd308a5da4fb';
@@ -100,10 +102,10 @@ const BlogArticles: React.FC = () => {
 
               <div className="border-t border-[#f0f0f0] pt-4 md:pt-5 flex items-center justify-between">
                 <span className="text-[#afb1b3] text-[12px] uppercase">{date}</span>
-                <a href="#" className="font-bold text-secondary text-[12px] uppercase tracking-[1.2px] flex items-center gap-1.5">
+                <Link to={paths.blog} className="font-bold text-secondary text-[12px] uppercase tracking-[1.2px] flex items-center gap-1.5">
                   Read More
                   <ArrowRightIcon size={8} />
-                </a>
+                </Link>
               </div>
             </div>
           ))}

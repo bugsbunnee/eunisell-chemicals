@@ -7,10 +7,10 @@ const navColumns = [
     heading: 'Company',
     links: [
       { label: 'About Us', path: paths.aboutUs },
-      { label: 'Leadership', path: paths.aboutUs },
-      { label: 'QHSE', path: paths.aboutUs },
-      { label: 'CSR', path: paths.aboutUs },
-      { label: 'Careers', path: paths.aboutUs },
+      { label: 'Leadership', path: paths.management },
+      { label: 'QHSE', path: paths.qhse },
+      { label: 'CSR', path: paths.csr },
+      { label: 'Careers', path: paths.careers },
     ],
   },
   {

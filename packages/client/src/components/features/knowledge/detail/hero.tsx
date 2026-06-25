@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link, useNavigate } from 'react-router-dom';
 import { ChevronRightIcon, ClockIcon } from 'lucide-react';
 import { paths } from '../../../../lib/data';
 
@@ -8,17 +8,18 @@ import type { ArticleDetail } from '../../../../lib/entities';
 type ArticleHeroProps = Pick<ArticleDetail, 'breadcrumb' | 'type' | 'tags' | 'title' | 'excerpt' | 'author' | 'date' | 'readTime'>;
 
 const ArticleHero: React.FC<ArticleHeroProps> = ({ breadcrumb, type, tags, title, excerpt, author, date, readTime }) => {
+  const navigate = useNavigate();
   return (
     <section className="bg-[#f0f4f8] px-5 pt-8 pb-10 md:px-30 md:py-18 text-left">
       <div className="mx-auto">
         <nav className="flex items-center gap-2 text-[12px] md:text-sm text-muted-foreground mb-6 md:mb-11.25">
-          <a href={paths.home} className="hover:text-foreground transition-colors">
+          <Link to={paths.home} className="hover:text-foreground transition-colors">
             Home
-          </a>
+          </Link>
           <ChevronRightIcon size={10} />
-          <a href={breadcrumb.href} className="hover:text-foreground transition-colors">
+          <Link to={breadcrumb.href} className="hover:text-foreground transition-colors">
             {breadcrumb.label}
-          </a>
+          </Link>
           <ChevronRightIcon size={10} />
           <span className="text-secondary truncate">{title}</span>
         </nav>
@@ -58,23 +59,33 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ breadcrumb, type, tags, title
               </div>
             </div>
 
-            {/* Buttons — mobile only, below author */}
             <div className="flex flex-col gap-3 mt-6 md:hidden">
-              <button className="w-full h-12 bg-secondary text-white font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/90 transition-colors">
+              <button
+                onClick={() => navigate(paths.contact)}
+                className="w-full h-12 bg-secondary text-white font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/90 transition-colors"
+              >
                 Request Consultation
               </button>
-              <button className="w-full h-12 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/5 transition-colors bg-transparent">
+              <button
+                onClick={() => navigate(paths.solutions)}
+                className="w-full h-12 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/5 transition-colors bg-transparent"
+              >
                 Explore Solutions
               </button>
             </div>
           </div>
 
-          {/* Buttons — desktop only, right column */}
           <div className="hidden md:flex flex-col gap-4 pt-64.5">
-            <button className="w-full h-14 bg-secondary text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/90 transition-colors">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="w-full h-14 bg-secondary text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/90 transition-colors"
+            >
               Request Consultation
             </button>
-            <button className="w-full h-14 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/5 transition-colors bg-transparent">
+            <button
+              onClick={() => navigate(paths.solutions)}
+              className="w-full h-14 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/5 transition-colors bg-transparent"
+            >
               Explore Solutions
             </button>
           </div>

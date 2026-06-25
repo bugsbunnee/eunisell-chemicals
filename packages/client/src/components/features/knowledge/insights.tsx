@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon, ChevronDownIcon, SearchIcon } from 'lucide-react';
 import { cn } from '../../../lib/utils';
+import { paths } from '../../../lib/data';
 
 const TABS = ['All Resources', 'Articles', 'Insights', 'Brochures', 'Bulletins'] as const;
 
@@ -152,9 +154,9 @@ const Insights: React.FC = () => {
         <div className="max-w-[1560px] mx-auto flex flex-col gap-8 md:gap-10">
           <div className="flex items-center justify-between">
             <h2 className="font-bold text-accent text-[20px] md:text-[30px] leading-7 md:leading-9">Latest Articles</h2>
-            <a href="#" className="font-bold text-secondary text-[12px] md:text-sm tracking-[0.6px] md:tracking-[0.7px] uppercase">
+            <Link to={paths.knowledge} className="font-bold text-secondary text-[12px] md:text-sm tracking-[0.6px] md:tracking-[0.7px] uppercase">
               View All
-            </a>
+            </Link>
           </div>
 
           {filtered.length === 0 ? (
@@ -180,10 +182,10 @@ const Insights: React.FC = () => {
 
                   <p className="text-[#64748b] text-[12px] md:text-sm leading-[19.5px] md:leading-[22.75px]">{article.excerpt}</p>
 
-                  <div className="flex items-center gap-2 pt-1 md:pt-2">
+                  <Link to={paths.knowledge} className="flex items-center gap-2 pt-1 md:pt-2">
                     <span className="font-bold text-accent text-[12px] md:text-sm">Read More</span>
                     <ArrowRightIcon size={10} className="text-accent" />
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>

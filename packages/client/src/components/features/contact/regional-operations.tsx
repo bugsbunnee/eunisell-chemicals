@@ -9,18 +9,21 @@ const operations = [
     description: '196A Jide Oki Street, Victoria Island. Lagos State.',
     phone: '234 908 765 9938, 234 908 765 9939',
     email: 'info@eunisell.com',
+    mapsUrl: 'https://maps.google.com/?q=196A+Jide+Oki+Street,+Victoria+Island,+Lagos',
   },
   {
     src: '/contact/branch-office.svg',
     badge: 'Lagos Branch',
     title: 'Branch Office (Lagos)',
     description: 'Plot 3A, Aswani Road, Oshodi Industrial Scheme, Isolo. Lagos State.',
+    mapsUrl: 'https://maps.google.com/?q=Aswani+Road,+Oshodi+Industrial+Scheme,+Isolo,+Lagos',
   },
   {
     src: '/contact/port-harcourt.svg',
     badge: 'Port Harcourt',
     title: 'Port Harcourt Operations Hub',
     description: 'Plot 49/51 Danjuma Drive, Trans Amadi, Port Harcourt. Rivers State.',
+    mapsUrl: 'https://maps.google.com/?q=Danjuma+Drive,+Trans+Amadi,+Port+Harcourt,+Rivers+State',
   },
 ];
 
@@ -59,9 +62,14 @@ const RegionalOperations: React.FC = () => {
               </div>
             )}
 
-            <button className="mt-6 flex items-center gap-x-2 text-[12px] font-bold text-secondary uppercase tracking-[0.6px]">
+            <a
+              href={operation.mapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 flex items-center gap-x-2 text-[12px] font-bold text-secondary uppercase tracking-[0.6px]"
+            >
               Get Directions <ArrowRightIcon size={12} />
-            </button>
+            </a>
           </div>
         ))}
       </div>

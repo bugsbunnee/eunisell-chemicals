@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon, FileTextIcon, BookOpenIcon, BriefcaseIcon, PlayCircleIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const resources = [
   {
@@ -46,10 +48,10 @@ const BlogMoreResources: React.FC = () => {
             <div className="w-12 h-1 bg-secondary" />
           </div>
 
-          <a href="#" className="hidden md:flex items-center gap-2 font-bold text-secondary text-[16px] leading-6">
+          <Link to={paths.knowledge} className="hidden md:flex items-center gap-2 font-bold text-secondary text-[16px] leading-6">
             View All Resources
             <ArrowRightIcon size={10} />
-          </a>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-6 md:hidden">
@@ -71,10 +73,10 @@ const BlogMoreResources: React.FC = () => {
               <Icon size={24} className={iconColor} />
               <h4 className="font-bold text-accent text-[18px] leading-7">{title}</h4>
               <p className="text-[#777] text-sm leading-5.25 flex-1">{description}</p>
-              <a href="#" className="flex items-center gap-2 font-bold text-secondary text-[13px] uppercase tracking-[0.65px]">
+              <Link to={paths.knowledge} className="flex items-center gap-2 font-bold text-secondary text-[13px] uppercase tracking-[0.65px]">
                 {link}
                 <ArrowRightIcon size={11} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

@@ -44,23 +44,23 @@ const Hero: React.FC = () => {
           Technical Expertise That Drives <span className="text-secondary">Better Operational Decisions</span>
         </h1>
 
-        <p className="font-normal text-card-foreground text-[16px] md:text-xl leading-[26px] md:leading-[32.5px] m-0">
+        <p className="font-normal text-card-foreground text-[16px] md:text-xl leading-6.5 md:leading-[32.5px] m-0">
           Eunisell's technical services bridge the gap between complex chemical science and field application, ensuring your assets perform at their
           peak while minimizing operational risk.
         </p>
 
-        <div className="flex flex-col md:flex-row gap-3 md:gap-x-4">
-          <Button className="h-[56px] md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary text-primary-foreground text-sm md:text-lg font-semibold rounded-[4px]">
+        <div className="flex flex-col mt-12 md:flex-row gap-3 md:gap-x-4">
+          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary text-primary-foreground text-sm md:text-lg font-semibold rounded-[4px]">
             Request Technical Consultation
           </Button>
-          <Button className="h-[56px] md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-secondary bg-transparent text-secondary text-sm md:text-lg font-semibold rounded-[4px]">
+          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-secondary bg-transparent text-secondary text-sm md:text-lg font-semibold rounded-[4px]">
             Explore Capabilities
           </Button>
         </div>
       </div>
 
-      <div className="w-full h-[260px] md:h-auto md:min-h-[500px]">
-        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[8px] md:rounded-[16px] object-cover" />
+      <div className="w-full h-65 md:h-auto md:min-h-125">
+        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[8px] md:rounded-[16px] object-fill" />
       </div>
     </section>
   );

@@ -1,6 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const Cta: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-accent py-16 px-6 md:py-24 md:px-8 text-center relative overflow-hidden">
       <div
@@ -20,7 +23,10 @@ const Cta: React.FC = () => {
           Our engineers are available for specialized consultations on your performance challenges.
         </p>
 
-        <button className="w-full md:w-auto md:h-17 md:px-12 h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors">
+        <button
+          onClick={() => navigate(paths.contact)}
+          className="w-full md:w-auto md:h-17 md:px-12 h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors"
+        >
           Request Technical Consultation
         </button>
       </div>

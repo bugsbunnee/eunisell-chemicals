@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon, CheckIcon, WrenchIcon, SprayCanIcon, ActivityIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const waterFeatures = ['Cooling Tower Treatment', 'Boiler Water Chemicals', 'Effluent Management'];
 
@@ -30,9 +32,12 @@ const ChemicalsCategories: React.FC = () => {
                 ))}
               </div>
 
-              <a href="#" className="inline-flex items-center gap-2 text-secondary font-bold text-base uppercase pt-6 hover:gap-3 transition-all">
+              <Link
+                to={paths.chemicals}
+                className="inline-flex items-center gap-2 text-secondary font-bold text-base uppercase pt-6 hover:gap-3 transition-all"
+              >
                 Explore Category <ArrowRightIcon size={14} />
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from 'lucide-react';
+import { paths } from '../../../../lib/data';
 
 const items = [
   {
@@ -28,9 +30,12 @@ const ArticleSolutions: React.FC = () => {
             <h2 className="font-bold text-foreground text-[24px] md:text-[32px] leading-[1.2]">Tailored Chemical Solutions</h2>
             <p className="text-muted-foreground text-[15px] md:text-[16px] mt-2">Solutions related to your industry needs.</p>
           </div>
-          <button className="font-bold text-secondary text-sm md:text-base tracking-[0.7px] capitalize pb-1 border-b-2 border-b-secondary self-start md:self-auto">
+          <Link
+            to={paths.solutions}
+            className="font-bold text-secondary text-sm md:text-base tracking-[0.7px] capitalize pb-1 border-b-2 border-b-secondary self-start md:self-auto"
+          >
             View All Solutions
-          </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
@@ -41,10 +46,10 @@ const ArticleSolutions: React.FC = () => {
               </div>
               <h4 className="font-bold text-foreground text-[18px] md:text-[20px] leading-[1.25] mt-4 md:mt-[18px] mb-2">{title}</h4>
               <p className="text-muted-foreground text-sm md:text-[15px] leading-[1.6] flex-1">{body}</p>
-              <a href="#" className="inline-flex items-center gap-2 text-secondary font-bold text-sm mt-4 hover:gap-3 transition-all">
+              <Link to={paths.solutions} className="inline-flex items-center gap-2 text-secondary font-bold text-sm mt-4 hover:gap-3 transition-all">
                 Explore
                 <ArrowRightIcon size={12} />
-              </a>
+              </Link>
             </div>
           ))}
         </div>

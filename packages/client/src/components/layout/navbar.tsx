@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon, MenuIcon, XIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
 import { paths, NavDropdown, dropdownNav, plainLinks } from '../../lib/data';
 import { cn } from '../../lib/utils';
@@ -12,6 +12,7 @@ import KnowledgeCentreMegaMenu from './knowledge-centre-mega-menu';
 import SolutionsMegaMenu from './solutions-mega-menu';
 
 const NavBar: React.FC = () => {
+  const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
@@ -42,7 +43,10 @@ const NavBar: React.FC = () => {
   return (
     <nav ref={navRef} className="sticky top-0 z-50 backdrop-blur-[54px] bg-[rgba(255,255,255,0.71)] border-b border-border">
       <div className="hidden md:flex h-18 items-center px-8 gap-6">
-        <button className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap">
+        <button
+          onClick={() => navigate(paths.contact)}
+          className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap"
+        >
           Request Technical Consultation
         </button>
 
@@ -162,7 +166,10 @@ const NavBar: React.FC = () => {
           ))}
 
           <div className="px-6 py-5">
-            <button className="w-full h-13 bg-secondary text-white font-semibold text-[14px] rounded-[2px] tracking-[0.7px] uppercase">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="w-full h-13 bg-secondary text-white font-semibold text-[14px] rounded-[2px] tracking-[0.7px] uppercase"
+            >
               Request Technical Consultation
             </button>
           </div>

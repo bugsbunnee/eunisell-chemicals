@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { ClockIcon } from 'lucide-react';
+import { paths } from '../../../lib/data';
 
 const Resources: React.FC = () => {
   return (
@@ -33,9 +35,12 @@ const Resources: React.FC = () => {
               How precision chemistry is reshaping production efficiency in the West African energy corridor.
             </p>
 
-            <a href="#" className="inline-block font-bold text-white text-sm md:text-base border-b border-secondary pb-1 self-start">
+            <Link
+              to={paths.knowledgeDetail.replace(':slug', 'industrial-performance')}
+              className="inline-block font-bold text-white text-sm md:text-base border-b border-secondary pb-1 self-start"
+            >
               Read Full Article
-            </a>
+            </Link>
           </div>
 
           <div className="hidden md:block overflow-hidden">
