@@ -5,7 +5,7 @@ const Biography: React.FC = () => {
     <section className="relative bg-background text-left py-20 px-6 md:py-32 md:px-30 flex flex-col md:grid md:grid-cols-2 md:items-center md:gap-x-16">
       <div>
         <div className="font-bold text-[28px] md:text-5xl text-accent leading-[33.6px] md:leading-14.25">
-          A Trusted Partner for Industry and Energy
+          A Trusted <span className="hidden md:block">Chemical Solutions</span> Partner for Industry and Energy
         </div>
 
         <p className="text-[16px] md:text-lg text-primary mt-6 md:mt-[31.1px] leading-[27.2px] md:leading-8">
