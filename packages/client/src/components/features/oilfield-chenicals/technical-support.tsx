@@ -1,58 +1,92 @@
-import { ArrowRightIcon, CheckIcon } from 'lucide-react';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { paths } from '../../../lib/data';
+import { CheckIcon } from 'lucide-react';
+import React, { Activity } from 'react';
 
-const outlines = [
+const treatments = [
   {
-    title: 'Field Optimization Audits',
-    description: 'On-site assessments to identify efficiency gaps and chemical waste.',
+    title: 'Produced Water Treatment',
+    description: 'Advanced separation and conditioning of produced water for safe disposal or reinjection.',
   },
   {
-    title: 'Analytical Lab Services',
-    description: 'Full-spectrum water, oil, and solids analysis for precise dosing.',
+    title: 'Deoiling Chemicals',
+    description: 'Specialized chemistry to remove residual oil from produced water streams.',
   },
   {
-    title: 'Custom Formulation',
-    description: 'Developing site-specific chemical cocktails for unique reservoir challenges.',
+    title: 'Clarifiers',
+    description: 'Effective removal of suspended solids and fine particulates from water systems.',
+  },
+  {
+    title: 'Water Quality Management',
+    description: 'Comprehensive monitoring and treatment programs to maintain water quality standards.',
   },
 ];
 
 const TechnicalSupport: React.FC = () => {
   return (
-    <section className="py-16 px-45 bg-card">
-      <div className="grid bg-background shadow-2xl grid-cols-2 text-left">
-        <div className="p-16">
-          <div className="font-bold text-accent text-4xl leading-10">Unrivaled Technical Support</div>
-
-          <p className="text-base text-muted-foreground mt-4">
-            Our commitment goes beyond chemical supply. We provide end-to-end technical partnerships powered by field-based expertise and rigorous
-            laboratory analysis.
+    <section className="bg-card text-left">
+      {/* Mobile */}
+      <div className="md:hidden px-6 py-16 flex flex-col gap-6">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-[28px] leading-9 text-accent">Water Treatment Chemicals</h2>
+          <p className="text-[14px] leading-5 text-card-foreground">
+            Our commitment goes beyond chemical supply. We provide end-to-end technical partnerships powered by field-based expertise and rigorous laboratory analysis.
           </p>
-
-          <div className="mt-10 space-y-4">
-            {outlines.map((outline) => (
-              <div className="flex items-start gap-x-4">
-                <div className="w-7 h-7 rounded-full flex items-center justify-center bg-secondary/10 text-secondary">
-                  <CheckIcon size={12} />
-                </div>
-                <div className="flex-1">
-                  <div className="font-bold text-base text-accent leading-6">{outline.title}</div>
-                  <div className="text-sm font-normal text-muted-foreground leading-5">{outline.description}</div>
-                </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          {treatments.map((item) => (
+            <div key={item.title} className="flex items-start gap-3">
+              <div className="size-6 rounded-full flex items-center justify-center bg-secondary/10 text-secondary shrink-0 mt-0.5">
+                <CheckIcon size={12} />
               </div>
-            ))}
-          </div>
-
-          <div className="mt-10 border-b-2 py-1 border-b-secondary w-fit">
-            <Link to={paths.aboutUs} className="text-secondary text-base font-bold leading-6 flex items-center gap-x-2">
-              View Technical Capabilities <ArrowRightIcon size={16} />
-            </Link>
+              <div>
+                <div className="text-[16px] text-accent leading-6">{item.title}</div>
+                <Activity mode="hidden">
+                  <div className="text-[13px] text-card-foreground leading-5 mt-0.5">{item.description}</div>
+                </Activity>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="relative h-56 rounded-[8px] overflow-hidden mt-2">
+          <img src="/oilfield-chemicals/technical-support.svg" alt="Laboratory" className="w-full h-full object-cover" />
+          <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-accent/80 to-transparent p-4">
+            <p className="text-[11px] text-white uppercase tracking-[1.2px]">Global Standards / Local Knowledge</p>
           </div>
         </div>
+      </div>
 
-        <div className="h-full">
-          <img src="/oilfield-chemicals/technical-support.svg" alt="Technical Support" className="w-full h-full object-cover" />
+      {/* Desktop */}
+      <div className="hidden md:block py-16 px-45">
+        <div className="grid bg-background shadow-2xl grid-cols-2 text-left">
+          <div className="p-16">
+            <div className="font-bold text-accent text-4xl leading-10">Water Treatment Chemicals</div>
+
+            <p className="text-base text-muted-foreground mt-4">
+              Our commitment goes beyond chemical supply. We provide end-to-end technical partnerships powered by field-based expertise and rigorous laboratory analysis.
+            </p>
+
+            <div className="mt-10 space-y-4">
+              {treatments.map((item) => (
+                <div key={item.title} className="flex items-start gap-x-4">
+                  <div className="w-7 h-7 rounded-full flex items-center justify-center bg-secondary/10 text-secondary shrink-0">
+                    <CheckIcon size={12} />
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-bold text-base text-accent leading-6">{item.title}</div>
+                    <Activity mode="hidden">
+                      <div className="text-sm font-normal text-muted-foreground leading-5">{item.description}</div>
+                    </Activity>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="h-full relative overflow-hidden">
+            <img src="/oilfield-chemicals/technical-support.svg" alt="Laboratory" className="w-full h-full object-cover" />
+            <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-accent/80 to-transparent p-12">
+              <p className="text-xs text-white uppercase tracking-[1.2px]">Global Standards / Local Knowledge</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -25,6 +25,7 @@ import CareerDetailPage from '../pages/CareerDetailPage';
 import BlogPage from '../pages/BlogPage';
 import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
+import LoginPage from '../pages/LoginPage';
 
 export const navigation: Option[] = [
   {
@@ -54,6 +55,10 @@ export const navigation: Option[] = [
 ];
 
 export const routes: RouteObject[] = [
+  {
+    path: paths.login,
+    element: <LoginPage />,
+  },
   {
     path: '/',
     element: <Layout />,

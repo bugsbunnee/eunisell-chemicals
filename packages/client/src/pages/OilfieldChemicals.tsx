@@ -7,9 +7,10 @@ import Performance from '../components/features/oilfield-chenicals/performance';
 import Portfolio from '../components/features/oilfield-chenicals/portfolio';
 import ProductionChemicals from '../components/features/oilfield-chenicals/production-chemicals';
 import FlowAssurance from '../components/features/oilfield-chenicals/flow-assurance';
-import IntegratedApplication from '../components/features/oilfield-chenicals/integrated-applications';
+import WellInterventionChemicals from '../components/features/oilfield-chenicals/well-interventions';
 import TechnicalSupport from '../components/features/oilfield-chenicals/technical-support';
 import CTA from '../components/features/oilfield-chenicals/cta';
+import Footer from '../components/common/footer';
 
 const OilfieldChemicalsPage: React.FC = () => {
   return (
@@ -21,9 +22,10 @@ const OilfieldChemicalsPage: React.FC = () => {
       <Portfolio />
       <ProductionChemicals />
       <FlowAssurance />
-      <IntegratedApplication />
+      <WellInterventionChemicals />
       <TechnicalSupport />
       <CTA />
+      <Footer />
     </React.Fragment>
   );
 };
