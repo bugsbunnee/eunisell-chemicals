@@ -49,6 +49,8 @@ export const AnyNull = runtime.AnyNull;
 
 export const ModelName = {
   Admin: 'Admin',
+  ActivityLog: 'ActivityLog',
+  Enquiry: 'Enquiry',
 } as const;
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -69,16 +71,47 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const AdminScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  name: 'name',
+  firstName: 'firstName',
+  lastName: 'lastName',
   password: 'password',
-  role: 'role',
   otp: 'otp',
   otpExpiresAt: 'otpExpiresAt',
+  lastLoginAt: 'lastLoginAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
 } as const;
 
 export type AdminScalarFieldEnum = (typeof AdminScalarFieldEnum)[keyof typeof AdminScalarFieldEnum];
+
+export const ActivityLogScalarFieldEnum = {
+  id: 'id',
+  adminId: 'adminId',
+  action: 'action',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type ActivityLogScalarFieldEnum = (typeof ActivityLogScalarFieldEnum)[keyof typeof ActivityLogScalarFieldEnum];
+
+export const EnquiryScalarFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  company: 'company',
+  jobTitle: 'jobTitle',
+  email: 'email',
+  phone: 'phone',
+  country: 'country',
+  industry: 'industry',
+  enquiryType: 'enquiryType',
+  solutionArea: 'solutionArea',
+  message: 'message',
+  status: 'status',
+  priority: 'priority',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type EnquiryScalarFieldEnum = (typeof EnquiryScalarFieldEnum)[keyof typeof EnquiryScalarFieldEnum];
 
 export const SortOrder = {
   asc: 'asc',

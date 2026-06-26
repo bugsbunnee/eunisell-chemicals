@@ -8,9 +8,18 @@
  * 🟢 You can import this file directly.
  */
 
-export const AdminRole = {
-  SUPER_ADMIN: 'SUPER_ADMIN',
-  ADMIN: 'ADMIN',
+export const EnquiryStatus = {
+  NEW: 'NEW',
+  IN_PROGRESS: 'IN_PROGRESS',
+  CLOSED: 'CLOSED',
+  PENDING: 'PENDING',
 } as const;
 
-export type AdminRole = (typeof AdminRole)[keyof typeof AdminRole];
+export type EnquiryStatus = (typeof EnquiryStatus)[keyof typeof EnquiryStatus];
+
+export const EnquiryPriority = {
+  NORMAL: 'NORMAL',
+  URGENT: 'URGENT',
+} as const;
+
+export type EnquiryPriority = (typeof EnquiryPriority)[keyof typeof EnquiryPriority];

@@ -341,6 +341,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 export const ModelName = {
   Admin: 'Admin',
+  ActivityLog: 'ActivityLog',
+  Enquiry: 'Enquiry',
 } as const;
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -354,7 +356,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions;
   };
   meta: {
-    modelProps: 'admin';
+    modelProps: 'admin' | 'activityLog' | 'enquiry';
     txIsolationLevel: TransactionIsolationLevel;
   };
   model: {
@@ -432,6 +434,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         };
       };
     };
+    ActivityLog: {
+      payload: Prisma.$ActivityLogPayload<ExtArgs>;
+      fields: Prisma.ActivityLogFieldRefs;
+      operations: {
+        findUnique: {
+          args: Prisma.ActivityLogFindUniqueArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload> | null;
+        };
+        findUniqueOrThrow: {
+          args: Prisma.ActivityLogFindUniqueOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        findFirst: {
+          args: Prisma.ActivityLogFindFirstArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload> | null;
+        };
+        findFirstOrThrow: {
+          args: Prisma.ActivityLogFindFirstOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        findMany: {
+          args: Prisma.ActivityLogFindManyArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>[];
+        };
+        create: {
+          args: Prisma.ActivityLogCreateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        createMany: {
+          args: Prisma.ActivityLogCreateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        createManyAndReturn: {
+          args: Prisma.ActivityLogCreateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>[];
+        };
+        delete: {
+          args: Prisma.ActivityLogDeleteArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        update: {
+          args: Prisma.ActivityLogUpdateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        deleteMany: {
+          args: Prisma.ActivityLogDeleteManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateMany: {
+          args: Prisma.ActivityLogUpdateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateManyAndReturn: {
+          args: Prisma.ActivityLogUpdateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>[];
+        };
+        upsert: {
+          args: Prisma.ActivityLogUpsertArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ActivityLogPayload>;
+        };
+        aggregate: {
+          args: Prisma.ActivityLogAggregateArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.AggregateActivityLog>;
+        };
+        groupBy: {
+          args: Prisma.ActivityLogGroupByArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.ActivityLogGroupByOutputType>[];
+        };
+        count: {
+          args: Prisma.ActivityLogCountArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.ActivityLogCountAggregateOutputType> | number;
+        };
+      };
+    };
+    Enquiry: {
+      payload: Prisma.$EnquiryPayload<ExtArgs>;
+      fields: Prisma.EnquiryFieldRefs;
+      operations: {
+        findUnique: {
+          args: Prisma.EnquiryFindUniqueArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload> | null;
+        };
+        findUniqueOrThrow: {
+          args: Prisma.EnquiryFindUniqueOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        findFirst: {
+          args: Prisma.EnquiryFindFirstArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload> | null;
+        };
+        findFirstOrThrow: {
+          args: Prisma.EnquiryFindFirstOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        findMany: {
+          args: Prisma.EnquiryFindManyArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>[];
+        };
+        create: {
+          args: Prisma.EnquiryCreateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        createMany: {
+          args: Prisma.EnquiryCreateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        createManyAndReturn: {
+          args: Prisma.EnquiryCreateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>[];
+        };
+        delete: {
+          args: Prisma.EnquiryDeleteArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        update: {
+          args: Prisma.EnquiryUpdateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        deleteMany: {
+          args: Prisma.EnquiryDeleteManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateMany: {
+          args: Prisma.EnquiryUpdateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateManyAndReturn: {
+          args: Prisma.EnquiryUpdateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>[];
+        };
+        upsert: {
+          args: Prisma.EnquiryUpsertArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EnquiryPayload>;
+        };
+        aggregate: {
+          args: Prisma.EnquiryAggregateArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEnquiry>;
+        };
+        groupBy: {
+          args: Prisma.EnquiryGroupByArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.EnquiryGroupByOutputType>[];
+        };
+        count: {
+          args: Prisma.EnquiryCountArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.EnquiryCountAggregateOutputType> | number;
+        };
+      };
+    };
   };
 } & {
   other: {
@@ -473,16 +623,47 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const AdminScalarFieldEnum = {
   id: 'id',
   email: 'email',
-  name: 'name',
+  firstName: 'firstName',
+  lastName: 'lastName',
   password: 'password',
-  role: 'role',
   otp: 'otp',
   otpExpiresAt: 'otpExpiresAt',
+  lastLoginAt: 'lastLoginAt',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
 } as const;
 
 export type AdminScalarFieldEnum = (typeof AdminScalarFieldEnum)[keyof typeof AdminScalarFieldEnum];
+
+export const ActivityLogScalarFieldEnum = {
+  id: 'id',
+  adminId: 'adminId',
+  action: 'action',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type ActivityLogScalarFieldEnum = (typeof ActivityLogScalarFieldEnum)[keyof typeof ActivityLogScalarFieldEnum];
+
+export const EnquiryScalarFieldEnum = {
+  id: 'id',
+  fullName: 'fullName',
+  company: 'company',
+  jobTitle: 'jobTitle',
+  email: 'email',
+  phone: 'phone',
+  country: 'country',
+  industry: 'industry',
+  enquiryType: 'enquiryType',
+  solutionArea: 'solutionArea',
+  message: 'message',
+  status: 'status',
+  priority: 'priority',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type EnquiryScalarFieldEnum = (typeof EnquiryScalarFieldEnum)[keyof typeof EnquiryScalarFieldEnum];
 
 export const SortOrder = {
   asc: 'asc',
@@ -520,16 +701,6 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>;
 
 /**
- * Reference to a field of type 'AdminRole'
- */
-export type EnumAdminRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdminRole'>;
-
-/**
- * Reference to a field of type 'AdminRole[]'
- */
-export type ListEnumAdminRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AdminRole[]'>;
-
-/**
  * Reference to a field of type 'DateTime'
  */
 export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>;
@@ -538,6 +709,26 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
  * Reference to a field of type 'DateTime[]'
  */
 export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>;
+
+/**
+ * Reference to a field of type 'EnquiryStatus'
+ */
+export type EnumEnquiryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnquiryStatus'>;
+
+/**
+ * Reference to a field of type 'EnquiryStatus[]'
+ */
+export type ListEnumEnquiryStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnquiryStatus[]'>;
+
+/**
+ * Reference to a field of type 'EnquiryPriority'
+ */
+export type EnumEnquiryPriorityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnquiryPriority'>;
+
+/**
+ * Reference to a field of type 'EnquiryPriority[]'
+ */
+export type ListEnumEnquiryPriorityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'EnquiryPriority[]'>;
 
 /**
  * Reference to a field of type 'Int'
@@ -663,6 +854,8 @@ export type PrismaClientOptions = (
 };
 export type GlobalOmitConfig = {
   admin?: Prisma.AdminOmit;
+  activityLog?: Prisma.ActivityLogOmit;
+  enquiry?: Prisma.EnquiryOmit;
 };
 
 /* Types for Logging */

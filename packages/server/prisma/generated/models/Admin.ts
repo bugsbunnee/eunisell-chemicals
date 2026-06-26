@@ -26,11 +26,12 @@ export type AggregateAdmin = {
 export type AdminMinAggregateOutputType = {
   id: string | null;
   email: string | null;
-  name: string | null;
+  firstName: string | null;
+  lastName: string | null;
   password: string | null;
-  role: $Enums.AdminRole | null;
   otp: string | null;
   otpExpiresAt: Date | null;
+  lastLoginAt: Date | null;
   createdAt: Date | null;
   updatedAt: Date | null;
 };
@@ -38,11 +39,12 @@ export type AdminMinAggregateOutputType = {
 export type AdminMaxAggregateOutputType = {
   id: string | null;
   email: string | null;
-  name: string | null;
+  firstName: string | null;
+  lastName: string | null;
   password: string | null;
-  role: $Enums.AdminRole | null;
   otp: string | null;
   otpExpiresAt: Date | null;
+  lastLoginAt: Date | null;
   createdAt: Date | null;
   updatedAt: Date | null;
 };
@@ -50,11 +52,12 @@ export type AdminMaxAggregateOutputType = {
 export type AdminCountAggregateOutputType = {
   id: number;
   email: number;
-  name: number;
+  firstName: number;
+  lastName: number;
   password: number;
-  role: number;
   otp: number;
   otpExpiresAt: number;
+  lastLoginAt: number;
   createdAt: number;
   updatedAt: number;
   _all: number;
@@ -63,11 +66,12 @@ export type AdminCountAggregateOutputType = {
 export type AdminMinAggregateInputType = {
   id?: true;
   email?: true;
-  name?: true;
+  firstName?: true;
+  lastName?: true;
   password?: true;
-  role?: true;
   otp?: true;
   otpExpiresAt?: true;
+  lastLoginAt?: true;
   createdAt?: true;
   updatedAt?: true;
 };
@@ -75,11 +79,12 @@ export type AdminMinAggregateInputType = {
 export type AdminMaxAggregateInputType = {
   id?: true;
   email?: true;
-  name?: true;
+  firstName?: true;
+  lastName?: true;
   password?: true;
-  role?: true;
   otp?: true;
   otpExpiresAt?: true;
+  lastLoginAt?: true;
   createdAt?: true;
   updatedAt?: true;
 };
@@ -87,11 +92,12 @@ export type AdminMaxAggregateInputType = {
 export type AdminCountAggregateInputType = {
   id?: true;
   email?: true;
-  name?: true;
+  firstName?: true;
+  lastName?: true;
   password?: true;
-  role?: true;
   otp?: true;
   otpExpiresAt?: true;
+  lastLoginAt?: true;
   createdAt?: true;
   updatedAt?: true;
   _all?: true;
@@ -169,11 +175,12 @@ export type AdminGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type AdminGroupByOutputType = {
   id: string;
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   password: string;
-  role: $Enums.AdminRole;
   otp: string | null;
   otpExpiresAt: Date | null;
+  lastLoginAt: Date | null;
   createdAt: Date;
   updatedAt: Date;
   _count: AdminCountAggregateOutputType | null;
@@ -199,25 +206,29 @@ export type AdminWhereInput = {
   NOT?: Prisma.AdminWhereInput | Prisma.AdminWhereInput[];
   id?: Prisma.StringFilter<'Admin'> | string;
   email?: Prisma.StringFilter<'Admin'> | string;
-  name?: Prisma.StringFilter<'Admin'> | string;
+  firstName?: Prisma.StringFilter<'Admin'> | string;
+  lastName?: Prisma.StringFilter<'Admin'> | string;
   password?: Prisma.StringFilter<'Admin'> | string;
-  role?: Prisma.EnumAdminRoleFilter<'Admin'> | $Enums.AdminRole;
   otp?: Prisma.StringNullableFilter<'Admin'> | string | null;
   otpExpiresAt?: Prisma.DateTimeNullableFilter<'Admin'> | Date | string | null;
+  lastLoginAt?: Prisma.DateTimeNullableFilter<'Admin'> | Date | string | null;
   createdAt?: Prisma.DateTimeFilter<'Admin'> | Date | string;
   updatedAt?: Prisma.DateTimeFilter<'Admin'> | Date | string;
+  activityLogs?: Prisma.ActivityLogListRelationFilter;
 };
 
 export type AdminOrderByWithRelationInput = {
   id?: Prisma.SortOrder;
   email?: Prisma.SortOrder;
-  name?: Prisma.SortOrder;
+  firstName?: Prisma.SortOrder;
+  lastName?: Prisma.SortOrder;
   password?: Prisma.SortOrder;
-  role?: Prisma.SortOrder;
   otp?: Prisma.SortOrderInput | Prisma.SortOrder;
   otpExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder;
+  lastLoginAt?: Prisma.SortOrderInput | Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
+  activityLogs?: Prisma.ActivityLogOrderByRelationAggregateInput;
 };
 
 export type AdminWhereUniqueInput = Prisma.AtLeast<
@@ -227,13 +238,15 @@ export type AdminWhereUniqueInput = Prisma.AtLeast<
     AND?: Prisma.AdminWhereInput | Prisma.AdminWhereInput[];
     OR?: Prisma.AdminWhereInput[];
     NOT?: Prisma.AdminWhereInput | Prisma.AdminWhereInput[];
-    name?: Prisma.StringFilter<'Admin'> | string;
+    firstName?: Prisma.StringFilter<'Admin'> | string;
+    lastName?: Prisma.StringFilter<'Admin'> | string;
     password?: Prisma.StringFilter<'Admin'> | string;
-    role?: Prisma.EnumAdminRoleFilter<'Admin'> | $Enums.AdminRole;
     otp?: Prisma.StringNullableFilter<'Admin'> | string | null;
     otpExpiresAt?: Prisma.DateTimeNullableFilter<'Admin'> | Date | string | null;
+    lastLoginAt?: Prisma.DateTimeNullableFilter<'Admin'> | Date | string | null;
     createdAt?: Prisma.DateTimeFilter<'Admin'> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<'Admin'> | Date | string;
+    activityLogs?: Prisma.ActivityLogListRelationFilter;
   },
   'id' | 'email'
 >;
@@ -241,11 +254,12 @@ export type AdminWhereUniqueInput = Prisma.AtLeast<
 export type AdminOrderByWithAggregationInput = {
   id?: Prisma.SortOrder;
   email?: Prisma.SortOrder;
-  name?: Prisma.SortOrder;
+  firstName?: Prisma.SortOrder;
+  lastName?: Prisma.SortOrder;
   password?: Prisma.SortOrder;
-  role?: Prisma.SortOrder;
   otp?: Prisma.SortOrderInput | Prisma.SortOrder;
   otpExpiresAt?: Prisma.SortOrderInput | Prisma.SortOrder;
+  lastLoginAt?: Prisma.SortOrderInput | Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
   _count?: Prisma.AdminCountOrderByAggregateInput;
@@ -259,11 +273,12 @@ export type AdminScalarWhereWithAggregatesInput = {
   NOT?: Prisma.AdminScalarWhereWithAggregatesInput | Prisma.AdminScalarWhereWithAggregatesInput[];
   id?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
   email?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
-  name?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
+  firstName?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
+  lastName?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
   password?: Prisma.StringWithAggregatesFilter<'Admin'> | string;
-  role?: Prisma.EnumAdminRoleWithAggregatesFilter<'Admin'> | $Enums.AdminRole;
   otp?: Prisma.StringNullableWithAggregatesFilter<'Admin'> | string | null;
   otpExpiresAt?: Prisma.DateTimeNullableWithAggregatesFilter<'Admin'> | Date | string | null;
+  lastLoginAt?: Prisma.DateTimeNullableWithAggregatesFilter<'Admin'> | Date | string | null;
   createdAt?: Prisma.DateTimeWithAggregatesFilter<'Admin'> | Date | string;
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<'Admin'> | Date | string;
 };
@@ -271,59 +286,68 @@ export type AdminScalarWhereWithAggregatesInput = {
 export type AdminCreateInput = {
   id?: string;
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   password: string;
-  role?: $Enums.AdminRole;
   otp?: string | null;
   otpExpiresAt?: Date | string | null;
+  lastLoginAt?: Date | string | null;
   createdAt?: Date | string;
   updatedAt?: Date | string;
+  activityLogs?: Prisma.ActivityLogCreateNestedManyWithoutAdminInput;
 };
 
 export type AdminUncheckedCreateInput = {
   id?: string;
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   password: string;
-  role?: $Enums.AdminRole;
   otp?: string | null;
   otpExpiresAt?: Date | string | null;
+  lastLoginAt?: Date | string | null;
   createdAt?: Date | string;
   updatedAt?: Date | string;
+  activityLogs?: Prisma.ActivityLogUncheckedCreateNestedManyWithoutAdminInput;
 };
 
 export type AdminUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string;
   email?: Prisma.StringFieldUpdateOperationsInput | string;
-  name?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
   password?: Prisma.StringFieldUpdateOperationsInput | string;
-  role?: Prisma.EnumAdminRoleFieldUpdateOperationsInput | $Enums.AdminRole;
   otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
   otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+  activityLogs?: Prisma.ActivityLogUpdateManyWithoutAdminNestedInput;
 };
 
 export type AdminUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string;
   email?: Prisma.StringFieldUpdateOperationsInput | string;
-  name?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
   password?: Prisma.StringFieldUpdateOperationsInput | string;
-  role?: Prisma.EnumAdminRoleFieldUpdateOperationsInput | $Enums.AdminRole;
   otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
   otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+  activityLogs?: Prisma.ActivityLogUncheckedUpdateManyWithoutAdminNestedInput;
 };
 
 export type AdminCreateManyInput = {
   id?: string;
   email: string;
-  name: string;
+  firstName: string;
+  lastName: string;
   password: string;
-  role?: $Enums.AdminRole;
   otp?: string | null;
   otpExpiresAt?: Date | string | null;
+  lastLoginAt?: Date | string | null;
   createdAt?: Date | string;
   updatedAt?: Date | string;
 };
@@ -331,11 +355,12 @@ export type AdminCreateManyInput = {
 export type AdminUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string;
   email?: Prisma.StringFieldUpdateOperationsInput | string;
-  name?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
   password?: Prisma.StringFieldUpdateOperationsInput | string;
-  role?: Prisma.EnumAdminRoleFieldUpdateOperationsInput | $Enums.AdminRole;
   otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
   otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -343,11 +368,12 @@ export type AdminUpdateManyMutationInput = {
 export type AdminUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string;
   email?: Prisma.StringFieldUpdateOperationsInput | string;
-  name?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
   password?: Prisma.StringFieldUpdateOperationsInput | string;
-  role?: Prisma.EnumAdminRoleFieldUpdateOperationsInput | $Enums.AdminRole;
   otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
   otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -355,11 +381,12 @@ export type AdminUncheckedUpdateManyInput = {
 export type AdminCountOrderByAggregateInput = {
   id?: Prisma.SortOrder;
   email?: Prisma.SortOrder;
-  name?: Prisma.SortOrder;
+  firstName?: Prisma.SortOrder;
+  lastName?: Prisma.SortOrder;
   password?: Prisma.SortOrder;
-  role?: Prisma.SortOrder;
   otp?: Prisma.SortOrder;
   otpExpiresAt?: Prisma.SortOrder;
+  lastLoginAt?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
@@ -367,11 +394,12 @@ export type AdminCountOrderByAggregateInput = {
 export type AdminMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder;
   email?: Prisma.SortOrder;
-  name?: Prisma.SortOrder;
+  firstName?: Prisma.SortOrder;
+  lastName?: Prisma.SortOrder;
   password?: Prisma.SortOrder;
-  role?: Prisma.SortOrder;
   otp?: Prisma.SortOrder;
   otpExpiresAt?: Prisma.SortOrder;
+  lastLoginAt?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
@@ -379,21 +407,23 @@ export type AdminMaxOrderByAggregateInput = {
 export type AdminMinOrderByAggregateInput = {
   id?: Prisma.SortOrder;
   email?: Prisma.SortOrder;
-  name?: Prisma.SortOrder;
+  firstName?: Prisma.SortOrder;
+  lastName?: Prisma.SortOrder;
   password?: Prisma.SortOrder;
-  role?: Prisma.SortOrder;
   otp?: Prisma.SortOrder;
   otpExpiresAt?: Prisma.SortOrder;
+  lastLoginAt?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string;
+export type AdminScalarRelationFilter = {
+  is?: Prisma.AdminWhereInput;
+  isNot?: Prisma.AdminWhereInput;
 };
 
-export type EnumAdminRoleFieldUpdateOperationsInput = {
-  set?: $Enums.AdminRole;
+export type StringFieldUpdateOperationsInput = {
+  set?: string;
 };
 
 export type NullableStringFieldUpdateOperationsInput = {
@@ -408,17 +438,134 @@ export type DateTimeFieldUpdateOperationsInput = {
   set?: Date | string;
 };
 
+export type AdminCreateNestedOneWithoutActivityLogsInput = {
+  create?: Prisma.XOR<Prisma.AdminCreateWithoutActivityLogsInput, Prisma.AdminUncheckedCreateWithoutActivityLogsInput>;
+  connectOrCreate?: Prisma.AdminCreateOrConnectWithoutActivityLogsInput;
+  connect?: Prisma.AdminWhereUniqueInput;
+};
+
+export type AdminUpdateOneRequiredWithoutActivityLogsNestedInput = {
+  create?: Prisma.XOR<Prisma.AdminCreateWithoutActivityLogsInput, Prisma.AdminUncheckedCreateWithoutActivityLogsInput>;
+  connectOrCreate?: Prisma.AdminCreateOrConnectWithoutActivityLogsInput;
+  upsert?: Prisma.AdminUpsertWithoutActivityLogsInput;
+  connect?: Prisma.AdminWhereUniqueInput;
+  update?: Prisma.XOR<
+    Prisma.XOR<Prisma.AdminUpdateToOneWithWhereWithoutActivityLogsInput, Prisma.AdminUpdateWithoutActivityLogsInput>,
+    Prisma.AdminUncheckedUpdateWithoutActivityLogsInput
+  >;
+};
+
+export type AdminCreateWithoutActivityLogsInput = {
+  id?: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  otp?: string | null;
+  otpExpiresAt?: Date | string | null;
+  lastLoginAt?: Date | string | null;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+};
+
+export type AdminUncheckedCreateWithoutActivityLogsInput = {
+  id?: string;
+  email: string;
+  firstName: string;
+  lastName: string;
+  password: string;
+  otp?: string | null;
+  otpExpiresAt?: Date | string | null;
+  lastLoginAt?: Date | string | null;
+  createdAt?: Date | string;
+  updatedAt?: Date | string;
+};
+
+export type AdminCreateOrConnectWithoutActivityLogsInput = {
+  where: Prisma.AdminWhereUniqueInput;
+  create: Prisma.XOR<Prisma.AdminCreateWithoutActivityLogsInput, Prisma.AdminUncheckedCreateWithoutActivityLogsInput>;
+};
+
+export type AdminUpsertWithoutActivityLogsInput = {
+  update: Prisma.XOR<Prisma.AdminUpdateWithoutActivityLogsInput, Prisma.AdminUncheckedUpdateWithoutActivityLogsInput>;
+  create: Prisma.XOR<Prisma.AdminCreateWithoutActivityLogsInput, Prisma.AdminUncheckedCreateWithoutActivityLogsInput>;
+  where?: Prisma.AdminWhereInput;
+};
+
+export type AdminUpdateToOneWithWhereWithoutActivityLogsInput = {
+  where?: Prisma.AdminWhereInput;
+  data: Prisma.XOR<Prisma.AdminUpdateWithoutActivityLogsInput, Prisma.AdminUncheckedUpdateWithoutActivityLogsInput>;
+};
+
+export type AdminUpdateWithoutActivityLogsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string;
+  email?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
+  password?: Prisma.StringFieldUpdateOperationsInput | string;
+  otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+  otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+
+export type AdminUncheckedUpdateWithoutActivityLogsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string;
+  email?: Prisma.StringFieldUpdateOperationsInput | string;
+  firstName?: Prisma.StringFieldUpdateOperationsInput | string;
+  lastName?: Prisma.StringFieldUpdateOperationsInput | string;
+  password?: Prisma.StringFieldUpdateOperationsInput | string;
+  otp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null;
+  otpExpiresAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  lastLoginAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null;
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+
+/**
+ * Count Type AdminCountOutputType
+ */
+
+export type AdminCountOutputType = {
+  activityLogs: number;
+};
+
+export type AdminCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  activityLogs?: boolean | AdminCountOutputTypeCountActivityLogsArgs;
+};
+
+/**
+ * AdminCountOutputType without action
+ */
+export type AdminCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AdminCountOutputType
+   */
+  select?: Prisma.AdminCountOutputTypeSelect<ExtArgs> | null;
+};
+
+/**
+ * AdminCountOutputType without action
+ */
+export type AdminCountOutputTypeCountActivityLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ActivityLogWhereInput;
+};
+
 export type AdminSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<
   {
     id?: boolean;
     email?: boolean;
-    name?: boolean;
+    firstName?: boolean;
+    lastName?: boolean;
     password?: boolean;
-    role?: boolean;
     otp?: boolean;
     otpExpiresAt?: boolean;
+    lastLoginAt?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
+    activityLogs?: boolean | Prisma.Admin$activityLogsArgs<ExtArgs>;
+    _count?: boolean | Prisma.AdminCountOutputTypeDefaultArgs<ExtArgs>;
   },
   ExtArgs['result']['admin']
 >;
@@ -427,11 +574,12 @@ export type AdminSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   {
     id?: boolean;
     email?: boolean;
-    name?: boolean;
+    firstName?: boolean;
+    lastName?: boolean;
     password?: boolean;
-    role?: boolean;
     otp?: boolean;
     otpExpiresAt?: boolean;
+    lastLoginAt?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
   },
@@ -442,11 +590,12 @@ export type AdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   {
     id?: boolean;
     email?: boolean;
-    name?: boolean;
+    firstName?: boolean;
+    lastName?: boolean;
     password?: boolean;
-    role?: boolean;
     otp?: boolean;
     otpExpiresAt?: boolean;
+    lastLoginAt?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
   },
@@ -456,32 +605,42 @@ export type AdminSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 export type AdminSelectScalar = {
   id?: boolean;
   email?: boolean;
-  name?: boolean;
+  firstName?: boolean;
+  lastName?: boolean;
   password?: boolean;
-  role?: boolean;
   otp?: boolean;
   otpExpiresAt?: boolean;
+  lastLoginAt?: boolean;
   createdAt?: boolean;
   updatedAt?: boolean;
 };
 
 export type AdminOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<
-  'id' | 'email' | 'name' | 'password' | 'role' | 'otp' | 'otpExpiresAt' | 'createdAt' | 'updatedAt',
+  'id' | 'email' | 'firstName' | 'lastName' | 'password' | 'otp' | 'otpExpiresAt' | 'lastLoginAt' | 'createdAt' | 'updatedAt',
   ExtArgs['result']['admin']
 >;
+export type AdminInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  activityLogs?: boolean | Prisma.Admin$activityLogsArgs<ExtArgs>;
+  _count?: boolean | Prisma.AdminCountOutputTypeDefaultArgs<ExtArgs>;
+};
+export type AdminIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
+export type AdminIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {};
 
 export type $AdminPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: 'Admin';
-  objects: {};
+  objects: {
+    activityLogs: Prisma.$ActivityLogPayload<ExtArgs>[];
+  };
   scalars: runtime.Types.Extensions.GetPayloadResult<
     {
       id: string;
       email: string;
-      name: string;
+      firstName: string;
+      lastName: string;
       password: string;
-      role: $Enums.AdminRole;
       otp: string | null;
       otpExpiresAt: Date | null;
+      lastLoginAt: Date | null;
       createdAt: Date;
       updatedAt: Date;
     },
@@ -890,6 +1049,9 @@ export interface Prisma__AdminClient<
   GlobalOmitOptions = {},
 > extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: 'PrismaPromise';
+  activityLogs<T extends Prisma.Admin$activityLogsArgs<ExtArgs> = {}>(
+    args?: Prisma.Subset<T, Prisma.Admin$activityLogsArgs<ExtArgs>>
+  ): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ActivityLogPayload<ExtArgs>, T, 'findMany', GlobalOmitOptions> | Null>;
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -921,11 +1083,12 @@ export interface Prisma__AdminClient<
 export interface AdminFieldRefs {
   readonly id: Prisma.FieldRef<'Admin', 'String'>;
   readonly email: Prisma.FieldRef<'Admin', 'String'>;
-  readonly name: Prisma.FieldRef<'Admin', 'String'>;
+  readonly firstName: Prisma.FieldRef<'Admin', 'String'>;
+  readonly lastName: Prisma.FieldRef<'Admin', 'String'>;
   readonly password: Prisma.FieldRef<'Admin', 'String'>;
-  readonly role: Prisma.FieldRef<'Admin', 'AdminRole'>;
   readonly otp: Prisma.FieldRef<'Admin', 'String'>;
   readonly otpExpiresAt: Prisma.FieldRef<'Admin', 'DateTime'>;
+  readonly lastLoginAt: Prisma.FieldRef<'Admin', 'DateTime'>;
   readonly createdAt: Prisma.FieldRef<'Admin', 'DateTime'>;
   readonly updatedAt: Prisma.FieldRef<'Admin', 'DateTime'>;
 }
@@ -943,6 +1106,10 @@ export type AdminFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.Interna
    * Omit specific fields from the Admin
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
   /**
    * Filter, which Admin to fetch.
    */
@@ -962,6 +1129,10 @@ export type AdminFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
+  /**
    * Filter, which Admin to fetch.
    */
   where: Prisma.AdminWhereUniqueInput;
@@ -979,6 +1150,10 @@ export type AdminFindFirstArgs<ExtArgs extends runtime.Types.Extensions.Internal
    * Omit specific fields from the Admin
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
   /**
    * Filter, which Admin to fetch.
    */
@@ -1028,6 +1203,10 @@ export type AdminFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.I
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
+  /**
    * Filter, which Admin to fetch.
    */
   where?: Prisma.AdminWhereInput;
@@ -1075,6 +1254,10 @@ export type AdminFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalA
    * Omit specific fields from the Admin
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
   /**
    * Filter, which Admins to fetch.
    */
@@ -1124,6 +1307,10 @@ export type AdminCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
+  /**
    * The data needed to create a Admin.
    */
   data: Prisma.XOR<Prisma.AdminCreateInput, Prisma.AdminUncheckedCreateInput>;
@@ -1171,6 +1358,10 @@ export type AdminUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    * Omit specific fields from the Admin
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
   /**
    * The data needed to update a Admin.
    */
@@ -1238,6 +1429,10 @@ export type AdminUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
+  /**
    * The filter to search for the Admin to update in case it exists.
    */
   where: Prisma.AdminWhereUniqueInput;
@@ -1264,6 +1459,10 @@ export type AdminDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArg
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
+  /**
    * Filter which Admin to delete.
    */
   where: Prisma.AdminWhereUniqueInput;
@@ -1284,6 +1483,30 @@ export type AdminDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 };
 
 /**
+ * Admin.activityLogs
+ */
+export type Admin$activityLogsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ActivityLog
+   */
+  select?: Prisma.ActivityLogSelect<ExtArgs> | null;
+  /**
+   * Omit specific fields from the ActivityLog
+   */
+  omit?: Prisma.ActivityLogOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ActivityLogInclude<ExtArgs> | null;
+  where?: Prisma.ActivityLogWhereInput;
+  orderBy?: Prisma.ActivityLogOrderByWithRelationInput | Prisma.ActivityLogOrderByWithRelationInput[];
+  cursor?: Prisma.ActivityLogWhereUniqueInput;
+  take?: number;
+  skip?: number;
+  distinct?: Prisma.ActivityLogScalarFieldEnum | Prisma.ActivityLogScalarFieldEnum[];
+};
+
+/**
  * Admin without action
  */
 export type AdminDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1295,4 +1518,8 @@ export type AdminDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
    * Omit specific fields from the Admin
    */
   omit?: Prisma.AdminOmit<ExtArgs> | null;
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AdminInclude<ExtArgs> | null;
 };

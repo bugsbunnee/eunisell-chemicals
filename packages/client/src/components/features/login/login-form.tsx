@@ -1,28 +1,53 @@
 import React, { useState, useCallback } from 'react';
+
 import { z } from 'zod';
 import { useAppForm } from '../../forms/form-context';
+import { toast } from 'sonner';
+import { getErrorMessage } from '../../../lib/utils';
 
 import EmailField from './email-field';
 import PasswordField from './password-field';
 import CheckboxField from './checkbox-field';
 import SignInButton from './sign-in-button';
 
+import { useNavigate } from 'react-router-dom';
+import http from '../../../services/http';
+import useAuthStore from '../../../store/auth';
+import { paths } from '../../../lib/data';
+
+interface Auth {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}
+
+const defaultValues: Auth = {
+  email: '',
+  password: '',
+  rememberMe: false,
+};
+
 const LoginForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
 
+  const navigate = useNavigate();
+  const auth = useAuthStore();
   const form = useAppForm({
-    defaultValues: {
-      email: '',
-      password: '',
-      rememberMe: false,
-    },
-    onSubmit: ({ value }) => {
-      console.log('Login submitted:', value);
+    defaultValues,
+    onSubmit: async ({ value }) => {
+      try {
+        const response = await http.post('/api/v1/auth/login', value);
+        toast.success('Authentication successful');
+        auth.login(response.data);
+        navigate(paths.dashboard, { replace: true });
+      } catch (error) {
+        toast.error('Failed to authenticate', { description: getErrorMessage(error) });
+      }
     },
   });
 
   const onSubmit = useCallback(
-    (e: React.FormEvent<HTMLFormElement>) => {
+    (e: React.SubmitEvent<HTMLFormElement>) => {
       e.preventDefault();
       e.stopPropagation();
       form.handleSubmit();
@@ -37,6 +62,7 @@ const LoginForm: React.FC = () => {
           <label className="text-[14px] leading-5 text-[#333]" htmlFor="email">
             Email Address
           </label>
+
           <form.AppField name="email" validators={{ onChange: z.email('Please enter a valid email address') }} children={() => <EmailField placeholder="admin@eunisell.com" />} />
         </div>
 

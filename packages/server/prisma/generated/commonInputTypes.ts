@@ -27,13 +27,6 @@ export type StringFilter<$PrismaModel = never> = {
   not?: Prisma.NestedStringFilter<$PrismaModel> | string;
 };
 
-export type EnumAdminRoleFilter<$PrismaModel = never> = {
-  equals?: $Enums.AdminRole | Prisma.EnumAdminRoleFieldRefInput<$PrismaModel>;
-  in?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  notIn?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  not?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel> | $Enums.AdminRole;
-};
-
 export type StringNullableFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel> | null;
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null;
@@ -94,16 +87,6 @@ export type StringWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedStringFilter<$PrismaModel>;
 };
 
-export type EnumAdminRoleWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.AdminRole | Prisma.EnumAdminRoleFieldRefInput<$PrismaModel>;
-  in?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  notIn?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  not?: Prisma.NestedEnumAdminRoleWithAggregatesFilter<$PrismaModel> | $Enums.AdminRole;
-  _count?: Prisma.NestedIntFilter<$PrismaModel>;
-  _min?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel>;
-  _max?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel>;
-};
-
 export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel> | null;
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null;
@@ -150,6 +133,40 @@ export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>;
 };
 
+export type EnumEnquiryStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryStatus | Prisma.EnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel> | $Enums.EnquiryStatus;
+};
+
+export type EnumEnquiryPriorityFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryPriority | Prisma.EnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel> | $Enums.EnquiryPriority;
+};
+
+export type EnumEnquiryStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryStatus | Prisma.EnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryStatusWithAggregatesFilter<$PrismaModel> | $Enums.EnquiryStatus;
+  _count?: Prisma.NestedIntFilter<$PrismaModel>;
+  _min?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel>;
+  _max?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel>;
+};
+
+export type EnumEnquiryPriorityWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryPriority | Prisma.EnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryPriorityWithAggregatesFilter<$PrismaModel> | $Enums.EnquiryPriority;
+  _count?: Prisma.NestedIntFilter<$PrismaModel>;
+  _min?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel>;
+  _max?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel>;
+};
+
 export type NestedStringFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel>;
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>;
@@ -162,13 +179,6 @@ export type NestedStringFilter<$PrismaModel = never> = {
   startsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>;
   endsWith?: string | Prisma.StringFieldRefInput<$PrismaModel>;
   not?: Prisma.NestedStringFilter<$PrismaModel> | string;
-};
-
-export type NestedEnumAdminRoleFilter<$PrismaModel = never> = {
-  equals?: $Enums.AdminRole | Prisma.EnumAdminRoleFieldRefInput<$PrismaModel>;
-  in?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  notIn?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  not?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel> | $Enums.AdminRole;
 };
 
 export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -235,16 +245,6 @@ export type NestedIntFilter<$PrismaModel = never> = {
   not?: Prisma.NestedIntFilter<$PrismaModel> | number;
 };
 
-export type NestedEnumAdminRoleWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.AdminRole | Prisma.EnumAdminRoleFieldRefInput<$PrismaModel>;
-  in?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  notIn?: $Enums.AdminRole[] | Prisma.ListEnumAdminRoleFieldRefInput<$PrismaModel>;
-  not?: Prisma.NestedEnumAdminRoleWithAggregatesFilter<$PrismaModel> | $Enums.AdminRole;
-  _count?: Prisma.NestedIntFilter<$PrismaModel>;
-  _min?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel>;
-  _max?: Prisma.NestedEnumAdminRoleFilter<$PrismaModel>;
-};
-
 export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
   equals?: string | Prisma.StringFieldRefInput<$PrismaModel> | null;
   in?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null;
@@ -299,4 +299,38 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>;
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>;
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>;
+};
+
+export type NestedEnumEnquiryStatusFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryStatus | Prisma.EnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel> | $Enums.EnquiryStatus;
+};
+
+export type NestedEnumEnquiryPriorityFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryPriority | Prisma.EnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel> | $Enums.EnquiryPriority;
+};
+
+export type NestedEnumEnquiryStatusWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryStatus | Prisma.EnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryStatus[] | Prisma.ListEnumEnquiryStatusFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryStatusWithAggregatesFilter<$PrismaModel> | $Enums.EnquiryStatus;
+  _count?: Prisma.NestedIntFilter<$PrismaModel>;
+  _min?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel>;
+  _max?: Prisma.NestedEnumEnquiryStatusFilter<$PrismaModel>;
+};
+
+export type NestedEnumEnquiryPriorityWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.EnquiryPriority | Prisma.EnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  in?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  notIn?: $Enums.EnquiryPriority[] | Prisma.ListEnumEnquiryPriorityFieldRefInput<$PrismaModel>;
+  not?: Prisma.NestedEnumEnquiryPriorityWithAggregatesFilter<$PrismaModel> | $Enums.EnquiryPriority;
+  _count?: Prisma.NestedIntFilter<$PrismaModel>;
+  _min?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel>;
+  _max?: Prisma.NestedEnumEnquiryPriorityFilter<$PrismaModel>;
 };

@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { authSchema } from '../infrastructure/utils/schema.ts';
+import { authSchema, registerSchema } from '../infrastructure/utils/schema.ts';
 
 import auth from '../controllers/auth.controller.ts';
 import validate from '../middleware/validate.ts';
@@ -7,5 +7,6 @@ import validate from '../middleware/validate.ts';
 const router = Router();
 
 router.post('/login', [validate(authSchema, 'body')], auth.login);
+router.post('/register', [validate(registerSchema, 'body')], auth.register);
 
 export default router;

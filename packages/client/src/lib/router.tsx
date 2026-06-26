@@ -26,6 +26,8 @@ import BlogPage from '../pages/BlogPage';
 import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
 import LoginPage from '../pages/LoginPage';
+import ProtectedRoute from '../pages/ProtectedRoute';
+import DashboardPage from '../pages/DashboardPage';
 
 export const navigation: Option[] = [
   {
@@ -146,6 +148,16 @@ export const routes: RouteObject[] = [
       {
         path: paths.chemicals,
         element: <ChemicalsPage />,
+      },
+    ],
+  },
+  {
+    path: paths.dashboard,
+    element: <ProtectedRoute />,
+    children: [
+      {
+        index: true,
+        element: <DashboardPage />,
       },
     ],
   },

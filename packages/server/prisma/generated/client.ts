@@ -49,3 +49,13 @@ export { Prisma };
  *
  */
 export type Admin = Prisma.AdminModel;
+/**
+ * Model ActivityLog
+ *
+ */
+export type ActivityLog = Prisma.ActivityLogModel;
+/**
+ * Model Enquiry
+ *
+ */
+export type Enquiry = Prisma.EnquiryModel;

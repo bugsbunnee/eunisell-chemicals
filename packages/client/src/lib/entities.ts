@@ -36,3 +36,10 @@ export interface ArticleDetail {
   takeaways: ArticleTakeawayCard[];
   relatedResources: ArticleRelatedResource[];
 }
+
+export interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+}

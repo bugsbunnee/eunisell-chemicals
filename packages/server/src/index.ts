@@ -1,7 +1,7 @@
 import 'dotenv/config';
 
-import logger from './src/startup/logger.ts';
-import registerApp from './src/startup/index.ts';
+import logger from './startup/logger.ts';
+import registerApp from './startup/index.ts';
 
 const app = registerApp();
 const port = Number(Bun.env.PORT) || 8080;

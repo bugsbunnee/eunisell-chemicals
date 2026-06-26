@@ -36,6 +36,7 @@ export const paths = {
   blogDetail: '/blog/:slug',
   chemicals: '/chemicals',
   login: '/admin/login',
+  dashboard: '/admin/dashboard',
 };
 
 export const specialties = [
