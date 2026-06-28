@@ -1,10 +1,10 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { Activity, useEffect, useRef, useState } from 'react';
 
 import { ChevronDownIcon, MenuIcon, XIcon } from 'lucide-react';
 import { FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import { AnimatePresence } from 'motion/react';
-import { paths, NavDropdown, dropdownNav, plainLinks } from '../../lib/data';
+import { paths, NavDropdown, dropdownNav } from '../../lib/data';
 import { cn } from '../../lib/utils';
 
 import ChemicalsMegaMenu from './chemicals-mega-menu';
@@ -97,53 +97,50 @@ const NavBar: React.FC = () => {
   return (
     <nav ref={navRef} className="sticky top-0 z-50 backdrop-blur-[54px] bg-[rgba(255,255,255,0.71)] border-b border-border">
       <div className="hidden md:flex h-18 items-center px-8 gap-6">
-        <button
-          onClick={() => navigate(paths.contact)}
-          className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap"
-        >
+        <button onClick={() => navigate(paths.contact)} className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap">
           Request Technical Consultation
         </button>
 
         <div className="flex flex-1 items-center justify-center gap-6 overflow-hidden">
-          {dropdownNav.map(({ label, items }) => (
-            <div key={label} className="relative">
-              <button
-                onClick={() => toggleDropdown(label)}
-                aria-expanded={openDropdown === label}
-                aria-haspopup="true"
-                className="flex items-center gap-[5px] text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap"
-              >
-                {label}
+          {dropdownNav.map(({ label, items, path }) => (
+            <React.Fragment key={label}>
+              <Activity mode={items.length > 0 ? 'visible' : 'hidden'}>
+                <div key={label} className="relative">
+                  <button
+                    onClick={() => toggleDropdown(label)}
+                    aria-expanded={openDropdown === label}
+                    aria-haspopup="true"
+                    className="flex items-center gap-[5px] text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap"
+                  >
+                    {label}
 
-                <ChevronDownIcon size={13} className={cn('transition-transform duration-200 text-accent', openDropdown === label && 'rotate-180')} />
-              </button>
+                    <ChevronDownIcon size={13} className={cn('transition-transform duration-200 text-accent', openDropdown === label && 'rotate-180')} />
+                  </button>
 
-              {![NavDropdown.Company, NavDropdown.Solutions, NavDropdown.KnowledgeCentre, NavDropdown.OurChemicals].includes(label as NavDropdown) &&
-                openDropdown === label && (
-                  <div className="absolute top-[calc(100%+12px)] left-0 bg-white border border-border shadow-[0px_4px_16px_rgba(0,0,0,0.08)] rounded-[2px] py-2 min-w-50 z-50">
-                    {items.map((item) => (
-                      <Link
-                        key={item.path}
-                        to={item.path}
-                        onClick={() => setOpenDropdown(null)}
-                        className="block px-5 py-2.5 text-[14px] font-medium text-primary hover:bg-card hover:text-secondary transition-colors"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-            </div>
-          ))}
+                  {![NavDropdown.Company, NavDropdown.Solutions, NavDropdown.KnowledgeCentre, NavDropdown.OurChemicals].includes(label as NavDropdown) &&
+                    openDropdown === label && (
+                      <div className="absolute top-[calc(100%+12px)] left-0 bg-white border border-border shadow-[0px_4px_16px_rgba(0,0,0,0.08)] rounded-[2px] py-2 min-w-50 z-50">
+                        {items.map((item) => (
+                          <Link
+                            key={item.path}
+                            to={item.path}
+                            onClick={() => setOpenDropdown(null)}
+                            className="block px-5 py-2.5 text-[14px] font-medium text-primary hover:bg-card hover:text-secondary transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                </div>
+              </Activity>
 
-          {plainLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className="text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap hover:text-secondary transition-colors"
-            >
-              {link.label}
-            </Link>
+              <Activity mode={items.length === 0 ? 'visible' : 'hidden'}>
+                <Link key={path} to={path!} className="text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap hover:text-secondary transition-colors">
+                  {label}
+                </Link>
+              </Activity>
+            </React.Fragment>
           ))}
         </div>
 
@@ -186,15 +183,10 @@ const NavBar: React.FC = () => {
                       className="flex items-center justify-between w-full px-8 py-5"
                       aria-expanded={mobileExpanded === item.label}
                     >
-                      <span className={cn('text-[18px] leading-6.75 font-normal', mobileExpanded === item.label ? 'text-secondary' : 'text-accent')}>
-                        {item.label}
-                      </span>
+                      <span className={cn('text-[18px] leading-6.75 font-normal', mobileExpanded === item.label ? 'text-secondary' : 'text-accent')}>{item.label}</span>
                       <ChevronDownIcon
                         size={16}
-                        className={cn(
-                          'transition-transform duration-200 shrink-0',
-                          mobileExpanded === item.label ? 'rotate-0 text-secondary' : '-rotate-90 text-accent'
-                        )}
+                        className={cn('transition-transform duration-200 shrink-0', mobileExpanded === item.label ? 'rotate-0 text-secondary' : '-rotate-90 text-accent')}
                       />
                     </button>
 
@@ -223,22 +215,10 @@ const NavBar: React.FC = () => {
           </div>
 
           <div className="border-t border-border px-8 py-8 flex items-center gap-4 shrink-0">
-            <a
-              href="https://linkedin.com/company/eunisell"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-              className="text-accent hover:text-secondary transition-colors"
-            >
+            <a href="https://linkedin.com/company/eunisell" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-accent hover:text-secondary transition-colors">
               <FaLinkedin size={24} />
             </a>
-            <a
-              href="https://facebook.com/eunisell"
-              target="_blank"
-              rel="noreferrer"
-              aria-label="Facebook"
-              className="text-accent hover:text-secondary transition-colors"
-            >
+            <a href="https://facebook.com/eunisell" target="_blank" rel="noreferrer" aria-label="Facebook" className="text-accent hover:text-secondary transition-colors">
               <FaFacebook size={24} />
             </a>
           </div>

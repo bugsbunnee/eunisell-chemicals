@@ -74,3 +74,26 @@ model Enquiry {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+enum BlogStatus {
+  PUBLISHED
+  IN_REVIEW
+  DRAFT
+  SCHEDULED
+  ARCHIVED
+}
+
+model BlogPost {
+  id             String     @id @default(cuid())
+  slug           String     @unique
+  title          String
+  topic          String
+  category       String
+  authorName     String
+  authorInitials String
+  status         BlogStatus @default(DRAFT)
+  featured       Boolean    @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

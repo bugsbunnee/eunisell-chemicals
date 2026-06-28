@@ -10,4 +10,5 @@
 export type * from './models/Admin.ts';
 export type * from './models/ActivityLog.ts';
 export type * from './models/Enquiry.ts';
+export type * from './models/BlogPost.ts';
 export type * from './commonInputTypes.ts';

@@ -40,8 +40,9 @@ const BlogAdminPage: React.FC = () => {
 
   const navigate = useNavigate();
   const store = useBlogAdminStore();
-  const stats = useBlogStats();
   const result = useBlogPosts();
+
+  const { data: stats } = useBlogStats();
 
   const actions = useMemo(() => {
     const actions: Action[] = [
@@ -107,7 +108,7 @@ const BlogAdminPage: React.FC = () => {
                         'bg-card border border-border text-card-foreground hover:border-secondary/40 hover:text-secondary': store.query.status !== tab.key,
                       })}
                     >
-                      {tab.label} ({stats[tab.countKey] as number})
+                      {tab.label} ({(stats?.[tab.countKey] ?? 0) as number})
                     </button>
                   ))}
                 </div>
@@ -166,13 +167,13 @@ const BlogAdminPage: React.FC = () => {
             </div>
 
             <div className="bg-white border border-border shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] rounded-[6px] overflow-hidden">
-              <Table columns={columns} data={result.data} loading={false} keyExtractor={(row) => row.id} selectable />
+              <Table columns={columns} data={result.data?.data ?? []} loading={result.isLoading} keyExtractor={(row) => row.id} selectable />
 
               <Pagination
                 page={store.query.page ?? 1}
-                totalPages={result.meta.totalPages}
-                total={result.meta.total}
-                perPage={result.meta.limit}
+                totalPages={result.data?.meta.totalPages ?? 1}
+                total={result.data?.meta.total ?? 0}
+                perPage={result.data?.meta.limit ?? 10}
                 onPageChange={(page) => store.onChangeQuery({ page })}
               />
             </div>
@@ -187,8 +188,8 @@ const BlogAdminPage: React.FC = () => {
               <div className="p-6 flex flex-col gap-4">
                 <CategoryBar
                   label="Technical Articles"
-                  count={stats.categoryBreakdown.technical}
-                  total={stats.total}
+                  count={stats?.categoryBreakdown.technical ?? 0}
+                  total={stats?.total ?? 0}
                   barColor="bg-secondary"
                   badgeBg="bg-[#eff6ff]"
                   badgeText="text-secondary"
@@ -196,8 +197,8 @@ const BlogAdminPage: React.FC = () => {
 
                 <CategoryBar
                   label="Industry Insights"
-                  count={stats.categoryBreakdown.insights}
-                  total={stats.total}
+                  count={stats?.categoryBreakdown.insights ?? 0}
+                  total={stats?.total ?? 0}
                   barColor="bg-[#1fc16b]"
                   badgeBg="bg-[#f0fdf4]"
                   badgeText="text-[#1fc16b]"
@@ -205,8 +206,8 @@ const BlogAdminPage: React.FC = () => {
 
                 <CategoryBar
                   label="Company Updates"
-                  count={stats.categoryBreakdown.updates}
-                  total={stats.total}
+                  count={stats?.categoryBreakdown.updates ?? 0}
+                  total={stats?.total ?? 0}
                   barColor="bg-[#f59e0b]"
                   badgeBg="bg-[#fffbeb]"
                   badgeText="text-[#f59e0b]"
@@ -231,8 +232,8 @@ const columns: Column<BlogPost>[] = [
     cellClassName: '!pl-3',
     render: (row) => (
       <div className="min-w-0">
-        <p className="text-[14px] text-[#002037] leading-5.25 line-clamp-2">{row.title}</p>
-        <p className="text-[12px] text-[#afb1b3] leading-4.5 mt-0.5">Topic: {row.topic}</p>
+        <p className="text-[14px] text-accent leading-5.25 line-clamp-2">{row.title}</p>
+        <p className="text-[12px] text-muted leading-4.5 mt-0.5">Topic: {row.topic}</p>
       </div>
     ),
   },

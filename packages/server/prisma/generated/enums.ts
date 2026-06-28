@@ -23,3 +23,13 @@ export const EnquiryPriority = {
 } as const;
 
 export type EnquiryPriority = (typeof EnquiryPriority)[keyof typeof EnquiryPriority];
+
+export const BlogStatus = {
+  PUBLISHED: 'PUBLISHED',
+  IN_REVIEW: 'IN_REVIEW',
+  DRAFT: 'DRAFT',
+  SCHEDULED: 'SCHEDULED',
+  ARCHIVED: 'ARCHIVED',
+} as const;
+
+export type BlogStatus = (typeof BlogStatus)[keyof typeof BlogStatus];

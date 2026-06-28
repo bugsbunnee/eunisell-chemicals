@@ -4,11 +4,18 @@ import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 const clients = [
   { src: '/clients/check.svg', alt: 'Check' },
+  { src: '/clients/century.jpg', alt: 'Century' },
+  { src: '/clients/dangote.png', alt: 'Dangote' },
+  { src: '/clients/heosl.jpeg', alt: 'Heosl' },
+  { src: '/clients/nepl.jpeg', alt: 'NEPL' },
+  { src: '/clients/nlng.jpg', alt: 'NLNG' },
   { src: '/clients/exxon.svg', alt: 'Exxon' },
-  { src: '/clients/shell.svg', alt: 'Shell' },
+  { src: '/clients/seplat.jpeg', alt: 'Seplat' },
+  { src: '/clients/total.webp', alt: 'Total' },
   { src: '/clients/energies.svg', alt: 'Total Energies' },
   { src: '/clients/nnpc.svg', alt: 'NNPC' },
   { src: '/clients/haliburton.svg', alt: 'Haliburton' },
+  { src: '/clients/yinson.jpg', alt: 'Yinson' },
 ];
 
 const SLIDES_TO_SHOW = 5;

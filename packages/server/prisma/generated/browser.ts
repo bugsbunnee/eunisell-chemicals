@@ -31,3 +31,8 @@ export type ActivityLog = Prisma.ActivityLogModel;
  *
  */
 export type Enquiry = Prisma.EnquiryModel;
+/**
+ * Model BlogPost
+ *
+ */
+export type BlogPost = Prisma.BlogPostModel;

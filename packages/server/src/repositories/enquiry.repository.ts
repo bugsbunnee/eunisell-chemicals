@@ -28,6 +28,26 @@ export const enquiryRepository = {
     return { data, total };
   },
 
+  async findStats() {
+    const [total, urgent, byType] = await Promise.all([
+      prisma.enquiry.count(),
+      prisma.enquiry.count({ where: { priority: 'URGENT' } }),
+      prisma.enquiry.groupBy({ by: ['enquiryType'], _count: { id: true } }),
+    ]);
+
+    const type = Object.fromEntries(byType.map((t) => [t.enquiryType, t._count.id]));
+
+    return {
+      total,
+      urgent,
+      consultation: type['Consultation'] ?? 0,
+      product: type['Product Enquiry'] ?? 0,
+      technical: type['Technical Support'] ?? 0,
+      laboratory: type['Lab Services'] ?? 0,
+      emergency: type['Emergency Support'] ?? 0,
+    };
+  },
+
   findById(id: string) {
     return prisma.enquiry.findUnique({ where: { id } });
   },

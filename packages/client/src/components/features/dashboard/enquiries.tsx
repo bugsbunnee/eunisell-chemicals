@@ -1,81 +1,110 @@
-import React, { useState } from 'react';
+import React, { Activity } from 'react';
+
 import { ArrowRightIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+
 import { cn } from '../../../lib/utils';
-import { EnquiryPriority } from '../../../hooks/use-enquiries';
+import { paths } from '../../../lib/data';
+import { useEnquiryStats, useLatestEnquiries } from '../../../hooks/use-enquiries';
+import EnquirySkeletonRow from './enquiry-skeleton-row';
 
-const tabs = [
-  { label: 'CONSULTATION', count: '08' },
-  { label: 'PRODUCT', count: '15' },
-  { label: 'TECHNICAL', count: '04' },
-  { label: 'LABORATORY', count: '02' },
-  { label: 'EMERGENCY', count: '01', urgent: true },
+const TYPE_CARDS = [
+  { label: 'Consultation', key: 'consultation' as const, emergency: false },
+  { label: 'Product', key: 'product' as const, emergency: false },
+  { label: 'Technical', key: 'technical' as const, emergency: false },
+  { label: 'Laboratory', key: 'laboratory' as const, emergency: false },
+  { label: 'Emergency', key: 'emergency' as const, emergency: true },
 ];
 
-const rows = [
-  { name: 'Johnathan Smith', company: 'Shell Nigeria', type: 'Technical', priority: 'URGENT', status: 'In Progress' },
-  { name: 'Amaka Okafor', company: 'Dangote Refinery', type: 'Product', priority: 'NORMAL', status: 'Closed' },
-];
+const PRIORITY_CONFIG = {
+  URGENT: { label: 'Urgent', className: 'bg-[#fb3748] text-white' },
+  NORMAL: { label: 'Normal', className: 'bg-secondary text-white' },
+};
+
+const STATUS_CONFIG = {
+  NEW: { label: 'New', className: 'text-secondary' },
+  IN_PROGRESS: { label: 'In Progress', className: 'text-secondary' },
+  PENDING: { label: 'Pending', className: 'text-[#6366f1]' },
+  CLOSED: { label: 'Closed', className: 'text-[#1fc16b]' },
+};
 
 const LatestEnquiries: React.FC = () => {
-  const [active, setActive] = useState(0);
+  const navigate = useNavigate();
+  const { data: stats } = useEnquiryStats();
+  const { data: enquiries, isLoading } = useLatestEnquiries({ limit: 5 });
 
   return (
-    <div className="bg-white border border-border rounded-[4px]">
-      <div className="flex items-center justify-between px-5 py-4 border-b border-border">
-        <h2 className="text-[15px] font-semibold text-accent">Latest Enquiries</h2>
-        <button className="flex items-center gap-1 text-[13px] text-secondary hover:text-secondary/80 transition-colors">
-          All Enquiries <ArrowRightIcon size={13} />
+    <div className="bg-white border border-border drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] rounded-[6px]">
+      <div className="flex items-center justify-between px-6 py-6 border-b border-border">
+        <h2 className="text-[16px] text-accent tracking-[-0.047px]">Latest Enquiries</h2>
+        <button onClick={() => navigate(paths.dashboard)} className="flex items-center gap-1 text-[12px] text-secondary hover:text-secondary/70 transition-colors">
+          All Enquiries <ArrowRightIcon size={12} />
         </button>
       </div>
 
-      <div className="grid grid-cols-5 gap-2 px-5 pt-4">
-        {tabs.map(({ label, count, urgent }, i) => (
-          <button
+      <div className="flex items-stretch gap-3 px-6 py-5 overflow-x-auto">
+        {TYPE_CARDS.map(({ label, key, emergency }) => (
+          <div
             key={label}
-            onClick={() => setActive(i)}
             className={cn(
-              'flex flex-col items-center border rounded-[4px] px-2 py-3 transition-colors',
-              urgent ? 'border-red-200 bg-red-50' : active === i ? 'border-secondary/30 bg-secondary/5' : 'border-border hover:border-secondary/30'
+              'flex flex-col items-center min-w-[120px] py-3 px-5 rounded-[4px] border shrink-0',
+              emergency ? 'bg-[rgba(251,55,72,0.05)] border-[rgba(251,55,72,0.2)]' : 'bg-[#f6f9fc] border-border'
             )}
           >
-            <span className={cn('text-[9px] font-semibold tracking-[0.5px] leading-4 uppercase', urgent ? 'text-red-500' : 'text-card-foreground')}>{label}</span>
-            <span className={cn('text-[22px] font-bold leading-7', urgent ? 'text-red-500' : active === i ? 'text-secondary' : 'text-accent')}>{count}</span>
-          </button>
+            <span className={cn('text-[10px] uppercase tracking-[0.06px]', emergency ? 'text-[#fb3748]' : 'text-card-foreground')}>{label}</span>
+            <span className={cn('text-[18px] leading-7 mt-0.5', emergency ? 'text-[#fb3748]' : 'text-accent')}>{String(stats?.[key] ?? 0).padStart(2, '0')}</span>
+          </div>
         ))}
       </div>
 
-      <div className="px-5 py-4">
+      <div className="px-6 pb-6">
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2 w-1/4">Name</th>
-              <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2 w-1/4">Company</th>
-              <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2">Type</th>
-              <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2">Priority</th>
-              <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2">Status</th>
+              <th className="text-[14px] text-card-foreground font-normal text-left pb-3">Name</th>
+              <th className="text-[14px] text-card-foreground font-normal text-left pb-3">Company</th>
+              <th className="text-[14px] text-card-foreground font-normal text-left pb-3">Type</th>
+              <th className="text-[14px] text-card-foreground font-normal text-left pb-3">Priority</th>
+              <th className="text-[14px] text-card-foreground font-normal text-left pb-3">Status</th>
             </tr>
           </thead>
 
-          <tbody className="divide-y divide-border">
-            {rows.map(({ name, company, type, priority, status }) => (
-              <tr key={name}>
-                <td className="text-[13px] text-accent py-3 pr-4">{name}</td>
-                <td className="text-[13px] text-card-foreground py-3 pr-4">{company}</td>
-                <td className="text-[13px] text-card-foreground py-3 pr-4">{type}</td>
-                <td className="py-3 pr-4">
-                  <span
-                    className={cn({
-                      'text-[11px] font-semibold px-2 py-0.5 rounded-[3px] text-white': true,
-                      'bg-red-500': priority === EnquiryPriority.Urgent,
-                      'bg-secondary': priority !== EnquiryPriority.Urgent,
-                    })}
-                  >
-                    {priority}
-                  </span>
+          <tbody>
+            <Activity mode={isLoading ? 'visible' : 'hidden'}>
+              {Array.from({ length: 3 }).map((_, i) => (
+                <EnquirySkeletonRow key={i} />
+              ))}
+            </Activity>
+
+            <Activity mode={!isLoading && !!enquiries?.length ? 'visible' : 'hidden'}>
+              {enquiries?.map((e) => {
+                const priority = PRIORITY_CONFIG[e.priority] ?? PRIORITY_CONFIG.NORMAL;
+                const status = STATUS_CONFIG[e.status] ?? STATUS_CONFIG.NEW;
+                return (
+                  <tr key={e.id} className="border-t border-border hover:bg-[#fafafa] transition-colors">
+                    <td className="py-4 pr-4 text-[14px] text-accent">{e.fullName}</td>
+                    <td className="py-4 pr-4 text-[14px] text-card-foreground">{e.company}</td>
+                    <td className="py-4 pr-4 text-[14px] text-card-foreground">{e.enquiryType}</td>
+                    <td className="py-4 pr-4">
+                      <span className={cn('text-[10px] font-semibold px-2 h-4 inline-flex items-center rounded-[2px] uppercase tracking-[0.07px]', priority.className)}>
+                        {priority.label}
+                      </span>
+                    </td>
+                    <td className="py-4">
+                      <span className={cn('text-[14px]', status.className)}>{status.label}</span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </Activity>
+
+            <Activity mode={!isLoading && !enquiries?.length ? 'visible' : 'hidden'}>
+              <tr>
+                <td colSpan={5} className="py-8 text-center text-[13px] text-card-foreground">
+                  No enquiries found
                 </td>
-                <td className={cn('text-[13px] py-3', status === 'In Progress' ? 'text-secondary' : 'text-green-600')}>{status}</td>
               </tr>
-            ))}
+            </Activity>
           </tbody>
         </table>
       </div>

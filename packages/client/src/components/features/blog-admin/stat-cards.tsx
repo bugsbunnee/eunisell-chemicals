@@ -2,13 +2,13 @@ import React from 'react';
 
 import type { LucideIcon } from 'lucide-react';
 
-import { useBlogStats } from '../../../hooks/use-blog-posts';
+import { useBlogStats, type BlogStats } from '../../../hooks/use-blog-posts';
 import { cn } from '../../../lib/utils';
 import { HexagonIcon, TriangleIcon, DiamondIcon, CalendarClockIcon, ArchiveIcon, CheckCircle2Icon } from 'lucide-react';
 
 interface StatCard {
   label: string;
-  countKey: keyof ReturnType<typeof useBlogStats>;
+  countKey: keyof Omit<BlogStats, 'categoryBreakdown'>;
   icon: LucideIcon;
   iconBg: string;
   iconColor: string;
@@ -24,7 +24,7 @@ const STAT_CARDS: StatCard[] = [
 ];
 
 const StatCards: React.FC = () => {
-  const stats = useBlogStats();
+  const { data: stats } = useBlogStats();
 
   return (
     <div className="grid grid-cols-6 gap-4">
@@ -34,7 +34,7 @@ const StatCards: React.FC = () => {
             <Icon size={22} className={iconColor} />
           </div>
           <p className="text-[12px] text-card-foreground tracking-[0.6px] uppercase mt-4">{label}</p>
-          <p className="text-[24px] text-accent leading-9">{stats[countKey] as number}</p>
+          <p className="text-[24px] text-accent leading-9">{stats?.[countKey] ?? 0}</p>
         </div>
       ))}
     </div>

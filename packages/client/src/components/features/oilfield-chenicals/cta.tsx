@@ -35,7 +35,7 @@ const CTA: React.FC = () => {
           <img src="/oilfield-chemicals/cta.svg" alt="Test Tube" className="w-100 h-100 object-contain" />
         </div>
 
-        <div className="text-left max-w-2xl z-50 relative">
+        <div className="text-left max-w-2xl z-40 relative">
           <div className="text-5xl leading-15 text-primary-foreground font-bold">
             Partner with Africa's Leading
             <span className="text-secondary"> Oilfield Chemical Experts</span>

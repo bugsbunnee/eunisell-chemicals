@@ -6,6 +6,8 @@ import helmet from 'helmet';
 
 import auth from '../routes/auth.routes';
 import enquiries from '../routes/enquiry.routes';
+import blog from '../routes/blog.routes';
+import activity from '../routes/activity.routes';
 
 import error from '../middleware/error';
 
@@ -25,6 +27,8 @@ const registerRoutes = (app: Express) => {
 
   app.use('/api/v1/auth', auth);
   app.use('/api/v1/enquiries', enquiries);
+  app.use('/api/v1/blog', blog);
+  app.use('/api/v1/activity', activity);
 
   app.use(error);
 };

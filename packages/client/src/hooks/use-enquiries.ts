@@ -34,11 +34,35 @@ export interface Enquiry {
   updatedAt: string;
 }
 
+export interface EnquiryStats {
+  total: number;
+  urgent: number;
+  consultation: number;
+  product: number;
+  technical: number;
+  laboratory: number;
+  emergency: number;
+}
+
 export const useEnquiries = () => {
   const query = useEnquiriesStore((store) => store.query);
 
   return useQuery({
     queryKey: ['enquiries', query],
     queryFn: () => http.get<PaginatedApiResponse<Enquiry>>('/api/v1/enquiries', { params: query }).then((response) => response.data),
+  });
+};
+
+export const useEnquiryStats = () => {
+  return useQuery({
+    queryKey: ['enquiry-stats'],
+    queryFn: () => http.get<EnquiryStats>('/api/v1/enquiries/stats').then((r) => r.data),
+  });
+};
+
+export const useLatestEnquiries = (params?: { status?: EnquiryStatus; limit?: number }) => {
+  return useQuery({
+    queryKey: ['enquiries-latest', params],
+    queryFn: () => http.get<PaginatedApiResponse<Enquiry>>('/api/v1/enquiries', { params: { ...params, limit: params?.limit ?? 5 } }).then((r) => r.data.data),
   });
 };

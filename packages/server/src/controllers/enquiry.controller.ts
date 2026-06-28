@@ -24,6 +24,11 @@ class EnquiryController {
     res.status(HttpStatusCode.Created).json(enquiry);
   }
 
+  async stats(_req: Request, res: Response) {
+    const data = await enquiryRepository.findStats();
+    return res.json(data);
+  }
+
   async findAll(req: Request, res: Response) {
     const query = enquiryQuerySchema.parse(req.query);
 

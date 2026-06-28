@@ -154,7 +154,7 @@ export const reasons = [
 
 export enum NavDropdown {
   Company = 'Company',
-  Solutions = 'Solutions',
+  Solutions = 'Our Solutions',
   KnowledgeCentre = 'Knowledge Centre',
   OurChemicals = 'Our Chemicals',
 }
@@ -227,22 +227,19 @@ export const dropdownNav = [
     ],
   },
   {
+    label: NavDropdown.OurChemicals,
+    items: [{ label: 'View All Chemicals', path: paths.chemicals }],
+  },
+  { label: 'Industries Served', path: paths.industries, items: [] },
+  { label: 'Technical Services', path: paths.technical, items: [] },
+  {
     label: NavDropdown.KnowledgeCentre,
     items: [
       { label: 'Articles & Insights', path: paths.knowledge },
       { label: 'Brochures', path: paths.brochures },
     ],
   },
-  {
-    label: NavDropdown.OurChemicals,
-    items: [{ label: 'View All Chemicals', path: paths.chemicals }],
-  },
-];
-
-export const plainLinks = [
-  { label: 'Industries Served', path: paths.industries },
-  { label: 'Technical Services', path: paths.technical },
-  { label: 'Contact', path: paths.contact },
+  { label: 'Contact', path: paths.contact, items: [] },
 ];
 
 export const team = [

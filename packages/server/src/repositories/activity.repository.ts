@@ -3,11 +3,15 @@ import prisma from '../../prisma';
 export enum ActivityAction {
   Login = 'login',
   NewEnquiry = 'new-enquiry',
+  NewBlogPost = 'new-blog-post',
+  UpdateBlogPost = 'update-blog-post',
+  DeleteBlogPost = 'delete-blog-post',
 }
 
 export enum ActivityCategory {
   Auth = 'auth',
   Enquiry = 'enquiry',
+  Blog = 'blog',
 }
 
 export interface ActivityData {
@@ -26,6 +30,14 @@ export const activityRepository = {
         category: data.category,
         description: data.description,
       },
+    });
+  },
+
+  findRecent({ limit = 10, category }: { limit?: number; category?: string } = {}) {
+    return prisma.activityLog.findMany({
+      where: category ? { category } : undefined,
+      orderBy: { createdAt: 'desc' },
+      take: limit,
     });
   },
 };

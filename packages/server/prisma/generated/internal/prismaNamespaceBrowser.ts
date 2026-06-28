@@ -51,6 +51,7 @@ export const ModelName = {
   Admin: 'Admin',
   ActivityLog: 'ActivityLog',
   Enquiry: 'Enquiry',
+  BlogPost: 'BlogPost',
 } as const;
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -114,6 +115,22 @@ export const EnquiryScalarFieldEnum = {
 } as const;
 
 export type EnquiryScalarFieldEnum = (typeof EnquiryScalarFieldEnum)[keyof typeof EnquiryScalarFieldEnum];
+
+export const BlogPostScalarFieldEnum = {
+  id: 'id',
+  slug: 'slug',
+  title: 'title',
+  topic: 'topic',
+  category: 'category',
+  authorName: 'authorName',
+  authorInitials: 'authorInitials',
+  status: 'status',
+  featured: 'featured',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum];
 
 export const SortOrder = {
   asc: 'asc',
