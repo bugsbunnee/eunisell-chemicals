@@ -11,7 +11,7 @@ import Contact from '../components/features/home/contact';
 import OurChemicals from '../components/features/home/our-chemicals';
 import Footer from '../components/common/footer';
 import KnowledgeCenter from '../components/features/about/knowledge-center';
-import Clients from '../components/features/home/clients';
+import Network from '../components/features/home/network';
 
 const HomePage: React.FC = () => {
   return (
@@ -34,7 +34,7 @@ const HomePage: React.FC = () => {
 
       <Why />
 
-      <Clients />
+      <Network />
 
       <Contact />
 

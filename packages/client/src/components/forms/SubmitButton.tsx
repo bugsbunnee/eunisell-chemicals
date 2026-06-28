@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Button } from '../ui/button';
 import { useFormContext } from './form-context';
+import { LoaderCircleIcon } from 'lucide-react';
 
 interface Props {
   label: string;
@@ -14,11 +15,8 @@ const SubmitButton: React.FC<Props> = ({ label }) => {
     <form.Subscribe
       selector={(state) => [state.canSubmit, state.isSubmitting]}
       children={([canSubmit, isSubmitting]) => (
-        <Button
-          disabled={!canSubmit || isSubmitting}
-          className="bg-sidebar-primary w-full h-16 font-bold text-base rounded-[2px] leading-6 text-white uppercase"
-        >
-          {isSubmitting ? '...' : label}
+        <Button disabled={!canSubmit || isSubmitting} className="bg-sidebar-primary w-full h-16 font-bold text-base rounded-[2px] leading-6 text-white uppercase">
+          {isSubmitting ? <LoaderCircleIcon size={20} className="animate-spin" /> : label}
         </Button>
       )}
     />

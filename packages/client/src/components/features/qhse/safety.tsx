@@ -3,20 +3,20 @@ import React from 'react';
 const images = [
   { src: '/qhse/blending.svg', title: 'blending', description: 'automated precision' },
   { src: '/qhse/industrial.svg', title: 'warehousing', description: 'safe segregation' },
-  { src: '/qhse/laboratory.svg', title: 'laboratory', description: 'analytical integrity' },
+  { src: '/qhse/hero.svg', title: 'laboratory', description: 'analytical integrity' },
   { src: '/qhse/poilfield.svg', title: 'field support', description: 'operational support' },
 ];
 
 const Safety: React.FC = () => {
   return (
-    <section className="bg-card">
+    <section id="safety-record" className="bg-card">
       {/* Mobile layout — 2x2 grid */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-8">
-        <h2 className="font-bold text-[24px] leading-[30px] text-accent text-center">Safety Embedded in Every Operation</h2>
+        <h2 className="font-bold text-[24px] leading-7.5 text-accent text-center">Safety Embedded in Every Operation</h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {images.map((image) => (
-            <div key={image.title} className="relative h-[160px] rounded-[2px] overflow-hidden">
+            <div key={image.title} className="relative h-40 rounded-[2px] overflow-hidden">
               <img src={image.src} alt={image.title} className="h-full w-full object-cover" />
               <div className="absolute inset-0 bg-linear-to-tr from-accent opacity-80 to-accent/0" />
               <div className="absolute left-3 bottom-3 text-left">

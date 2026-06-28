@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../../ui/button';
+import { paths } from '../../../lib/data';
 
 const CTA: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-accent text-left">
       {/* Mobile */}
@@ -14,10 +17,14 @@ const CTA: React.FC = () => {
           expertise makes.
         </p>
         <div className="flex flex-col gap-4">
-          <Button className="w-full rounded-xs bg-secondary text-base h-13">Schedule a Technical Audit</Button>
+          <Button onClick={() => navigate(paths.contact)} className="w-full rounded-xs bg-secondary text-base h-13">
+            Schedule a Technical Audit
+          </Button>
           <div>
             <div className="text-[12px] text-white/50">Direct Support</div>
-            <div className="text-[16px] text-white">+234 1 234 5678</div>
+            <a href="tel:+23412345678" className="text-[16px] text-white">
+              +234 1 234 5678
+            </a>
           </div>
         </div>
       </div>
@@ -40,11 +47,15 @@ const CTA: React.FC = () => {
           </p>
 
           <div className="mt-10 flex items-center gap-x-6">
-            <Button className="rounded-xs bg-secondary font-bold text-lg h-16 px-10">Schedule a Technical Audit</Button>
+            <Button onClick={() => navigate(paths.contact)} className="rounded-xs bg-secondary font-bold text-lg h-16 px-10">
+              Schedule a Technical Audit
+            </Button>
 
             <div>
               <div className="text-sm font-normal text-primary-foreground/50">Direct Support</div>
-              <div className="text-lg font-bold text-primary-foreground leading-7">+234 1 234 5678</div>
+              <a href="tel:+23412345678" className="text-lg font-bold text-primary-foreground leading-7">
+                +234 1 234 5678
+              </a>
             </div>
           </div>
         </div>

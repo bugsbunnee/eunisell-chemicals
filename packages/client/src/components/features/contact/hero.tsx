@@ -2,7 +2,7 @@ import React from 'react';
 
 import { paths } from '../../../lib/data';
 import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../../../lib/utils';
+import { cn, scrollToView } from '../../../lib/utils';
 import { ArrowRightIcon, ChevronRightIcon, MicroscopeIcon } from 'lucide-react';
 import { Button } from '../../ui/button';
 
@@ -42,15 +42,21 @@ const Hero: React.FC = () => {
         <div className="text-accent font-bold leading-[39.6px] md:leading-16.5 text-[36px] md:text-[60px]">Speak with Eunisell Chemicals</div>
 
         <p className="mt-4 md:mt-8 text-[#afb1b3] md:text-primary text-[18px] md:text-xl leading-7.25 md:leading-8 max-w-full md:max-w-126.5">
-          Connect with our technical specialists for world-class industrial chemical solutions, advanced laboratory services, and oilfield expertise
-          tailored to your operational needs.
+          Connect with our technical specialists for world-class industrial chemical solutions, advanced laboratory services, and oilfield expertise tailored to your operational
+          needs.
         </p>
 
         <div className="mt-8 md:mt-10 flex flex-col md:flex-row gap-3 md:gap-x-6">
-          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-primary rounded-[2px] text-[14px] md:text-base font-bold capitalize tracking-[0.35px] flex items-center justify-center">
+          <Button
+            onClick={() => scrollToView('contact-form')}
+            className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-primary rounded-[2px] text-[14px] md:text-base font-bold capitalize tracking-[0.35px] flex items-center justify-center"
+          >
             Submit Enquiry <ArrowRightIcon />
           </Button>
-          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 border border-[rgba(0,0,0,0.15)] md:border-2 md:border-primary rounded-[2px] bg-transparent text-primary text-sm md:text-base font-bold capitalize tracking-[0.35px]">
+          <Button
+            onClick={() => scrollToView('locations')}
+            className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 border border-[rgba(0,0,0,0.15)] md:border-2 md:border-primary rounded-[2px] bg-transparent text-primary text-sm md:text-base font-bold capitalize tracking-[0.35px]"
+          >
             Our Locations
           </Button>
         </div>

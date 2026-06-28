@@ -1,12 +1,13 @@
 import React from 'react';
 import { ArrowRightIcon } from 'lucide-react';
+import { PieChart, Pie, Tooltip, ResponsiveContainer } from 'recharts';
 import { cn } from '../../../lib/utils';
 
 const segments = [
-  { label: 'Articles', pct: 55, color: '#0083ce' },
-  { label: 'Brochures', pct: 25, color: '#002037' },
-  { label: 'Tech Bulletins', pct: 12, color: '#6b7280' },
-  { label: 'Knowledge', pct: 8, color: '#94a3b8' },
+  { label: 'Articles', value: 55, fill: '#0083ce' },
+  { label: 'Brochures', value: 25, fill: '#002037' },
+  { label: 'Tech Bulletins', value: 12, fill: '#6b7280' },
+  { label: 'Knowledge', value: 8, fill: '#94a3b8' },
 ];
 
 const statusStyles: Record<string, string> = {
@@ -21,14 +22,6 @@ const contentItems = [
   { title: 'Water Treatment Safety Protocols', type: 'Knowledge Centre', status: 'DRAFT', updated: 'Oct 22, 2023' },
 ];
 
-const gradient = segments
-  .reduce<{ stop: string; cum: number }[]>((acc, s) => {
-    const prev = acc.at(-1)?.cum ?? 0;
-    return [...acc, { stop: `${s.color} ${prev}% ${prev + s.pct}%`, cum: prev + s.pct }];
-  }, [])
-  .map((s) => s.stop)
-  .join(', ');
-
 const ContentDistribution: React.FC = () => (
   <div className="bg-white border border-border rounded-[4px]">
     <div className="flex items-center justify-between px-5 py-4 border-b border-border">
@@ -40,14 +33,17 @@ const ContentDistribution: React.FC = () => (
 
     <div className="flex gap-6 p-5">
       <div className="flex flex-col items-center gap-3 shrink-0">
-        <div className="relative size-30 rounded-full" style={{ background: `conic-gradient(${gradient})` }}>
-          <div className="absolute inset-7 rounded-full bg-white" />
-        </div>
+        <ResponsiveContainer width={120} height={120}>
+          <PieChart>
+            <Pie data={segments} cx="50%" cy="50%" innerRadius={36} outerRadius={58} dataKey="value" strokeWidth={0} />
+            <Tooltip formatter={(value) => [`${value ?? ''}%`]} contentStyle={{ fontSize: 12, borderRadius: 4, border: '1px solid #e5e7eb', boxShadow: 'none' }} />
+          </PieChart>
+        </ResponsiveContainer>
 
         <div className="grid grid-cols-2 gap-x-4 gap-y-1.5">
-          {segments.map(({ label, color }) => (
+          {segments.map(({ label, fill }) => (
             <div key={label} className="flex items-center gap-1.5">
-              <span className="size-2.5 rounded-[2px] shrink-0" style={{ backgroundColor: color }} />
+              <span className="size-2.5 rounded-[2px] shrink-0" style={{ backgroundColor: fill }} />
               <span className="text-[11px] text-card-foreground">{label}</span>
             </div>
           ))}

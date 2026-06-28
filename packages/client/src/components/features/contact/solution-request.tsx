@@ -22,13 +22,11 @@ const solutions = [
 
 const SolutionRequest: React.FC = () => {
   return (
-    <section className="py-16 px-6 md:py-24 md:px-30 flex flex-col md:grid md:grid-cols-[1fr_2fr] md:gap-x-24">
+    <section id="contact-form" className="py-16 px-6 md:py-24 md:px-30 flex flex-col md:grid md:grid-cols-[1fr_2fr] md:gap-x-24">
       {/* Mobile-only heading */}
       <div className="md:hidden text-center mb-10">
         <h2 className="text-[30px] font-bold text-accent leading-9">Send an Enquiry</h2>
-        <p className="text-[16px] text-card-foreground leading-6 mt-4">
-          Please provide your details and our technical team will contact you within 24 hours.
-        </p>
+        <p className="text-[16px] text-card-foreground leading-6 mt-4">Please provide your details and our technical team will contact you within 24 hours.</p>
       </div>
 
       {/* Left column — desktop only */}

@@ -11,9 +11,10 @@ import CheckboxField from './checkbox-field';
 import SignInButton from './sign-in-button';
 
 import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
+
 import http from '../../../services/http';
 import useAuthStore from '../../../store/auth';
-import { paths } from '../../../lib/data';
 
 interface Auth {
   email: string;
@@ -37,8 +38,10 @@ const LoginForm: React.FC = () => {
     onSubmit: async ({ value }) => {
       try {
         const response = await http.post('/api/v1/auth/login', value);
+
         toast.success('Authentication successful');
         auth.login(response.data);
+
         navigate(paths.dashboard, { replace: true });
       } catch (error) {
         toast.error('Failed to authenticate', { description: getErrorMessage(error) });

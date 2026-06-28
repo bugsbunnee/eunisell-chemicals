@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { paths } from '../../../lib/data';
-import { Link } from 'react-router-dom';
-import { cn } from '../../../lib/utils';
+import { Link, useNavigate } from 'react-router-dom';
+import { cn, scrollToView } from '../../../lib/utils';
 import { ChevronRightIcon } from 'lucide-react';
 import { Button } from '../../ui/button';
 
@@ -18,6 +18,8 @@ const crumbs = [
 ];
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-white px-6 py-12 md:px-30 md:py-24 flex flex-col md:grid md:grid-cols-2 md:gap-x-18 text-left md:items-stretch gap-8">
       <div className="space-y-6 md:space-y-8">
@@ -45,26 +47,28 @@ const Hero: React.FC = () => {
         </h1>
 
         <p className="font-normal text-card-foreground text-[16px] md:text-xl leading-6.5 md:leading-[32.5px] m-0">
-          Eunisell's technical services bridge the gap between complex chemical science and field application, ensuring your assets perform at their
-          peak while minimizing operational risk.
+          Eunisell's technical services bridge the gap between complex chemical science and field application, ensuring your assets perform at their peak while minimizing
+          operational risk.
         </p>
 
         <div className="flex flex-col mt-12 md:flex-row gap-3 md:gap-x-4">
-          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary text-primary-foreground text-sm md:text-lg font-semibold rounded-[4px]">
+          <Button
+            onClick={() => navigate(paths.contact)}
+            className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary text-primary-foreground text-sm md:text-lg font-semibold rounded-[4px]"
+          >
             Request Technical Consultation
           </Button>
-          <Button className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-secondary bg-transparent text-secondary text-sm md:text-lg font-semibold rounded-[4px]">
+          <Button
+            onClick={() => scrollToView('lab-services')}
+            className="h-14 md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-secondary bg-transparent text-secondary text-sm md:text-lg font-semibold rounded-[4px]"
+          >
             Explore Capabilities
           </Button>
         </div>
       </div>
 
       <div className="w-full h-65 md:h-auto md:min-h-125">
-        <img
-          src="/technical-services/hero.svg"
-          alt="Technical Services"
-          className="w-full h-full rounded-[8px] md:rounded-[16px] object-cover md:object-fill"
-        />
+        <img src="/technical-services/hero.svg" alt="Technical Services" className="w-full h-full rounded-[8px] md:rounded-[16px] object-cover md:object-fill" />
       </div>
     </section>
   );

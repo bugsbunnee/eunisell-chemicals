@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from '../../ui/button';
 import { FaAtlassian, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { paths } from '../../../lib/data';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const quickLinks = [
   { title: 'CSR Strategy', path: paths.aboutUs },
@@ -18,21 +18,19 @@ const socialLinks = [
 ];
 
 const CTA: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-accent text-left">
       {/* Mobile layout */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
-        <h2 className="font-bold text-[28px] leading-[35px] text-white">Partnering for Business, People and Community Impact</h2>
+        <h2 className="font-bold text-[28px] leading-8.75 text-white">Partnering for Business, People and Community Impact</h2>
 
-        <p className="text-[16px] leading-[26px] text-muted">
-          We are always looking for ways to deepen our roots and expand our reach. Connect with us to learn more.
-        </p>
+        <p className="text-[16px] leading-6.5 text-muted">We are always looking for ways to deepen our roots and expand our reach. Connect with us to learn more.</p>
 
         <div className="flex flex-col gap-3 pt-2">
-          <Button className="w-full h-[54px] bg-secondary text-white text-[14px] font-bold rounded-[4px]">Contact our CSR Team</Button>
-          <Button className="w-full h-[54px] bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]">
-            Download CSR Report
-          </Button>
+          <Button className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[4px]">Contact our CSR Team</Button>
+          <Button className="w-full h-13.5 bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]">Download CSR Report</Button>
         </div>
 
         <div className="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
@@ -66,15 +64,14 @@ const CTA: React.FC = () => {
           <div className="text-5xl text-white text-left leading-18 font-bold">Partnering for Business, People and Community Impact</div>
 
           <div className="mt-6 text-xl text-muted font-normal leading-7.5">
-            We are always looking for ways to deepen our roots and expand our reach. Connect with us to learn more about our CSR initiatives or
-            explore partnership opportunities.
+            We are always looking for ways to deepen our roots and expand our reach. Connect with us to learn more about our CSR initiatives or explore partnership opportunities.
           </div>
 
           <div className="flex items-center gap-x-4 mt-12">
-            <Button className="px-10 flex items-center h-15.5 bg-secondary text-base font-bold rounded-[4px]">Contact our CSR Team</Button>
-            <Button className="px-10 flex items-center h-15.5 bg-transparent text-white border border-white/30 text-base font-bold rounded-[4px]">
-              Download CSR Report
+            <Button onClick={() => navigate(paths.contact)} className="px-10 flex items-center h-15.5 bg-secondary text-base font-bold rounded-[4px]">
+              Contact our CSR Team
             </Button>
+            <Button className="px-10 flex items-center h-15.5 bg-transparent text-white border border-white/30 text-base font-bold rounded-[4px]">Download CSR Report</Button>
           </div>
         </div>
 

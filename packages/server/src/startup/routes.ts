@@ -5,6 +5,8 @@ import compression from 'compression';
 import helmet from 'helmet';
 
 import auth from '../routes/auth.routes';
+import enquiries from '../routes/enquiry.routes';
+
 import error from '../middleware/error';
 
 const registerRoutes = (app: Express) => {
@@ -22,6 +24,8 @@ const registerRoutes = (app: Express) => {
   app.use(express.static('public'));
 
   app.use('/api/v1/auth', auth);
+  app.use('/api/v1/enquiries', enquiries);
+
   app.use(error);
 };
 

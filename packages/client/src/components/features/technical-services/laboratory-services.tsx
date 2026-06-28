@@ -1,7 +1,8 @@
 import React from 'react';
 
 import { ArrowRightIcon, HexagonIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 const services = [
   {
@@ -31,8 +32,9 @@ const services = [
 ];
 
 const LaboratoryServices: React.FC = () => {
+  const navigate = useNavigate();
   return (
-    <section className="bg-card px-6 py-16 md:px-30 md:py-24 space-y-10 md:space-y-16">
+    <section id="lab-services" className="bg-card px-6 py-16 md:px-30 md:py-24 space-y-10 md:space-y-16">
       <div className="space-y-3 md:space-y-4 items-center w-full">
         <h2 className="font-bold text-accent text-[26px] md:text-[30px] text-center leading-8 md:leading-9">Laboratory Services</h2>
         <p className="max-w-2xl mx-auto font-normal text-card-foreground text-sm md:text-base text-center leading-6">
@@ -52,9 +54,9 @@ const LaboratoryServices: React.FC = () => {
             <p className="font-normal text-card-foreground text-[13px] md:text-base leading-5 md:leading-6">{service.description}</p>
 
             <div className="hidden md:flex mt-6 text-sm uppercase font-semibold leading-5 text-secondary">
-              <Link to="" className="flex items-center gap-x-2">
+              <button onClick={() => navigate(paths.contact)} className="flex items-center gap-x-2">
                 View Capabilities <ArrowRightIcon size={14} />
-              </Link>
+              </button>
             </div>
           </div>
         ))}

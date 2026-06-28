@@ -4,9 +4,10 @@ import authService from '../services/auth.service.tsx';
 
 import { HttpStatusCode } from 'axios';
 import { authRepository } from '../repositories/auth.repository.ts';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.ts';
 
 import type { Request, Response } from 'express';
-import type { IRegister } from '../infrastructure/utils/schema.ts';
+import type { IRegister } from '../infrastructure/schemas';
 
 class AuthController {
   async login(req: Request, res: Response) {
@@ -19,11 +20,20 @@ class AuthController {
     const user = _.omit(admin, ['password']);
     const token = authService.signPayload(user);
 
-    authService.sendLoginAlert(admin, {
-      loginTime: new Date().toUTCString(),
-      location: (req.headers['x-forwarded-for'] as string | undefined) ?? req.socket.remoteAddress ?? 'Unknown',
-      device: req.headers['user-agent'] ?? 'Unknown device',
-    });
+    await Promise.all([
+      authService.sendLoginAlert(admin, {
+        loginTime: new Date().toUTCString(),
+        location: (req.headers['x-forwarded-for'] as string | undefined) ?? req.socket.remoteAddress ?? 'Unknown',
+        device: req.headers['user-agent'] ?? 'Unknown device',
+      }),
+
+      activityRepository.recordActivity({
+        adminId: user.id,
+        action: ActivityAction.Login,
+        category: ActivityCategory.Auth,
+        description: 'Successful login attempt by ' + user.firstName,
+      }),
+    ]);
 
     return res.header('x-auth-token', token).json({ token, user });
   }

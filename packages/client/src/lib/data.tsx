@@ -12,6 +12,7 @@ import {
   TestTube2Icon,
   TruckIcon,
 } from 'lucide-react';
+import { PartnerCategory } from './entities';
 
 export const paths = {
   home: '/',
@@ -37,6 +38,11 @@ export const paths = {
   chemicals: '/chemicals',
   login: '/admin/login',
   dashboard: '/admin/dashboard',
+  blogAdmin: '/admin/dashboard/blog',
+  chemicalsAdmin: '/admin/dashboard/chemicals',
+  solutionsAdmin: '/admin/dashboard/solutions',
+  brochuresAdmin: '/admin/dashboard/brochures',
+  careersAdmin: '/admin/dashboard/careers',
 };
 
 export const specialties = [
@@ -279,7 +285,7 @@ export const team = [
   {
     src: '/management/lain.svg',
     name: 'Lain Fraiser',
-    title: 'Director of Projects',
+    title: 'Head of International Business',
     url: '',
     description: 'Specialist in complex industrial engineering and large-scale facility management.',
     paragraphs: [],
@@ -293,5 +299,72 @@ export const team = [
     description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
     paragraphs: [],
     highlights: [],
+  },
+];
+
+export const partners = [
+  {
+    id: 1,
+    category: PartnerCategory.Technical,
+    src: '/partners/antara-groupe.png',
+    alt: 'Technical Services',
+    name: 'Antara Groupe',
+    description: 'Expert consultancy and laboratory services for specialized industrial chemical applications.',
+  },
+  {
+    id: 2,
+    category: PartnerCategory.Chemical,
+    src: '/partners/basf.png',
+    alt: 'Global Manufacturer',
+    name: 'BASF',
+    description: 'Leading provider of high-performance chemicals for automotive and industrial sectors.',
+  },
+  {
+    id: 3,
+    category: PartnerCategory.Chemical,
+    src: '/partners/clariant.png',
+    alt: 'Specialty Chemicals',
+    name: 'Clariant',
+    description: 'Innovating sustainable specialty chemical solutions for energy and resources.',
+  },
+  {
+    id: 4,
+    category: PartnerCategory.Industrial,
+    src: '/partners/dow.png',
+    alt: 'Industrial Solutions',
+    name: 'Dow',
+    description: 'Materials science leader providing chemical intermediates and industrial plastics.',
+  },
+  {
+    id: 5,
+    category: PartnerCategory.Industrial,
+    src: '/partners/dupont.png',
+    alt: 'Technical Materials',
+    name: 'DuPont',
+    description: 'Specialized technical polymers and protection materials for hazardous environments.',
+  },
+  {
+    id: 6,
+    category: PartnerCategory.Chemical,
+    src: '/partners/honeywell.png',
+    alt: 'Performance Materials',
+    name: 'Honeywell',
+    description: 'Advanced materials and process technologies for refining and petrochemical industries.',
+  },
+  {
+    id: 7,
+    category: PartnerCategory.Chemical,
+    src: '/partners/nouryon.png',
+    alt: 'Specialty Chemicals',
+    name: 'Nouryon',
+    description: 'Global leader in essential chemistry for paper, plastics, and personal care.',
+  },
+  {
+    id: 8,
+    category: PartnerCategory.Technical,
+    src: '/partners/quaker-houghton.png',
+    alt: 'Industrial Fluids',
+    name: 'Quaker Houghton',
+    description: 'Primary provider of industrial process fluids for metals and heavy manufacturing.',
   },
 ];

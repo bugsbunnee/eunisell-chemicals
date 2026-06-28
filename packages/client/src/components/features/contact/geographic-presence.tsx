@@ -16,16 +16,10 @@ const GeographicPresence: React.FC = () => {
 
         {/* Desktop: full section with text */}
         <div className="hidden md:block px-30 py-24 relative">
-          <img
-            src="/contact/geography.svg"
-            alt="Geographical Presence"
-            className="w-full absolute object-cover h-full top-0 right-0 left-0 bottom-0 z-10"
-          />
+          <img src="/contact/geography.svg" alt="Geographical Presence" className="w-full absolute object-cover h-full top-0 right-0 left-0 bottom-0 z-10" />
 
           <div className="max-w-2xl mx-auto text-center z-50 relative">
-            <div className="text-sm font-bold mx-auto text-secondary tracking-[1.4px] py-2 px-6 border-4 border-secondary rounded-full w-fit uppercase">
-              geographic presence
-            </div>
+            <div className="text-sm font-bold mx-auto text-secondary tracking-[1.4px] py-2 px-6 border-4 border-secondary rounded-full w-fit uppercase">geographic presence</div>
 
             <div className="text-5xl font-bold text-white mt-6 capitalize">Serving Across the Region</div>
 
@@ -54,13 +48,14 @@ const GeographicPresence: React.FC = () => {
 
         <h2 className="text-[30px] font-bold text-white leading-9">Need Urgent Support?</h2>
 
-        <p className="mt-4 text-[16px] leading-6 text-[#afb1b3]">
-          Our emergency response team is available 24/7 for critical chemical and operational issues.
-        </p>
+        <p className="mt-4 text-[16px] leading-6 text-[#afb1b3]">Our emergency response team is available 24/7 for critical chemical and operational issues.</p>
 
-        <button className="mt-8 w-full h-[64px] bg-white text-accent font-bold text-[16px] uppercase tracking-[1px] rounded-[2px] flex items-center justify-center gap-x-3">
+        <a
+          href="tel:+2349087659938"
+          className="mt-8 w-full h-[64px] bg-white text-accent font-bold text-[16px] uppercase tracking-[1px] rounded-[2px] flex items-center justify-center gap-x-3"
+        >
           <PhoneIcon size={18} /> Call Now
-        </button>
+        </a>
       </section>
     </>
   );

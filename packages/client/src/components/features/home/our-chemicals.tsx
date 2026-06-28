@@ -4,13 +4,7 @@ import { ArrowRightIcon, ChevronRightIcon, CircleIcon, DropletIcon } from 'lucid
 import { Link } from 'react-router-dom';
 import { paths } from '../../../lib/data';
 
-const chemicals = [
-  'Production Chemicals',
-  'Drilling Chemicals',
-  'Flow Assurance Chemicals',
-  'Pipeline Integrity Chemicals',
-  'Water Management Chemicals',
-];
+const chemicals = ['Production Chemicals', 'Drilling Chemicals', 'Flow Assurance Chemicals', 'Pipeline Integrity Chemicals', 'Water Management Chemicals'];
 
 const tags = ['Heat Transfer Fluids', 'Metalworking Fluids', 'Process Chemicals', 'Refrigeration & Cooling Fluids', 'Specialty Process Fluids'];
 
@@ -25,13 +19,10 @@ const OurChemicals: React.FC = () => {
           <div className="font-black text-[15px] text-secondary uppercase leading-3 tracking-[3px]">OUR CHEMICALS</div>
         </div>
 
-        <div className="mt-4 md:mt-5 font-extrabold text-[32px] md:text-[56px] leading-10 md:leading-16 text-accent max-w-full md:max-w-[50%]">
-          Specialty Chemical Solutions
-        </div>
+        <div className="mt-4 md:mt-5 font-extrabold text-[32px] md:text-[56px] leading-10 md:leading-16 text-accent max-w-full md:max-w-[50%]">Specialty Chemical Solutions</div>
 
         <p className="text-[16px] md:text-lg leading-6.5 md:leading-8 font-normal text-accent/70 max-w-full md:max-w-[50%] mt-4 md:mt-7">
-          Explore our portfolio of industrial process fluids, cleaning and hygiene chemicals, oilfield chemicals, and fluid monitoring services
-          designed for operational excellence.
+          Explore our portfolio of industrial process fluids, cleaning and hygiene chemicals, oilfield chemicals, and fluid monitoring services designed for operational excellence.
         </p>
       </div>
 
@@ -90,10 +81,7 @@ const OurChemicals: React.FC = () => {
               ))}
             </ul>
 
-            <Link
-              to={paths.aboutUs}
-              className="font-bold text-[12px] md:text-[13px] tracking-[1px] leading-[19.5px] uppercase flex items-center gap-x-1 text-secondary"
-            >
+            <Link to={paths.aboutUs} className="font-bold text-[12px] md:text-[13px] tracking-[1px] leading-[19.5px] uppercase flex items-center gap-x-1 text-secondary">
               Learn More <ArrowRightIcon size={14} />
             </Link>
           </div>
@@ -108,9 +96,7 @@ const OurChemicals: React.FC = () => {
 
           <div className="p-6 md:p-8 text-left flex flex-col flex-1">
             <div className="flex-1">
-              <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left">
-                Cleaning &amp; Hygiene
-              </div>
+              <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left">Cleaning &amp; Hygiene</div>
 
               <div className="flex items-center flex-wrap gap-2 mt-3 md:mt-4">
                 {hygienes.map((hygiene) => (
@@ -129,10 +115,7 @@ const OurChemicals: React.FC = () => {
             </div>
 
             <div className="mt-auto">
-              <Link
-                to={paths.aboutUs}
-                className="text-[12px] md:text-[13px] text-secondary leading-4.75 tracking-[1px] font-bold flex items-center gap-x-1 uppercase"
-              >
+              <Link to={paths.aboutUs} className="text-[12px] md:text-[13px] text-secondary leading-4.75 tracking-[1px] font-bold flex items-center gap-x-1 uppercase">
                 View Range <ArrowRightIcon size={15} />
               </Link>
             </div>
@@ -158,17 +141,14 @@ const OurChemicals: React.FC = () => {
             <div className="font-normal text-[11px] md:text-xs leading-4.5 text-white">Advanced filtration and scaling prevention.</div>
           </div>
 
-          <Link
-            to="/"
-            className="font-bold text-[12px] md:text-[13px] z-50 relative mt-auto text-white leading-[19.5px] tracking-[1px] uppercase flex items-center gap-x-2 pt-6"
-          >
+          <Link to="/" className="font-bold text-[12px] md:text-[13px] z-50 relative mt-auto text-white leading-[19.5px] tracking-[1px] uppercase flex items-center gap-x-2 pt-6">
             Explore Solutions <ArrowRightIcon />
           </Link>
         </div>
 
         <div className="border border-border rounded-sm overflow-hidden">
           <div className="h-50 md:h-60">
-            <img src="/home/monitoring.svg" className="h-full w-full object-cover" />
+            <img src="/home/monitoring.png" className="h-full w-full object-cover" />
           </div>
 
           <div className="p-6 md:p-8 text-left flex flex-col">
@@ -177,9 +157,7 @@ const OurChemicals: React.FC = () => {
               <div className="uppercase font-bold text-[10px] md:text-[11px] tracking-[1px] leading-[16.5px] text-accent/40">Live Diagnostics</div>
             </div>
 
-            <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left mt-3">
-              Fluid Condition Monitoring
-            </div>
+            <div className="text-[22px] md:text-2xl leading-8.25 md:leading-9 font-bold capitalize text-accent text-left mt-3">Fluid Condition Monitoring</div>
 
             <p className="mt-4 md:mt-6 text-accent/60 font-normal text-sm md:text-sm leading-5.5 md:leading-6 mb-4 md:mb-6 pb-4 md:pb-6 border-b border-b-border">
               Real-time analysis and predictive maintenance through advanced laboratory testing.
@@ -198,10 +176,7 @@ const OurChemicals: React.FC = () => {
             </div>
 
             <div className="mt-6 md:mt-9">
-              <Link
-                to={paths.aboutUs}
-                className="text-[12px] md:text-[13px] text-secondary leading-4.75 tracking-[1px] font-bold flex items-center gap-x-1 uppercase"
-              >
+              <Link to={paths.aboutUs} className="text-[12px] md:text-[13px] text-secondary leading-4.75 tracking-[1px] font-bold flex items-center gap-x-1 uppercase">
                 Service Details <ArrowRightIcon size={15} />
               </Link>
             </div>

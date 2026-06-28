@@ -7,6 +7,8 @@ import { router } from './lib/router.tsx';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './lib/client.ts';
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(

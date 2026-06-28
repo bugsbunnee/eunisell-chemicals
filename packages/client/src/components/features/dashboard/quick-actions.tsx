@@ -1,24 +1,16 @@
-import React from 'react';
-import { SquarePenIcon, FileUpIcon, UserRoundPlusIcon, MegaphoneIcon, type LucideIcon } from 'lucide-react';
+import type React from 'react';
+import type { Action } from '../../../lib/entities';
 
-interface Action {
-  label: string;
-  icon: LucideIcon;
-  iconColor: string;
+interface Props {
+  actions: Action[];
 }
 
-const actions: Action[] = [
-  { label: 'CREATE BLOG', icon: SquarePenIcon, iconColor: 'text-secondary' },
-  { label: 'UPLOAD BROCHURE', icon: FileUpIcon, iconColor: 'text-secondary' },
-  { label: 'ADD USER', icon: UserRoundPlusIcon, iconColor: 'text-accent' },
-  { label: 'POST ALERT', icon: MegaphoneIcon, iconColor: 'text-red-500' },
-];
-
-const QuickActions: React.FC = () => (
+const QuickActions: React.FC<Props> = ({ actions }) => (
   <div className="bg-white border border-border rounded-[4px]">
     <div className="px-5 py-4 border-b border-border">
       <h2 className="text-[15px] font-semibold text-accent">Quick Actions</h2>
     </div>
+
     <div className="grid grid-cols-2 gap-3 p-4">
       {actions.map(({ label, icon: Icon, iconColor }) => (
         <button

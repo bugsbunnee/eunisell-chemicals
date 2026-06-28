@@ -1,16 +1,13 @@
 import React from 'react';
 
 import { ArrowRightIcon, BuildingIcon, HandshakeIcon, SettingsIcon, TestTubeDiagonalIcon, TestTubeIcon, TruckElectricIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { paths } from '../../../lib/data';
-import { cn } from '../../../lib/utils';
+import { cn, scrollToView } from '../../../lib/utils';
 
 const departments = [
   {
     Icon: HandshakeIcon,
     title: 'Consultation',
     description: 'Book a session with our industry-leading technical advisors.',
-    path: paths.contact,
     label: 'Schedule Now',
     borderColor: 'border-secondary',
     iconBg: 'bg-secondary/5',
@@ -21,7 +18,6 @@ const departments = [
     Icon: TestTubeDiagonalIcon,
     title: 'Product Enquiries',
     description: 'Enquire about our state-of-the-art analytical testing capabilities.',
-    path: paths.contact,
     label: 'Enquire',
     borderColor: 'border-sidebar-primary',
     iconBg: 'bg-sidebar-primary/5',
@@ -32,7 +28,6 @@ const departments = [
     Icon: SettingsIcon,
     title: 'Technical Support',
     description: 'Assistance with chemical applications, mixing ratios, and on-site implementation.',
-    path: paths.contact,
     label: 'Get Support',
     borderColor: 'border-secondary',
     iconBg: 'bg-secondary/5',
@@ -43,7 +38,6 @@ const departments = [
     Icon: TestTubeIcon,
     title: 'Lab Services',
     description: 'Chemical analysis, quality testing, and R&D partnership requests.',
-    path: paths.contact,
     label: 'Lab Portal',
     borderColor: 'border-secondary',
     iconBg: 'bg-secondary/5',
@@ -54,7 +48,6 @@ const departments = [
     Icon: BuildingIcon,
     title: 'Partnership',
     description: 'Join our global supply chain or explore distributor opportunities across Africa.',
-    path: paths.contact,
     label: 'Inquire',
     borderColor: 'border-secondary',
     iconBg: 'bg-secondary/5',
@@ -65,7 +58,6 @@ const departments = [
     Icon: TruckElectricIcon,
     title: 'Emergency Support',
     description: '24/7 critical assistance for urgent chemical or operational issues.',
-    path: paths.contact,
     label: 'Priority Access',
     borderColor: 'border-destructive',
     iconBg: 'bg-white/10',
@@ -76,6 +68,10 @@ const departments = [
 ];
 
 const SpecializedDepartments: React.FC = () => {
+  const handleAction = () => {
+    scrollToView('contact-form');
+  };
+
   return (
     <section className="relative bg-card text-left py-20 px-6 md:py-17.5 md:px-30">
       <div className="flex flex-col gap-2 mb-8 md:mb-0">
@@ -103,17 +99,12 @@ const SpecializedDepartments: React.FC = () => {
 
             <div className="flex flex-col gap-1.5 flex-1">
               <div className={cn('text-[18px] font-bold leading-7', department.alternate ? 'text-white' : 'text-accent')}>{department.title}</div>
-              <p className={cn('text-sm leading-[22px] font-normal', department.alternate ? 'text-[#afb1b3]' : 'text-card-foreground')}>
-                {department.description}
-              </p>
+              <p className={cn('text-sm leading-5.5 font-normal', department.alternate ? 'text-[#afb1b3]' : 'text-card-foreground')}>{department.description}</p>
             </div>
 
-            <Link
-              to={department.path}
-              className={cn('uppercase text-[12px] gap-x-2 leading-4 tracking-[0.6px] font-bold flex items-center', department.labelColor)}
-            >
+            <button onClick={handleAction} className={cn('uppercase text-[12px] gap-x-2 leading-4 tracking-[0.6px] font-bold flex items-center', department.labelColor)}>
               {department.label} <ArrowRightIcon size={12} />
-            </Link>
+            </button>
           </div>
         ))}
       </div>

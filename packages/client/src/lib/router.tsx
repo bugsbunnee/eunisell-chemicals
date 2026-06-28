@@ -27,7 +27,14 @@ import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
 import LoginPage from '../pages/LoginPage';
 import ProtectedRoute from '../pages/ProtectedRoute';
+import DashboardLayout from '../components/features/dashboard/layout';
 import DashboardPage from '../pages/DashboardPage';
+import EnquiriesPage from '../pages/EnquiriesPage';
+import BlogAdminPage from '../pages/BlogAdminPage';
+import ChemicalsAdminPage from '../pages/ChemicalsAdminPage';
+import SolutionsAdminPage from '../pages/SolutionsAdminPage';
+import BrochuresAdminPage from '../pages/BrochuresAdminPage';
+import CareersAdminPage from '../pages/CareersAdminPage';
 
 export const navigation: Option[] = [
   {
@@ -156,8 +163,16 @@ export const routes: RouteObject[] = [
     element: <ProtectedRoute />,
     children: [
       {
-        index: true,
-        element: <DashboardPage />,
+        element: <DashboardLayout />,
+        children: [
+          { index: true, element: <DashboardPage /> },
+          { path: 'enquiries', element: <EnquiriesPage /> },
+          { path: 'blog', element: <BlogAdminPage /> },
+          { path: 'chemicals', element: <ChemicalsAdminPage /> },
+          { path: 'solutions', element: <SolutionsAdminPage /> },
+          { path: 'brochures', element: <BrochuresAdminPage /> },
+          { path: 'careers', element: <CareersAdminPage /> },
+        ],
       },
     ],
   },

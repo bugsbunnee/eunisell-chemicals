@@ -1,12 +1,6 @@
 import React, { useMemo } from 'react';
-import SliderLib, { type Settings } from 'react-slick';
-
-// react-slick is CJS — Vite wraps it as { default: Slider }, so unwrap at runtime
-const Slider = ((SliderLib as unknown as { default: React.ComponentType<Settings & { ref?: React.Ref<unknown> }> }).default ??
-  SliderLib) as React.ComponentType<Settings & { ref?: React.Ref<unknown> }>;
-
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import type { Settings } from 'react-slick';
+import { Slider } from './slide';
 
 export interface SliderHandle {
   slickPrev: () => void;
@@ -24,11 +18,13 @@ interface LogoCarouselProps {
   sliderRef?: React.RefObject<SliderHandle | null>;
   onSlideChange?: (index: number) => void;
   speed?: number;
+  rtl?: boolean;
   slidesToShow?: number;
+  slidesToScroll?: number;
   className?: string;
 }
 
-const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideChange, speed = 3000, slidesToShow = 5, className = '' }) => {
+const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideChange, rtl = false, speed = 3000, slidesToScroll = 1, slidesToShow = 5, className = '' }) => {
   const settings = useMemo<Settings>(
     () => ({
       infinite: true,
@@ -36,7 +32,8 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideCh
       autoplaySpeed: speed,
       speed: 600,
       slidesToShow,
-      slidesToScroll: slidesToShow,
+      rtl,
+      slidesToScroll,
       arrows: false,
       dots: false,
       pauseOnHover: true,
@@ -47,7 +44,7 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideCh
         { breakpoint: 640, settings: { slidesToShow: 2, slidesToScroll: 2 } },
       ],
     }),
-    [speed, slidesToShow, onSlideChange]
+    [speed, slidesToShow, rtl, slidesToScroll, onSlideChange]
   );
 
   return (
@@ -55,12 +52,8 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideCh
       <Slider ref={sliderRef as React.Ref<unknown>} {...settings}>
         {logos.map((logo) => (
           <div key={logo.alt} className="px-8 outline-none">
-            <div className="flex items-center justify-center h-16">
-              <img
-                src={logo.src}
-                alt={logo.alt}
-                className="max-h-full max-w-full object-contain opacity-50 transition-all duration-300 hover:opacity-100"
-              />
+            <div className="flex items-center justify-center h-22 rounded-full">
+              <img src={logo.src} alt={logo.alt} className="max-h-full max-w-full object-cover opacity-50 rounded-full transition-all duration-300 hover:opacity-100" />
             </div>
           </div>
         ))}

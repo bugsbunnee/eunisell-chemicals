@@ -5,7 +5,7 @@ import { team } from '../../../lib/data';
 
 const Team: React.FC = () => {
   return (
-    <section className="py-16 px-6 md:py-24 md:px-30 bg-card">
+    <section id="team" className="py-16 px-6 md:py-24 md:px-30 bg-card">
       <div className="text-left md:text-center">
         <div className="text-[32px] md:text-5xl font-bold leading-12 md:leading-18 text-accent">The Management Team</div>
         <div className="w-16 h-1 bg-secondary mt-3 md:mt-4 md:mx-auto"></div>
@@ -27,9 +27,7 @@ const Team: React.FC = () => {
                 <FaLinkedin className="text-[#0076B2] shrink-0" size={20} />
               </div>
 
-              <div className="text-sm md:text-sm font-normal leading-5.5 md:leading-5.5 mt-3.5 md:mt-[14.75px] text-card-foreground">
-                {member.description}
-              </div>
+              <div className="text-sm md:text-sm font-normal leading-5.5 md:leading-5.5 mt-3.5 md:mt-[14.75px] text-card-foreground">{member.description}</div>
             </div>
           </div>
         ))}

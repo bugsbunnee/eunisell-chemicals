@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ArrowRightIcon } from 'lucide-react';
 import { cn } from '../../../lib/utils';
+import { EnquiryPriority } from '../../../hooks/use-enquiries';
 
 const tabs = [
   { label: 'CONSULTATION', count: '08' },
@@ -54,6 +55,7 @@ const LatestEnquiries: React.FC = () => {
               <th className="text-[11px] font-semibold text-card-foreground uppercase tracking-[0.5px] text-left pb-2">Status</th>
             </tr>
           </thead>
+
           <tbody className="divide-y divide-border">
             {rows.map(({ name, company, type, priority, status }) => (
               <tr key={name}>
@@ -61,7 +63,15 @@ const LatestEnquiries: React.FC = () => {
                 <td className="text-[13px] text-card-foreground py-3 pr-4">{company}</td>
                 <td className="text-[13px] text-card-foreground py-3 pr-4">{type}</td>
                 <td className="py-3 pr-4">
-                  <span className={cn('text-[11px] font-semibold px-2 py-0.5 rounded-[3px] text-white', priority === 'URGENT' ? 'bg-red-500' : 'bg-secondary')}>{priority}</span>
+                  <span
+                    className={cn({
+                      'text-[11px] font-semibold px-2 py-0.5 rounded-[3px] text-white': true,
+                      'bg-red-500': priority === EnquiryPriority.Urgent,
+                      'bg-secondary': priority !== EnquiryPriority.Urgent,
+                    })}
+                  >
+                    {priority}
+                  </span>
                 </td>
                 <td className={cn('text-[13px] py-3', status === 'In Progress' ? 'text-secondary' : 'text-green-600')}>{status}</td>
               </tr>

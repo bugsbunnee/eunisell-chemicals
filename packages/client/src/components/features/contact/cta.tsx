@@ -1,10 +1,13 @@
-import { ArrowRightIcon, SendIcon } from 'lucide-react';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { paths } from '../../../lib/data';
+
+import { ArrowRightIcon, SendIcon } from 'lucide-react';
+import { scrollToView } from '../../../lib/utils';
 
 const CTA: React.FC = () => {
-  const navigate = useNavigate();
+  const scrollToForm = () => {
+    scrollToView('contact-form');
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* Mobile layout */}
@@ -12,8 +15,8 @@ const CTA: React.FC = () => {
         <h2 className="text-[30px] font-bold text-white leading-9">Ready to optimize your industrial chemical operations?</h2>
         <p className="mt-4 text-[16px] leading-6 text-[#CBD5E1]">Partner with West Africa's leading chemical solutions provider.</p>
         <button
-          onClick={() => navigate(paths.contact)}
-          className="mt-8 w-full h-[60px] bg-secondary text-white font-bold text-sm uppercase tracking-[0.7px] rounded-[2px] flex items-center justify-center gap-x-3"
+          onClick={scrollToForm}
+          className="mt-8 w-full h-15 bg-secondary text-white font-bold text-sm uppercase tracking-[0.7px] rounded-[2px] flex items-center justify-center gap-x-3"
         >
           Work With Us <ArrowRightIcon size={16} />
         </button>
@@ -26,10 +29,7 @@ const CTA: React.FC = () => {
           <p className="text-lg leading-7 text-[#CBD5E1] font-regular">Partner with West Africa's leading chemical solutions provider.</p>
         </div>
         <div>
-          <button
-            onClick={() => navigate(paths.contact)}
-            className="h-17 bg-secondary text-white font-bold leading-7 flex items-center gap-x-4 px-12 rounded-[2px]"
-          >
+          <button onClick={scrollToForm} className="h-17 bg-secondary text-white font-bold leading-7 flex items-center gap-x-4 px-12 rounded-[2px]">
             Start Consultation <SendIcon />
           </button>
         </div>

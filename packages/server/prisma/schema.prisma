@@ -31,10 +31,12 @@ model Admin {
 model ActivityLog {
   id String @id @default(cuid())
 
-  admin   Admin  @relation(fields: [adminId], references: [id])
-  adminId String
+  admin   Admin?  @relation(fields: [adminId], references: [id])
+  adminId String?
 
-  action String
+  action      String
+  category    String
+  description String @db.Text
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

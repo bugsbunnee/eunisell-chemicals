@@ -41,13 +41,10 @@ const Specialty: React.FC = () => {
       <div className="font-black text-[10px] md:text-[15px] leading-[15px] md:leading-4 text-secondary uppercase mb-3 md:mb-4 text-center md:text-left tracking-[3px]">
         Specialized Knowledge
       </div>
-      <div className="font-bold text-[30px] md:text-5xl text-accent leading-[36px] md:leading-18 text-center md:text-left">
-        Deep Industry Knowledge
-      </div>
+      <div className="font-bold text-[30px] md:text-5xl text-accent leading-[36px] md:leading-18 text-center md:text-left">Deep Industry Knowledge</div>
 
-      {/* Mobile-only lab image */}
-      <div className="md:hidden h-[200px] rounded-[8px] overflow-hidden mt-8">
-        <img src="/about/biography-1.svg" alt="Laboratory" className="w-full h-[163.5%] object-cover mt-[-31.75%]" />
+      <div className="md:hidden min-h-50 h-full rounded-[8px] overflow-hidden mt-8">
+        <img src="/about/deep-industry-knowledge.svg" alt="Laboratory" className="w-full h-full object-cover" />
       </div>
 
       <div className="mt-8 md:mt-16 flex flex-col md:grid md:grid-cols-3 gap-4 md:gap-8">

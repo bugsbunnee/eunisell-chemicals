@@ -1,9 +1,12 @@
 import React from 'react';
+
 import { Link, useLocation } from 'react-router-dom';
 import { ChevronRightIcon } from 'lucide-react';
-import { cn } from '../../../lib/utils';
+import { cn, downloadFile } from '../../../lib/utils';
 import { Button } from '../../ui/button';
 import { paths } from '../../../lib/data';
+
+import healthPolicyPdf from '../../../assets/documents/health-policy.pdf';
 
 const crumbs = [
   { path: paths.home, label: 'Home' },
@@ -42,13 +45,15 @@ const Hero: React.FC = () => {
           At Eunisell Chemicals, safety is not a protocol—it is our core operational philosophy. Protecting people, environment, and assets.
         </p>
 
-        <Button className="w-full h-[48px] bg-accent text-white text-[14px] font-semibold rounded-[2px]">Download QHSE Policy</Button>
+        <Button onClick={() => downloadFile(healthPolicyPdf, 'QHSE-Policy.pdf')} className="w-full h-12 bg-accent text-white text-[14px] font-semibold rounded-[2px]">
+          Download QHSE Policy
+        </Button>
 
-        <div className="relative rounded-tr-[60px] overflow-hidden h-[300px]">
-          <img src="/qhse/compliance.svg" alt="QHSE Compliance" className="w-full h-full object-cover" />
+        <div className="relative rounded-tr-[60px] overflow-hidden h-75">
+          <img src="/qhse/hero.svg" alt="QHSE Compliance" className="w-full h-full object-cover" />
           <div className="absolute bottom-4 right-4 bg-secondary p-4 rounded-[1px]">
-            <div className="font-bold text-[28px] leading-[32px] text-white">100%</div>
-            <div className="font-medium text-[12px] leading-[15px] text-white">Compliance</div>
+            <div className="font-bold text-[28px] leading-8 text-white">100%</div>
+            <div className="font-medium text-[12px] leading-3.75 text-white">Compliance</div>
           </div>
         </div>
       </div>
@@ -80,16 +85,21 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-card-foreground text-xl leading-[32.5px] max-w-148">
-              At Eunisell Chemicals, safety is not a protocol—it is our core operational philosophy. We are committed to protecting our people, the
-              environment, and our partners' assets through rigorous QHSE management.
+              At Eunisell Chemicals, safety is not a protocol—it is our core operational philosophy. We are committed to protecting our people, the environment, and our partners'
+              assets through rigorous QHSE management.
             </p>
           </div>
 
-          <Button className="py-4 px-8 bg-accent text-primary-foreground h-15 text-base font-semibold rounded-[2px]">Download QHSE Policy</Button>
+          <Button
+            onClick={() => downloadFile(healthPolicyPdf, 'QHSE-Policy.pdf')}
+            className="py-4 px-8 bg-accent text-primary-foreground h-15 text-base font-semibold rounded-[2px]"
+          >
+            Download QHSE Policy
+          </Button>
         </div>
 
         <div className="relative min-h-150 h-full w-full">
-          <img src="/qhse/compliance.svg" alt="Eunisell & Abia Warriors FC" className="w-full h-full object-cover rounded-tr-[100px]" />
+          <img src="/qhse/hero.svg" alt="Eunisell & Abia Warriors FC" className="w-full h-full object-cover rounded-tr-[100px]" />
           <div className="absolute bg-secondary p-8 rounded-[1px] -bottom-10 -right-10">
             <div className="font-bold text-4xl text-white">100%</div>
             <div className="font-medium text-sm leading-6 text-white max-w-55">Compliance Standards</div>

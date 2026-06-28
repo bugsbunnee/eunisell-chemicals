@@ -5,7 +5,7 @@ const portfolios = ['Production Chemicals', 'Flow Assurance', 'Well Intervention
 
 const Portfolio: React.FC = () => {
   return (
-    <section className="bg-background text-left">
+    <section id="portfolio" className="bg-background text-left">
       {/* Mobile */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
         <div className="flex flex-col gap-1.5">

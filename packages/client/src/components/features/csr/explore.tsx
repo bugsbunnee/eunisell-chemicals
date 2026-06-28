@@ -5,9 +5,9 @@ import { ArrowRightIcon } from 'lucide-react';
 
 const explorationPaths = [
   { title: 'About us', label: 'Learn More', path: paths.aboutUs },
-  { title: 'QHSE', label: 'View Standards', path: paths.aboutUs },
-  { title: 'Executive Management', label: 'Meet the Team', path: paths.aboutUs },
-  { title: 'Careers', label: 'Join Eunisell', path: paths.aboutUs },
+  { title: 'QHSE', label: 'View Standards', path: paths.qhse },
+  { title: 'Executive Management', label: 'Meet the Team', path: paths.management },
+  { title: 'Careers', label: 'Join Eunisell', path: paths.careers },
 ];
 
 const Explore: React.FC = () => {
@@ -19,11 +19,7 @@ const Explore: React.FC = () => {
 
         <div className="flex flex-col gap-3">
           {explorationPaths.map((path) => (
-            <Link
-              key={path.title}
-              to={path.path}
-              className="bg-white border border-border shadow-sm p-5 rounded-[6px] flex items-center justify-between"
-            >
+            <Link key={path.title} to={path.path} className="bg-white border border-border shadow-sm p-5 rounded-[6px] flex items-center justify-between">
               <span className="font-bold text-[18px] leading-6 text-accent">{path.title}</span>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-[14px] text-secondary leading-5">{path.label}</span>

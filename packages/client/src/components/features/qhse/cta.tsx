@@ -1,7 +1,13 @@
 import type React from 'react';
+
+import { useNavigate } from 'react-router-dom';
 import { Button } from '../../ui/button';
+import { paths } from '../../../lib/data';
+import { scrollToView } from '../../../lib/utils';
 
 const CTA: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="bg-accent">
       <div className="md:hidden px-6 py-16 flex flex-col gap-6 text-center">
@@ -13,8 +19,10 @@ const CTA: React.FC = () => {
         <p className="text-[16px] leading-6.5 text-muted">Ready to elevate your operational standards? Contact our technical safety experts today.</p>
 
         <div className="flex flex-col gap-3 pt-2">
-          <Button className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[2px]">Request Consultation</Button>
-          <Button className="w-full h-13.5 bg-transparent text-white border-2 border-white/20 text-[14px] font-bold rounded-[2px]">
+          <Button onClick={() => navigate(paths.contact)} className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[2px]">
+            Request Consultation
+          </Button>
+          <Button onClick={() => scrollToView('safety-record')} className="w-full h-13.5 bg-transparent text-white border-2 border-white/20 text-[14px] font-bold rounded-[2px]">
             View Safety Record
           </Button>
         </div>
@@ -31,8 +39,13 @@ const CTA: React.FC = () => {
         </p>
 
         <div className="flex items-center justify-center gap-x-6 mt-12">
-          <Button className="px-10 flex items-center h-15 bg-secondary text-base text-white font-bold rounded-[2px]">Request Consultation</Button>
-          <Button className="px-10 flex items-center h-15 bg-transparent text-white border-2 border-white/20 text-base font-bold rounded-[2px]">
+          <Button onClick={() => navigate(paths.contact)} className="px-10 flex items-center h-15 bg-secondary text-base text-white font-bold rounded-[2px]">
+            Request Consultation
+          </Button>
+          <Button
+            onClick={() => scrollToView('safety-record')}
+            className="px-10 flex items-center h-15 bg-transparent text-white border-2 border-white/20 text-base font-bold rounded-[2px]"
+          >
             View Safety Record
           </Button>
         </div>

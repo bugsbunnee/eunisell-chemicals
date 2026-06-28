@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { authSchema, registerSchema } from '../infrastructure/utils/schema.ts';
+import { authSchema, registerSchema } from '../infrastructure/schemas';
 
 import auth from '../controllers/auth.controller.ts';
 import validate from '../middleware/validate.ts';

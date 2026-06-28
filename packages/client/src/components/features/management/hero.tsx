@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { paths } from '../../../lib/data';
-import { Link, useLocation } from 'react-router-dom';
-import { cn } from '../../../lib/utils';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { cn, scrollToView } from '../../../lib/utils';
 import { ChevronRightIcon } from 'lucide-react';
 import { Button } from '../../ui/button';
 
@@ -14,6 +14,7 @@ const crumbs = [
 
 const Hero: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <section className="relative bg-background flex flex-col md:grid md:grid-cols-2 md:gap-x-14 text-left px-6 py-12 md:py-17.5 md:px-30 md:items-center gap-6">
@@ -38,20 +39,24 @@ const Hero: React.FC = () => {
           ))}
         </div>
 
-        <div className="text-accent font-bold leading-11 md:leading-16.5 text-[40px] md:text-[64px] md:mt-8">
-          Experienced Leadership. Strategic Vision.
-        </div>
+        <div className="text-accent font-bold leading-11 md:leading-16.5 text-[40px] md:text-[64px] md:mt-8">Experienced Leadership. Strategic Vision.</div>
 
         <p className="mt-4 md:mt-8 text-card-foreground text-[16px] md:text-lg leading-6.5 md:leading-8 max-w-full md:max-w-126.5">
-          Eunisell is led by a seasoned management team with deep industry expertise, committed to driving innovation and technical excellence across
-          the African chemical landscape.
+          Eunisell is led by a seasoned management team with deep industry expertise, committed to driving innovation and technical excellence across the African chemical
+          landscape.
         </p>
 
         <div className="mt-6 md:mt-[39.75px] flex flex-col md:flex-row gap-3 md:gap-x-4">
-          <Button className="h-13 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary rounded-[2px] text-sm leading-5 tracking-[0.7px] font-bold uppercase flex items-center justify-center">
+          <Button
+            onClick={() => scrollToView('team')}
+            className="h-13 md:h-15 w-full md:w-auto md:py-4 md:px-8 bg-secondary rounded-[2px] text-sm leading-5 tracking-[0.7px] font-bold uppercase flex items-center justify-center"
+          >
             Meet Our Leadership
           </Button>
-          <Button className="h-13 md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-accent rounded-[2px] bg-transparent text-accent text-sm font-bold uppercase leading-5 tracking-[0.7px]">
+          <Button
+            onClick={() => navigate(paths.aboutUs)}
+            className="h-13 md:h-15 w-full md:w-auto md:py-4 md:px-8 border-2 border-accent rounded-[2px] bg-transparent text-accent text-sm font-bold uppercase leading-5 tracking-[0.7px]"
+          >
             Learn About Eunisell
           </Button>
         </div>

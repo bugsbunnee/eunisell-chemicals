@@ -11,3 +11,20 @@ export function getErrorMessage(error: unknown) {
 
   return (error as Error).message;
 }
+
+export function scrollToView(viewId: string) {
+  const view = document.getElementById(viewId);
+  if (view) view.scrollIntoView({ behavior: 'smooth' });
+}
+
+export function downloadFile(file: string, fileName: string) {
+  const a = document.createElement('a');
+
+  a.href = file;
+  a.download = fileName;
+
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+}

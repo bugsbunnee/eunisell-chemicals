@@ -87,6 +87,8 @@ export const ActivityLogScalarFieldEnum = {
   id: 'id',
   adminId: 'adminId',
   action: 'action',
+  category: 'category',
+  description: 'description',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
 } as const;

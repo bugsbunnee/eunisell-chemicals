@@ -47,8 +47,8 @@ const TechnicalSupport: React.FC = () => {
           ))}
         </div>
         <div className="relative h-56 rounded-[8px] overflow-hidden mt-2">
-          <img src="/oilfield-chemicals/technical-support.svg" alt="Laboratory" className="w-full h-full object-cover" />
-          <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-accent/80 to-transparent p-4">
+          <img src="/oilfield-chemicals/water-treatment.svg" alt="Laboratory" className="w-full h-full object-cover" />
+          <div className="absolute top-0 left-0 right-0 bg-linear-to-b from-accent/80 to-transparent p-4">
             <p className="text-[11px] text-white uppercase tracking-[1.2px]">Global Standards / Local Knowledge</p>
           </div>
         </div>
@@ -82,7 +82,7 @@ const TechnicalSupport: React.FC = () => {
           </div>
 
           <div className="h-full relative overflow-hidden">
-            <img src="/oilfield-chemicals/technical-support.svg" alt="Laboratory" className="w-full h-full object-cover" />
+            <img src="/oilfield-chemicals/water-treatment.svg" alt="Laboratory" className="w-full h-full object-cover" />
             <div className="absolute top-0 left-0 right-0 bg-gradient-to-b from-accent/80 to-transparent p-12">
               <p className="text-xs text-white uppercase tracking-[1.2px]">Global Standards / Local Knowledge</p>
             </div>

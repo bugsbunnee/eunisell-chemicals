@@ -1,5 +1,7 @@
 import type React from 'react';
 import { FaFilePdf } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../ui/accordion';
 
 const faqs = [
@@ -37,12 +39,10 @@ const FAQ: React.FC = () => {
       {/* Desktop left column */}
       <div className="hidden md:block space-y-6 text-left">
         <div className="text-[36px] leading-10 text-accent font-bold">Common Enquiries</div>
-        <p className="text-primary text-base leading-6 font-normal">
-          Quick answers to procedural questions regarding our chemical supply and technical services.
-        </p>
-        <button className="text-base leading-6 font-bold text-primary flex items-center gap-x-3">
+        <p className="text-primary text-base leading-6 font-normal">Quick answers to procedural questions regarding our chemical supply and technical services.</p>
+        <Link to={paths.brochures} className="text-base leading-6 font-bold text-primary flex items-center gap-x-3">
           View Technical Docs <FaFilePdf size={16} />
-        </button>
+        </Link>
       </div>
 
       {/* Mobile: simple stacked cards */}
