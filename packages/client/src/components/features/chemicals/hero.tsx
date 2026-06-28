@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '../../../lib/data';
+import { scrollToView } from '../../../lib/utils';
 
 const ChemicalsHero: React.FC = () => {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ const ChemicalsHero: React.FC = () => {
             </button>
 
             <button
-              onClick={() => navigate(paths.chemicals)}
+              onClick={() => scrollToView('categories')}
               className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-white/10 transition-colors"
             >
               Explore Chemical Categories

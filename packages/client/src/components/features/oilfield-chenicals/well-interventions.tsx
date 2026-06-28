@@ -40,7 +40,7 @@ const WellInterventionChemicals: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <h3 className="text-3xl font-bold text-accent">Well Intervention Chemicals</h3>
         <p className="mt-2 text-base text-muted-foreground">End-to-end chemical management for the complete field lifecycle</p>
 

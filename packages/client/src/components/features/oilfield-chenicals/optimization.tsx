@@ -43,7 +43,7 @@ const Optimization: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="text-4xl text-accent">Optimizing Production. Protecting Assets. Improving Reliability.</h2>
           <div className="w-24 h-1 bg-secondary" />

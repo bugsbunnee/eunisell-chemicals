@@ -30,7 +30,7 @@ const CTA: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block relative py-16 px-45 overflow-hidden">
+      <div className="hidden md:block relative py-16 px-30 overflow-hidden">
         <div className="absolute -rotate-12 -top-10 right-5 opacity-20 z-20">
           <img src="/oilfield-chemicals/cta.svg" alt="Test Tube" className="w-100 h-100 object-contain" />
         </div>

@@ -1,19 +1,21 @@
-import type React from 'react';
+import React from 'react';
 
 import { Button } from '../../ui/button';
 import { Separator } from '../../ui/separator';
-import { specialties } from '../../../lib/data';
+import { specialties, paths } from '../../../lib/data';
+import { useNavigate } from 'react-router-dom';
 
 const Specialty: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="px-45 py-35 gap-x-20 bg-accent grid grid-cols-2">
       <div className="text-left">
         <div className="text-[10px] uppercase text-secondary font-semibold">Oilfield Chemicals</div>
         <div className="text-4xl font-bold text-primary-foreground">Specialty Chemical Solutions for Production Optimization and Asset Integrity</div>
         <p className="mt-6.75 text-base text-primary-foreground/65">
-          We provide specialty chemical solutions that support production optimization, asset integrity, flow assurance, well intervention, and water
-          treatment across upstream oil and gas operations. Our offerings include corrosion inhibitors, scale inhibitors, demulsifiers, paraffin and
-          asphaltene treatments, H₂S scavengers, and produced water treatment programmes.
+          We provide specialty chemical solutions that support production optimization, asset integrity, flow assurance, well intervention, and water treatment across upstream oil
+          and gas operations. Our offerings include corrosion inhibitors, scale inhibitors, demulsifiers, paraffin and asphaltene treatments, H₂S scavengers, and produced water
+          treatment programmes.
         </p>
 
         <div className="grid grid-cols-2 gap-4 mt-12">
@@ -26,7 +28,9 @@ const Specialty: React.FC = () => {
           ))}
         </div>
 
-        <Button className="rounded-xs bg-secondary font-semibold text-[15px] py-3.5 px-6 mt-12.5">Explore Oilfield Chemicals</Button>
+        <Button onClick={() => navigate(paths.oilfield)} className="rounded-xs bg-secondary font-semibold text-[15px] py-3.5 px-6 mt-12.5">
+          Explore Oilfield Chemicals
+        </Button>
       </div>
       <div className="relative">
         <img src="/solution.png" alt="Specialty" className="w-full h-full object-cover" />

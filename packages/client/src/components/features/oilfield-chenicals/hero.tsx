@@ -53,9 +53,9 @@ const Hero: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block px-45 py-37.75 bg-[url(/oilfield-chemicals/hero.svg)] w-screen bg-cover bg-no-repeat relative">
+      <div className="hidden md:block px-30 py-37.75 bg-[url(/oilfield-chemicals/hero.svg)] w-screen bg-cover bg-no-repeat relative">
         <div className="absolute z-10 bg-linear-to-r from-accent via-accent/80 to-accent/50 w-screen h-full top-0 left-0 right-0 bottom-0" />
-        <div className="relative w-full text-left z-50">
+        <div className="relative w-full text-left z-40">
           <div className="mb-2">
             <div className="uppercase font-bold text-secondary tracking-[1.4px] text-sm">Oilfield Solutions</div>
           </div>

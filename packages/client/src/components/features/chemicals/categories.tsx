@@ -7,7 +7,7 @@ const waterFeatures = ['Cooling Tower Treatment', 'Boiler Water Chemicals', 'Eff
 
 const ChemicalsCategories: React.FC = () => {
   return (
-    <section className="bg-card py-20 px-30 text-left">
+    <section id="categories" className="bg-card py-20 px-30 text-left">
       <div className="max-w-360 mx-auto flex flex-col gap-6">
         <div className="grid grid-cols-[2fr_1fr] gap-6 h-150">
           <div className="relative rounded-[6px] overflow-hidden">
@@ -32,10 +32,7 @@ const ChemicalsCategories: React.FC = () => {
                 ))}
               </div>
 
-              <Link
-                to={paths.chemicals}
-                className="inline-flex items-center gap-2 text-secondary font-bold text-base uppercase pt-6 hover:gap-3 transition-all"
-              >
+              <Link to={paths.oilfield} className="inline-flex items-center gap-2 text-secondary font-bold text-base uppercase pt-6 hover:gap-3 transition-all">
                 Explore Category <ArrowRightIcon size={14} />
               </Link>
             </div>
@@ -47,9 +44,7 @@ const ChemicalsCategories: React.FC = () => {
 
               <h3 className="font-bold text-white text-[32px] leading-normal">Water Solutions</h3>
 
-              <p className="text-white/80 text-[16px] leading-normal">
-                Comprehensive treatment for boiler, cooling, and reverse osmosis systems to ensure water quality.
-              </p>
+              <p className="text-white/80 text-[16px] leading-normal">Comprehensive treatment for boiler, cooling, and reverse osmosis systems to ensure water quality.</p>
 
               <ul className="flex flex-col gap-3 mt-5">
                 {waterFeatures.map((item) => (
@@ -68,7 +63,7 @@ const ChemicalsCategories: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-3 gap-6">
-          <div className="bg-background border border-input rounded-[6px] p-10 flex flex-col h-112.5">
+          <Link to={paths.industrial} className="bg-background border border-input rounded-[6px] p-10 flex flex-col h-112.5 group hover:border-secondary/30 transition-colors">
             <div className="mb-6">
               <div className="bg-card w-12 h-12 flex items-center justify-center">
                 <WrenchIcon size={20} className="text-secondary" />
@@ -77,17 +72,15 @@ const ChemicalsCategories: React.FC = () => {
 
             <h3 className="font-bold text-accent text-[24px] leading-normal mb-3">Industrial Process Fluids</h3>
 
-            <p className="text-[#777] text-[16px] leading-normal flex-1">
-              Specialized lubricants, heat transfer fluids, and metalworking additives for manufacturing efficiency.
-            </p>
+            <p className="text-[#777] text-[16px] leading-normal flex-1">Specialized lubricants, heat transfer fluids, and metalworking additives for manufacturing efficiency.</p>
 
             <div className="flex items-center justify-between pt-6 border-t border-input">
-              <span className="font-semibold text-accent text-sm">Learn More</span>
-              <ArrowRightIcon size={12} className="text-accent" />
+              <span className="font-semibold text-accent text-sm group-hover:text-secondary transition-colors">Learn More</span>
+              <ArrowRightIcon size={12} className="text-accent group-hover:text-secondary transition-colors" />
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-background border border-input rounded-[6px] p-10 flex flex-col h-112.5">
+          <Link to={paths.industrial} className="bg-background border border-input rounded-[6px] p-10 flex flex-col h-112.5 group hover:border-secondary/30 transition-colors">
             <div className="mb-6">
               <div className="bg-card w-12 h-12 flex items-center justify-center">
                 <SprayCanIcon size={20} className="text-secondary" />
@@ -96,17 +89,15 @@ const ChemicalsCategories: React.FC = () => {
 
             <h3 className="font-bold text-accent text-[24px] leading-normal mb-3">Cleaning & Hygiene</h3>
 
-            <p className="text-[#777] text-[16px] leading-normal flex-1">
-              Food-grade sanitizers, heavy-duty industrial cleaners, and surface disinfection protocols.
-            </p>
+            <p className="text-[#777] text-[16px] leading-normal flex-1">Food-grade sanitizers, heavy-duty industrial cleaners, and surface disinfection protocols.</p>
 
             <div className="flex items-center justify-between pt-6 border-t border-input">
-              <span className="font-semibold text-accent text-sm">Learn More</span>
-              <ArrowRightIcon size={12} className="text-accent" />
+              <span className="font-semibold text-accent text-sm group-hover:text-secondary transition-colors">Learn More</span>
+              <ArrowRightIcon size={12} className="text-accent group-hover:text-secondary transition-colors" />
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-accent rounded-[6px] p-10 flex flex-col h-112.5">
+          <Link to={paths.technical} className="bg-accent rounded-[6px] p-10 flex flex-col h-112.5 group hover:bg-accent/90 transition-colors">
             <div className="mb-6">
               <div className="bg-white/10 w-12 h-12 flex items-center justify-center">
                 <ActivityIcon size={20} className="text-white" />
@@ -115,15 +106,13 @@ const ChemicalsCategories: React.FC = () => {
 
             <h3 className="font-bold text-white text-[24px] leading-normal mb-3">Fluid Condition Monitoring</h3>
 
-            <p className="text-white/60 text-[16px] leading-normal flex-1">
-              Predictive laboratory analysis for oil, fuel, and chemical health to mitigate mechanical failure.
-            </p>
+            <p className="text-white/60 text-[16px] leading-normal flex-1">Predictive laboratory analysis for oil, fuel, and chemical health to mitigate mechanical failure.</p>
 
             <div className="flex items-center justify-between pt-6 border-t border-white/10">
               <span className="font-semibold text-white text-sm">View Lab Services</span>
               <ArrowRightIcon size={12} className="text-white" />
             </div>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

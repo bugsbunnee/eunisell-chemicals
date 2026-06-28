@@ -3,7 +3,7 @@ import { Button } from '../../ui/button';
 
 const ImpactGallery: React.FC = () => {
   return (
-    <section className="bg-white text-left">
+    <section id="csr-impact" className="bg-white text-left">
       {/* Mobile layout */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-8">
         <div className="flex flex-col gap-2">

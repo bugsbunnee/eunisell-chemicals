@@ -57,27 +57,27 @@ const AnalysisChart: React.FC = () => (
 );
 
 const TechnicalExcellence: React.FC = () => (
-  <section className="bg-white py-24 px-30">
-    <div className="max-w-300 mx-auto flex flex-col gap-20">
+  <section className="bg-white py-16 px-6 md:py-24 md:px-30">
+    <div className="max-w-300 mx-auto flex flex-col gap-12 md:gap-20">
       <div className="flex flex-col items-center gap-4">
         <span className="font-black text-secondary text-[15px] uppercase tracking-[3px] leading-4">Scientific Accuracy</span>
-        <h2 className="font-bold text-accent text-[48px] leading-15 tracking-[-0.09px] text-center max-w-3xl">
+        <h2 className="font-bold text-accent text-[32px] md:text-[48px] leading-10 md:leading-15 tracking-[-0.09px] text-center max-w-3xl">
           Technical Excellence at the Heart of Every Solution
         </h2>
       </div>
 
-      <div className="grid grid-cols-2 gap-8 items-center">
-        <div className="relative h-125 rounded-[8px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+      <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center">
+        <div className="relative h-72 md:h-125 rounded-[8px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
           <img src={labImage} alt="Chemical analysis laboratory equipment" className="absolute inset-0 w-full h-full object-cover" />
-          <div className="absolute top-8 right-8 w-75 bg-white/95 border border-border rounded-[4px] p-6 flex flex-col gap-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          <div className="absolute top-4 right-4 md:top-8 md:right-8 w-56 md:w-75 bg-white/95 border border-border rounded-[4px] p-4 md:p-6 flex flex-col gap-3 md:gap-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
             <p className="font-bold text-accent text-sm leading-5">Real-time Analysis Data</p>
-            <div className="h-37.5 w-full">
+            <div className="h-24 md:h-37.5 w-full">
               <AnalysisChart />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-8 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 text-left">
           {capabilities.map(({ icon: Icon, title, description }) => (
             <div key={title} className="flex gap-4 items-start">
               <div className="w-10 h-10 rounded-full border border-border flex items-center justify-center shrink-0">

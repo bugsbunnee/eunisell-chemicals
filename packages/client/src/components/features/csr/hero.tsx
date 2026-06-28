@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ArrowRightIcon, ChevronRightIcon } from 'lucide-react';
-import { cn } from '../../../lib/utils';
+import { cn, scrollToView } from '../../../lib/utils';
 import { Button } from '../../ui/button';
 import { paths } from '../../../lib/data';
 
@@ -12,6 +12,7 @@ const crumbs = [
 
 const Hero: React.FC = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <section className="bg-background text-left">
@@ -39,15 +40,17 @@ const Hero: React.FC = () => {
         <h1 className="font-bold text-[36px] leading-[39.6px] text-accent">Driving Community Impact Through Sports</h1>
 
         <p className="text-[18px] leading-[29.25px] text-card-foreground">
-          Eunisell's partnership with Abia Warriors FC reflects a commitment to sustainable community development, youth empowerment, and lasting
-          impact beyond business.
+          Eunisell's partnership with Abia Warriors FC reflects a commitment to sustainable community development, youth empowerment, and lasting impact beyond business.
         </p>
 
         <div className="flex flex-col gap-4 pt-2">
-          <Button className="w-full h-[54px] bg-secondary text-white text-[16px] font-semibold rounded-[4px] flex items-center justify-center gap-2">
+          <Button
+            onClick={() => scrollToView('csr-impact')}
+            className="w-full h-[54px] bg-secondary text-white text-[16px] font-semibold rounded-[4px] flex items-center justify-center gap-2"
+          >
             Explore Our CSR Impact <ArrowRightIcon size={16} />
           </Button>
-          <Button className="w-full h-[54px] border-2 border-accent bg-transparent text-accent text-[16px] font-semibold rounded-[4px]">
+          <Button onClick={() => navigate(paths.aboutUs)} className="w-full h-[54px] border-2 border-accent bg-transparent text-accent text-[16px] font-semibold rounded-[4px]">
             Learn About Eunisell
           </Button>
         </div>
@@ -83,20 +86,22 @@ const Hero: React.FC = () => {
           <h1 className="text-[64px] font-bold text-accent leading-[70.4px] max-w-178">Driving Community Impact Through Sports</h1>
 
           <p className="mt-6 text-card-foreground text-xl leading-[32.5px] max-w-178">
-            At Eunisell Chemicals, our responsibility extends far beyond the industrial solutions we provide. We are deeply committed to the
-            communities we operate within across Africa.
+            At Eunisell Chemicals, our responsibility extends far beyond the industrial solutions we provide. We are deeply committed to the communities we operate within across
+            Africa.
           </p>
 
           <p className="mt-6 text-card-foreground text-xl leading-[32.5px] max-w-178">
-            Through strategic investments in sports and youth development, we create lasting social value that transforms lives and strengthens
-            communities.
+            Through strategic investments in sports and youth development, we create lasting social value that transforms lives and strengthens communities.
           </p>
 
           <div className="mt-10 flex gap-x-6">
-            <Button className="py-4 px-8 bg-secondary text-primary-foreground h-15 text-base font-semibold rounded-[4px] items-center flex gap-x-2">
+            <Button
+              onClick={() => scrollToView('csr-impact')}
+              className="py-4 px-8 bg-secondary text-primary-foreground h-15 text-base font-semibold rounded-[4px] items-center flex gap-x-2"
+            >
               Explore Our CSR Impact <ArrowRightIcon size={18} />
             </Button>
-            <Button className="py-4 px-8 border-2 border-accent bg-transparent text-accent h-15 text-base font-semibold rounded-[4px]">
+            <Button onClick={() => navigate(paths.aboutUs)} className="py-4 px-8 border-2 border-accent bg-transparent text-accent h-15 text-base font-semibold rounded-[4px]">
               Learn About Eunisell
             </Button>
           </div>

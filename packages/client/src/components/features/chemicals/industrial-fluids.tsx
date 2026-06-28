@@ -29,8 +29,7 @@ const ChemicalsIndustrialFluids: React.FC = () => {
           </div>
 
           <p className="text-[#777] text-[18px] leading-relaxed">
-            Our industrial fluids are formulated to withstand extreme pressure and temperature variations, ensuring your machinery operates at peak
-            performance with minimal wear.
+            Our industrial fluids are formulated to withstand extreme pressure and temperature variations, ensuring your machinery operates at peak performance with minimal wear.
           </p>
 
           <div className="grid grid-cols-2 gap-6">
@@ -44,7 +43,7 @@ const ChemicalsIndustrialFluids: React.FC = () => {
 
           <div className="pt-4">
             <button
-              onClick={() => navigate(paths.chemicals)}
+              onClick={() => navigate(paths.industrial)}
               className="bg-accent text-white font-semibold text-[16px] px-8 py-4 rounded-[4px] hover:bg-accent/90 transition-colors"
             >
               View Full Product List

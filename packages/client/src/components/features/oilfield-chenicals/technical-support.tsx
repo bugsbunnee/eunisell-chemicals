@@ -55,7 +55,7 @@ const TechnicalSupport: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="grid bg-background shadow-2xl grid-cols-2 text-left">
           <div className="p-16">
             <div className="font-bold text-accent text-4xl leading-10">Water Treatment Chemicals</div>

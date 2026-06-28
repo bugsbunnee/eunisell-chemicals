@@ -3,6 +3,7 @@ import BreadCrumbNavigation from '../../common/bread-crumb';
 
 import { Button } from '../../ui/button';
 import { paths } from '../../../lib/data';
+import { useNavigate } from 'react-router-dom';
 
 const crumbs = [
   {
@@ -16,6 +17,7 @@ const crumbs = [
 ];
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="md:relative md:w-screen">
       <div className="relative bg-accent md:bg-transparent px-6 pt-12 pb-16 md:px-30 md:py-37.75">
@@ -35,15 +37,21 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="mt-6 md:mt-8 max-w-full md:max-w-2xl text-[16px] md:text-xl text-muted leading-[25.6px] md:leading-normal">
-            Delivering specialized industrial chemicals, oilfield chemicals, laboratory services, and technical expertise that help businesses
-            optimize operations and maximize performance across Africa.
+            Delivering specialized industrial chemicals, oilfield chemicals, laboratory services, and technical expertise that help businesses optimize operations and maximize
+            performance across Africa.
           </p>
 
           <div className="flex flex-col md:flex-row items-stretch md:items-center mt-8 md:mt-12 gap-4 md:gap-x-6">
-            <Button className="rounded-xs bg-secondary font-bold text-sm md:text-base h-13 md:h-13 md:flex md:items-center md:gap-x-3 md:px-7">
+            <Button
+              onClick={() => navigate(paths.solutions)}
+              className="rounded-xs bg-secondary font-bold text-sm md:text-base h-13 md:h-13 md:flex md:items-center md:gap-x-3 md:px-7"
+            >
               Explore Our Solutions
             </Button>
-            <Button className="rounded-xs bg-transparent border border-primary-foreground/40 font-bold text-sm md:text-base h-13 md:h-13 md:px-7">
+            <Button
+              onClick={() => navigate(paths.contact)}
+              className="rounded-xs bg-transparent border border-primary-foreground/40 font-bold text-sm md:text-base h-13 md:h-13 md:px-7"
+            >
               Technical Consultation
             </Button>
           </div>

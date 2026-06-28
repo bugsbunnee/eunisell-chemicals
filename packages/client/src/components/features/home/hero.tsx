@@ -5,6 +5,8 @@ import { CogIcon, EarthIcon, FlaskConicalIcon, TestTubeIcon } from 'lucide-react
 import { Button } from '../../ui/button';
 import { Separator } from '../../ui/separator';
 import { AnimatePresence, motion } from 'motion/react';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
 
 import videoOne from '../../../assets/videos/video-1.mp4';
 import videoTwo from '../../../assets/videos/video-2.mp4';
@@ -34,6 +36,7 @@ const TRANSITION = {
 const IMAGE_DURATION_MS = 5000;
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -91,9 +94,7 @@ const Hero: React.FC = () => {
       <div className="relative z-10 w-full text-left">
         <div className="flex items-center justify-start mb-4 md:mb-6 gap-x-4 md:gap-x-6">
           <div className="h-0.5 w-8 md:w-10 bg-secondary shrink-0"></div>
-          <div className="uppercase text-secondary tracking-[3px] text-[10px] md:text-[11px]">
-            AFRICA'S LEADING INDUSTRIAL CHEMICAL SOLUTIONS PROVIDER
-          </div>
+          <div className="uppercase text-secondary tracking-[3px] text-[10px] md:text-[11px]">AFRICA'S LEADING INDUSTRIAL CHEMICAL SOLUTIONS PROVIDER</div>
         </div>
 
         <h1 className="leading-[35.2px] md:leading-[75.6px] max-w-full md:max-w-200 text-primary-foreground font-extrabold text-[29px] md:text-[72px]">
@@ -107,8 +108,13 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col md:flex-row items-stretch md:items-center mt-6 md:mt-11 gap-3 md:gap-x-4">
-          <Button className="rounded-xs bg-secondary font-semibold text-[15px] md:text-base h-11 md:h-13 md:px-7">Explore Solutions</Button>
-          <Button className="rounded-xs bg-transparent border border-primary-foreground/40 font-semibold text-[16px] md:text-base h-11 md:h-13 md:px-7">
+          <Button onClick={() => navigate(paths.solutions)} className="rounded-xs bg-secondary font-semibold text-[15px] md:text-base h-11 md:h-13 md:px-7">
+            Explore Solutions
+          </Button>
+          <Button
+            onClick={() => navigate(paths.contact)}
+            className="rounded-xs bg-transparent border border-primary-foreground/40 font-semibold text-[16px] md:text-base h-11 md:h-13 md:px-7"
+          >
             Request Technical Consultation
           </Button>
         </div>

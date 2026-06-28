@@ -23,7 +23,7 @@ const Portfolio: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="flex items-center gap-x-8">
           <div className="font-bold text-3xl text-accent">Oilfield Chemical Portfolio</div>
           <div className="border-b border-b-border flex-1"></div>

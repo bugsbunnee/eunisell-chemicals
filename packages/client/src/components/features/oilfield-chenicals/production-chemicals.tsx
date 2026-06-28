@@ -30,7 +30,7 @@ const ProductionChemicals: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="grid grid-cols-2 gap-x-16 items-center">
           <div>
             <h2 className="text-4xl text-accent leading-10 font-bold">Production Chemicals</h2>

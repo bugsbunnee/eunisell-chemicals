@@ -41,7 +41,7 @@ const Performance: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="text-4xl leading-13.75 font-bold text-primary-foreground max-w-163.25">Built for Production Performance and Mission-Critical Reliability</div>
 
         <div className="mt-16 grid grid-cols-4 gap-x-6">

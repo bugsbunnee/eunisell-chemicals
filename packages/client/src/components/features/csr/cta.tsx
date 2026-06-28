@@ -29,8 +29,12 @@ const CTA: React.FC = () => {
         <p className="text-[16px] leading-6.5 text-muted">We are always looking for ways to deepen our roots and expand our reach. Connect with us to learn more.</p>
 
         <div className="flex flex-col gap-3 pt-2">
-          <Button className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[4px]">Contact our CSR Team</Button>
-          <Button className="w-full h-13.5 bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]">Download CSR Report</Button>
+          <Button onClick={() => navigate(paths.contact)} className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[4px]">
+            Contact our CSR Team
+          </Button>
+          <Button onClick={() => navigate(paths.brochures)} className="w-full h-13.5 bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]">
+            Download CSR Report
+          </Button>
         </div>
 
         <div className="grid grid-cols-2 gap-8 pt-6 border-t border-white/10">
@@ -71,7 +75,12 @@ const CTA: React.FC = () => {
             <Button onClick={() => navigate(paths.contact)} className="px-10 flex items-center h-15.5 bg-secondary text-base font-bold rounded-[4px]">
               Contact our CSR Team
             </Button>
-            <Button className="px-10 flex items-center h-15.5 bg-transparent text-white border border-white/30 text-base font-bold rounded-[4px]">Download CSR Report</Button>
+            <Button
+              onClick={() => navigate(paths.brochures)}
+              className="px-10 flex items-center h-15.5 bg-transparent text-white border border-white/30 text-base font-bold rounded-[4px]"
+            >
+              Download CSR Report
+            </Button>
           </div>
         </div>
 

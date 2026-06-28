@@ -29,14 +29,14 @@ const images = [
 
 const Operations: React.FC = () => {
   return (
-    <section className="bg-background text-left">
+    <section id="sectors" className="bg-background text-left">
       {/* Mobile layout */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
         <h2 className="font-bold text-[30px] leading-[37.5px] text-accent">Supporting Operations Across Essential Sectors</h2>
 
         <p className="text-[16px] leading-[26px] text-card-foreground">
-          Eunisell Chemicals is Africa's leading specialty chemical distribution provider. We deliver integrated solutions that optimize performance
-          and protect multi-million dollar assets.
+          Eunisell Chemicals is Africa's leading specialty chemical distribution provider. We deliver integrated solutions that optimize performance and protect multi-million
+          dollar assets.
         </p>
 
         <div className="flex flex-col gap-4 pt-4">
@@ -71,9 +71,8 @@ const Operations: React.FC = () => {
           <div>
             <div className="text-[48px] font-bold text-accent leading-[57.6px]">Supporting Operations Across Essential Industrial Sectors</div>
             <div className="mt-8 text-card-foreground leading-[29.3px]">
-              Eunisell Chemicals is Africa's leading specialty chemical distribution and technical service provider. We deliver more than just
-              products; we provide integrated solutions that optimize performance, protect critical assets, and drive operational efficiency in the
-              continent's most demanding environments.
+              Eunisell Chemicals is Africa's leading specialty chemical distribution and technical service provider. We deliver more than just products; we provide integrated
+              solutions that optimize performance, protect critical assets, and drive operational efficiency in the continent's most demanding environments.
             </div>
           </div>
 

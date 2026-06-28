@@ -1,7 +1,11 @@
 import React from 'react';
 import { Button } from '../../../components/ui/button';
+import { useNavigate } from 'react-router-dom';
+import { paths } from '../../../lib/data';
+import { scrollToView } from '../../../lib/utils';
 
 const Hero: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative bg-accent overflow-hidden text-left">
       {/* Background image */}
@@ -23,10 +27,16 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col gap-3 pt-2">
-          <Button className="w-full h-[54px] bg-secondary text-[12px] leading-4 text-white font-bold rounded-[2px] uppercase tracking-[0.6px]">
+          <Button
+            onClick={() => navigate(paths.contact)}
+            className="w-full h-[54px] bg-secondary text-[12px] leading-4 text-white font-bold rounded-[2px] uppercase tracking-[0.6px]"
+          >
             Consult an Expert
           </Button>
-          <Button className="w-full h-[54px] bg-transparent border border-white text-[12px] leading-4 text-white font-bold rounded-[2px] uppercase tracking-[0.6px]">
+          <Button
+            onClick={() => scrollToView('sectors')}
+            className="w-full h-[54px] bg-transparent border border-white text-[12px] leading-4 text-white font-bold rounded-[2px] uppercase tracking-[0.6px]"
+          >
             Explore Sectors
           </Button>
         </div>
@@ -34,20 +44,21 @@ const Hero: React.FC = () => {
 
       {/* Desktop layout */}
       <div className="hidden md:block relative z-40 py-26.25 px-30">
-        <h1 className="text-[64px] leading-[70.4px] font-extrabold text-primary-foreground max-w-200">
-          Chemical Solutions for Critical Industries Across Africa
-        </h1>
+        <h1 className="text-[64px] leading-[70.4px] font-extrabold text-primary-foreground max-w-200">Chemical Solutions for Critical Industries Across Africa</h1>
 
         <p className="font-normal text-xl leading-[32.5px] text-primary-foreground/80 mt-6 max-w-146.25">
-          Supporting oil and gas, manufacturing, utilities, infrastructure, construction, marine, and offshore operations with technical expertise and
-          world-class chemical supply chains.
+          Supporting oil and gas, manufacturing, utilities, infrastructure, construction, marine, and offshore operations with technical expertise and world-class chemical supply
+          chains.
         </p>
 
         <div className="flex items-center justify-start gap-x-4 mt-12">
-          <Button className="px-8 flex items-center h-13 bg-secondary text-sm leading-6 text-white font-bold rounded-[2px] uppercase">
+          <Button onClick={() => navigate(paths.contact)} className="px-8 flex items-center h-13 bg-secondary text-sm leading-6 text-white font-bold rounded-[2px] uppercase">
             consult an expert
           </Button>
-          <Button className="px-8 flex items-center h-13 bg-transparent border border-white text-sm leading-6 text-white font-bold rounded-[2px] uppercase">
+          <Button
+            onClick={() => navigate(paths.qhse)}
+            className="px-8 flex items-center h-13 bg-transparent border border-white text-sm leading-6 text-white font-bold rounded-[2px] uppercase"
+          >
             View Safety Record
           </Button>
         </div>

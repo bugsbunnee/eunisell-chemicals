@@ -46,7 +46,7 @@ const FlowAssurance: React.FC = () => {
       </div>
 
       {/* Desktop */}
-      <div className="hidden md:block py-16 px-45">
+      <div className="hidden md:block py-16 px-30">
         <div className="grid grid-cols-2 gap-x-16 items-center">
           <div className="relative">
             <img src="/oilfield-chemicals/flow-assurance.svg" alt="Flow Assurance" className="w-160 h-112 object-contain" />

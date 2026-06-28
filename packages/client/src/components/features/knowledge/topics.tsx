@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { DownloadIcon, FileTextIcon } from 'lucide-react';
 import { paths } from '../../../lib/data';
 
@@ -23,6 +23,7 @@ const brochures = [
 ];
 
 const Topics: React.FC = () => {
+  const navigate = useNavigate();
   return (
     <section className="bg-[#f8fafc] py-12 px-6 md:py-24 md:px-20 text-left">
       <div className="max-w-[1560px] mx-auto md:px-8 flex flex-col gap-8 md:gap-12">
@@ -46,7 +47,10 @@ const Topics: React.FC = () => {
 
               <p className="text-popover-foreground text-[10px] md:text-xs leading-4 mb-6 md:mb-8">{brochure.meta}</p>
 
-              <button className="bg-accent text-white text-[12px] md:text-sm font-bold h-11 flex items-center justify-center gap-2 mt-auto">
+              <button
+                onClick={() => navigate(paths.brochures)}
+                className="bg-accent text-white text-[12px] md:text-sm font-bold h-11 flex items-center justify-center gap-2 mt-auto"
+              >
                 <DownloadIcon size={10} />
                 Download PDF
               </button>
