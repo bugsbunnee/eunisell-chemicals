@@ -276,25 +276,60 @@ export const team = [
     title: 'Chief Executive Officer',
     url: '',
     description: 'Drives operational strategy and regional expansion across West Africa.',
-    paragraphs: [],
+    paragraphs: [
+      `
+        Kenneth Okeiyi oversees the daily operations of the company.
+        He holds a B.Sc. degree in Banking & Finance from the Imo
+        State University and an MBA in Business Finance from the
+        University of Nigeria, Nsukka.
+      `,
+      `
+        With over 20 years of experience in banking, finance, the
+        capital market and business advisory services across Africa.
+        He possesses strong experience in offering purpose fit
+        business finance structures across a wide range of industries.
+        Kenneth Okeiyi has a strong network of relationships across
+        financial institutions globally.
+      `,
+    ],
     highlights: [],
   },
   {
     src: '/management/lain.svg',
-    name: 'Lain Fraiser',
+    name: 'Iain Fraiser',
     title: 'Head of International Business',
     url: '',
     description: 'Specialist in complex industrial engineering and large-scale facility management.',
-    paragraphs: [],
+    paragraphs: [
+      `
+        Iain Fraser is an Engineering and Sales professional with over
+        30 years hands-on experience within the oil & gas and
+        specialty chemical industry. He holds a B.Sc. in Mechanical
+        Engineering from the Harriot-Watt University, Edinburg.
+      `,
+      `
+      Iain is responsible for developing key international businesses
+      and relationships for the company. He has worked with
+      notable global companies including St. Helena Gold Mine,
+      Shell, the Lubrizol Corporation.
+      `,
+    ],
     highlights: [],
   },
   {
     src: '/management/odekina.svg',
     name: 'Philip Odekina',
-    title: 'Chief Financial Officer',
+    title: 'Head, Finance & Accounts',
     url: '',
     description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
-    paragraphs: [],
+    paragraphs: [
+      `
+      Philip is a core accounting professional with 30 years
+      experience in the financial sector. He holds an MBA in
+      Financial Management. Prior to joining Eunisell, he worked as
+      Financial Accountant at KPMG Professional Service.
+      `,
+    ],
     highlights: [],
   },
 ];
