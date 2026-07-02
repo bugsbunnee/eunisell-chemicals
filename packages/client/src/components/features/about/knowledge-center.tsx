@@ -4,6 +4,7 @@ import SectionWithTitle from '../../layout/section-with-title';
 import { ArrowRightIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { paths } from '../../../lib/data';
+import { Reveal, Stagger, StaggerItem } from '../../common/animate';
 
 const knowledges = [
   {
@@ -40,10 +41,10 @@ const KnowledgeCenter: React.FC = () => {
       description="Technical articles, industry insights, product brochures, and technical bulletins from Eunisell Chemicals."
       legend="knowledge center"
     >
-      <div className="mt-10 md:mt-16 flex flex-col gap-4 md:gap-0 md:border md:border-border md:rounded-lg md:grid md:grid-cols-4 md:divide-x divide-border">
+      <Stagger className="mt-10 md:mt-16 flex flex-col gap-4 md:gap-0 md:border md:border-border md:rounded-lg md:grid md:grid-cols-4 md:divide-x divide-border">
         {knowledges.map((knowledge) => (
-          <div
-            className="p-6 md:p-10 text-left flex flex-col border border-border rounded-[4px] shadow-[0px_2px_2px_rgba(0,0,0,0.05)] md:border-0 md:rounded-none md:shadow-none"
+          <StaggerItem
+            className="group p-6 md:p-10 text-left flex flex-col border border-border rounded-[4px] shadow-[0px_2px_2px_rgba(0,0,0,0.05)] md:border-0 md:rounded-none md:shadow-none transition-colors duration-300 md:hover:bg-card/60"
             key={knowledge.id}
           >
             <div className="text-[9px] uppercase font-bold tracking-[2px] text-secondary">{knowledge.title}</div>
@@ -53,21 +54,21 @@ const KnowledgeCenter: React.FC = () => {
 
             <div className="mt-8 border-t border-t-border pt-5">
               <Link to={knowledge.path} className="text-xs font-bold leading-4 flex items-center text-secondary gap-1">
-                Read More <ArrowRightIcon size={12} />
+                Read More <ArrowRightIcon size={12} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
-          </div>
+          </StaggerItem>
         ))}
-      </div>
+      </Stagger>
 
-      <div className="mt-8 md:mt-16 flex items-center justify-center">
+      <Reveal className="mt-8 md:mt-16 flex items-center justify-center">
         <Link
           to={paths.knowledge}
           className="w-full md:w-auto px-8 py-3.5 border border-secondary rounded-xs text-sm leading-5 text-secondary font-medium flex items-center justify-center gap-x-1"
         >
           Visit Knowledge Centre <ArrowRightIcon size={14} />
         </Link>
-      </div>
+      </Reveal>
     </SectionWithTitle>
   );
 };

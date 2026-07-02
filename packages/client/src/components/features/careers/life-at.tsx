@@ -17,7 +17,7 @@ const LifeAtEunisell: React.FC = () => (
           <br />
           Programmes
         </h2>
-        <p className="text-[#606060] text-[15px] leading-[25.5px]">Nurturing the next generation of technical leaders through hands-on experience and mentorship.</p>
+        <p className="text-card-foreground text-[15px] leading-[25.5px]">Nurturing the next generation of technical leaders through hands-on experience and mentorship.</p>
       </div>
 
       <div className="px-6 flex flex-col gap-4">

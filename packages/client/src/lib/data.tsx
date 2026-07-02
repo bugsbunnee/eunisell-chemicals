@@ -36,6 +36,7 @@ export const paths = {
   blog: '/blog',
   blogDetail: '/blog/:slug',
   chemicals: '/chemicals',
+  processFluids: '/chemicals/industrial-process-fluids',
   login: '/admin/login',
   dashboard: '/admin/dashboard',
   blogAdmin: '/admin/dashboard/blog',
@@ -206,7 +207,7 @@ export const downloadLinks: NavLink[] = [
 export const knowledgeTopics: string[] = ['Oilfield', 'Industrial', 'Laboratory', 'Water', 'Sustainability', 'QHSE'];
 
 export const chemicalsPrimaryLinks: NavLink[] = [
-  { label: 'Industrial Process Fluids', path: paths.chemicals },
+  { label: 'Industrial Process Fluids', path: paths.processFluids },
   { label: 'Cleaning & Hygiene', path: paths.chemicals },
   { label: 'Water Solutions', path: paths.chemicals },
 ];

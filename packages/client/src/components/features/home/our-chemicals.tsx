@@ -3,6 +3,7 @@ import React from 'react';
 import { ArrowRightIcon, ChevronRightIcon, CircleIcon, DropletIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { paths } from '../../../lib/data';
+import { Reveal, Stagger, StaggerItem } from '../../common/animate';
 
 const chemicals = ['Production Chemicals', 'Drilling Chemicals', 'Flow Assurance Chemicals', 'Pipeline Integrity Chemicals', 'Water Management Chemicals'];
 
@@ -13,7 +14,7 @@ const hygienes = ['General Cleaning', 'Disinfection', 'Food & Beverage', 'Health
 const OurChemicals: React.FC = () => {
   return (
     <section className="px-6 py-12 md:p-30 bg-background text-left">
-      <div>
+      <Reveal direction="left" distance={56}>
         <div className="flex items-center gap-x-3 md:gap-x-4">
           <div className="h-0.5 w-6 md:h-1 md:w-10 bg-secondary shrink-0"></div>
           <div className="font-black text-[15px] text-secondary uppercase leading-3 tracking-[3px]">OUR CHEMICALS</div>
@@ -24,10 +25,10 @@ const OurChemicals: React.FC = () => {
         <p className="text-[16px] md:text-lg leading-6.5 md:leading-8 font-normal text-accent/70 max-w-full md:max-w-[50%] mt-4 md:mt-7">
           Explore our portfolio of industrial process fluids, cleaning and hygiene chemicals, oilfield chemicals, and fluid monitoring services designed for operational excellence.
         </p>
-      </div>
+      </Reveal>
 
       <div className="flex flex-col md:grid md:grid-cols-[2fr_1fr] gap-6 md:gap-x-8 mt-6 md:mt-20">
-        <div className="min-h-130 md:min-h-180 rounded-[4px] overflow-hidden relative bg-accent flex flex-col justify-end">
+        <Reveal direction="left" distance={56} className="min-h-130 md:min-h-180 rounded-[4px] overflow-hidden relative bg-accent flex flex-col justify-end">
           <div className="absolute inset-0 opacity-40 pointer-events-none">
             <img src="/home/oilfield-chemicals.svg" alt="" className="h-full w-full object-cover" />
           </div>
@@ -59,11 +60,15 @@ const OurChemicals: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </Reveal>
 
-        <div className="border border-border bg-accent-bg rounded-[4px] overflow-hidden">
-          <div className="h-50 md:h-77.25">
-            <img src="/home/industrial-process-fluids.svg" alt="Industrial Process Fluids" className="w-full h-full object-cover" />
+        <Reveal direction="right" distance={56} className="group border border-border bg-accent-bg rounded-[4px] overflow-hidden">
+          <div className="h-50 md:h-77.25 overflow-hidden">
+            <img
+              src="/home/industrial-process-fluids.svg"
+              alt="Industrial Process Fluids"
+              className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+            />
           </div>
 
           <div className="p-6 md:p-10">
@@ -85,13 +90,13 @@ const OurChemicals: React.FC = () => {
               Learn More <ArrowRightIcon size={14} />
             </Link>
           </div>
-        </div>
+        </Reveal>
       </div>
 
-      <div className="flex flex-col md:grid md:grid-cols-3 mt-6 md:mt-8 gap-6 md:gap-x-8">
-        <div className="border border-border flex flex-col rounded-sm overflow-hidden">
-          <div className="h-50 md:h-60">
-            <img src="/home/cleaning-hygiene.svg" className="h-full w-full object-cover" />
+      <Stagger className="flex flex-col md:grid md:grid-cols-3 mt-6 md:mt-8 gap-6 md:gap-x-8">
+        <StaggerItem lift className="group border border-border flex flex-col rounded-sm overflow-hidden">
+          <div className="h-50 md:h-60 overflow-hidden">
+            <img src="/home/cleaning-hygiene.svg" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           </div>
 
           <div className="p-6 md:p-8 text-left flex flex-col flex-1">
@@ -120,9 +125,12 @@ const OurChemicals: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
+        </StaggerItem>
 
-        <div className="rounded-[4px] flex flex-col overflow-hidden p-8 md:p-10 bg-[url(/home/water-solutions.svg)] bg-cover bg-no-repeat relative min-h-[300px] md:min-h-0">
+        <StaggerItem
+          lift
+          className="rounded-[4px] flex flex-col overflow-hidden p-8 md:p-10 bg-[url(/home/water-solutions.svg)] bg-cover bg-no-repeat relative min-h-[300px] md:min-h-0"
+        >
           <div className="absolute z-10 top-0 right-0 left-0 bottom-0 bg-accent/60"></div>
 
           <div className="w-10 h-10 z-50 rounded-[4px] relative border border-white flex items-center justify-center">
@@ -144,11 +152,11 @@ const OurChemicals: React.FC = () => {
           <Link to="/" className="font-bold text-[12px] md:text-[13px] z-50 relative mt-auto text-white leading-[19.5px] tracking-[1px] uppercase flex items-center gap-x-2 pt-6">
             Explore Solutions <ArrowRightIcon />
           </Link>
-        </div>
+        </StaggerItem>
 
-        <div className="border border-border rounded-sm overflow-hidden">
-          <div className="h-50 md:h-60">
-            <img src="/home/monitoring.png" className="h-full w-full object-cover" />
+        <StaggerItem lift className="group border border-border rounded-sm overflow-hidden">
+          <div className="h-50 md:h-60 overflow-hidden">
+            <img src="/home/monitoring.png" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           </div>
 
           <div className="p-6 md:p-8 text-left flex flex-col">
@@ -181,8 +189,8 @@ const OurChemicals: React.FC = () => {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
+        </StaggerItem>
+      </Stagger>
     </section>
   );
 };

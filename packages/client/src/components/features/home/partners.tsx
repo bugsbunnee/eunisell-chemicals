@@ -12,10 +12,10 @@ const Partners: React.FC = () => {
   const index = currentSlide % total;
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 border-t border-t-border py-16 px-6 md:px-30">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4 md:gap-0">
         <div className="text-left">
-          <div className="font-black text-[15px] tracking-[1.4px] leading-5 text-secondary uppercase">OEM</div>
+          <div className="font-black text-[15px] tracking-[1.4px] leading-5 text-secondary uppercase">OEM PARTNERS</div>
         </div>
         <div className="flex items-center gap-x-3">
           <button

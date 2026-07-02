@@ -20,16 +20,16 @@ const PrimarySector: React.FC = () => {
           {mobileSteps.map((step) => (
             <div key={step} className="flex gap-3 items-center">
               <div className="w-2 h-2 bg-secondary shrink-0" />
-              <div className="text-[14px] leading-[20px] text-white">{step}</div>
+              <div className="text-[14px] leading-5 text-white">{step}</div>
             </div>
           ))}
         </div>
 
-        <div className="relative mt-4 rounded-[4px] overflow-hidden h-[220px]">
+        <div className="relative mt-4 rounded-[4px] overflow-hidden h-55">
           <img src="/industries-served/sector.svg" alt="Oil & Gas" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-linear-to-t from-accent/80 to-accent/0" />
           <div className="absolute bottom-4 left-4 bg-secondary px-4 py-3">
-            <div className="font-bold text-[24px] leading-[24px] text-white">25+</div>
+            <div className="font-bold text-[24px] leading-6 text-white">25+</div>
             <div className="text-[12px] leading-[15px] text-white/80 mt-1">Years Partnership</div>
           </div>
         </div>
@@ -43,8 +43,7 @@ const PrimarySector: React.FC = () => {
             <h2 className="text-5xl font-bold text-primary-foreground leading-15">Oil & Gas Excellence</h2>
 
             <p className="text-lg font-normal text-primary-foreground/70 leading-7 mt-8">
-              Eunisell is a recognized leader in the Nigerian and African oilfield services sector, providing high-performance chemicals for the
-              entire value chain.
+              Eunisell is a recognized leader in the Nigerian and African oilfield services sector, providing high-performance chemicals for the entire value chain.
             </p>
 
             <div className="grid grid-cols-2 gap-4">
@@ -62,9 +61,7 @@ const PrimarySector: React.FC = () => {
 
             <div className="absolute bg-secondary p-8 -bottom-10 -left-10">
               <div className="font-bold text-[32px] leading-8 text-white">25+</div>
-              <div className="font-normal text-sm leading-6 text-white/80 mt-2 max-w-55">
-                Years of Partnership with IOCs and NOCs across the region.
-              </div>
+              <div className="font-normal text-sm leading-6 text-white/80 mt-2 max-w-55">Years of Partnership with IOCs and NOCs across the region.</div>
             </div>
           </div>
         </div>

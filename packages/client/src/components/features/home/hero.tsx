@@ -92,22 +92,44 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-linear-to-t from-accent/95 via-accent/60 to-accent/10 md:bg-linear-to-r md:from-accent/90 md:via-accent/50 md:to-transparent" />
 
       <div className="relative z-10 w-full text-left">
-        <div className="flex items-center justify-start mb-4 md:mb-6 gap-x-4 md:gap-x-6">
-          <div className="h-0.5 w-8 md:w-10 bg-secondary shrink-0"></div>
+        <motion.div
+          className="flex items-center justify-start mb-4 md:mb-6 gap-x-4 md:gap-x-6"
+          initial={{ opacity: 0, x: -48 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.div
+            className="h-0.5 w-8 md:w-10 bg-secondary shrink-0 origin-left"
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          />
           <div className="uppercase text-secondary tracking-[3px] text-[10px] md:text-[11px]">AFRICA'S LEADING INDUSTRIAL CHEMICAL SOLUTIONS PROVIDER</div>
-        </div>
+        </motion.div>
 
-        <h1 className="leading-[35.2px] md:leading-[75.6px] max-w-full md:max-w-200 text-primary-foreground font-extrabold text-[29px] md:text-[72px]">
+        <motion.h1
+          className="leading-[35.2px] md:leading-[75.6px] max-w-full md:max-w-200 text-primary-foreground font-extrabold text-[29px] md:text-[72px]"
+          initial={{ opacity: 0, x: -64 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
           Engineering Chemical Solutions for Industry and Energy
-        </h1>
+        </motion.h1>
 
-        <div className="hidden md:block text-muted italic text-xl mt-4">"Behind Every Problem is a Solution You Can Trust"</div>
+        <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}>
+          <div className="hidden md:block text-muted italic text-xl mt-4">"Behind Every Problem is a Solution You Can Trust"</div>
 
-        <p className="mt-4 md:mt-6 max-w-full md:max-w-155 text-primary-foreground/70 text-[16px] md:text-base leading-[25.6px] md:leading-normal">
-          Optimizing operations and maximizing performance with specialized chemicals and technical expertise across Africa.
-        </p>
+          <p className="mt-4 md:mt-6 max-w-full md:max-w-155 text-primary-foreground/70 text-[16px] md:text-base leading-[25.6px] md:leading-normal">
+            Optimizing operations and maximizing performance with specialized chemicals and technical expertise across Africa.
+          </p>
+        </motion.div>
 
-        <div className="flex flex-col md:flex-row items-stretch md:items-center mt-6 md:mt-11 gap-3 md:gap-x-4">
+        <motion.div
+          className="flex flex-col md:flex-row items-stretch md:items-center mt-6 md:mt-11 gap-3 md:gap-x-4"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Button onClick={() => navigate(paths.solutions)} className="rounded-xs bg-secondary font-semibold text-[15px] md:text-base h-11 md:h-13 md:px-7">
             Explore Solutions
           </Button>
@@ -117,19 +139,26 @@ const Hero: React.FC = () => {
           >
             Request Technical Consultation
           </Button>
-        </div>
+        </motion.div>
 
         <Separator className="bg-primary-foreground/10 mt-16 hidden md:block" />
 
         <div className="hidden md:grid grid-cols-4 gap-x-4 mt-6 items-center">
-          {features.map((feature) => (
-            <div key={feature.title} className="p-4 bg-primary-foreground/5 border border-primary-foreground/10">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              className="p-4 bg-primary-foreground/5 border border-primary-foreground/10"
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.7 + index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -4 }}
+            >
               <div className="flex items-center gap-x-1 text-[10px] tracking-[0.5px] font-bold text-secondary uppercase">
                 <span>
                   {feature.title} <span className="font-normal">{feature.description}</span>
                 </span>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-const manufacturingImg = 'https://www.figma.com/api/mcp/asset/bab3d3e2-4fd4-4c6c-a736-6c5f934bdf05';
-const utilitiesImg = 'https://www.figma.com/api/mcp/asset/cda3bc88-be08-4364-b875-3b08f25212c0';
-const infrastructureImg = 'https://www.figma.com/api/mcp/asset/d3769684-6148-48a6-885c-ed6a117418bf';
-const marineImg = 'https://www.figma.com/api/mcp/asset/cefdc75e-08ce-426d-afce-53047b7799e5';
+const manufacturingImg = '/solution-detail/industry-manufacturing.png';
+const utilitiesImg = '/solution-detail/industry-utilities.png';
+const infrastructureImg = '/solution-detail/industry-infrastructure.png';
+const marineImg = '/solution-detail/industry-marine.png';
 
 const industries = [
   { title: 'Manufacturing', image: manufacturingImg },
@@ -13,7 +13,7 @@ const industries = [
 ];
 
 const IndustriesServed: React.FC = () => (
-  <section className="bg-accent py-24 px-30">
+  <section className="hidden md:block bg-accent py-24 px-30">
     <div className="flex flex-col gap-16">
       <h2 className="font-bold text-white text-center text-3xl leading-9 uppercase tracking-[3px]">Industries Served</h2>
 

@@ -25,6 +25,7 @@ import CareerDetailPage from '../pages/CareerDetailPage';
 import BlogPage from '../pages/BlogPage';
 import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
+import IndustrialProcessFluidsPage from '../pages/IndustrialProcessFluidsPage';
 import LoginPage from '../pages/LoginPage';
 import ProtectedRoute from '../pages/ProtectedRoute';
 import DashboardLayout from '../components/features/dashboard/layout';
@@ -155,6 +156,10 @@ export const routes: RouteObject[] = [
       {
         path: paths.chemicals,
         element: <ChemicalsPage />,
+      },
+      {
+        path: paths.processFluids,
+        element: <IndustrialProcessFluidsPage />,
       },
     ],
   },

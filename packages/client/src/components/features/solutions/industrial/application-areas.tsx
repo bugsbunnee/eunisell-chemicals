@@ -3,16 +3,11 @@ import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon } from 'lucide-react';
 import { paths } from '../../../../lib/data';
 
-const waterTreatmentImg = 'https://www.figma.com/api/mcp/asset/3e7601d3-33d3-48e7-824e-abdadc8408ee';
-const plantMaintenanceImg = 'https://www.figma.com/api/mcp/asset/23dbeef2-4774-4f7f-bd44-8836d4c650ef';
-const manufacturingImg = 'https://www.figma.com/api/mcp/asset/eff420a0-cc4c-4aac-bfc1-8347d71431f6';
-const infrastructureImg = 'https://www.figma.com/api/mcp/asset/888343eb-7753-4b4d-981d-f4d217850f56';
-
 const areas = [
-  { title: 'Water Treatment', image: waterTreatmentImg },
-  { title: 'Plant Maintenance', image: plantMaintenanceImg },
-  { title: 'Manufacturing Processes', image: manufacturingImg },
-  { title: 'Infrastructure', image: infrastructureImg },
+  { title: 'Water Treatment', image: '/solution-detail/water-treatment.png' },
+  { title: 'Plant Maintenance', image: '/solution-detail/plant-maintenance.png' },
+  { title: 'Manufacturing Processes', image: '/solution-detail/manufacturing.png' },
+  { title: 'Infrastructure', image: '/solution-detail/infrastructure.png' },
 ];
 
 const VISIBLE = 3;
@@ -25,8 +20,30 @@ const ApplicationAreas: React.FC = () => {
   const next = () => setIndex((i) => Math.min(max, i + 1));
 
   return (
-    <section className="bg-card py-24 px-30">
-      <div className="flex flex-col gap-16">
+    <section className="bg-card py-16 px-6 md:py-24 md:px-30">
+      {/* Mobile */}
+      <div className="md:hidden flex flex-col gap-8 text-left">
+        <h3 className="font-bold text-accent text-[24px] leading-8">Application Areas</h3>
+
+        <div className="flex flex-col gap-6">
+          {areas.slice(0, 2).map(({ title, image }) => (
+            <div key={title} className="bg-white rounded-xl overflow-hidden shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)]">
+              <div className="h-48 overflow-hidden">
+                <img src={image} alt={title} className="w-full h-full object-cover" />
+              </div>
+              <div className="p-6 flex flex-col gap-2">
+                <h6 className="font-bold text-accent text-[18px] leading-7">{title}</h6>
+                <Link to={paths.industrial} className="flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-[0.082px]">
+                  Learn More <ArrowRightIcon size={12} />
+                </Link>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop */}
+      <div className="hidden md:flex flex-col gap-16">
         <div className="flex items-end justify-between">
           <div className="flex flex-col gap-4 text-left">
             <h3 className="font-bold text-accent text-[30px] leading-9">Application Areas</h3>
@@ -52,10 +69,7 @@ const ApplicationAreas: React.FC = () => {
         </div>
 
         <div className="overflow-hidden">
-          <div
-            className="flex gap-6 transition-transform duration-300 ease-in-out"
-            style={{ transform: `translateX(calc(-${index} * (100% + 1.5rem) / ${VISIBLE}))` }}
-          >
+          <div className="flex gap-6 transition-transform duration-300 ease-in-out" style={{ transform: `translateX(calc(-${index} * (100% + 1.5rem) / ${VISIBLE}))` }}>
             {areas.map(({ title, image }) => (
               <div
                 key={title}

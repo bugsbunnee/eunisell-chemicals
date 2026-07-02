@@ -1,8 +1,6 @@
 import React from 'react';
 
 import { FileTextIcon, CalendarIcon, DownloadIcon } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { paths } from '../../../lib/data';
 
 export interface Brochure {
   id: number;
@@ -12,6 +10,7 @@ export interface Brochure {
   image: string;
   title: string;
   description: string;
+  file: string;
   fileSize: string;
   updatedAt: string;
 }
@@ -22,13 +21,11 @@ interface Props {
 
 const BrochureCard: React.FC<Props> = ({ brochure }) => {
   return (
-    <div className="bg-white border border-border rounded-md shadow-[0px_16px_16px_rgba(0,0,0,0.08)] flex flex-col isolate overflow-hidden p-2">
+    <div className="group bg-white border border-border rounded-md shadow-[0px_16px_16px_rgba(0,0,0,0.08)] flex flex-col isolate overflow-hidden p-2 h-full">
       <div className="relative bg-[#f1f5f9] rounded-[4px] h-[220px] md:h-70 overflow-hidden shrink-0">
-        <img src={brochure.image} alt={brochure.title} className="absolute inset-0 w-full h-full object-cover" />
+        <img src={brochure.image} alt={brochure.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
 
-        <span
-          className={`absolute top-4 left-4 ${brochure.badgeColor} text-white text-[10px] font-bold uppercase tracking-[0.5px] px-3 py-1 rounded-full`}
-        >
+        <span className={`absolute top-4 left-4 ${brochure.badgeColor} text-white text-[10px] font-bold uppercase tracking-[0.5px] px-3 py-1 rounded-full`}>
           {brochure.badgeLabel}
         </span>
       </div>
@@ -49,13 +46,10 @@ const BrochureCard: React.FC<Props> = ({ brochure }) => {
           </div>
         </div>
 
-        <Link
-          to={paths.contact}
-          className="bg-accent text-white font-bold text-sm text-center py-4 rounded-[4px] flex items-center justify-center gap-2 mt-4.5"
-        >
+        <a href={brochure.file} download className="bg-accent text-white font-bold text-sm text-center py-4 rounded-[4px] flex items-center justify-center gap-2 mt-4.5">
           <DownloadIcon size={14} />
           Download Brochure
-        </Link>
+        </a>
       </div>
     </div>
   );
