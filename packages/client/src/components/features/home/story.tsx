@@ -10,8 +10,7 @@ const values = [
   },
   {
     title: 'vision',
-    description:
-      'To deliver innovative, high-quality chemical and production solutions that improve operational efficiency and create long-term value.',
+    description: 'To deliver innovative, high-quality chemical and production solutions that improve operational efficiency and create long-term value.',
   },
 ];
 
@@ -27,8 +26,8 @@ const stories = [
     caption: 'industrial',
   },
   {
-    image: '/home/blending.svg',
-    caption: 'blending',
+    image: '/home/cleaning.svg',
+    caption: 'cleaning',
   },
   {
     image: '/home/oilfield.svg',
@@ -58,18 +57,15 @@ const Story: React.FC = () => {
       <div className="text-left">
         <div className="text-[15px] leading-[18px] uppercase font-black tracking-[3px] text-secondary">our story</div>
 
-        <div className="font-bold text-accent text-[34px] md:text-[42px] leading-[40.8px] md:leading-12 my-3 md:my-2.75">
-          Driving Performance Through Chemical Innovation
-        </div>
+        <div className="font-bold text-accent text-[34px] md:text-[42px] leading-[40.8px] md:leading-12 my-3 md:my-2.75">Driving Performance Through Chemical Innovation</div>
 
         <p className="text-[15px] md:text-base text-accent-foreground leading-[24.38px] md:leading-normal">
-          Eunisell Chemicals is a leading provider of specialty chemical solutions, technical services, and production support across Africa's energy
-          and infrastructure sectors.
+          Eunisell Chemicals is a leading provider of specialty chemical solutions, technical services, and production support across Africa's energy and infrastructure sectors.
         </p>
 
         <p className="hidden md:block text-base text-accent-foreground mt-3.75">
-          For decades, we have partnered with operators and industrial organizations to solve complex production, process, and operational challenges
-          through innovative chemical technologies, technical expertise, and a commitment to delivering measurable results.
+          For decades, we have partnered with operators and industrial organizations to solve complex production, process, and operational challenges through innovative chemical
+          technologies, technical expertise, and a commitment to delivering measurable results.
         </p>
 
         <div className="grid grid-cols-2 gap-x-4 mt-6 md:mt-10">

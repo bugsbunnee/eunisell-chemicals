@@ -23,7 +23,7 @@ const Responsibility: React.FC = () => {
     <section className="bg-white text-left">
       {/* Mobile layout */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
-        <div className="h-[264px] rounded-[6px] overflow-hidden">
+        <div className="h-66 rounded-[6px] overflow-hidden">
           <img src="/qhse/sustainability.svg" alt="Sustainability" className="w-full h-full object-cover" />
         </div>
 
@@ -57,8 +57,8 @@ const Responsibility: React.FC = () => {
             <h2 className="text-4xl font-bold text-accent leading-10">Environmental Responsibility</h2>
 
             <p className="text-lg font-normal text-card-foreground leading-[29.25px]">
-              Eunisell Chemicals is dedicated to preserving the ecosystems where we operate. We strictly adhere to local and international
-              environmental laws, ensuring our footprints are minimized through innovative chemical technology and operational discipline.
+              Eunisell Chemicals is dedicated to preserving the ecosystems where we operate. We strictly adhere to local and international environmental laws, ensuring our
+              footprints are minimized through innovative chemical technology and operational discipline.
             </p>
 
             <div className="space-y-8">

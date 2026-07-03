@@ -19,15 +19,10 @@ const Statements: React.FC = () => {
       <img src="/about/grid.svg" alt="Grid" className="absolute h-4/5 left-12 opacity-10 z-30 hidden md:block" />
 
       {statements.map((statement) => (
-        <div
-          key={statement.caption}
-          className="text-left p-8 md:p-16 bg-primary/40 border z-50 border-primary-foreground/10 rounded-[4px] min-h-[300px] flex flex-col justify-between"
-        >
+        <div key={statement.caption} className="text-left p-8 md:p-16 bg-primary/40 border z-50 border-primary-foreground/10 rounded-[4px] min-h-75 flex flex-col justify-between">
           <div>
-            <div className="text-[10px] font-bold uppercase text-secondary leading-[15px] tracking-[3px]">{statement.title}</div>
-            <div className="font-bold text-[24px] md:text-[42px] text-primary-foreground leading-[32px] md:leading-12.5 mt-4 md:mt-6">
-              {statement.description}
-            </div>
+            <div className="text-[10px] font-bold uppercase text-white leading-[15px] tracking-[3px]">{statement.title}</div>
+            <div className="font-bold text-[24px] md:text-[42px] text-primary-foreground leading-8 md:leading-12.5 mt-4 md:mt-6">{statement.description}</div>
           </div>
           <div className="flex items-center gap-x-4 mt-8">
             <div className="h-px w-8 bg-secondary shrink-0"></div>

@@ -7,9 +7,7 @@ const Infrastructure: React.FC = () => {
       <div className="md:hidden px-6 py-16 flex flex-col gap-[22.8px]">
         <h2 className="font-bold text-[28px] leading-[42px] text-accent">Infrastructure</h2>
 
-        <p className="text-[14px] leading-[22.75px] text-card-foreground">
-          Concrete admixtures, waterproofing, and structural protection for the future of African cities.
-        </p>
+        <p className="text-[14px] leading-[22.75px] text-card-foreground">Concrete admixtures, waterproofing, and structural protection for the future of African cities.</p>
 
         <div className="flex flex-col gap-4 pt-[9.2px]">
           <div className="h-[200px] rounded-[4px] overflow-hidden">

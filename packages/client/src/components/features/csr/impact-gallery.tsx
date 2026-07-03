@@ -46,20 +46,20 @@ const ImpactGallery: React.FC = () => {
 
           <div className="grid grid-cols-2 grid-rows-2 gap-6 h-200">
             <div className="rounded-[6px] overflow-hidden min-h-200">
-              <img src="/csr/stadium.svg" alt="Hero" className="w-full h-full object-cover" />
+              <img src="/csr/impact-main.svg" alt="Hero" className="w-full h-full object-cover" />
             </div>
 
             <div className="grid grid-cols-2 gap-6">
               <div className="space-y-6">
                 <div className="rounded-[6px] overflow-hidden h-97">
-                  <img src="/csr/hero.svg" alt="Hero" className="w-full h-full object-cover" />
+                  <img src="/csr/impact-grid-top.svg" alt="Hero" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-[6px] overflow-hidden h-97">
-                  <img src="/csr/warriors.svg" alt="Hero" className="w-full h-full object-cover" />
+                  <img src="/csr/impact-grid-bottom.svg" alt="Hero" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="rounded-[6px] overflow-hidden min-h-200">
-                <img src="/csr/hero.svg" alt="Hero" className="w-full h-full object-cover" />
+                <img src="/csr/impact-grid-right.svg" alt="Hero" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

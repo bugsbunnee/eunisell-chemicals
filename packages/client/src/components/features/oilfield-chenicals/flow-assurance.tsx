@@ -48,8 +48,16 @@ const FlowAssurance: React.FC = () => {
       {/* Desktop */}
       <div className="hidden md:block py-16 px-30">
         <div className="grid grid-cols-2 gap-x-16 items-center">
-          <div className="relative">
-            <img src="/oilfield-chemicals/flow-assurance.svg" alt="Flow Assurance" className="w-160 h-112 object-contain" />
+          <div className="relative grid grid-cols-2 gap-x-5">
+            <div className="space-y-5.25">
+              <img src="/oilfield-chemicals/wax-before.svg" alt="Wax Cleaning Before" className="w-77.5 h-112 rounded-[15px] object-cover" />
+              <div className="text-3xl leading-10 text-white">Before</div>
+            </div>
+
+            <div className="space-y-5.25">
+              <img src="/oilfield-chemicals/wax-after.svg" alt="Wax Cleaning After" className="w-77.5 h-112 rounded-[15px] object-cover" />
+              <div className="text-3xl leading-10 text-white">After</div>
+            </div>
           </div>
 
           <div>

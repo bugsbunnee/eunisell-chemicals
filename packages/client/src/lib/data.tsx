@@ -37,6 +37,7 @@ export const paths = {
   blogDetail: '/blog/:slug',
   chemicals: '/chemicals',
   processFluids: '/chemicals/industrial-process-fluids',
+  waterSolutions: '/chemicals/water-solutions',
   login: '/admin/login',
   dashboard: '/admin/dashboard',
   blogAdmin: '/admin/dashboard/blog',
@@ -209,7 +210,7 @@ export const knowledgeTopics: string[] = ['Oilfield', 'Industrial', 'Laboratory'
 export const chemicalsPrimaryLinks: NavLink[] = [
   { label: 'Industrial Process Fluids', path: paths.processFluids },
   { label: 'Cleaning & Hygiene', path: paths.chemicals },
-  { label: 'Water Solutions', path: paths.chemicals },
+  { label: 'Water Solutions', path: paths.waterSolutions },
 ];
 
 export const chemicalsSecondaryLinks: NavLink[] = [

@@ -9,7 +9,7 @@ import HomePage from '../pages/HomePage';
 import SolutionsPage from '../pages/SolutionsPage';
 import IndustrialManufacturingPage from '../pages/IndustrialManufacturingPage';
 import SolutionDetailPage from '../pages/SolutionDetailPage';
-import OilfieldChemicalsPage from '../pages/OilfieldChemicals';
+import OilfieldChemicalsPage from '../pages/OilfieldChemicalsPage';
 import KnowledgePage from '../pages/KnowledgePage';
 import KnowledgeDetailPage from '../pages/KnowledgeDetailPage';
 import BrochuresPage from '../pages/BrochuresPage';
@@ -26,6 +26,7 @@ import BlogPage from '../pages/BlogPage';
 import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
 import IndustrialProcessFluidsPage from '../pages/IndustrialProcessFluidsPage';
+import WaterSolutionsPage from '../pages/WaterSolutionsPage';
 import LoginPage from '../pages/LoginPage';
 import ProtectedRoute from '../pages/ProtectedRoute';
 import DashboardLayout from '../components/features/dashboard/layout';
@@ -160,6 +161,10 @@ export const routes: RouteObject[] = [
       {
         path: paths.processFluids,
         element: <IndustrialProcessFluidsPage />,
+      },
+      {
+        path: paths.waterSolutions,
+        element: <WaterSolutionsPage />,
       },
     ],
   },

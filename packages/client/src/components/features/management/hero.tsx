@@ -65,9 +65,8 @@ const Hero: React.FC = () => {
       <div className="relative mr-2 mb-2 md:m-0 h-80 md:min-h-125 md:h-full w-full">
         <div className="md:hidden absolute top-2 right-[-8px] bottom-[-8px] left-2 bg-[rgba(0,32,55,0.05)] rounded-[4px]" />
 
-        <div className="relative h-full rounded-[2px]">
+        <div className="relative h-full rounded-[10px] overflow-hidden">
           <img src="/management/hero.svg" alt="Management" className="w-full h-full object-cover" />
-
           <div className="md:hidden absolute inset-0 bg-linear-to-t from-[rgba(0,32,55,0.4)] to-transparent" />
         </div>
       </div>
