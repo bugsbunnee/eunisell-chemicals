@@ -3,19 +3,22 @@ import LogoCarousel, { type SliderHandle } from '../../common/logo-carousel';
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
 
 const clients = [
-  { src: '/clients/check.svg', alt: 'Check' },
-  { src: '/clients/century.jpg', alt: 'Century' },
-  { src: '/clients/dangote.png', alt: 'Dangote' },
-  { src: '/clients/heosl.jpeg', alt: 'Heosl' },
-  { src: '/clients/nepl.jpeg', alt: 'NEPL' },
-  { src: '/clients/nlng.jpg', alt: 'NLNG' },
-  { src: '/clients/exxon.svg', alt: 'Exxon' },
-  { src: '/clients/seplat.jpeg', alt: 'Seplat' },
-  { src: '/clients/total.webp', alt: 'Total' },
-  { src: '/clients/energies.svg', alt: 'Total Energies' },
-  { src: '/clients/nnpc.svg', alt: 'NNPC' },
-  { src: '/clients/haliburton.svg', alt: 'Haliburton' },
-  { src: '/clients/yinson.jpg', alt: 'Yinson' },
+  { src: '/clients-new/seplat.png', alt: 'Seplat Energy' },
+  { src: '/clients-new/heritage.png', alt: 'Heritage Energy' },
+  { src: '/clients-new/chorus.png', alt: 'Chorus Energy' },
+  { src: '/clients-new/sollant.png', alt: 'Sollant' },
+  { src: '/clients-new/nnpc.png', alt: 'NNPC' },
+  { src: '/clients-new/halliburton.png', alt: 'Halliburton' },
+  { src: '/clients-new/midwestern.png', alt: 'Midwestern Oil & Gas' },
+  { src: '/clients-new/total-energies.png', alt: 'TotalEnergies' },
+  { src: '/clients-new/conoil.png', alt: 'Conoil' },
+  { src: '/clients-new/chevron.png', alt: 'Chevron' },
+  { src: '/clients-new/belemaoil.png', alt: 'Belemaoil' },
+  { src: '/clients-new/bc.png', alt: 'BC' },
+  { src: '/clients-new/nepn.png', alt: 'Network Exploration & Production' },
+  { src: '/clients-new/shell.png', alt: 'Shell' },
+  { src: '/clients-new/exxonmobil.png', alt: 'ExxonMobil' },
+  { src: '/clients-new/universal.png', alt: 'Universal Energy' },
 ];
 
 const SLIDES_TO_SHOW = 5;

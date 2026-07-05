@@ -40,9 +40,6 @@ const FlowAssurance: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="h-56 rounded-[8px] overflow-hidden mt-2">
-          <img src="/oilfield-chemicals/flow-assurance.svg" alt="Flow Assurance" className="w-full h-full object-cover" />
-        </div>
       </div>
 
       {/* Desktop */}

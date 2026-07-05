@@ -25,8 +25,11 @@ const mobileNavItems: MobileNavItem[] = [
       { label: 'About Us', path: paths.aboutUs },
       { label: 'Executive Management', path: paths.management },
       { label: 'QHSE', path: paths.qhse },
+      { label: 'Health Safety & Environment', path: paths.hsePolicy },
       { label: 'CSR', path: paths.csr },
       { label: 'Careers', path: paths.careers },
+      { label: 'Partners', path: paths.partners },
+      { label: 'Graduate Trainee Program', path: paths.graduateTrainee },
     ],
   },
   {
@@ -37,6 +40,17 @@ const mobileNavItems: MobileNavItem[] = [
       { label: 'Oilfield Chemicals', path: paths.oilfield },
       { label: 'Technical Services', path: paths.technical },
       { label: 'Laboratory Services', path: paths.technical },
+    ],
+  },
+  {
+    label: 'Our Chemicals',
+    items: [
+      { label: 'All Chemicals', path: paths.chemicals },
+      { label: 'Oilfield Chemicals', path: paths.oilfield },
+      { label: 'Industrial Process Fluids', path: paths.processFluids },
+      { label: 'Cleaning & Hygiene', path: paths.cleaningHygiene },
+      { label: 'Water Solutions', path: paths.waterSolutions },
+      { label: 'Fluid Condition Monitoring', path: paths.fluidMonitoring },
     ],
   },
   {

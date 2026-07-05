@@ -6,6 +6,9 @@ const features: { Icon: LucideIcon; text: string }[] = [
   { Icon: UserCheckIcon, text: 'Mentorship from Senior Executives' },
 ];
 
+const gridImages = Array.from({ length: 9 }, (_, index) => `/careers/life-${index + 1}.svg`);
+const largeImages = ['/careers/life-large-1.svg', '/careers/life-large-2.svg'];
+
 const LifeAtEunisell: React.FC = () => (
   <section>
     {/* Mobile — "Graduate Trainee Programmes" */}
@@ -37,19 +40,25 @@ const LifeAtEunisell: React.FC = () => (
     </div>
 
     {/* Desktop — "Life at Eunisell" */}
-    <div className="hidden md:block bg-card py-24 px-30 text-left">
+    <div className="hidden md:block bg-card pt-30 px-30 text-left">
       <div className="max-w-[1776px]">
-        <h2 className="font-bold text-accent text-[40px] leading-15 mb-12">Life at Eunisell</h2>
+        <h2 className="text-accent text-[40px] leading-15 mb-12">Life at Eunisell</h2>
 
-        <div className="grid gap-4" style={{ gridTemplateColumns: '2fr 1fr', gridTemplateRows: '1fr 1fr', height: '600px' }}>
-          <div className="rounded-[8px] overflow-hidden" style={{ gridRow: '1 / 3' }}>
-            <img src="/careers/life.svg" alt="Eunisell manufacturing facility" className="w-full h-full object-cover" />
+        <div className="flex gap-4">
+          <div className="grid grid-cols-3 gap-4 w-[66.386%]">
+            {gridImages.map((image, index) => (
+              <div key={image} className="aspect-square rounded-[8px] overflow-hidden">
+                <img src={image} alt={`Life at Eunisell ${index + 1}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
           </div>
-          <div className="rounded-[8px] overflow-hidden">
-            <img src="/careers/group.jpeg" alt="Chemical engineers collaborating" className="w-full h-full object-cover" />
-          </div>
-          <div className="rounded-[8px] overflow-hidden">
-            <img src="/careers/toast.jpeg" alt="Laboratory researcher" className="w-full h-full object-cover" />
+
+          <div className="flex-1 flex flex-col gap-4">
+            {largeImages.map((image, index) => (
+              <div key={image} className="flex-1 rounded-[8px] overflow-hidden">
+                <img src={image} alt={`Life at Eunisell featured ${index + 1}`} className="w-full h-full object-cover" />
+              </div>
+            ))}
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { paths } from '../../../lib/data';
 
 const links = [
   { img: '/careers/head-office.svg', label: 'About Us', to: paths.aboutUs },
-  { img: '/management/director.svg', label: 'Executive Management', to: paths.management },
+  { img: '/careers/management.svg', label: 'Executive Management', to: paths.management },
   { img: '/careers/qhse.svg', label: 'QHSE', to: paths.qhse },
   { img: '/careers/csr.svg', label: 'CSR', to: paths.csr },
 ];

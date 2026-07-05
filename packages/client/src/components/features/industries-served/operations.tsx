@@ -1,5 +1,6 @@
 import { HeadsetIcon, LockIcon, TicketsIcon } from 'lucide-react';
 import React from 'react';
+import IndustriesServed from '../../common/industries-served';
 
 const operations = [
   {
@@ -17,14 +18,6 @@ const operations = [
     title: 'Technical Support',
     description: 'On-site laboratory testing and expert chemical engineering support to solve complex industrial challenges.',
   },
-];
-
-const images = [
-  { src: '/industries-served/oil.svg', title: 'oil & gas' },
-  { src: '/industries-served/manufacture.svg', title: 'manufacturing' },
-  { src: '/industries-served/utils.svg', title: 'utilities' },
-  { src: '/industries-served/infra.svg', title: 'infrastructure' },
-  { src: '/industries-served/marine.svg', title: 'marine' },
 ];
 
 const Operations: React.FC = () => {
@@ -54,17 +47,6 @@ const Operations: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile image strip */}
-      <div className="md:hidden px-6 pb-16 flex flex-col gap-4">
-        {images.slice(0, 3).map((image) => (
-          <div key={image.title} className="relative h-40 rounded-[4px] overflow-hidden">
-            <img src={image.src} alt={image.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-linear-to-t from-accent/80 to-accent/0" />
-            <div className="absolute bottom-4 left-6 font-bold text-[20px] leading-7 text-white capitalize">{image.title}</div>
-          </div>
-        ))}
-      </div>
-
       {/* Desktop layout */}
       <div className="hidden md:block px-30 py-24">
         <div className="grid grid-cols-2 gap-x-18">
@@ -91,16 +73,8 @@ const Operations: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-30 grid grid-cols-5 gap-x-4">
-          {images.map((image) => (
-            <div key={image.title} className="relative h-125 overflow-hidden">
-              <img src={image.src} alt={image.title} className="h-full w-full object-cover" />
-              <div className="absolute top-0 left-0 right-0 bottom-0 bg-linear-to-tr from-accent opacity-80 to-accent/0" />
-              <div className="space-y-2 absolute left-8 bottom-8 text-left">
-                <div className="text-xl capitalize leading-8 text-primary-foreground font-bold">{image.title}</div>
-              </div>
-            </div>
-          ))}
+        <div className="mt-30">
+          <IndustriesServed />
         </div>
       </div>
     </section>

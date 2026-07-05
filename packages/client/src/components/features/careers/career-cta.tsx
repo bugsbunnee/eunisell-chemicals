@@ -38,7 +38,7 @@ const CareerCta: React.FC = () => (
     </div>
 
     {/* Desktop */}
-    <div className="hidden md:block py-24 px-30">
+    <div className="hidden md:block pb-24 px-30">
       <div
         className="relative overflow-hidden rounded-[24px] bg-accent py-20 px-20 text-center"
         style={{ backgroundImage: 'linear-gradient(90deg, rgb(0, 32, 55) 0%, rgb(0, 32, 55) 100%)' }}

@@ -1,15 +1,38 @@
-import React, { useRef, useState } from 'react';
+import React, { useMemo, useRef, useState } from 'react';
 import LogoCarousel, { type SliderHandle } from '../../common/logo-carousel';
 import { ChevronLeftIcon, ChevronRightIcon } from 'lucide-react';
-import { partners } from '../../../lib/data';
+
+const partners = [
+  { src: '/oem/basf.png', alt: 'BASF' },
+  { src: '/oem/iggnita.png', alt: 'Iggnita' },
+  { src: '/oem/comptech.png', alt: 'Comptech' },
+  { src: '/oem/quaker-houghton.png', alt: 'Quaker Houghton' },
+  { src: '/oem/sollant.png', alt: 'Sollant' },
+  { src: '/oem/honeywell.png', alt: 'Honeywell' },
+  { src: '/oem/antara.png', alt: 'Antara Groupe' },
+  { src: '/oem/clariant.png', alt: 'Clariant' },
+  { src: '/oem/dow.png', alt: 'Dow' },
+  { src: '/oem/dupont.png', alt: 'DuPont' },
+  { src: '/oem/eagle-burgmann.png', alt: 'Eagle Burgmann' },
+  { src: '/oem/nouryon.png', alt: 'Nouryon' },
+  { src: '/oem/roemex.png', alt: 'Roemex' },
+  { src: '/oem/tmc.png', alt: 'TMC Transmare Chemie' },
+  { src: '/oem/ttsa.png', alt: 'TTSA' },
+];
 
 const SLIDES_TO_SHOW = 5;
 const total = partners.length;
 
 const Partners: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+
   const sliderRef = useRef<SliderHandle>(null);
   const index = currentSlide % total;
+
+  const current = useMemo(() => {
+    const currentValue = index + 1;
+    return total - currentValue;
+  }, [index]);
 
   return (
     <div className="mt-8 border-t border-t-border py-16 px-6 md:px-30">
@@ -39,10 +62,10 @@ const Partners: React.FC = () => {
 
       <div className="mt-22.25 flex items-center gap-x-4">
         <div className="flex-1 h-0.5 bg-border">
-          <div className="h-full bg-secondary transition-all duration-500" style={{ width: `${((index + 1) / total) * 100}%` }} />
+          <div className="h-full bg-secondary transition-all duration-500" style={{ width: `${(current / total) * 100}%` }} />
         </div>
         <span className="text-xs text-accent leading-5 font-medium tabular-nums shrink-0">
-          {(index + 1).toString().padStart(2, '0')} / {total.toString().padStart(2, '0')}
+          {current.toString().padStart(2, '0')} / {total.toString().padStart(2, '0')}
         </span>
       </div>
     </div>

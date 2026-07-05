@@ -27,8 +27,10 @@ import CareerDetailPage from '../pages/CareerDetailPage';
 import BlogPage from '../pages/BlogPage';
 import BlogDetailPage from '../pages/BlogDetailPage';
 import ChemicalsPage from '../pages/ChemicalsPage';
-import IndustrialProcessFluidsPage from '../pages/IndustrialProcessFluidsPage';
 import WaterSolutionsPage from '../pages/WaterSolutionsPage';
+import FluidConditionMonitoringPage from '../pages/FluidConditionMonitoringPage';
+import CleaningHygienePage from '../pages/CleaningHygienePage';
+import ChemicalProcessFluidsPage from '../pages/ChemicalProcessFluidsPage';
 import LoginPage from '../pages/LoginPage';
 import ProtectedRoute from '../pages/ProtectedRoute';
 import DashboardLayout from '../components/features/dashboard/layout';
@@ -170,11 +172,19 @@ export const routes: RouteObject[] = [
       },
       {
         path: paths.processFluids,
-        element: <IndustrialProcessFluidsPage />,
+        element: <ChemicalProcessFluidsPage />,
       },
       {
         path: paths.waterSolutions,
         element: <WaterSolutionsPage />,
+      },
+      {
+        path: paths.fluidMonitoring,
+        element: <FluidConditionMonitoringPage />,
+      },
+      {
+        path: paths.cleaningHygiene,
+        element: <CleaningHygienePage />,
       },
     ],
   },

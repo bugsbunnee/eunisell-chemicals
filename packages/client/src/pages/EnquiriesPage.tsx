@@ -61,7 +61,7 @@ const typeConfig: Record<string, { bg: string; text: string; icon: LucideIcon }>
 };
 
 const priorityConfig: Record<EnquiryPriority, { dot: string; label: string }> = {
-  NORMAL: { dot: 'bg-[#94a3b8]', label: 'Normal' },
+  NORMAL: { dot: 'bg-popover-foreground', label: 'Normal' },
   URGENT: { dot: 'bg-[#ef4444]', label: 'Urgent' },
 };
 

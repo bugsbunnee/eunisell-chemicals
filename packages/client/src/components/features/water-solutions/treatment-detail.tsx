@@ -14,7 +14,7 @@ export interface TreatmentDetailProps {
 
 const TreatmentDetail: React.FC<TreatmentDetailProps> = ({ title, description, image, imageAlt = '', cardTitle, items, mutedCardTitle = false }) => {
   return (
-    <section className="bg-white px-6 py-12 md:px-30 md:py-30 grid md:grid-cols-2 gap-10 md:gap-x-25 items-center text-left">
+    <section className="bg-white px-6 py-12 md:px-30 md:py-30 grid md:grid-cols-2 gap-10 md:gap-x-25 items-start text-left">
       <Reveal direction="left" distance={56} className="flex flex-col gap-8">
         <h2 className="font-bold text-[24px] leading-8 md:text-4xl md:leading-10 text-accent">{title}</h2>
 

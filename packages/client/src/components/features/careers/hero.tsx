@@ -68,13 +68,13 @@ const CareersHero: React.FC = () => (
             and Innovation
           </h1>
 
-          <p className="text-card-foreground text-[20px] leading-[1.625] max-w-150 mb-8">
+          <p className="text-card-foreground text-[20px] leading-relaxed max-w-150 mb-8">
             Join Eunisell Chemicals and become part of a legacy that powers the continent's most vital industries through chemistry and technical expertise.
           </p>
 
           <button
             onClick={() => scrollToView('open-positions')}
-            className="inline-flex items-center justify-center bg-secondary text-white font-semibold text-[16px] px-8 py-[18px] rounded-[4px] hover:bg-secondary/90 transition-colors w-fit"
+            className="inline-flex items-center justify-center bg-secondary text-white font-semibold text-[16px] px-8 py-4.5 rounded-[4px] hover:bg-secondary/90 transition-colors w-fit"
           >
             View Current Opportunities
           </button>

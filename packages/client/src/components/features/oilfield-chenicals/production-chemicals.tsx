@@ -12,27 +12,21 @@ const ProductionChemicals: React.FC = () => {
         <p className="text-[16px] leading-6.5 text-card-foreground">
           Our production chemicals are designed to maximize recovery and ensure efficient separation of oil, water, and gas phases under varied operating conditions.
         </p>
-        <div className="grid grid-cols-2 gap-3">
+
+        <div className="space-y-4">
           {chemicals.map((chemical) => (
-            <div key={chemical} className="flex items-center gap-2 text-[14px] leading-5 text-accent">
+            <div key={chemical} className="flex gap-x-3 items-center py-[12.5px] text-sm border-b border-b-border leading-5 text-accent">
               <CheckCircleIcon size={14} className="text-secondary shrink-0" />
               {chemical}
             </div>
           ))}
         </div>
-        <div className="relative mt-2 h-64 rounded-[8px] overflow-hidden">
-          <img src="/oilfield-chemicals/production-chemical.svg" alt="Production Chemical" className="w-full h-full object-cover" />
-          <div className="absolute bottom-0 left-0 right-0 border-l-[3px] bg-background border-l-secondary p-4">
-            <div className="text-[10px] text-secondary uppercase tracking-[1px]">Impact Insight</div>
-            <p className="text-[13px] text-accent mt-1">Improved phase separation by 35% in recent offshore application.</p>
-          </div>
-        </div>
       </div>
 
       {/* Desktop */}
       <div className="hidden md:block py-16 px-30">
-        <div className="grid grid-cols-2 gap-x-16 items-center">
-          <div>
+        <div className="grid grid-cols-[1fr_2fr] gap-x-16 items-start">
+          <div className="pt-19.25">
             <h2 className="text-4xl text-accent leading-10 font-bold">Production Chemicals</h2>
 
             <p className="text-lg text-muted-foreground mt-8">
@@ -48,12 +42,21 @@ const ProductionChemicals: React.FC = () => {
             </div>
           </div>
 
-          <div className="relative">
-            <img src="/oilfield-chemicals/production-chemical.svg" alt="Production Chemical" className="w-160 h-112 object-contain" />
+          <div className="relative space-y-4.25">
+            <div className="grid grid-cols-3 gap-4.25">
+              <img src="/oilfield-chemicals/production-chemicals-1.svg" alt="Production Chemical 1" className="w-full aspect-290/450 rounded-[10px] object-cover" />
+              <img src="/oilfield-chemicals/production-chemicals-2.svg" alt="Production Chemical 2" className="w-full aspect-290/450 rounded-[10px] object-cover" />
+              <img src="/oilfield-chemicals/production-chemicals-3.svg" alt="Production Chemical 3" className="w-full aspect-290/450 rounded-[10px] object-cover" />
+            </div>
 
-            <div className="absolute -left-6 bottom-6 border-l-[3px] bg-background border-l-secondary p-6 text-left">
-              <div className="text-xs font-semibold text-secondary uppercase">impact insight</div>
-              <p className="text-sm font-bold mt-0 text-accent max-w-51.75">Improved phase separation by 35% in recent offshore application.</p>
+            <div className="grid grid-cols-2 gap-4.25">
+              <div className="w-full aspect-video rounded-[10px] overflow-hidden">
+                <img src="/oilfield-chemicals/production-chemicals-4.svg" alt="Production Chemical 4" className="w-full h-full object-cover" />
+              </div>
+
+              <div className="w-full aspect-video rounded-[10px] overflow-hidden">
+                <img src="/oilfield-chemicals/production-chemicals-5.svg" alt="Production Chemical 5" className="w-full h-full object-cover" />
+              </div>
             </div>
           </div>
         </div>

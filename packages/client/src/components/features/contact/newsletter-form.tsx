@@ -35,11 +35,9 @@ const NewsletterForm: React.FC = () => {
         <div className="relative max-w-374 mx-auto">
           <div className="flex flex-col gap-6 md:grid md:items-center md:grid-cols-[1fr_2fr] md:gap-x-12">
             <div>
-              <h2 className="font-bold text-white text-[24px] md:text-[36px] leading-8 md:leading-[1.2] mb-3 md:mb-4">
-                Stay informed on technical advances
-              </h2>
+              <h2 className="font-bold text-white text-[24px] md:text-[36px] leading-8 md:leading-[1.2] mb-3 md:mb-4">Stay informed on technical advances</h2>
 
-              <p className="text-[#94a3b8] text-sm md:text-[16px] leading-5 md:leading-[1.65]">
+              <p className="text-popover-foreground text-sm md:text-[16px] leading-5 md:leading-[1.65]">
                 Quarterly technical bulletins and industry analysis curated by our R&amp;D team.
               </p>
             </div>
@@ -65,12 +63,7 @@ const NewsletterForm: React.FC = () => {
                   name="industry"
                   validators={{ onChange: z.string().min(1) }}
                   children={(field) => (
-                    <select
-                      value={field.state.value}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      onBlur={field.handleBlur}
-                      className={`${inputClass} appearance-none`}
-                    >
+                    <select value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} onBlur={field.handleBlur} className={`${inputClass} appearance-none`}>
                       <option value="" disabled className="bg-accent text-white/40">
                         Select Industry
                       </option>
@@ -104,12 +97,7 @@ const NewsletterForm: React.FC = () => {
                   name="industry"
                   validators={{ onChange: z.string().min(1) }}
                   children={(field) => (
-                    <select
-                      value={field.state.value}
-                      onChange={(e) => field.handleChange(e.target.value)}
-                      onBlur={field.handleBlur}
-                      className={`${inputClass} appearance-none`}
-                    >
+                    <select value={field.state.value} onChange={(e) => field.handleChange(e.target.value)} onBlur={field.handleBlur} className={`${inputClass} appearance-none`}>
                       <option value="" disabled className="bg-accent text-white/40">
                         Select Industry
                       </option>

@@ -17,6 +17,7 @@ const desktopLinks = [
 
 const ApplyCta: React.FC = () => {
   const navigate = useNavigate();
+
   return (
     <section>
       {/* Mobile */}

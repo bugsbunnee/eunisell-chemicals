@@ -1,91 +1,107 @@
 import React from 'react';
+import ImageCard from '../../common/image-card';
 
 const areas = [
   {
     title: 'Aluminium Can Processing',
-    description: 'Can processing',
-    image: '/industrial-manufacturing/water-treatment.svg',
+    description:
+      'Eunisell provides specialised chemical solutions for aluminium can manufacturing, helping producers improve efficiency, product quality, and operational reliability.',
+    hoverDescription:
+      'Our portfolio includes cupper lubricants, bodymaker coolants, cleaners, conversion coatings, and mobility enhancers, all designed to support high-speed production while reducing maintenance, extending tool life, and promoting more sustainable operations. Backed by process control equipment and dedicated technical support, we deliver integrated solutions that help manufacturers optimise performance, minimise chemical consumption, and maintain consistent production quality.',
+    image: '/industrial-manufacturing/applied/aluminium-can.jpg',
   },
   {
-    title: 'Food & Beverage',
-    description: 'Sanitization and process-specific additives.',
-    image: '/industrial-manufacturing/food-and-beverage.svg',
+    title: 'Food & Beverage Chemicals',
+    description:
+      'Eunisell provides specialised process and chemical solutions that help food and beverage manufacturers maintain product quality, operational efficiency, and the highest hygiene standards.',
+    hoverDescription:
+      'Our solutions include Clean-in-Place (CIP) and Clean-out-of-Place (COP) systems, membrane regeneration solutions, conveyor lubrication solutions, bottle treatment solutions and process cleaning chemicals. Backed by technical expertise and reliable support, we help manufacturers optimise production, improve equipment performance, minimise downtime and ensure compliance with industry quality and food safety standards.',
+    image: '/industrial-manufacturing/applied/food-beverage.jpg',
   },
   {
-    title: 'Cleaning & Hygiene',
-    description: 'Prevention of scale and bio-fouling in HVAC.',
-    image: '/industrial-manufacturing/cleaning-and-hygiene.svg',
+    title: 'Cleaning and Hygiene Chemicals',
+    description:
+      'Eunisell offers a comprehensive range of cleaning and hygiene chemicals designed to maintain safe, clean, and hygienic environments across industrial, commercial, and institutional facilities.',
+    hoverDescription:
+      'Our solutions deliver effective cleaning, sanitation, and disinfection while supporting regulatory compliance, operational efficiency, and the protection of people, equipment, and assets.',
+    image: '/industrial-manufacturing/applied/cleaning-hygiene.jpg',
   },
   {
-    title: 'Refining Chemicals',
-    description: 'High-performance refining chemicals',
-    image: '/industrial-manufacturing/refining-chemicals.svg',
+    title: 'Refinery Chemicals',
+    description:
+      'Eunisell provides a comprehensive range of high-performance refinery chemicals designed to optimize refining processes, improve operational efficiency, and protect critical assets.',
+    hoverDescription:
+      'Our solutions help refineries maximize throughput, enhance product quality, mitigate corrosion and fouling, and ensure reliable, cost-effective operations while supporting compliance with industry standards and environmental regulations.',
+    image: '/industrial-manufacturing/applied/refinery.jpg',
   },
   {
     title: 'Specialized Lubricants',
-    description: 'High-performance lubricants',
-    image: '/industrial-manufacturing/specialized-lubricants.svg',
+    description:
+      'Eunisell delivers a broad range of specialized lubricant chemicals designed to provide superior protection, reduce friction, and enhance equipment performance under demanding operating conditions.',
+    hoverDescription:
+      'Our solutions improve reliability, minimize wear, extend maintenance intervals, and maximize the operational life of industrial machinery across diverse sectors.',
+    image: '/industrial-manufacturing/applied/lubricants.jpg',
   },
   {
     title: 'Construction Chemicals',
-    description: 'High-performance construction chemicals for building project',
-    image: '/industrial-manufacturing/construction-chemicals.svg',
+    description:
+      'Eunisell offers a comprehensive range of high-performance construction chemicals designed to enhance the strength, durability, and longevity of concrete and building structures.',
+    hoverDescription:
+      'Our solutions support every stage of construction—from mixing and placement to protection and repair—helping improve performance, accelerate project delivery, and ensure long-term structural integrity across residential, commercial, and industrial applications.',
+    image: '/industrial-manufacturing/applied/construction.jpg',
   },
   {
-    title: 'Marine Chemical',
-    description: 'High-performance marine chemicals',
-    image: '/industrial-manufacturing/marine.svg',
+    title: 'Marine Chemicals',
+    description: 'Eunisell supplies high-performance marine chemicals engineered to support safe, efficient, and compliant vessel operations.',
+    hoverDescription:
+      'Our portfolio includes solutions for water treatment, cleaning, maintenance, fuel treatment, and equipment protection, helping ship operators improve operational reliability, reduce maintenance costs, and extend the service life of critical marine systems.',
+    image: '/industrial-manufacturing/applied/marine.jpg',
   },
   {
     title: 'Water Treatment Chemicals',
-    description: 'High-performance water treatment chemicals',
-    image: '/industrial-manufacturing/water.svg',
+    description:
+      'Eunisell provides a comprehensive range of high-performance water treatment chemicals designed to improve water quality, protect critical assets, and optimize system performance.',
+    hoverDescription:
+      'Our solutions help prevent corrosion, scaling, fouling, and microbial growth, ensuring efficient, reliable, and sustainable operations across industrial, commercial, and utility applications.',
+    image: '/industrial-manufacturing/applied/water-treatment.jpg',
   },
   {
     title: 'Metal Cleaning Chemicals',
-    description: 'High-performance metal cleaning chemicals',
-    image: '/industrial-manufacturing/metal-cleaning.svg',
+    description: 'Eunisell offers advanced metal cleaning chemicals formulated to effectively remove oils, grease, scale, rust, and other contaminants from metal surfaces.',
+    hoverDescription:
+      'Our solutions improve surface cleanliness, enhance production efficiency, and prepare components for subsequent manufacturing, coating, or finishing processes while protecting equipment and extending asset life.',
+    image: '/industrial-manufacturing/applied/metal-cleaning.jpg',
   },
 ];
 
-const ImageCard = ({ title, description, image, className = '' }: { title: string; description: string; image: string; className?: string }) => (
-  <div className={`rounded-[2px] overflow-hidden relative ${className}`}>
-    <img src={image} alt={title} className="w-full h-full object-cover z-10 relative" />
-    <div className="absolute inset-0 bg-linear-to-t from-accent/90 to-accent/5 z-50" />
-    <div className="absolute z-50 left-4 md:left-8 bottom-4 md:bottom-8 right-4 md:right-8 text-left">
-      <div className="font-bold text-[16px] md:text-xl leading-6 md:leading-8 text-white mb-1 md:mb-2">{title}</div>
-      <p className="text-[10px] md:text-sm text-white/70 leading-4 md:leading-5">{description}</p>
-    </div>
-  </div>
-);
+const banner = {
+  title: 'Industrial Chemicals',
+  description:
+    'Eunisell supplies a broad portfolio of high-performance industrial chemicals that support efficient manufacturing, processing, and maintenance operations across multiple industries.',
+  hoverDescription:
+    'Our solutions are engineered to enhance productivity, improve process efficiency, protect critical equipment, and help customers achieve reliable, cost-effective, and sustainable operational performance.',
+  image: '/industrial-manufacturing/applied/industrial.jpg',
+};
 
 const AppliedChemistry: React.FC = () => {
   return (
-    <section className="px-6 py-16 md:px-30 md:py-28 bg-background">
-      <h2 className="font-bold text-[24px] md:text-4xl leading-[30px] md:leading-10 text-accent text-center md:mx-auto">Applied Chemistry</h2>
+    <section className="px-6 py-16 md:px-24 md:py-24 bg-background">
+      <h2 className="text-[24px] md:text-4xl leading-7.5 md:leading-10 text-accent text-center md:mx-auto">Applied Chemistry</h2>
 
       {/* Mobile: 2×2 grid (first 4 only) */}
       <div className="md:hidden grid grid-cols-2 gap-4 mt-8">
         {areas.slice(0, 4).map((area) => (
-          <ImageCard key={area.title} {...area} className="h-[200px]" />
+          <ImageCard key={area.title} {...area} className="h-50" />
         ))}
       </div>
 
-      {/* Desktop: 3-col grid (all 9) */}
+      {/* Desktop: 3-col grid (all 9) plus wide banner */}
       <div className="hidden md:grid grid-cols-3 gap-8 mt-16">
         {areas.map((area) => (
           <ImageCard key={area.title} {...area} className="h-100" />
         ))}
-      </div>
 
-      {/* Desktop: wide banner at bottom */}
-      <div className="hidden md:block rounded-[2px] h-100 mt-8 overflow-hidden relative">
-        <img src="/industrial-manufacturing/industrial-chemical.svg" alt="Industrial Chemical" className="w-full h-full object-cover z-10 relative" />
-        <div className="absolute top-0 right-0 left-0 bottom-0 bg-linear-to-t from-accent/90 to-accent/5 z-50" />
-        <div className="absolute z-50 left-8 bottom-8 right-8 text-left">
-          <div className="font-bold text-xl leading-8 text-white mb-2">Industrial Chemical</div>
-          <p className="text-sm text-white/70 leading-5">High-performance industry chemicals</p>
-        </div>
+        <ImageCard {...banner} className="col-span-3 h-100" />
       </div>
     </section>
   );

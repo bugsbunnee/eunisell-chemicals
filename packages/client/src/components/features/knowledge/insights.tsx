@@ -79,7 +79,7 @@ const Insights: React.FC = () => {
                 className={cn({
                   'text-sm shrink-0 cursor-pointer transition-colors whitespace-nowrap px-2 py-2': true,
                   'font-bold text-accent border-b-2 border-secondary': activeTab === tab,
-                  'font-medium text-[#94a3b8]': activeTab !== tab,
+                  'font-medium text-popover-foreground': activeTab !== tab,
                 })}
               >
                 {tab}
@@ -97,7 +97,7 @@ const Insights: React.FC = () => {
                 className={cn({
                   'text-[16px] shrink-0 cursor-pointer transition-colors': true,
                   'font-bold text-accent border-b-2 border-secondary px-2 py-2': activeTab === tab,
-                  'font-medium text-[#94a3b8] px-2 py-2.25 hover:text-accent': activeTab !== tab,
+                  'font-medium text-popover-foreground px-2 py-2.25 hover:text-accent': activeTab !== tab,
                 })}
               >
                 {tab}
@@ -168,11 +168,7 @@ const Insights: React.FC = () => {
               {filtered.map((article) => (
                 <div key={article.title} className="flex flex-col gap-3 md:gap-4">
                   <div className="h-52 md:h-64 bg-[#f1f5f9] overflow-hidden shrink-0">
-                    <img
-                      src={article.image}
-                      alt={article.title}
-                      className="w-full h-[157%] object-cover mt-[-28%] md:h-full md:mt-0 md:object-cover"
-                    />
+                    <img src={article.image} alt={article.title} className="w-full h-[157%] object-cover mt-[-28%] md:h-full md:mt-0 md:object-cover" />
                   </div>
 
                   <div className="flex items-center gap-3 pt-1 md:pt-2">
