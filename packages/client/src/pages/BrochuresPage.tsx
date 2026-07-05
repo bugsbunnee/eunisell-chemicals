@@ -12,7 +12,9 @@ const BrochuresPage: React.FC = () => {
       <NavBar />
       <Hero />
       <BrochureLibrary />
-      <KnowledgeCenter />
+      <div className="md:hidden">
+        <KnowledgeCenter />
+      </div>
       <Cta />
       <Footer />
     </React.Fragment>

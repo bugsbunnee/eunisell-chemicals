@@ -23,9 +23,7 @@ const Hero: React.FC = () => {
         <div className="max-w-full md:max-w-200 flex flex-col gap-5 md:gap-6">
           <BreadCrumbNavigation crumbs={crumbs} />
 
-          <div className="font-bold text-xs md:text-sm uppercase tracking-[2.4px] md:tracking-[2.8px] leading-[18px] md:leading-5 text-secondary">
-            Product Brochures
-          </div>
+          <div className="font-bold text-xs md:text-sm uppercase tracking-[2.4px] md:tracking-[2.8px] leading-[18px] md:leading-5 text-secondary">Product Brochures</div>
 
           <div className="space-y-3 md:space-y-4">
             <h1 className="font-bold text-[36px] md:text-[60px] leading-[45px] md:leading-15 text-white">
@@ -44,24 +42,19 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-base md:text-xl text-white/80 leading-[26px] md:leading-[32.5px] max-w-full md:max-w-160">
-              Access our comprehensive library of technical documentation and industrial chemical solutions.
-              <span className="hidden md:inline"> Detailed insights for global engineering and procurement teams.</span>
+              Access our comprehensive library of technical documentation
+              <span className="md:hidden"> and industrial chemical solutions.</span>
+              <span className="hidden md:inline">, corporate profiles, and industrial chemical solutions. Detailed insights for global engineering and procurement teams.</span>
             </p>
           </div>
 
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-stretch md:items-center pt-4">
-            <Link
-              to={paths.contact}
-              className="bg-secondary text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap"
-            >
+            <Link to={paths.contact} className="bg-secondary text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap">
               <span className="md:hidden">Request Consultation</span>
               <span className="hidden md:inline">Request Technical Consultation</span>
             </Link>
 
-            <Link
-              to={paths.contact}
-              className="border border-white text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap"
-            >
+            <Link to={paths.contact} className="border border-white text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap">
               <span className="md:hidden">Product Support</span>
               <span className="hidden md:inline">Contact Product Support</span>
             </Link>

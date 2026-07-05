@@ -62,12 +62,14 @@ const PartnersGrid: React.FC = () => {
       <section className="hidden md:block bg-background px-30 pt-12.5 pb-30.5">
         <div className="grid grid-cols-4 gap-6">
           {visible.map((p) => (
-            <div key={p.id} className="bg-white border border-border rounded-[1px] shadow-[0px_16px_16px_rgba(0,0,0,0.08)] flex flex-col items-center text-center p-8 pt-8">
-              <div className="flex items-center justify-center h-24 mb-5">
-                <img src={p.src} alt={p.name} className="max-h-16 max-w-14 object-contain" />
+            <div
+              key={p.id}
+              className="bg-white border border-input rounded-[1px] drop-shadow-[0px_2px_2px_rgba(0,0,0,0.05)] flex flex-col items-center justify-center text-center px-6 py-10 min-h-75"
+            >
+              <div className="flex items-center justify-center h-24 mb-6">
+                <img src={p.sphere} alt={p.name} className="size-37.5 shrink-0 object-contain" />
               </div>
-              <span className="font-bold text-secondary text-xs uppercase tracking-[1.5px] mb-3">{p.alt}</span>
-              <h4 className="font-bold text-xl text-accent leading-7 mb-3">{p.name}</h4>
+              <h4 className="text-[20px] text-accent leading-7 mb-4">{p.name}</h4>
               <p className="text-sm text-card-foreground leading-[22.75px]">{p.description}</p>
             </div>
           ))}

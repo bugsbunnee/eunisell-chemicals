@@ -9,8 +9,8 @@ const CTA: React.FC = () => {
   return (
     <section className="relative py-20 px-6 md:py-30 md:px-30 bg-accent flex text-center items-center justify-center w-full overflow-hidden">
       <div className="w-full text-center z-40">
-        <div className="mx-auto text-[30px] md:text-[60px] leading-9 md:leading-15.75 text-primary-foreground max-w-full md:max-w-184.75 font-black">
-          Partner with Eunisell Chemicals for Your Next Operational Challenge
+        <div className="mx-auto text-3xl md:text-[60px] leading-9 md:leading-15.75 text-primary-foreground max-w-full md:max-w-184.75 font-black">
+          Partner with Eunisell for Your Next Operational Challenge
         </div>
 
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center mt-8 md:mt-10 gap-4 md:gap-x-4">

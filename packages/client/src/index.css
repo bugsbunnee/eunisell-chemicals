@@ -103,6 +103,18 @@
 
   --radius: 0.625rem;
 
+  --card-soft: #f7f9fb;
+
+  --secondary-tint: #eff6ff;
+
+  --secondary-pale: #dbeafe;
+
+  --primary-light: #00558e;
+
+  --ink: #555555;
+
+  --ink-soft: #666666;
+
   --sidebar: #f8fafc;
 
   --sidebar-foreground: #9ca3af;
@@ -170,6 +182,12 @@ body {
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-soft: var(--card-soft);
+  --color-secondary-tint: var(--secondary-tint);
+  --color-secondary-pale: var(--secondary-pale);
+  --color-primary-light: var(--primary-light);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
   --color-foreground: var(--foreground);
   --color-background: var(--background);
   --radius-sm: calc(var(--radius) * 0.6);

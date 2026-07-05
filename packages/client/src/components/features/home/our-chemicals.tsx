@@ -156,7 +156,7 @@ const OurChemicals: React.FC = () => {
 
         <StaggerItem lift className="group border border-border rounded-sm overflow-hidden">
           <div className="h-50 md:h-60 overflow-hidden">
-            <img src="/home/monitoring.png" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
+            <img src="/home/monitoring.svg" className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105" />
           </div>
 
           <div className="p-6 md:p-8 text-left flex flex-col">

@@ -17,6 +17,8 @@ import PartnersPage from '../pages/PartnersPage';
 import ContactPage from '../pages/ContactPage';
 import CsrPage from '../pages/CsrPage';
 import QHSEPage from '../pages/QHSEPage';
+import HealthSafetyPage from '../pages/HealthSafetyPage';
+import GraduateTraineePage from '../pages/GraduateTraineePage';
 import IndustriesServedPage from '../pages/IndustriesServedPage';
 import TechnicalServicesPage from '../pages/TechnicalServicesPage';
 import ManagementPage from '../pages/ManagementPage';
@@ -131,6 +133,10 @@ export const routes: RouteObject[] = [
         element: <QHSEPage />,
       },
       {
+        path: paths.hsePolicy,
+        element: <HealthSafetyPage />,
+      },
+      {
         path: paths.technical,
         element: <TechnicalServicesPage />,
       },
@@ -141,6 +147,10 @@ export const routes: RouteObject[] = [
       {
         path: paths.careers,
         element: <CareersPage />,
+      },
+      {
+        path: paths.graduateTrainee,
+        element: <GraduateTraineePage />,
       },
       {
         path: paths.careerDetail,
