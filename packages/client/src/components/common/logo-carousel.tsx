@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import type { Settings } from 'react-slick';
 import { Slider } from './slide';
+import useVisibleSlides from '../../hooks/use-visible-slides';
 
 export interface SliderHandle {
   slickPrev: () => void;
@@ -25,26 +26,23 @@ interface LogoCarouselProps {
 }
 
 const LogoCarousel: React.FC<LogoCarouselProps> = ({ logos, sliderRef, onSlideChange, rtl = false, speed = 3000, slidesToScroll = 1, slidesToShow = 5, className = '' }) => {
+  const visibleSlides = useVisibleSlides(slidesToShow);
+
   const settings = useMemo<Settings>(
     () => ({
       infinite: true,
       autoplay: true,
       autoplaySpeed: speed,
       speed: 600,
-      slidesToShow,
+      slidesToShow: visibleSlides,
       rtl,
-      slidesToScroll,
+      slidesToScroll: visibleSlides < slidesToShow ? visibleSlides : slidesToScroll,
       arrows: false,
       dots: false,
       pauseOnHover: true,
       afterChange: onSlideChange,
-      responsive: [
-        { breakpoint: 1280, settings: { slidesToShow: 4, slidesToScroll: 4 } },
-        { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 3 } },
-        { breakpoint: 640, settings: { slidesToShow: 2, slidesToScroll: 2 } },
-      ],
     }),
-    [speed, slidesToShow, rtl, slidesToScroll, onSlideChange]
+    [speed, visibleSlides, slidesToShow, rtl, slidesToScroll, onSlideChange]
   );
 
   return (

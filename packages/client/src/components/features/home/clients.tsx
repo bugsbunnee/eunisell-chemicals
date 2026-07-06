@@ -6,7 +6,6 @@ const clients = [
   { src: '/clients-new/seplat.png', alt: 'Seplat Energy' },
   { src: '/clients-new/heritage.png', alt: 'Heritage Energy' },
   { src: '/clients-new/chorus.png', alt: 'Chorus Energy' },
-  { src: '/clients-new/sollant.png', alt: 'Sollant' },
   { src: '/clients-new/nnpc.png', alt: 'NNPC' },
   { src: '/clients-new/halliburton.png', alt: 'Halliburton' },
   { src: '/clients-new/midwestern.png', alt: 'Midwestern Oil & Gas' },
