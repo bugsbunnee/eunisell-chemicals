@@ -50,7 +50,7 @@ const Insights: React.FC = () => {
   });
 
   return (
-    <section className="bg-background text-left">
+    <section id="articles" className="bg-background text-left">
       <div className="bg-white border-b border-[#e2e8f0] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] py-4 px-6 md:px-30">
         <div className="flex md:hidden items-center gap-3 mb-3">
           <div className="relative flex-1">

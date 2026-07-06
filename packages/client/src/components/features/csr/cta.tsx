@@ -3,6 +3,9 @@ import { Button } from '../../ui/button';
 import { FaAtlassian, FaFacebook, FaLinkedin } from 'react-icons/fa';
 import { paths } from '../../../lib/data';
 import { Link, useNavigate } from 'react-router-dom';
+import { downloadFile } from '../../../lib/utils';
+
+import csrReportPdf from '../../../assets/documents/csr-report.pdf';
 
 const quickLinks = [
   { title: 'CSR Strategy', path: paths.aboutUs },
@@ -32,7 +35,10 @@ const CTA: React.FC = () => {
           <Button onClick={() => navigate(paths.contact)} className="w-full h-13.5 bg-secondary text-white text-[14px] font-bold rounded-[4px]">
             Contact our CSR Team
           </Button>
-          <Button onClick={() => navigate(paths.brochures)} className="w-full h-13.5 bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]">
+          <Button
+            onClick={() => downloadFile(csrReportPdf, 'Eunisell-CSR-Report.pdf')}
+            className="w-full h-13.5 bg-transparent text-white border border-white/30 text-[14px] font-bold rounded-[4px]"
+          >
             Download CSR Report
           </Button>
         </div>
@@ -76,7 +82,7 @@ const CTA: React.FC = () => {
               Contact our CSR Team
             </Button>
             <Button
-              onClick={() => navigate(paths.brochures)}
+              onClick={() => downloadFile(csrReportPdf, 'Eunisell-CSR-Report.pdf')}
               className="px-10 flex items-center h-15.5 bg-transparent text-white border border-white/30 text-base font-bold rounded-[4px]"
             >
               Download CSR Report

@@ -3,7 +3,7 @@ import type SMTPTransport from 'nodemailer/lib/smtp-transport';
 
 interface MailOptions {
   from: string;
-  to: string;
+  to: string | string[];
   subject: string;
   html: string;
 }

@@ -1,14 +1,27 @@
 import React, { useCallback, useMemo } from 'react';
+import SubmitButton from '../../forms/SubmitButton';
+import http from '../../../services/http';
+
 import { z } from 'zod';
-import { useAppForm } from '../../forms/form-context';
+import { useAppForm } from '../../forms/app-form';
+
+import { toast } from 'sonner';
+import { getErrorMessage } from '../../../lib/utils';
 
 const industries = ['Oil & Gas', 'Manufacturing', 'Construction', 'Marine', 'Agriculture', 'Pharmaceuticals', 'Other'];
 
 const NewsletterForm: React.FC = () => {
   const form = useAppForm({
     defaultValues: { email: '', industry: '', interest: '' },
-    onSubmit: ({ value }) => {
-      console.log('Newsletter submitted:', value);
+    onSubmit: async ({ value }) => {
+      try {
+        await http.post('/api/v1/subscriptions', value);
+
+        toast.success('You are subscribed! Watch your inbox for technical updates.');
+        form.reset();
+      } catch (error) {
+        toast.error('Failed to subscribe', { description: getErrorMessage(error) });
+      }
     },
   });
 
@@ -112,17 +125,10 @@ const NewsletterForm: React.FC = () => {
               </div>
 
               <form.AppForm>
-                <form.Subscribe
-                  selector={(s) => [s.canSubmit, s.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
-                    <button
-                      type="submit"
-                      disabled={!canSubmit || isSubmitting}
-                      className="w-full h-12 md:h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors disabled:opacity-50"
-                    >
-                      {isSubmitting ? '...' : 'Subscribe'}
-                    </button>
-                  )}
+                <SubmitButton
+                  label="Subscribe"
+                  loadingLabel="Subscribing…"
+                  className="bg-secondary hover:bg-secondary/90 h-12 md:h-14 text-sm md:text-[15px] tracking-[1px] rounded-none"
                 />
               </form.AppForm>
             </form>

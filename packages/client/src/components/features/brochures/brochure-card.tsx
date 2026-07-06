@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { FileTextIcon, CalendarIcon, DownloadIcon } from 'lucide-react';
+import { downloadFile } from '../../../lib/utils';
 
 export interface Brochure {
   id: number;
@@ -50,14 +51,13 @@ const BrochureCard: React.FC<Props> = ({ brochure }) => {
           </div>
         </div>
 
-        <a
-          href={brochure.file}
-          download
+        <button
+          onClick={() => downloadFile(brochure.file, `${brochure.title}.pdf`)}
           className="bg-accent text-white font-bold md:font-normal text-sm text-center py-4 rounded-[4px] flex items-center justify-center gap-2 mt-4.5 md:mt-4"
         >
           <DownloadIcon size={14} />
           Download Brochure
-        </a>
+        </button>
       </div>
     </div>
   );

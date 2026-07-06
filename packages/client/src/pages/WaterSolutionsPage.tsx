@@ -9,6 +9,8 @@ import KnowledgeCenter from '../components/features/about/knowledge-center';
 import Cta from '../components/features/water-solutions/cta';
 import Footer from '../components/common/footer';
 
+import waterTreatmentBrochurePdf from '../assets/documents/water-treatment-brochure.pdf';
+
 const WaterSolutionsPage: React.FC = () => {
   return (
     <React.Fragment>
@@ -88,7 +90,7 @@ const WaterSolutionsPage: React.FC = () => {
 
       <KnowledgeCenter />
 
-      <Cta />
+      <Cta secondaryCta={{ label: 'Download Brochure', file: waterTreatmentBrochurePdf, fileName: 'Eunisell-Water-Treatment-Brochure.pdf' }} />
 
       <Footer />
     </React.Fragment>

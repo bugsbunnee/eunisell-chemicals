@@ -7,6 +7,11 @@ import { Reveal, Stagger, StaggerItem } from '../../common/animate';
 
 import type { Brochure } from './brochure-card';
 
+import corporateProfilePdf from '../../../assets/documents/corporate-profile.pdf';
+import chemicalServicesPdf from '../../../assets/documents/chemical-services-brochure.pdf';
+import oilGasWaterSolutionsPdf from '../../../assets/documents/oil-and-gas-water-solutions.pdf';
+import aluminiumCanPdf from '../../../assets/documents/aluminium-can-brochure.pdf';
+
 enum FilterCategory {
   All = 'all',
   Corporate = 'corporate',
@@ -32,8 +37,8 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/corporate-profile.jpg',
     title: 'Corporate Profile',
     description: "An overview of Eunisell's businesses, capabilities, and track record across Africa's energy and industrial sectors.",
-    file: '/brochures/files/process-chemicals-catalysts-catalog.pdf',
-    fileSize: 'PDF (4.2 MB)',
+    file: corporateProfilePdf,
+    fileSize: 'PDF (20.7 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
   {
@@ -44,8 +49,8 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/oilfield-chemical-services.jpg',
     title: 'Oil Field Chemical & Services',
     description: "Comprehensive guide to Eunisell's upstream and downstream chemical solutions for the energy sector.",
-    file: '/brochures/files/oilfield-chemicals-solutions.pdf',
-    fileSize: 'PDF (4.2 MB)',
+    file: chemicalServicesPdf,
+    fileSize: 'PDF (8.4 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
   {
@@ -68,8 +73,8 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/water-process-solutions.jpg',
     title: 'Advanced Water & Process Solutions for Oil & Gas Operations',
     description: 'Water treatment and process chemistry for produced water, injection systems, and field operations.',
-    file: '/brochures/files/oilfield-chemicals-solutions.pdf',
-    fileSize: 'PDF (4.2 MB)',
+    file: oilGasWaterSolutionsPdf,
+    fileSize: 'PDF (1.1 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
   {
@@ -92,8 +97,8 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/aluminium-can.png',
     title: 'Aluminium Can Processing Solutions',
     description: 'Metal cleaning and surface treatment chemistry for aluminium can manufacturing lines.',
-    file: '/brochures/files/sustainable-manufacturing-additives.pdf',
-    fileSize: 'PDF (4.2 MB)',
+    file: aluminiumCanPdf,
+    fileSize: 'PDF (7.4 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
 ];

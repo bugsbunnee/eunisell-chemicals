@@ -1,7 +1,13 @@
 import React, { useCallback } from 'react';
+import SubmitButton from '../../forms/SubmitButton';
+import http from '../../../services/http';
+
 import { CheckIcon } from 'lucide-react';
 import { z } from 'zod';
-import { useAppForm } from '../../forms/form-context';
+import { useAppForm } from '../../forms/app-form';
+
+import { toast } from 'sonner';
+import { getErrorMessage } from '../../../lib/utils';
 
 const industries = ['Oil & Gas', 'Manufacturing', 'Construction', 'Marine', 'Agriculture', 'Pharmaceuticals', 'Other'];
 const interests = ['Technical Articles', 'Industry Insights', 'Company Updates', 'Product Bulletins'];
@@ -10,8 +16,15 @@ const bullets = ['Monthly Technical Digest', 'New Product Bulletins'];
 const BlogNewsletter: React.FC = () => {
   const form = useAppForm({
     defaultValues: { email: '', industry: '', interest: '' },
-    onSubmit: ({ value }) => {
-      console.log('Newsletter submitted:', value);
+    onSubmit: async ({ value }) => {
+      try {
+        await http.post('/api/v1/subscriptions', value);
+
+        toast.success('You are subscribed! Watch your inbox for technical updates.');
+        form.reset();
+      } catch (error) {
+        toast.error('Failed to subscribe', { description: getErrorMessage(error) });
+      }
     },
   });
 
@@ -118,17 +131,10 @@ const BlogNewsletter: React.FC = () => {
 
             <div className="pt-2 md:pt-3">
               <form.AppForm>
-                <form.Subscribe
-                  selector={(s) => [s.canSubmit, s.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
-                    <button
-                      type="submit"
-                      disabled={!canSubmit || isSubmitting}
-                      className="w-full bg-secondary text-white font-bold text-[15px] md:text-[16px] py-5 md:py-4 hover:bg-secondary/90 transition-colors shadow-[0px_16px_16px_rgba(0,0,0,0.1)] disabled:opacity-50"
-                    >
-                      {isSubmitting ? '...' : 'Subscribe to Updates'}
-                    </button>
-                  )}
+                <SubmitButton
+                  label="Subscribe to Updates"
+                  loadingLabel="Subscribing…"
+                  className="bg-secondary hover:bg-secondary/90 h-auto py-5 md:py-4 text-[15px] md:text-[16px] normal-case rounded-none shadow-[0px_16px_16px_rgba(0,0,0,0.1)]"
                 />
               </form.AppForm>
             </div>

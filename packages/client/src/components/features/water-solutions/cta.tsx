@@ -3,10 +3,13 @@ import { Button } from '../../ui/button';
 import { useNavigate } from 'react-router-dom';
 import { paths } from '../../../lib/data';
 import { Reveal } from '../../common/animate';
+import { downloadFile } from '../../../lib/utils';
 
 export interface CtaAction {
   label: string;
-  path: string;
+  path?: string;
+  file?: string;
+  fileName?: string;
 }
 
 export interface CtaProps {
@@ -23,6 +26,12 @@ const CTA: React.FC<CtaProps> = ({
   secondaryCta = { label: 'Download Brochure', path: paths.brochures },
 }) => {
   const navigate = useNavigate();
+
+  const runAction = (action: CtaAction) => {
+    if (action.file) return downloadFile(action.file, action.fileName ?? `${action.label}.pdf`);
+    if (action.path) navigate(action.path);
+  };
+
   return (
     <section className="relative px-6 py-16 md:px-30 md:py-0 bg-accent text-center overflow-hidden md:h-150 md:flex md:items-center md:justify-center">
       {/* Technical grid background */}
@@ -46,13 +55,13 @@ const CTA: React.FC<CtaProps> = ({
 
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center gap-4 md:gap-x-6 mt-10">
           <Button
-            onClick={() => navigate(primaryCta.path)}
+            onClick={() => runAction(primaryCta)}
             className="h-14 md:h-[70px] px-6 md:px-12 flex items-center justify-center bg-secondary text-base md:text-xl leading-7 text-white font-bold rounded-[4px] capitalize"
           >
             {primaryCta.label}
           </Button>
           <Button
-            onClick={() => navigate(secondaryCta.path)}
+            onClick={() => runAction(secondaryCta)}
             className="h-14 md:h-[68px] px-6 md:px-12 flex items-center justify-center bg-transparent border border-white text-base md:text-xl leading-7 text-white font-bold rounded-[4px] capitalize"
           >
             {secondaryCta.label}

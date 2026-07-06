@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { paths } from '../../../lib/data';
+import { downloadFile } from '../../../lib/utils';
+
+import corporateProfilePdf from '../../../assets/documents/corporate-profile.pdf';
 
 const links = [
   { url: paths.aboutUs, label: 'Our History' },
@@ -41,7 +44,7 @@ const Cta: React.FC = () => {
           </button>
 
           <button
-            onClick={() => navigate(paths.aboutUs)}
+            onClick={() => downloadFile(corporateProfilePdf, 'Eunisell-Corporate-Profile.pdf')}
             className="bg-transparent border border-white text-white uppercase font-bold text-sm md:text-[15px] tracking-[0.7px] md:tracking-[0.75px] h-[56px] md:h-auto md:px-10 md:py-5 rounded-[2px] whitespace-nowrap flex items-center justify-center"
           >
             Corporate Profile

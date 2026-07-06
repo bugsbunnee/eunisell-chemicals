@@ -193,14 +193,14 @@ export const coreSolutionLinks: NavLink[] = [
 
 export const technicalCapabilityLinks: NavLink[] = [
   { label: 'Technical Services', path: paths.technical, semibold: true },
-  { label: 'Laboratory Services', path: paths.technical },
+  { label: 'Laboratory Services', path: `${paths.technical}#lab-services` },
   { label: 'Chemical Blending', path: paths.chemicals },
 ];
 
 export const resourceLinks: NavLink[] = [
   { label: 'Knowledge Centre Hub', path: paths.knowledge, semibold: true },
-  { label: 'Technical Articles', path: paths.knowledge },
-  { label: 'Industry Insights', path: paths.knowledge },
+  { label: 'Technical Articles', path: `${paths.knowledge}#articles` },
+  { label: 'Industry Insights', path: `${paths.knowledge}#insights` },
   { label: 'Our Blog', path: paths.blog },
 ];
 

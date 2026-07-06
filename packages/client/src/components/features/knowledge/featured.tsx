@@ -26,13 +26,11 @@ const categories = [
 
 const Featured: React.FC = () => {
   return (
-    <section className="bg-white py-16 px-6 md:py-24 md:px-30 text-left">
+    <section id="insights" className="bg-white py-16 px-6 md:py-24 md:px-30 text-left">
       <div className="max-w-[1560px] mx-auto">
         <div className="flex flex-col gap-6 md:grid md:grid-cols-2 md:gap-18 md:items-start">
           <div className="flex flex-col gap-0">
-            <h2 className="font-bold text-[24px] md:text-[44px] text-accent leading-8 md:leading-[1.2] md:tracking-tight">
-              Insights and Technical Resources
-            </h2>
+            <h2 className="font-bold text-[24px] md:text-[44px] text-accent leading-8 md:leading-[1.2] md:tracking-tight">Insights and Technical Resources</h2>
 
             <p className="text-[#475569] text-sm md:text-lg leading-[22.75px] md:leading-relaxed mt-4 md:mt-8">
               Eunisell bridges the gap between chemical innovation and operational reality for African industrial contexts.

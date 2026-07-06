@@ -1,7 +1,13 @@
 import React, { useCallback, useRef, useState } from 'react';
+import SubmitButton from '../../forms/SubmitButton';
+import http from '../../../services/http';
+
 import { UploadCloudIcon } from 'lucide-react';
 import { z } from 'zod';
-import { useAppForm } from '../../forms/form-context';
+import { useAppForm } from '../../forms/app-form';
+
+import { toast } from 'sonner';
+import { getErrorMessage } from '../../../lib/utils';
 
 const steps = ['Personal Details', 'Experience & Education', 'Documents'];
 
@@ -28,8 +34,16 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
       motivation: '',
       agreed: false,
     },
-    onSubmit: ({ value }) => {
-      console.log('Application submitted:', value, { file: fileName });
+    onSubmit: async ({ value }) => {
+      try {
+        await http.post('/api/v1/applications', { ...value, jobTitle });
+
+        toast.success('Your application was submitted successfully! Our HR team will be in touch.');
+        form.reset();
+        setFileName(null);
+      } catch (error) {
+        toast.error('Failed to submit the application', { description: getErrorMessage(error) });
+      }
     },
   });
 
@@ -44,7 +58,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
 
   return (
     <section className="bg-card py-24 px-30">
-      <div className="max-w-[1200px] mx-auto bg-white rounded-[16px] border border-[rgba(175,177,179,0.2)] shadow-[0px_16px_40px_0px_rgba(0,0,0,0.12)] overflow-hidden">
+      <div className="max-w-300 mx-auto bg-white rounded-[16px] border border-[rgba(175,177,179,0.2)] shadow-[0px_16px_40px_0px_rgba(0,0,0,0.12)] overflow-hidden">
         <div className="bg-accent flex items-center h-20 px-12">
           {steps.map((step, i) => (
             <React.Fragment key={step}>
@@ -68,9 +82,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
         <div className="p-16">
           <div className="mb-12">
             <h3 className="font-bold text-accent text-[28px] leading-10.5">Application for {jobTitle}</h3>
-            <p className="text-[#606060] text-[16px] leading-6 mt-2">
-              Please provide accurate information. Your application will be reviewed by our HR and Technical teams.
-            </p>
+            <p className="text-[#606060] text-[16px] leading-6 mt-2">Please provide accurate information. Your application will be reviewed by our HR and Technical teams.</p>
           </div>
 
           <form onSubmit={onSubmit} className="flex flex-col gap-8">
@@ -163,16 +175,12 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
                         type="button"
                         onClick={() => field.handleChange(option)}
                         className={`flex items-center justify-between p-4 rounded border font-semibold text-sm transition-colors ${
-                          field.state.value === option
-                            ? 'bg-secondary/5 border-secondary text-secondary'
-                            : 'bg-white border-[rgba(175,177,179,0.3)] text-accent'
+                          field.state.value === option ? 'bg-secondary/5 border-secondary text-secondary' : 'bg-white border-[rgba(175,177,179,0.3)] text-accent'
                         }`}
                       >
                         {option} Years
                         <span
-                          className={`w-4 h-4 rounded-full border-2 transition-colors ${
-                            field.state.value === option ? 'bg-secondary border-secondary' : 'border-[#afb1b3]'
-                          }`}
+                          className={`w-4 h-4 rounded-full border-2 transition-colors ${field.state.value === option ? 'bg-secondary border-secondary' : 'border-[#afb1b3]'}`}
                         />
                       </button>
                     ))}
@@ -197,13 +205,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
                   {!fileName && <p className="text-[#606060] text-[12px] leading-[18px]">PDF, DOCX (Max. 5MB)</p>}
                 </div>
               </button>
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".pdf,.docx"
-                onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
-                className="hidden"
-              />
+              <input ref={fileInputRef} type="file" accept=".pdf,.docx" onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)} className="hidden" />
             </div>
 
             {/* Motivation */}
@@ -252,17 +254,10 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
 
             <form.AppForm>
               <div className="flex justify-end pt-4">
-                <form.Subscribe
-                  selector={(s) => [s.canSubmit, s.isSubmitting]}
-                  children={([canSubmit, isSubmitting]) => (
-                    <button
-                      type="submit"
-                      disabled={!canSubmit || isSubmitting}
-                      className="bg-secondary text-white font-bold text-[16px] px-12 py-4 rounded shadow-[0px_16px_16px_rgba(0,0,0,0.08)] hover:bg-secondary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                      {isSubmitting ? 'Submitting…' : 'Submit Application'}
-                    </button>
-                  )}
+                <SubmitButton
+                  label="Submit Application"
+                  loadingLabel="Submitting…"
+                  className="bg-secondary hover:bg-secondary/90 w-auto h-auto px-12 py-4 text-[16px] normal-case rounded shadow-[0px_16px_16px_rgba(0,0,0,0.08)]"
                 />
               </div>
             </form.AppForm>
