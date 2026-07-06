@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { getUser, logout, persistUser } from '../services/auth';
 
 import type { User } from '../lib/entities';
+import { paths } from '../lib/data';
 
 export interface Auth {
   token: string;
@@ -24,7 +25,7 @@ const useAuthStore = create<AuthStore>((set) => ({
     set((store) => ({ ...store, auth: null }));
     logout();
 
-    window.location.href = '/';
+    window.location.href = paths.home;
   },
 }));
 
