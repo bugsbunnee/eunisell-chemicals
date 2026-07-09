@@ -49,12 +49,18 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-3 md:gap-6 items-stretch md:items-center pt-4">
-            <Link to={paths.contact} className="bg-secondary text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap">
+            <Link
+              to={paths.contact}
+              className="bg-secondary text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap transition-all hover:scale-105"
+            >
               <span className="md:hidden">Request Consultation</span>
               <span className="hidden md:inline">Request Technical Consultation</span>
             </Link>
 
-            <Link to={paths.contact} className="border border-white text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap">
+            <Link
+              to={paths.contact}
+              className="border border-white text-white font-bold text-sm md:text-base text-center py-4 md:py-5 md:px-10 rounded-[4px] whitespace-nowrap transition-all hover:scale-105"
+            >
               <span className="md:hidden">Product Support</span>
               <span className="hidden md:inline">Contact Product Support</span>
             </Link>

@@ -102,7 +102,10 @@ const SpecializedDepartments: React.FC = () => {
               <p className={cn('text-sm leading-5.5 font-normal', department.alternate ? 'text-[#afb1b3]' : 'text-card-foreground')}>{department.description}</p>
             </div>
 
-            <button onClick={handleAction} className={cn('uppercase text-[12px] gap-x-2 leading-4 tracking-[0.6px] font-bold flex items-center', department.labelColor)}>
+            <button
+              onClick={handleAction}
+              className={cn('uppercase text-[12px] gap-x-2 leading-4 tracking-[0.6px] font-bold flex items-center transition-all hover:scale-105', department.labelColor)}
+            >
               {department.label} <ArrowRightIcon size={12} />
             </button>
           </div>

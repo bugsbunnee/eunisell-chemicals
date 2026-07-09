@@ -48,10 +48,16 @@ const ApplyCta: React.FC = () => {
           <h3 className="font-bold text-white text-[20px] leading-7.5">General Application</h3>
           <p className="text-muted text-[14px] leading-5.25">Join our talent database and be the first to know about upcoming roles.</p>
           <div className="flex flex-col gap-3">
-            <button onClick={() => navigate(paths.contact)} className="w-full h-13 bg-secondary text-white font-bold text-[16px] rounded-[4px] tracking-[-0.016px]">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="w-full h-13 bg-secondary text-white font-bold text-[16px] rounded-[4px] tracking-[-0.016px] transition-all hover:scale-105"
+            >
               Submit CV / Resume
             </button>
-            <button onClick={() => navigate(paths.contact)} className="w-full h-13 border border-white/20 text-white font-bold text-[16px] rounded-[4px] tracking-[0.047px]">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="w-full h-13 border border-white/20 text-white font-bold text-[16px] rounded-[4px] tracking-[0.047px] transition-all hover:scale-105"
+            >
               Join Talent Network
             </button>
           </div>
@@ -80,13 +86,13 @@ const ApplyCta: React.FC = () => {
             <div className="flex flex-col gap-4 mt-4">
               <button
                 onClick={() => navigate(paths.contact)}
-                className="w-full bg-secondary text-white font-bold text-[16px] py-4 rounded-[4px] hover:bg-secondary/90 transition-colors"
+                className="w-full bg-secondary text-white font-bold text-[16px] py-4 rounded-[4px] hover:bg-secondary/90 transition-all hover:scale-105"
               >
                 Submit CV / Resume
               </button>
               <button
                 onClick={() => navigate(paths.contact)}
-                className="w-full border border-white/20 text-white font-bold text-[16px] py-4 rounded-[4px] hover:bg-white/5 transition-colors"
+                className="w-full border border-white/20 text-white font-bold text-[16px] py-4 rounded-[4px] hover:bg-white/5 transition-all hover:scale-105"
               >
                 Join Talent Network
               </button>

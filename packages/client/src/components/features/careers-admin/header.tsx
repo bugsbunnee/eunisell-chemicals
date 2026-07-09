@@ -27,7 +27,7 @@ export default function CareerHeader({ search, onSearch }: Props) {
           <BellIcon size={16} className="text-accent" />
           <span className="absolute top-2 right-2 size-2 bg-[#ef4444] rounded-full border-2 border-white" />
         </div>
-        <button className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px]">
+        <button className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px] transition-all hover:scale-105">
           <PlusIcon size={14} />
           Add Career Opening
         </button>

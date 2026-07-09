@@ -44,7 +44,7 @@ const ChemicalsIndustrialFluids: React.FC = () => {
           <div className="pt-4">
             <button
               onClick={() => navigate(paths.industrial)}
-              className="bg-accent text-white font-semibold text-[16px] px-8 py-4 rounded-[4px] hover:bg-accent/90 transition-colors"
+              className="bg-accent text-white font-semibold text-[16px] px-8 py-4 rounded-[4px] hover:bg-accent/90 transition-all hover:scale-105"
             >
               View Full Product List
             </button>

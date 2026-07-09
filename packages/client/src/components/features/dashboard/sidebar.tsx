@@ -78,7 +78,7 @@ const Sidebar: React.FC = () => {
       </nav>
 
       <div className="px-4 py-6 border-t border-white/10 shrink-0">
-        <button onClick={logout} className="flex items-center gap-3 w-full text-left group">
+        <button onClick={logout} className="flex items-center gap-3 w-full text-left group transition-all hover:scale-105">
           <div className="size-9 rounded-full bg-secondary flex items-center justify-center text-white text-[13px] font-semibold shrink-0">
             {auth?.user.firstName?.[0]}
             {auth?.user.lastName?.[0]}

@@ -88,7 +88,7 @@ export const COLUMNS: Column<CareerRole>[] = [
     headerClassName: 'text-right',
     cellClassName: '!py-[14px] !pr-[20px] text-right',
     render: () => (
-      <button className="inline-flex items-center justify-center size-8 rounded-full hover:bg-[#f6f9fc] transition-colors text-[#777]">
+      <button className="inline-flex items-center justify-center size-8 rounded-full hover:bg-[#f6f9fc] transition-all text-[#777] hover:scale-105">
         <MoreVerticalIcon size={14} />
       </button>
     ),

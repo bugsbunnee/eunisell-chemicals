@@ -28,7 +28,7 @@ const PartnersGrid: React.FC = () => {
               key={f.id}
               onClick={() => setActive(f.id)}
               className={cn({
-                'px-8 py-3 rounded-[1px] text-sm transition-all whitespace-nowrap': true,
+                'px-8 py-3 rounded-[1px] text-sm transition-all hover:scale-105 whitespace-nowrap': true,
                 'bg-secondary shadow-sm text-white font-bold drop-shadow-[0px_2px_2px_rgba(0,0,0,0.05)]': active === f.id,
                 'text-card-foreground font-medium': active !== f.id,
               })}
@@ -47,7 +47,7 @@ const PartnersGrid: React.FC = () => {
               key={f.id}
               onClick={() => setActive(f.id)}
               className={cn({
-                'px-6 py-3 rounded-[1px] text-[13px] transition-all whitespace-nowrap shrink-0': true,
+                'px-6 py-3 rounded-[1px] text-[13px] transition-all hover:scale-105 whitespace-nowrap shrink-0': true,
                 'bg-secondary text-white font-bold shadow-[0px_2px_2px_rgba(0,0,0,0.05)]': active === f.id,
                 'bg-card border border-[#e8e8e8] text-card-foreground font-medium': active !== f.id,
               })}
@@ -96,7 +96,7 @@ const PartnersGrid: React.FC = () => {
 
         <Link
           to={paths.partners}
-          className="mt-8 flex items-center justify-center w-full border border-[#e8e8e8] py-4 text-accent text-[14px] uppercase tracking-[1.4px] font-medium"
+          className="mt-8 flex items-center justify-center w-full border border-[#e8e8e8] py-4 text-accent text-[14px] uppercase tracking-[1.4px] font-medium transition-all hover:scale-105"
         >
           View All Partners
         </Link>

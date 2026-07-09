@@ -19,13 +19,13 @@ const BlogCta: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
           <Link
             to={paths.contact}
-            className="bg-secondary text-white font-bold text-[15px] md:text-[16px] px-10 py-5 md:py-4.75 hover:bg-secondary/90 transition-colors text-center"
+            className="bg-secondary text-white font-bold text-[15px] md:text-[16px] px-10 py-5 md:py-4.75 hover:bg-secondary/90 transition-all text-center hover:scale-105"
           >
             Speak to a Specialist
           </Link>
           <Link
             to={paths.contact}
-            className="bg-white/10 border border-white/20 text-white font-bold text-[15px] md:text-[16px] px-10 py-5 md:py-4.5 hover:bg-white/15 transition-colors text-center"
+            className="bg-white/10 border border-white/20 text-white font-bold text-[15px] md:text-[16px] px-10 py-5 md:py-4.5 hover:bg-white/15 transition-all text-center hover:scale-105"
           >
             Contact Us
           </Link>

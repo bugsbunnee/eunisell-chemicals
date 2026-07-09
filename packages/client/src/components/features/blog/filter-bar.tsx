@@ -30,12 +30,12 @@ const BlogFilterBar: React.FC = () => {
 
       {/* Filter + Sort row — mobile */}
       <div className="flex items-center justify-between md:hidden">
-        <button className="flex items-center gap-2">
+        <button className="flex items-center gap-2 transition-all hover:scale-105">
           <SlidersHorizontalIcon size={14} className="text-secondary" />
           <span className="font-bold text-accent text-sm">Filter Articles</span>
         </button>
         <div className="relative">
-          <button onClick={() => setSortOpen((o) => !o)} className="flex items-center gap-1.5">
+          <button onClick={() => setSortOpen((o) => !o)} className="flex items-center gap-1.5 transition-all hover:scale-105">
             <span className="font-bold text-secondary text-sm">Sort: {sortBy}</span>
             <ChevronDownIcon size={10} className="text-secondary" />
           </button>
@@ -66,7 +66,7 @@ const BlogFilterBar: React.FC = () => {
               key={cat}
               onClick={() => setActiveCategory(cat)}
               className={cn({
-                'text-sm font-medium px-5 rounded-full transition-colors shrink-0': true,
+                'text-sm font-medium px-5 rounded-full transition-all hover:scale-105 shrink-0': true,
                 'bg-secondary text-white py-2.25': activeCategory === cat,
                 'border border-border text-[#777] py-2 hover:border-secondary/40 hover:text-accent': activeCategory !== cat,
               })}
@@ -84,7 +84,7 @@ const BlogFilterBar: React.FC = () => {
               setTopicOpen((o) => !o);
               setSortOpen(false);
             }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 transition-all hover:scale-105"
           >
             <span className="text-muted text-sm font-medium">Topic:</span>
             <span className="font-semibold text-accent text-sm whitespace-nowrap">{activeTopic}</span>
@@ -126,7 +126,7 @@ const BlogFilterBar: React.FC = () => {
                 setSortOpen((o) => !o);
                 setTopicOpen(false);
               }}
-              className="border border-border flex items-center gap-2 px-4 py-2.5 hover:border-secondary/40 transition-colors"
+              className="border border-border flex items-center gap-2 px-4 py-2.5 hover:border-secondary/40 transition-all hover:scale-105"
             >
               <span className="font-semibold text-accent text-sm whitespace-nowrap">Sort by: {sortBy}</span>
               <ChevronDownIcon size={10} className="text-accent" />

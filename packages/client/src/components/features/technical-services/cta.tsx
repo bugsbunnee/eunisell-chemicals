@@ -20,14 +20,14 @@ const CTA: React.FC = () => {
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 mt-8 md:mt-12 items-center justify-center">
           <button
             onClick={() => navigate(paths.contact)}
-            className="w-full md:w-auto h-14 md:h-auto flex items-center justify-center bg-secondary text-white font-bold text-sm md:text-lg leading-7 md:px-10 md:py-5 rounded-[4px]"
+            className="w-full md:w-auto h-14 md:h-auto flex items-center justify-center bg-secondary text-white font-bold text-sm md:text-lg leading-7 md:px-10 md:py-5 rounded-[4px] transition-all hover:scale-105"
           >
             Get Started Today
           </button>
 
           <button
             onClick={() => navigate(paths.blog)}
-            className="w-full md:w-auto h-14 md:h-auto flex items-center justify-center border border-white/30 text-white font-bold text-sm md:text-lg leading-7 md:px-10 md:py-5 rounded-[4px]"
+            className="w-full md:w-auto h-14 md:h-auto flex items-center justify-center border border-white/30 text-white font-bold text-sm md:text-lg leading-7 md:px-10 md:py-5 rounded-[4px] transition-all hover:scale-105"
           >
             View Technical Blog
           </button>

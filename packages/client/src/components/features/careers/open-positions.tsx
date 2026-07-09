@@ -70,7 +70,7 @@ const OpenPositions: React.FC = () => {
               </div>
               <button
                 onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
-                className="w-full h-11 bg-[#f6f9fc] border border-[#e8e8e8] text-secondary font-bold text-[16px] rounded-[4px]"
+                className="w-full h-11 bg-[#f6f9fc] border border-[#e8e8e8] text-secondary font-bold text-[16px] rounded-[4px] transition-all hover:scale-105"
               >
                 View Role
               </button>
@@ -130,7 +130,7 @@ const OpenPositions: React.FC = () => {
                 </div>
                 <button
                   onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
-                  className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-colors shrink-0"
+                  className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-all shrink-0 hover:scale-105"
                 >
                   View Role
                 </button>

@@ -22,7 +22,7 @@ export default function CareerTable({ data, total, page, totalPages, onPage }: P
           <button
             onClick={() => onPage(Math.max(1, page - 1))}
             disabled={page === 1}
-            className="size-8 bg-white border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[14px] disabled:opacity-40"
+            className="size-8 bg-white border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[14px] disabled:opacity-40 transition-all hover:scale-105"
           >
             ‹
           </button>
@@ -30,7 +30,7 @@ export default function CareerTable({ data, total, page, totalPages, onPage }: P
             <button
               key={n}
               onClick={() => onPage(n)}
-              className={`size-8 rounded-[4px] flex items-center justify-center text-[12px] ${
+              className={`size-8 rounded-[4px] flex items-center justify-center text-[12px] transition-all hover:scale-105 ${
                 page === n ? 'bg-secondary border border-secondary text-white' : 'bg-white border border-[#e8e8e8] text-[#777]'
               }`}
             >
@@ -40,7 +40,7 @@ export default function CareerTable({ data, total, page, totalPages, onPage }: P
           <button
             onClick={() => onPage(Math.min(totalPages, page + 1))}
             disabled={page === totalPages}
-            className="size-8 bg-white border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[14px] disabled:opacity-40"
+            className="size-8 bg-white border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[14px] disabled:opacity-40 transition-all hover:scale-105"
           >
             ›
           </button>

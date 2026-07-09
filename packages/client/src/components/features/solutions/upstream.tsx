@@ -19,7 +19,7 @@ const Upstream: React.FC = () => {
 
           <button
             onClick={() => navigate(paths.oilfield)}
-            className="mt-8 flex items-center gap-3 bg-secondary text-white font-semibold text-[16px] h-14 px-7 rounded-xs hover:bg-secondary/90 transition-colors"
+            className="mt-8 flex items-center gap-3 bg-secondary text-white font-semibold text-[16px] h-14 px-7 rounded-xs hover:bg-secondary/90 transition-all hover:scale-105"
           >
             Explore Oilfield Chemicals
             <ArrowRightIcon size={12} />

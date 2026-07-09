@@ -53,7 +53,7 @@ const BrochureCard: React.FC<Props> = ({ brochure }) => {
 
         <button
           onClick={() => downloadFile(brochure.file, `${brochure.title}.pdf`)}
-          className="bg-accent text-white font-bold md:font-normal text-sm text-center py-4 rounded-[4px] flex items-center justify-center gap-2 mt-4.5 md:mt-4"
+          className="bg-accent text-white font-bold md:font-normal text-sm text-center py-4 rounded-[4px] flex items-center justify-center gap-2 mt-4.5 md:mt-4 transition-all hover:scale-105"
         >
           <DownloadIcon size={14} />
           Download Brochure

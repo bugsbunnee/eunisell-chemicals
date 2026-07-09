@@ -21,12 +21,15 @@ const CTA: React.FC = () => {
         </p>
 
         <div className="flex flex-col gap-3 pt-2 w-full">
-          <button onClick={() => navigate(paths.careers)} className="w-full h-14 bg-secondary text-white text-[16px] font-medium flex items-center justify-center rounded-xs">
+          <button
+            onClick={() => navigate(paths.careers)}
+            className="w-full h-14 bg-secondary text-white text-[16px] font-medium flex items-center justify-center rounded-xs transition-all hover:scale-105"
+          >
             Apply Now
           </button>
           <button
             onClick={() => navigate(paths.careers)}
-            className="w-full h-14 border border-white/30 text-white text-[16px] font-medium flex items-center justify-center rounded-xs"
+            className="w-full h-14 border border-white/30 text-white text-[16px] font-medium flex items-center justify-center rounded-xs transition-all hover:scale-105"
           >
             View Career Opportunities
           </button>
@@ -44,13 +47,13 @@ const CTA: React.FC = () => {
         <div className="flex items-start justify-center gap-6 pt-4">
           <button
             onClick={() => navigate(paths.careers)}
-            className="bg-secondary text-white text-[16px] font-medium px-12 py-5.25 rounded-xs hover:bg-secondary/90 transition-colors"
+            className="bg-secondary text-white text-[16px] font-medium px-12 py-5.25 rounded-xs hover:bg-secondary/90 transition-all hover:scale-105"
           >
             Apply Now
           </button>
           <button
             onClick={() => navigate(paths.careers)}
-            className="border border-white/30 text-white text-[16px] font-medium px-12 py-5 rounded-xs hover:bg-white/10 transition-colors"
+            className="border border-white/30 text-white text-[16px] font-medium px-12 py-5 rounded-xs hover:bg-white/10 transition-all hover:scale-105"
           >
             View Career Opportunities
           </button>

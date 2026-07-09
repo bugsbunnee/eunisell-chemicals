@@ -26,7 +26,7 @@ const CmsPageHealth: React.FC<Props> = ({ items, onAudit }) => (
 
     <button
       onClick={onAudit}
-      className="w-full border border-border rounded-[4px] py-2 text-[12px] text-secondary tracking-[0.082px] uppercase text-center hover:bg-card transition-colors"
+      className="w-full border border-border rounded-[4px] py-2 text-[12px] text-secondary tracking-[0.082px] uppercase text-center hover:bg-card transition-all hover:scale-105"
     >
       Run System Audit
     </button>

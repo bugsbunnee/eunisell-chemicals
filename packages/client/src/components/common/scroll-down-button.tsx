@@ -20,7 +20,7 @@ const ScrollDownButton: React.FC = () => {
     <button
       onClick={handleClick}
       aria-label="Scroll to next section"
-      className="flex flex-col justify-center items-center text-white/60 cursor-pointer animate-bounce"
+      className="flex flex-col justify-center items-center text-white/60 cursor-pointer animate-bounce transition-all hover:scale-105"
     >
       <span className="text-[10px] leading-3.75 uppercase tracking-[2px] transition-colors duration-300">Scroll</span>
 

@@ -29,13 +29,16 @@ const CmsHeader: React.FC<Props> = ({ title, subtitle, ctaLabel, onSearch, onCta
 
       <div className="flex items-center gap-4">
         <div className="relative">
-          <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-colors">
+          <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-all hover:scale-105">
             <BellIcon size={16} />
           </button>
           <span className="absolute top-2 right-2 size-2 rounded-full bg-red-500 border-2 border-white" />
         </div>
 
-        <button onClick={onCta} className="flex items-center gap-2 bg-secondary text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-secondary/90 transition-colors shrink-0">
+        <button
+          onClick={onCta}
+          className="flex items-center gap-2 bg-secondary text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-secondary/90 transition-all shrink-0 hover:scale-105"
+        >
           <PlusIcon size={12} /> {ctaLabel}
         </button>
       </div>

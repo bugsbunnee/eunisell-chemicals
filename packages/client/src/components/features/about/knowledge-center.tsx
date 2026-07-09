@@ -64,7 +64,7 @@ const KnowledgeCenter: React.FC = () => {
       <Reveal className="mt-8 md:mt-16 flex items-center justify-center">
         <Link
           to={paths.knowledge}
-          className="w-full md:w-auto px-8 py-3.5 border border-secondary rounded-xs text-sm leading-5 text-secondary font-medium flex items-center justify-center gap-x-1"
+          className="w-full md:w-auto px-8 py-3.5 border border-secondary rounded-xs text-sm leading-5 text-secondary font-medium flex items-center justify-center gap-x-1 transition-all hover:scale-105"
         >
           Visit Knowledge Centre <ArrowRightIcon size={14} />
         </Link>

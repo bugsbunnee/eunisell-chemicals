@@ -11,7 +11,7 @@ const CmsSystemTools: React.FC<Props> = ({ tools }) => (
 
     <div className="grid grid-cols-2 gap-3">
       {tools.map(({ icon: Icon, label, onClick }) => (
-        <button key={label} onClick={onClick} className="bg-[#002a49] rounded-[4px] py-4 flex flex-col items-center gap-5 hover:bg-[#003560] transition-colors">
+        <button key={label} onClick={onClick} className="bg-[#002a49] rounded-[4px] py-4 flex flex-col items-center gap-5 hover:bg-[#003560] transition-all hover:scale-105">
           <Icon size={16} className="text-white" />
           <span className="text-[10px] text-white text-center leading-3">{label}</span>
         </button>

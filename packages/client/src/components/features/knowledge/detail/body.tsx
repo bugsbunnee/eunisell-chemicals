@@ -36,10 +36,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ content, resourceDetails, rel
               <p className="text-[10px] md:text-[11px] font-bold uppercase tracking-[1.8px] text-secondary mb-3">Related Solution</p>
               <h4 className="font-bold text-white text-[20px] md:text-[22px] leading-[1.25] mb-3">{relatedSolution.title}</h4>
               <p className="text-muted text-sm leading-[1.6] mb-6">{relatedSolution.description}</p>
-              <a
-                href={relatedSolution.href}
-                className="inline-flex items-center gap-2 font-bold text-white text-sm md:text-[15px] hover:gap-3 transition-all"
-              >
+              <a href={relatedSolution.href} className="inline-flex items-center gap-2 font-bold text-white text-sm md:text-[15px] hover:gap-3 transition-all">
                 Learn More
                 <ArrowRightIcon size={14} />
               </a>
@@ -57,7 +54,7 @@ const ArticleBody: React.FC<ArticleBodyProps> = ({ content, resourceDetails, rel
                 <button
                   key={label}
                   style={{ color }}
-                  className="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center text-sm md:text-[13px] font-bold hover:opacity-70 transition-opacity"
+                  className="w-6 h-6 md:w-5 md:h-5 flex items-center justify-center text-sm md:text-[13px] font-bold hover:opacity-70 transition-all hover:scale-105"
                 >
                   {label}
                 </button>

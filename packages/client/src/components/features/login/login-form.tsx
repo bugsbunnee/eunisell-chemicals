@@ -75,7 +75,7 @@ const LoginForm: React.FC = () => {
               Password
             </label>
 
-            <button type="button" className="text-[14px] leading-5 text-secondary hover:text-secondary/80 transition-colors">
+            <button type="button" className="text-[14px] leading-5 text-secondary hover:text-secondary/80 transition-all hover:scale-105">
               Forgot password?
             </button>
           </div>

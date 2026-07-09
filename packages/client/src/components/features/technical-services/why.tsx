@@ -53,7 +53,7 @@ const Why: React.FC = () => {
           <div className="text-[12px] leading-4 font-normal text-white/80">Speak with a specialist today for a technical assessment.</div>
           <button
             onClick={() => navigate(paths.contact)}
-            className="w-full bg-white text-secondary text-sm font-bold leading-5 py-3 px-6 rounded-[4px]"
+            className="w-full bg-white text-secondary text-sm font-bold leading-5 py-3 px-6 rounded-[4px] transition-all hover:scale-105"
           >
             Contact Us
           </button>
@@ -99,7 +99,10 @@ const Why: React.FC = () => {
           <div className="bg-secondary rounded-[12px] p-10 text-center space-y-4">
             <div className="text-2xl leading-8 font-bold text-white capitalize">Ready to Optimize?</div>
             <div className="text-base leading-6 font-normal text-white/80">Speak with a specialist today for a technical assessment.</div>
-            <button onClick={() => navigate(paths.contact)} className="text-secondary text-base leading-6 font-bold py-3 px-6 bg-white rounded-[4px]">
+            <button
+              onClick={() => navigate(paths.contact)}
+              className="text-secondary text-base leading-6 font-bold py-3 px-6 bg-white rounded-[4px] transition-all hover:scale-105"
+            >
               Contact Us
             </button>
           </div>

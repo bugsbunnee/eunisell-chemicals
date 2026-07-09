@@ -12,9 +12,7 @@ const ArticleStayInformed: React.FC = () => {
 
         <h2 className="font-bold text-foreground text-[28px] md:text-[40px] leading-[1.2] mb-3 md:mb-4">Stay Informed</h2>
 
-        <p className="text-muted-foreground text-[15px] md:text-[17px] leading-[1.6] mb-8 md:mb-10">
-          Subscribe for technical bulletins and industry updates.
-        </p>
+        <p className="text-muted-foreground text-[15px] md:text-[17px] leading-[1.6] mb-8 md:mb-10">Subscribe for technical bulletins and industry updates.</p>
 
         <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-3 mb-4 md:mb-[18px]">
           <input
@@ -22,14 +20,10 @@ const ArticleStayInformed: React.FC = () => {
             placeholder="Professional Email"
             className="h-13 md:h-14 w-full md:w-[433px] border border-border px-4 md:px-5 text-[16px] md:text-[15px] text-foreground placeholder:text-muted-foreground/60 focus:outline-none focus:border-secondary"
           />
-          <button className="h-13 md:h-14 px-8 bg-accent text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-primary transition-colors">
-            Subscribe
-          </button>
+          <button className="h-13 md:h-14 px-8 bg-accent text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-primary transition-all hover:scale-105">Subscribe</button>
         </div>
 
-        <p className="text-muted-foreground/70 text-[12px]">
-          By subscribing, you agree to our Privacy Policy and to receive marketing communications.
-        </p>
+        <p className="text-muted-foreground/70 text-[12px]">By subscribing, you agree to our Privacy Policy and to receive marketing communications.</p>
       </div>
     </section>
   );

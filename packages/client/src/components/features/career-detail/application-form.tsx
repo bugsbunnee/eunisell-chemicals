@@ -174,7 +174,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
                         key={option}
                         type="button"
                         onClick={() => field.handleChange(option)}
-                        className={`flex items-center justify-between p-4 rounded border font-semibold text-sm transition-colors ${
+                        className={`flex items-center justify-between p-4 rounded border font-semibold text-sm transition-all hover:scale-105 ${
                           field.state.value === option ? 'bg-secondary/5 border-secondary text-secondary' : 'bg-white border-[rgba(175,177,179,0.3)] text-accent'
                         }`}
                       >
@@ -195,7 +195,7 @@ const ApplicationForm: React.FC<ApplicationFormProps> = ({ jobTitle }) => {
               <button
                 type="button"
                 onClick={() => fileInputRef.current?.click()}
-                className="bg-card border-2 border-dashed border-[rgba(175,177,179,0.3)] rounded-[8px] h-[180px] flex flex-col items-center justify-center gap-3 hover:border-secondary/40 transition-colors"
+                className="bg-card border-2 border-dashed border-[rgba(175,177,179,0.3)] rounded-[8px] h-[180px] flex flex-col items-center justify-center gap-3 hover:border-secondary/40 transition-all hover:scale-105"
               >
                 <div className="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center">
                   <UploadCloudIcon size={24} className="text-secondary" />

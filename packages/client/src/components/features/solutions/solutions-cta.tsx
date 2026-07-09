@@ -22,13 +22,13 @@ const SolutionsCta: React.FC = () => (
       <div className="flex flex-col md:flex-row items-stretch md:items-center gap-4 md:gap-6 mt-4 w-full md:w-auto">
         <Link
           to={paths.contact}
-          className="bg-secondary text-white font-bold text-[16px] md:text-[18px] px-8 md:px-12 py-4 md:py-5 rounded-xs text-center hover:bg-secondary/90 transition-colors"
+          className="bg-secondary text-white font-bold text-[16px] md:text-[18px] px-8 md:px-12 py-4 md:py-5 rounded-xs text-center hover:bg-secondary/90 transition-all hover:scale-105"
         >
           Request Technical Consultation
         </Link>
         <Link
           to={paths.contact}
-          className="bg-white/5 border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-8 md:px-12 py-4 md:py-5 rounded-xs text-center hover:bg-white/10 transition-colors"
+          className="bg-white/5 border border-white/20 text-white font-bold text-[16px] md:text-[18px] px-8 md:px-12 py-4 md:py-5 rounded-xs text-center hover:bg-white/10 transition-all hover:scale-105"
         >
           Contact Technical Support
         </Link>

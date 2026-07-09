@@ -24,7 +24,7 @@ const EnquiriesPage: React.FC = () => {
 
         <div className="flex items-center gap-6 shrink-0">
           <div className="relative">
-            <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-colors">
+            <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-all hover:scale-105">
               <BellIcon size={16} />
             </button>
             <span className="absolute top-2 right-2 size-2 rounded-full bg-red-500 border-2 border-white" />
@@ -144,13 +144,13 @@ const columns: Column<Enquiry>[] = [
     label: 'Actions',
     render: () => (
       <div className="flex items-center gap-3">
-        <button className="text-[#777] hover:text-accent transition-colors">
+        <button className="text-[#777] hover:text-accent transition-all hover:scale-105">
           <EyeIcon size={18} />
         </button>
-        <button className="text-[#777] hover:text-accent transition-colors">
+        <button className="text-[#777] hover:text-accent transition-all hover:scale-105">
           <CornerUpLeftIcon size={16} />
         </button>
-        <button className="text-[#777] hover:text-accent transition-colors">
+        <button className="text-[#777] hover:text-accent transition-all hover:scale-105">
           <MoreVerticalIcon size={16} />
         </button>
       </div>

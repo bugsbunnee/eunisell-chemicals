@@ -20,20 +20,18 @@ const Cta: React.FC = () => {
       <div className="md:hidden relative z-10 flex flex-col items-center text-center px-6 py-16 gap-6">
         <h2 className="font-bold text-[28px] text-white leading-[35px]">Looking for a Chemical Solutions Partner?</h2>
 
-        <p className="text-[16px] text-muted leading-[26px] max-w-sm">
-          Join forces with Eunisell Chemicals to access premium products and world-class technical support.
-        </p>
+        <p className="text-[16px] text-muted leading-[26px] max-w-sm">Join forces with Eunisell Chemicals to access premium products and world-class technical support.</p>
 
         <div className="flex flex-col gap-4 w-full pt-4">
           <Link
             to={paths.contact}
-            className="w-full bg-secondary text-white uppercase font-bold text-[14px] py-5 rounded-[1px] tracking-[0.7px] text-center"
+            className="w-full bg-secondary text-white uppercase font-bold text-[14px] py-5 rounded-[1px] tracking-[0.7px] text-center transition-all hover:scale-105"
           >
             Request Consultation
           </Link>
           <Link
             to={paths.contact}
-            className="w-full border border-white text-white uppercase font-bold text-[14px] py-5 rounded-[1px] tracking-[0.7px] text-center"
+            className="w-full border border-white text-white uppercase font-bold text-[14px] py-5 rounded-[1px] tracking-[0.7px] text-center transition-all hover:scale-105"
           >
             Become a Partner
           </Link>
@@ -50,17 +48,16 @@ const Cta: React.FC = () => {
           </h2>
 
           <p className="text-xl text-muted leading-[32.5px] max-w-175">
-            Join forces with Eunisell Chemicals to access premium products, world-class technical support, and a robust supply chain built for
-            performance.
+            Join forces with Eunisell Chemicals to access premium products, world-class technical support, and a robust supply chain built for performance.
           </p>
 
           <div className="flex items-center gap-4">
-            <Link to={paths.contact} className="bg-secondary text-white uppercase font-bold text-base px-10 py-5 rounded-[1px] whitespace-nowrap">
+            <Link to={paths.contact} className="bg-secondary text-white uppercase font-bold text-base px-10 py-5 rounded-[1px] whitespace-nowrap transition-all hover:scale-105">
               Request Technical Consultation
             </Link>
             <Link
               to={paths.contact}
-              className="bg-transparent border border-white uppercase text-white font-bold text-base px-10 py-5 rounded-[1px] whitespace-nowrap"
+              className="bg-transparent border border-white uppercase text-white font-bold text-base px-10 py-5 rounded-[1px] whitespace-nowrap transition-all hover:scale-105"
             >
               Become a Partner
             </Link>

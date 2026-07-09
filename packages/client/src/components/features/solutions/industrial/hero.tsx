@@ -50,14 +50,14 @@ const IndustrialHero: React.FC = () => {
           <div className="flex flex-col md:flex-row items-stretch md:items-center gap-3 md:gap-4 pt-4">
             <Link
               to={paths.contact}
-              className="flex items-center justify-center md:justify-start gap-3 h-14 md:h-auto bg-secondary text-white font-bold text-xs md:text-sm uppercase tracking-[1.2px] md:tracking-[1.4px] px-8 md:py-[17px] hover:bg-secondary/90 transition-colors"
+              className="flex items-center justify-center md:justify-start gap-3 h-14 md:h-auto bg-secondary text-white font-bold text-xs md:text-sm uppercase tracking-[1.2px] md:tracking-[1.4px] px-8 md:py-[17px] hover:bg-secondary/90 transition-all hover:scale-105"
             >
               Talk to an Expert
               <ArrowRightIcon size={12} />
             </Link>
             <button
               onClick={() => navigate(paths.brochures)}
-              className="flex items-center justify-center h-14 md:h-auto border border-white/30 text-white font-bold text-xs md:text-sm uppercase tracking-[1.2px] md:tracking-[1.4px] px-8 md:py-4 hover:bg-white/10 transition-colors"
+              className="flex items-center justify-center h-14 md:h-auto border border-white/30 text-white font-bold text-xs md:text-sm uppercase tracking-[1.2px] md:tracking-[1.4px] px-8 md:py-4 hover:bg-white/10 transition-all hover:scale-105"
             >
               Download Brochure
             </button>

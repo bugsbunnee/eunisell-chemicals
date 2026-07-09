@@ -17,8 +17,7 @@ const articles = [
     categoryColor: 'text-secondary',
     subcategory: 'Industrial',
     title: 'Optimizing Water Treatment in Centralized Cooling Systems',
-    description:
-      'Discover how modern chemical filtration and treatment protocols are extending the life of industrial cooling infrastructure across the sub-region.',
+    description: 'Discover how modern chemical filtration and treatment protocols are extending the life of industrial cooling infrastructure across the sub-region.',
     date: 'May 5, 2024',
     meta: '6 min read • May 5, 2024',
   },
@@ -28,8 +27,7 @@ const articles = [
     categoryColor: 'text-[#00558e]',
     subcategory: 'Oilfield',
     title: 'The Future of EOR: Chemical Innovations in Mature Fields',
-    description:
-      'Enhanced Oil Recovery (EOR) techniques are evolving. We look at the polymers and surfactants driving production efficiency in West African fields.',
+    description: 'Enhanced Oil Recovery (EOR) techniques are evolving. We look at the polymers and surfactants driving production efficiency in West African fields.',
     date: 'Apr 28, 2024',
     meta: '10 min read • Apr 28, 2024',
   },
@@ -112,7 +110,7 @@ const BlogArticles: React.FC = () => {
         </div>
 
         <div className="flex md:hidden">
-          <button className="w-full border border-[#e8e8e8] bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.05)] h-16 flex items-center justify-center gap-3 font-bold text-accent text-[15px] uppercase tracking-[1.5px] hover:bg-card transition-colors">
+          <button className="w-full border border-[#e8e8e8] bg-white shadow-[0px_1px_1px_rgba(0,0,0,0.05)] h-16 flex items-center justify-center gap-3 font-bold text-accent text-[15px] uppercase tracking-[1.5px] hover:bg-card transition-all hover:scale-105">
             Load More Articles
             <RefreshCwIcon size={14} className="text-secondary" />
           </button>
@@ -122,7 +120,7 @@ const BlogArticles: React.FC = () => {
           <button
             onClick={() => setPage((p) => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="w-12 h-12 border border-[#e8e8e8] flex items-center justify-center hover:bg-card transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-12 h-12 border border-[#e8e8e8] flex items-center justify-center hover:bg-card transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105"
           >
             <ArrowLeftIcon size={10} className="text-accent" />
           </button>
@@ -131,7 +129,7 @@ const BlogArticles: React.FC = () => {
             <button
               key={num}
               onClick={() => setPage(num)}
-              className={`w-12 h-12 flex items-center justify-center font-bold text-[16px] leading-6 transition-colors ${
+              className={`w-12 h-12 flex items-center justify-center font-bold text-[16px] leading-6 transition-all hover:scale-105 ${
                 page === num ? 'bg-secondary text-white' : 'border border-[#e8e8e8] text-accent hover:bg-card'
               }`}
             >
@@ -142,7 +140,7 @@ const BlogArticles: React.FC = () => {
           <button
             onClick={() => setPage((p) => Math.min(TOTAL_PAGES, p + 1))}
             disabled={page === TOTAL_PAGES}
-            className="w-12 h-12 border border-[#e8e8e8] flex items-center justify-center hover:bg-card transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-12 h-12 border border-[#e8e8e8] flex items-center justify-center hover:bg-card transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105"
           >
             <ArrowRightIcon size={10} className="text-accent" />
           </button>

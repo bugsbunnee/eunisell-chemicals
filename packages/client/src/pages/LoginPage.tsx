@@ -61,7 +61,7 @@ const LoginPage: React.FC = () => {
 
               <div className="flex items-center justify-center gap-6">
                 {footnotes.map((footnote) => (
-                  <button key={footnote} type="button" className="text-[11px] uppercase tracking-[-0.55px] text-card-foreground hover:text-accent transition-colors">
+                  <button key={footnote} type="button" className="text-[11px] uppercase tracking-[-0.55px] text-card-foreground hover:text-accent transition-all hover:scale-105">
                     {footnote}
                   </button>
                 ))}

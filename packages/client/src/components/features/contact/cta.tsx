@@ -16,7 +16,7 @@ const CTA: React.FC = () => {
         <p className="mt-4 text-[16px] leading-6 text-[#CBD5E1]">Partner with West Africa's leading chemical solutions provider.</p>
         <button
           onClick={scrollToForm}
-          className="mt-8 w-full h-15 bg-secondary text-white font-bold text-sm uppercase tracking-[0.7px] rounded-[2px] flex items-center justify-center gap-x-3"
+          className="mt-8 w-full h-15 bg-secondary text-white font-bold text-sm uppercase tracking-[0.7px] rounded-[2px] flex items-center justify-center gap-x-3 transition-all hover:scale-105"
         >
           Work With Us <ArrowRightIcon size={16} />
         </button>
@@ -29,7 +29,7 @@ const CTA: React.FC = () => {
           <p className="text-lg leading-7 text-[#CBD5E1] font-regular">Partner with West Africa's leading chemical solutions provider.</p>
         </div>
         <div>
-          <button onClick={scrollToForm} className="h-17 bg-secondary text-white font-bold leading-7 flex items-center gap-x-4 px-12 rounded-[2px]">
+          <button onClick={scrollToForm} className="h-17 bg-secondary text-white font-bold leading-7 flex items-center gap-x-4 px-12 rounded-[2px] transition-all hover:scale-105">
             Start Consultation <SendIcon />
           </button>
         </div>

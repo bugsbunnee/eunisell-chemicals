@@ -39,14 +39,14 @@ const Clients: React.FC = () => {
           <button
             onClick={() => sliderRef.current?.slickPrev()}
             aria-label="Previous"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-muted text-accent hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-muted text-accent hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-200 hover:scale-105"
           >
             <ChevronLeftIcon size={18} />
           </button>
           <button
             onClick={() => sliderRef.current?.slickNext()}
             aria-label="Next"
-            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-secondary text-secondary hover:bg-secondary hover:text-white hover:border-secondary transition-colors duration-200"
+            className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center border border-secondary text-secondary hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-200 hover:scale-105"
           >
             <ChevronRightIcon size={18} />
           </button>

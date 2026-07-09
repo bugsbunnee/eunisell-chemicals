@@ -111,7 +111,10 @@ const NavBar: React.FC = () => {
   return (
     <nav ref={navRef} className="sticky top-0 z-50 backdrop-blur-[54px] bg-[rgba(255,255,255,0.71)] border-b border-border">
       <div className="hidden md:flex h-18 items-center px-8 gap-6">
-        <button onClick={() => navigate(paths.contact)} className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap">
+        <button
+          onClick={() => navigate(paths.contact)}
+          className="shrink-0 bg-secondary text-white text-[13px] font-semibold px-5.5 py-3 rounded-[2px] whitespace-nowrap transition-all hover:scale-105"
+        >
           Request Technical Consultation
         </button>
 
@@ -124,7 +127,7 @@ const NavBar: React.FC = () => {
                     onClick={() => toggleDropdown(label)}
                     aria-expanded={openDropdown === label}
                     aria-haspopup="true"
-                    className="flex items-center gap-[5px] text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap"
+                    className="flex items-center gap-[5px] text-[14px] leading-5.25 font-medium text-accent whitespace-nowrap transition-all hover:scale-105"
                   >
                     {label}
 
@@ -173,7 +176,7 @@ const NavBar: React.FC = () => {
       <div className="flex md:hidden h-18 items-center justify-between px-6 bg-white drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] border-b border-[rgba(175,177,179,0.3)]">
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="w-10 h-10 bg-[rgba(175,177,179,0.2)] flex items-center justify-center shrink-0"
+          className="w-10 h-10 bg-[rgba(175,177,179,0.2)] flex items-center justify-center shrink-0 transition-all hover:scale-105"
           aria-label="Toggle menu"
           aria-expanded={mobileOpen}
         >
@@ -194,7 +197,7 @@ const NavBar: React.FC = () => {
                   <>
                     <button
                       onClick={() => setMobileExpanded(mobileExpanded === item.label ? null : item.label)}
-                      className="flex items-center justify-between w-full px-8 py-5"
+                      className="flex items-center justify-between w-full px-8 py-5 transition-all hover:scale-105"
                       aria-expanded={mobileExpanded === item.label}
                     >
                       <span className={cn('text-[18px] leading-6.75 font-normal', mobileExpanded === item.label ? 'text-secondary' : 'text-accent')}>{item.label}</span>

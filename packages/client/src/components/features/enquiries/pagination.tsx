@@ -27,7 +27,7 @@ const Pagination: React.FC<Props> = (props) => {
         <button
           onClick={() => props.onPageChange(Math.max(1, props.page - 1))}
           disabled={props.page === 1}
-          className="size-8 flex items-center justify-center rounded-[4px] border border-border bg-white text-[#777] hover:border-secondary/40 hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="size-8 flex items-center justify-center rounded-[4px] border border-border bg-white text-[#777] hover:border-secondary/40 hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-all hover:scale-105"
         >
           <ChevronLeftIcon size={12} />
         </button>
@@ -42,7 +42,7 @@ const Pagination: React.FC<Props> = (props) => {
               key={p}
               onClick={() => props.onPageChange(p as number)}
               className={cn({
-                'size-8 flex items-center justify-center rounded-[4px] text-[12px] border transition-colors': true,
+                'size-8 flex items-center justify-center rounded-[4px] text-[12px] border transition-all hover:scale-105': true,
                 'bg-secondary border-secondary text-white': props.page === p,
                 'bg-white border-border text-[#777] hover:border-secondary/40 hover:text-secondary': props.page !== p,
               })}
@@ -55,7 +55,7 @@ const Pagination: React.FC<Props> = (props) => {
         <button
           onClick={() => props.onPageChange(Math.min(props.totalPages, props.page + 1))}
           disabled={props.page === props.totalPages}
-          className="size-8 flex items-center justify-center rounded-[4px] border border-border bg-white text-[#777] hover:border-secondary/40 hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+          className="size-8 flex items-center justify-center rounded-[4px] border border-border bg-white text-[#777] hover:border-secondary/40 hover:text-secondary disabled:opacity-40 disabled:cursor-not-allowed transition-all hover:scale-105"
         >
           <ChevronRightIcon size={12} />
         </button>

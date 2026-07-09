@@ -37,7 +37,7 @@ const LatestEnquiries: React.FC = () => {
     <div className="bg-white border border-border drop-shadow-[0px_1px_1px_rgba(0,0,0,0.05)] rounded-[6px]">
       <div className="flex items-center justify-between px-6 py-6 border-b border-border">
         <h2 className="text-[16px] text-accent tracking-[-0.047px]">Latest Enquiries</h2>
-        <button onClick={() => navigate(paths.dashboard)} className="flex items-center gap-1 text-[12px] text-secondary hover:text-secondary/70 transition-colors">
+        <button onClick={() => navigate(paths.dashboard)} className="flex items-center gap-1 text-[12px] text-secondary hover:text-secondary/70 transition-all hover:scale-105">
           All Enquiries <ArrowRightIcon size={12} />
         </button>
       </div>

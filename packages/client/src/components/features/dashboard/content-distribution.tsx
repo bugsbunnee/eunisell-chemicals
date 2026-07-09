@@ -26,7 +26,7 @@ const ContentDistribution: React.FC = () => (
   <div className="bg-white border border-border rounded-[4px]">
     <div className="flex items-center justify-between px-5 py-4 border-b border-border">
       <h2 className="text-[15px] font-semibold text-accent">Content Distribution</h2>
-      <button className="flex items-center gap-1 text-[13px] text-secondary hover:text-secondary/80 transition-colors">
+      <button className="flex items-center gap-1 text-[13px] text-secondary hover:text-secondary/80 transition-all hover:scale-105">
         View Content Library <ArrowRightIcon size={13} />
       </button>
     </div>

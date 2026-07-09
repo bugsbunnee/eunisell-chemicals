@@ -59,7 +59,7 @@ export function buildCmsColumns(statusConfig: Record<string, StatusConfig>): Col
       headerClassName: 'text-right',
       cellClassName: 'text-right',
       render: () => (
-        <button className="text-[#777] hover:text-accent transition-colors p-1">
+        <button className="text-[#777] hover:text-accent transition-all p-1 hover:scale-105">
           <MoreVerticalIcon size={16} />
         </button>
       ),

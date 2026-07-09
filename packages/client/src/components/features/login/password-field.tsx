@@ -34,7 +34,7 @@ const PasswordField: React.FC<Props> = ({ placeholder, showPassword, onToggle })
           type="button"
           onClick={onToggle}
           aria-label={showPassword ? 'Hide password' : 'Show password'}
-          className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ca3af] hover:text-accent transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 text-[#9ca3af] hover:text-accent transition-all hover:scale-105"
         >
           {showPassword ? <EyeOffIcon size={18} /> : <EyeIcon size={18} />}
         </button>

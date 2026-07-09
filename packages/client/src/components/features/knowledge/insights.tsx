@@ -64,7 +64,7 @@ const Insights: React.FC = () => {
             />
           </div>
 
-          <button className="h-11 border border-[#e2e8f0] rounded-[4px] px-4 flex items-center gap-2 text-[#475569] text-sm shrink-0">
+          <button className="h-11 border border-[#e2e8f0] rounded-[4px] px-4 flex items-center gap-2 text-[#475569] text-sm shrink-0 transition-all hover:scale-105">
             <ChevronDownIcon size={12} className="text-[#475569]" />
             Filter
           </button>

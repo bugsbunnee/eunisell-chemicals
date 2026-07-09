@@ -25,9 +25,7 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ breadcrumb, type, tags, title
         </nav>
 
         <div className="flex flex-wrap items-center gap-2 mb-6 md:mb-14.5">
-          <span className="bg-secondary text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.5px] md:tracking-[1.5px] px-3 py-1">
-            {type}
-          </span>
+          <span className="bg-secondary text-white text-[10px] md:text-[11px] font-bold uppercase tracking-[0.5px] md:tracking-[1.5px] px-3 py-1">{type}</span>
           {tags.map((tag) => (
             <span key={tag} className="border border-border text-muted-foreground text-[12px] md:text-[13px] px-3 py-0.5">
               {tag}
@@ -62,13 +60,13 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ breadcrumb, type, tags, title
             <div className="flex flex-col gap-3 mt-6 md:hidden">
               <button
                 onClick={() => navigate(paths.contact)}
-                className="w-full h-12 bg-secondary text-white font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/90 transition-colors"
+                className="w-full h-12 bg-secondary text-white font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/90 transition-all hover:scale-105"
               >
                 Request Consultation
               </button>
               <button
                 onClick={() => navigate(paths.solutions)}
-                className="w-full h-12 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/5 transition-colors bg-transparent"
+                className="w-full h-12 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[0.35px] hover:bg-secondary/5 transition-all bg-transparent hover:scale-105"
               >
                 Explore Solutions
               </button>
@@ -78,13 +76,13 @@ const ArticleHero: React.FC<ArticleHeroProps> = ({ breadcrumb, type, tags, title
           <div className="hidden md:flex flex-col gap-4 pt-64.5">
             <button
               onClick={() => navigate(paths.contact)}
-              className="w-full h-14 bg-secondary text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/90 transition-colors"
+              className="w-full h-14 bg-secondary text-white font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/90 transition-all hover:scale-105"
             >
               Request Consultation
             </button>
             <button
               onClick={() => navigate(paths.solutions)}
-              className="w-full h-14 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/5 transition-colors bg-transparent"
+              className="w-full h-14 border-2 border-secondary text-secondary font-bold text-sm uppercase tracking-[1.2px] hover:bg-secondary/5 transition-all bg-transparent hover:scale-105"
             >
               Explore Solutions
             </button>

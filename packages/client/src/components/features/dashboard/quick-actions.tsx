@@ -15,7 +15,7 @@ const QuickActions: React.FC<Props> = ({ actions }) => (
       {actions.map(({ label, icon: Icon, iconColor }) => (
         <button
           key={label}
-          className="flex flex-col items-center justify-center gap-2.5 bg-card border border-border rounded-lg py-5 px-3 hover:border-secondary/40 hover:bg-secondary/5 transition-colors group"
+          className="flex flex-col items-center justify-center gap-2.5 bg-card border border-border rounded-lg py-5 px-3 hover:border-secondary/40 hover:bg-secondary/5 transition-all group hover:scale-105"
         >
           <Icon size={22} className={`${iconColor} group-hover:opacity-80 transition-opacity`} />
           <span className="text-[10px] font-bold tracking-[0.6px] text-card-foreground group-hover:text-secondary transition-colors text-center leading-tight">{label}</span>

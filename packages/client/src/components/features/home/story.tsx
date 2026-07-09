@@ -91,7 +91,7 @@ const Story: React.FC = () => {
 
         <button
           onClick={() => navigate(paths.aboutUs)}
-          className="hidden md:flex h-13 rounded-[2px] mt-6.25 px-7 text-white items-center gap-x-1 bg-secondary font-semibold text-base leading-6"
+          className="hidden md:flex h-13 rounded-[2px] mt-6.25 px-7 text-white items-center gap-x-1 bg-secondary font-semibold text-base leading-6 transition-all hover:scale-105"
         >
           Learn more <ArrowRightIcon size={16} />
         </button>

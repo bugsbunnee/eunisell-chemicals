@@ -54,7 +54,7 @@ const LaboratoryServices: React.FC = () => {
             <p className="font-normal text-card-foreground text-[13px] md:text-base leading-5 md:leading-6">{service.description}</p>
 
             <div className="hidden md:flex mt-6 text-sm uppercase font-semibold leading-5 text-secondary">
-              <button onClick={() => navigate(paths.contact)} className="flex items-center gap-x-2">
+              <button onClick={() => navigate(paths.contact)} className="flex items-center gap-x-2 transition-all hover:scale-105">
                 View Capabilities <ArrowRightIcon size={14} />
               </button>
             </div>

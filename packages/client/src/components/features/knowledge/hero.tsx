@@ -19,9 +19,7 @@ const Hero: React.FC = () => {
           <div className="max-w-200 flex flex-col gap-4 md:gap-6">
             <div className="flex items-center gap-4">
               <div className="w-8 md:w-12 h-px bg-secondary" />
-              <span className="text-secondary text-xs md:text-sm font-semibold tracking-[2.4px] md:tracking-[2.8px] uppercase">
-                Intellectual Capital
-              </span>
+              <span className="text-secondary text-xs md:text-sm font-semibold tracking-[2.4px] md:tracking-[2.8px] uppercase">Intellectual Capital</span>
             </div>
 
             <h1 className="text-white font-bold text-3xl leading-[37.5px] md:text-[64px] md:leading-[1.1]">
@@ -33,20 +31,19 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-[#cbd5e1] text-base leading-6.5 md:text-xl md:leading-relaxed md:max-w-160">
-              Access our comprehensive repository of technical articles, industry insights, and product specifications designed to optimize your
-              critical operations.
+              Access our comprehensive repository of technical articles, industry insights, and product specifications designed to optimize your critical operations.
             </p>
 
             <div className="flex flex-col md:flex-row md:items-center gap-3 md:gap-4 pt-2 md:pt-4">
               <button
                 onClick={() => navigate(paths.knowledge)}
-                className="h-12 md:h-auto bg-secondary text-white font-semibold text-base md:text-base px-8 md:py-4.25 rounded-xs"
+                className="h-12 md:h-auto bg-secondary text-white font-semibold text-base md:text-base px-8 md:py-4.25 rounded-xs transition-all hover:scale-105"
               >
                 Browse Resources
               </button>
               <button
                 onClick={() => navigate(paths.knowledge)}
-                className="h-12 md:h-auto border border-white/30 text-white font-semibold text-[16px] md:text-base px-8 md:py-4 rounded-xs"
+                className="h-12 md:h-auto border border-white/30 text-white font-semibold text-[16px] md:text-base px-8 md:py-4 rounded-xs transition-all hover:scale-105"
               >
                 Search Library
               </button>

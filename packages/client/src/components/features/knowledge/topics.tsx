@@ -49,7 +49,7 @@ const Topics: React.FC = () => {
 
               <button
                 onClick={() => navigate(paths.brochures)}
-                className="bg-accent text-white text-[12px] md:text-sm font-bold h-11 flex items-center justify-center gap-2 mt-auto"
+                className="bg-accent text-white text-[12px] md:text-sm font-bold h-11 flex items-center justify-center gap-2 mt-auto transition-all hover:scale-105"
               >
                 <DownloadIcon size={10} />
                 Download PDF

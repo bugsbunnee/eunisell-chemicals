@@ -40,14 +40,14 @@ const ChemicalsHero: React.FC = () => {
           <div className="flex items-center gap-4 pt-3">
             <button
               onClick={() => navigate(paths.contact)}
-              className="bg-secondary text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-secondary/90 transition-colors"
+              className="bg-secondary text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-secondary/90 transition-all hover:scale-105"
             >
               Request Product Consultation
             </button>
 
             <button
               onClick={() => scrollToView('categories')}
-              className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-white/10 transition-colors"
+              className="border border-white/30 text-white font-semibold text-base px-8 py-4 rounded-[4px] hover:bg-white/10 transition-all hover:scale-105"
             >
               Explore Chemical Categories
             </button>

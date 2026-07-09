@@ -77,7 +77,7 @@ export default function CareerFilterBar({ filters, onChange, onReset }: Props) {
           </select>
         </div>
       </div>
-      <button onClick={onReset} className="flex items-center gap-1.5 text-[12px] text-[#777] h-[36px] px-2 whitespace-nowrap hover:text-accent transition-colors">
+      <button onClick={onReset} className="flex items-center gap-1.5 text-[12px] text-[#777] h-[36px] px-2 whitespace-nowrap hover:text-accent transition-all hover:scale-105">
         <RotateCcwIcon size={10} />
         Reset Filters
       </button>

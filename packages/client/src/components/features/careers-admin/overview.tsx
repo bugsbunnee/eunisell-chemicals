@@ -3,7 +3,7 @@ export default function ApplicationOverview() {
     <div className="bg-white border border-[#e5e8ec] shadow-[0px_4px_2px_0px_rgba(0,0,0,0.02)] rounded-[10px] p-6 flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <h3 className="text-[16px] text-accent">Application Overview</h3>
-        <button className="text-[11px] text-secondary">View All</button>
+        <button className="text-[11px] text-secondary transition-all hover:scale-105">View All</button>
       </div>
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">

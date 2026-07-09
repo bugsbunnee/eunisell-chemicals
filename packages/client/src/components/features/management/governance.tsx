@@ -45,7 +45,7 @@ const Governance: React.FC = () => {
 
         <button
           onClick={() => navigate(paths.qhse)}
-          className="bg-accent h-13 md:h-13.25 w-full md:w-auto px-10 text-[13px] md:text-sm uppercase text-white rounded-[2px] mt-8 md:mt-10 font-bold leading-[19.5px] md:leading-5.25 tracking-[0.65px] md:tracking-[0.7px]"
+          className="bg-accent h-13 md:h-13.25 w-full md:w-auto px-10 text-[13px] md:text-sm uppercase text-white rounded-[2px] mt-8 md:mt-10 font-bold leading-[19.5px] md:leading-5.25 tracking-[0.65px] md:tracking-[0.7px] transition-all hover:scale-105"
         >
           Governance Report
         </button>

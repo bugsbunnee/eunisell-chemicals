@@ -38,14 +38,14 @@ const Cta: React.FC = () => {
         <div className="flex flex-col md:flex-row items-stretch md:items-center justify-center mt-8 md:mt-12 gap-3 md:gap-6">
           <button
             onClick={() => navigate(paths.contact)}
-            className="bg-secondary text-white uppercase font-bold text-sm md:text-[15px] tracking-[0.7px] md:tracking-[0.75px] h-[56px] md:h-auto md:px-10 md:py-5 rounded-[2px] whitespace-nowrap flex items-center justify-center"
+            className="bg-secondary text-white uppercase font-bold text-sm md:text-[15px] tracking-[0.7px] md:tracking-[0.75px] h-[56px] md:h-auto md:px-10 md:py-5 rounded-[2px] whitespace-nowrap flex items-center justify-center transition-all hover:scale-105"
           >
             Contact Management
           </button>
 
           <button
             onClick={() => downloadFile(corporateProfilePdf, 'Eunisell-Corporate-Profile.pdf')}
-            className="bg-transparent border border-white text-white uppercase font-bold text-sm md:text-[15px] tracking-[0.7px] md:tracking-[0.75px] h-[56px] md:h-auto md:px-10 md:py-5 rounded-[2px] whitespace-nowrap flex items-center justify-center"
+            className="bg-transparent border border-white text-white uppercase font-bold text-sm md:text-[15px] tracking-[0.7px] md:tracking-[0.75px] h-[56px] md:h-auto md:px-10 md:py-5 rounded-[2px] whitespace-nowrap flex items-center justify-center transition-all hover:scale-105"
           >
             Corporate Profile
           </button>

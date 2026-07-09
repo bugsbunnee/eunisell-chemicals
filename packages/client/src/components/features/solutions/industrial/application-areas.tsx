@@ -54,14 +54,14 @@ const ApplicationAreas: React.FC = () => {
             <button
               onClick={prev}
               disabled={index === 0}
-              className="w-12 h-12 rounded-full border border-[#e8e8e8] flex items-center justify-center hover:bg-white transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="w-12 h-12 rounded-full border border-[#e8e8e8] flex items-center justify-center hover:bg-white transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105"
             >
               <ArrowLeftIcon size={14} className="text-accent" />
             </button>
             <button
               onClick={next}
               disabled={index === max}
-              className="w-12 h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/90 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+              className="w-12 h-12 rounded-full bg-accent flex items-center justify-center hover:bg-accent/90 transition-all disabled:opacity-30 disabled:cursor-not-allowed hover:scale-105"
             >
               <ArrowRightIcon size={14} className="text-white" />
             </button>

@@ -52,7 +52,7 @@ const GeographicPresence: React.FC = () => {
 
         <a
           href="tel:+2349087659938"
-          className="mt-8 w-full h-[64px] bg-white text-accent font-bold text-[16px] uppercase tracking-[1px] rounded-[2px] flex items-center justify-center gap-x-3"
+          className="mt-8 w-full h-[64px] bg-white text-accent font-bold text-[16px] uppercase tracking-[1px] rounded-[2px] flex items-center justify-center gap-x-3 transition-all hover:scale-105"
         >
           <PhoneIcon size={18} /> Call Now
         </a>

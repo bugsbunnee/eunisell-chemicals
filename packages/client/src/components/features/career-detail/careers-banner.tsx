@@ -20,13 +20,13 @@ const CareersBanner: React.FC = () => {
         <div className="flex items-center gap-4 mt-4">
           <Link
             to={paths.careers}
-            className="bg-secondary text-white font-bold text-[16px] px-10 h-14 rounded flex items-center justify-center hover:bg-secondary/90 transition-colors"
+            className="bg-secondary text-white font-bold text-[16px] px-10 h-14 rounded flex items-center justify-center hover:bg-secondary/90 transition-all hover:scale-105"
           >
             Explore All Openings
           </Link>
           <button
             onClick={() => navigate(paths.contact)}
-            className="border border-white text-white font-bold text-[16px] px-10 h-14 rounded flex items-center justify-center hover:bg-white/10 transition-colors"
+            className="border border-white text-white font-bold text-[16px] px-10 h-14 rounded flex items-center justify-center hover:bg-white/10 transition-all hover:scale-105"
           >
             Join Talent Pool
           </button>

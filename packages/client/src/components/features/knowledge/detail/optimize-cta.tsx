@@ -25,13 +25,13 @@ const ArticleOptimizeCta: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-center md:justify-center gap-4 md:gap-6">
           <button
             onClick={() => navigate(paths.contact)}
-            className="h-14 md:h-16 px-10 md:px-12 bg-secondary text-white font-bold text-[16px] uppercase tracking-[0.4px] md:tracking-[1.3px] hover:bg-secondary/90 transition-colors"
+            className="h-14 md:h-16 px-10 md:px-12 bg-secondary text-white font-bold text-[16px] uppercase tracking-[0.4px] md:tracking-[1.3px] hover:bg-secondary/90 transition-all hover:scale-105"
           >
             Request Site Audit
           </button>
           <button
             onClick={() => navigate(paths.contact)}
-            className="h-14 md:h-16 px-10 md:px-12 border-2 border-white text-white font-bold text-[16px] uppercase tracking-[0.4px] md:tracking-[1.3px] hover:bg-white/10 transition-colors"
+            className="h-14 md:h-16 px-10 md:px-12 border-2 border-white text-white font-bold text-[16px] uppercase tracking-[0.4px] md:tracking-[1.3px] hover:bg-white/10 transition-all hover:scale-105"
           >
             Contact Sales
           </button>

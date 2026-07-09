@@ -28,13 +28,13 @@ const CareersHero: React.FC = () => (
         <div className="flex flex-col gap-3 pt-2">
           <button
             onClick={() => scrollToView('open-positions')}
-            className="w-full h-13 bg-secondary text-white text-[16px] font-semibold flex items-center justify-center rounded-[4px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)]"
+            className="w-full h-13 bg-secondary text-white text-[16px] font-semibold flex items-center justify-center rounded-[4px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] transition-all hover:scale-105"
           >
             View Openings
           </button>
           <button
             onClick={() => scrollToView('advantage')}
-            className="w-full h-13 border border-secondary text-secondary text-[16px] flex items-center justify-center rounded-[4px]"
+            className="w-full h-13 border border-secondary text-secondary text-[16px] flex items-center justify-center rounded-[4px] transition-all hover:scale-105"
           >
             Our Culture
           </button>
@@ -74,7 +74,7 @@ const CareersHero: React.FC = () => (
 
           <button
             onClick={() => scrollToView('open-positions')}
-            className="inline-flex items-center justify-center bg-secondary text-white font-semibold text-[16px] px-8 py-4.5 rounded-[4px] hover:bg-secondary/90 transition-colors w-fit"
+            className="inline-flex items-center justify-center bg-secondary text-white font-semibold text-[16px] px-8 py-4.5 rounded-[4px] hover:bg-secondary/90 transition-all w-fit hover:scale-105"
           >
             View Current Opportunities
           </button>

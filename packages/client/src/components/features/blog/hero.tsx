@@ -34,14 +34,14 @@ const BlogHero: React.FC = () => {
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3 w-full sm:w-auto">
           <a
             href="#articles"
-            className="bg-secondary flex items-center justify-center gap-3 text-white font-bold text-[15px] md:font-semibold md:text-[16px] px-8 py-4 md:py-4.5 hover:bg-secondary/90 transition-colors"
+            className="bg-secondary flex items-center justify-center gap-3 text-white font-bold text-[15px] md:font-semibold md:text-[16px] px-8 py-4 md:py-4.5 hover:bg-secondary/90 transition-all hover:scale-105"
           >
             Explore Articles <ArrowRightIcon size={14} />
           </a>
 
           <Link
             to={paths.knowledge}
-            className="border-2 border-secondary text-secondary font-bold text-[15px] md:font-semibold md:text-[16px] px-8 py-4 flex items-center justify-center hover:bg-secondary/5 transition-colors"
+            className="border-2 border-secondary text-secondary font-bold text-[15px] md:font-semibold md:text-[16px] px-8 py-4 flex items-center justify-center hover:bg-secondary/5 transition-all hover:scale-105"
           >
             Knowledge Centre
           </Link>

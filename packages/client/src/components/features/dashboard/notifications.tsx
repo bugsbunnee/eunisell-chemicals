@@ -56,7 +56,7 @@ const Notifications: React.FC = () => (
     </div>
 
     <div className="px-5 py-3.5 bg-card flex items-center text-center justify-center">
-      <button className=" flex items-center text-center justify-center gap-1 text-[12px] font-semibold text-secondary hover:text-secondary/80 transition-colors uppercase tracking-[0.5px]">
+      <button className=" flex items-center text-center justify-center gap-1 text-[12px] font-semibold text-secondary hover:text-secondary/80 transition-all uppercase tracking-[0.5px] hover:scale-105">
         Open Notification Centre
       </button>
     </div>

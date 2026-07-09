@@ -58,7 +58,7 @@ const BlogAdminFilters: React.FC = () => {
         </div>
       </div>
 
-      <button className="flex items-center gap-2 bg-accent text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-accent/90 transition-colors shrink-0">
+      <button className="flex items-center gap-2 bg-accent text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-accent/90 transition-all shrink-0 hover:scale-105">
         <PlusIcon size={14} />
         New Article
       </button>

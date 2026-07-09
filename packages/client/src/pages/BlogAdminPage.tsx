@@ -76,14 +76,14 @@ const BlogAdminPage: React.FC = () => {
 
           <div className="flex items-center gap-4">
             <div className="relative">
-              <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-colors">
+              <button className="size-10 flex items-center justify-center rounded-full bg-card text-card-foreground hover:text-accent transition-all hover:scale-105">
                 <BellIcon size={16} />
               </button>
 
               <span className="absolute top-2 right-2 size-2 rounded-full bg-red-500 border-2 border-white" />
             </div>
 
-            <button className="flex items-center gap-2 bg-secondary text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-secondary/90 transition-colors shrink-0">
+            <button className="flex items-center gap-2 bg-secondary text-white text-[14px] px-5 py-2.5 rounded-[6px] hover:bg-secondary/90 transition-all shrink-0 hover:scale-105">
               <PlusIcon size={12} /> Create Blog Article
             </button>
           </div>
@@ -103,7 +103,7 @@ const BlogAdminPage: React.FC = () => {
                       key={tab.key}
                       onClick={() => store.onChangeQuery({ status: tab.key || undefined, page: 1 })}
                       className={cn({
-                        'px-4 py-[7.5px] rounded-[4px] text-[13px] tracking-[0.025px] transition-colors': true,
+                        'px-4 py-[7.5px] rounded-[4px] text-[13px] tracking-[0.025px] transition-all hover:scale-105': true,
                         'bg-secondary text-white': store.query.status === tab.key,
                         'bg-card border border-border text-card-foreground hover:border-secondary/40 hover:text-secondary': store.query.status !== tab.key,
                       })}
@@ -114,12 +114,12 @@ const BlogAdminPage: React.FC = () => {
                 </div>
 
                 <div className="flex items-center gap-2">
-                  <button className="flex items-center gap-1.5 bg-card border border-border px-3 py-1.75 rounded-[4px] text-[13px] text-card-foreground hover:border-secondary/40 hover:text-secondary transition-colors">
+                  <button className="flex items-center gap-1.5 bg-card border border-border px-3 py-1.75 rounded-[4px] text-[13px] text-card-foreground hover:border-secondary/40 hover:text-secondary transition-all hover:scale-105">
                     <ArrowUpDownIcon size={13} />
                     Sort By
                   </button>
 
-                  <button className="flex items-center gap-1.5 bg-card border border-border px-3 py-1.75 rounded-[4px] text-[13px] text-card-foreground hover:border-secondary/40 hover:text-secondary transition-colors">
+                  <button className="flex items-center gap-1.5 bg-card border border-border px-3 py-1.75 rounded-[4px] text-[13px] text-card-foreground hover:border-secondary/40 hover:text-secondary transition-all hover:scale-105">
                     <DownloadIcon size={13} />
                     Export
                   </button>
@@ -162,7 +162,7 @@ const BlogAdminPage: React.FC = () => {
                   </div>
                 </div>
 
-                <button className="bg-accent text-white text-[13px] py-2 rounded-[4px] hover:bg-accent/90 transition-colors">Apply Filters</button>
+                <button className="bg-accent text-white text-[13px] py-2 rounded-[4px] hover:bg-accent/90 transition-all hover:scale-105">Apply Filters</button>
               </div>
             </div>
 
@@ -286,7 +286,7 @@ const columns: Column<BlogPost>[] = [
     headerClassName: 'text-right',
     cellClassName: 'text-right',
     render: () => (
-      <button className="text-card-foreground hover:text-accent transition-colors p-1">
+      <button className="text-card-foreground hover:text-accent transition-all p-1 hover:scale-105">
         <MoreVerticalIcon size={16} />
       </button>
     ),

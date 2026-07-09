@@ -21,14 +21,17 @@ const CareerCta: React.FC = () => (
           </h2>
           <p className="text-[#afb1b3] text-[15px] leading-[22.5px] text-center">Be part of the specialized force moving Africa's industry forward.</p>
           <div className="flex flex-col gap-3 w-full">
-            <button onClick={() => scrollToView('open-positions')} className="w-full h-13 bg-secondary text-white font-bold text-[16px] rounded-[4px]">
+            <button
+              onClick={() => scrollToView('open-positions')}
+              className="w-full h-13 bg-secondary text-white font-bold text-[16px] rounded-[4px] transition-all hover:scale-105"
+            >
               Apply Now
             </button>
             <a
               href="https://www.linkedin.com/company/eunisell"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full h-13 border border-white text-white font-bold text-[16px] rounded-[4px] flex items-center justify-center tracking-[0.031px]"
+              className="w-full h-13 border border-white text-white font-bold text-[16px] rounded-[4px] flex items-center justify-center tracking-[0.031px] transition-all hover:scale-105"
             >
               LinkedIn Careers
             </a>
@@ -52,7 +55,7 @@ const CareerCta: React.FC = () => (
           <div className="flex items-center gap-6 mt-4">
             <button
               onClick={() => scrollToView('open-positions')}
-              className="bg-secondary text-white font-bold text-[18px] px-10 py-5.25 rounded-[4px] hover:bg-secondary/90 transition-colors"
+              className="bg-secondary text-white font-bold text-[18px] px-10 py-5.25 rounded-[4px] hover:bg-secondary/90 transition-all hover:scale-105"
             >
               Apply Now
             </button>
@@ -60,7 +63,7 @@ const CareerCta: React.FC = () => (
               href="https://www.linkedin.com/company/eunisell"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-white text-white font-bold text-[18px] px-10 py-5 rounded-[4px] hover:bg-white/10 transition-colors"
+              className="border border-white text-white font-bold text-[18px] px-10 py-5 rounded-[4px] hover:bg-white/10 transition-all hover:scale-105"
             >
               LinkedIn Careers
             </a>

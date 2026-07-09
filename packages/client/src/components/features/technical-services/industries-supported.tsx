@@ -33,13 +33,11 @@ const IndustriesSupported: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2 md:gap-0">
         <div className="text-left">
           <div className="text-[26px] md:text-3xl leading-8 md:leading-9 font-bold text-accent">Industries Supported</div>
-          <div className="hidden md:block text-base leading-6 font-normal text-card-foreground mt-4">
-            Tailored technical services for diverse industrial applications.
-          </div>
+          <div className="hidden md:block text-base leading-6 font-normal text-card-foreground mt-4">Tailored technical services for diverse industrial applications.</div>
         </div>
         <button
           onClick={() => navigate(paths.industries)}
-          className="hidden md:flex text-base leading-6 text-secondary font-bold uppercase items-center gap-x-2"
+          className="hidden md:flex text-base leading-6 text-secondary font-bold uppercase items-center gap-x-2 transition-all hover:scale-105"
         >
           VIEW ALL SECTORS <ArrowRightIcon size={16} />
         </button>
@@ -60,7 +58,7 @@ const IndustriesSupported: React.FC = () => {
 
       <button
         onClick={() => navigate(paths.industries)}
-        className="md:hidden mt-6 text-[13px] leading-5 text-secondary font-bold uppercase flex items-center gap-x-2"
+        className="md:hidden mt-6 text-[13px] leading-5 text-secondary font-bold uppercase flex items-center gap-x-2 transition-all hover:scale-105"
       >
         VIEW ALL SECTORS <ArrowRightIcon size={14} />
       </button>

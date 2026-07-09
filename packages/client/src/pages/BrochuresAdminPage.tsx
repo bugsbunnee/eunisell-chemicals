@@ -258,7 +258,7 @@ const BrochuresAdminPage: React.FC = () => {
             <BellIcon size={16} className="text-accent" />
             <span className="absolute top-2 right-2 size-2 bg-[#ef4444] rounded-full border-2 border-white" />
           </div>
-          <button className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px]">
+          <button className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px] transition-all hover:scale-105">
             <PlusIcon size={14} />
             Upload Brochure
           </button>
@@ -299,7 +299,7 @@ const BrochuresAdminPage: React.FC = () => {
                       setActiveTab(tab.key);
                       setPage(1);
                     }}
-                    className={`px-4 py-2 rounded-[6px] text-[14px] transition-colors ${
+                    className={`px-4 py-2 rounded-[6px] text-[14px] transition-all hover:scale-105 ${
                       activeTab === tab.key ? 'bg-white shadow-[0px_1px_1px_0px_rgba(0,0,0,0.05)] text-secondary' : 'text-[#777]'
                     }`}
                   >
@@ -361,11 +361,11 @@ const BrochuresAdminPage: React.FC = () => {
                           </div>
                         </div>
                         <div className="flex gap-2">
-                          <button className="flex-1 bg-secondary text-white flex items-center justify-center gap-2 py-3 rounded-[4px] text-[12px]">
+                          <button className="flex-1 bg-secondary text-white flex items-center justify-center gap-2 py-3 rounded-[4px] text-[12px] transition-all hover:scale-105">
                             <DownloadIcon size={12} />
                             Download
                           </button>
-                          <button className="size-10 border border-[#e8e8e8] flex items-center justify-center rounded-[4px] text-[#777] hover:text-accent transition-colors shrink-0">
+                          <button className="size-10 border border-[#e8e8e8] flex items-center justify-center rounded-[4px] text-[#777] hover:text-accent transition-all shrink-0 hover:scale-105">
                             <Link2Icon size={16} />
                           </button>
                         </div>
@@ -385,7 +385,7 @@ const BrochuresAdminPage: React.FC = () => {
                 <button
                   onClick={() => setPage((p) => Math.max(1, p - 1))}
                   disabled={page === 1}
-                  className="size-8 border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[16px] disabled:opacity-40"
+                  className="size-8 border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[16px] disabled:opacity-40 transition-all hover:scale-105"
                 >
                   ‹
                 </button>
@@ -393,7 +393,7 @@ const BrochuresAdminPage: React.FC = () => {
                   <button
                     key={n}
                     onClick={() => setPage(n)}
-                    className={`size-8 rounded-[4px] flex items-center justify-center text-[14px] ${
+                    className={`size-8 rounded-[4px] flex items-center justify-center text-[14px] transition-all hover:scale-105 ${
                       page === n ? 'bg-secondary text-white' : 'border border-[#e8e8e8] text-[#777]'
                     }`}
                   >
@@ -403,7 +403,7 @@ const BrochuresAdminPage: React.FC = () => {
                 <button
                   onClick={() => setPage((p) => Math.min(totalPages, p + 1))}
                   disabled={page === totalPages}
-                  className="size-8 border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[16px] disabled:opacity-40"
+                  className="size-8 border border-[#e8e8e8] rounded-[4px] flex items-center justify-center text-[#777] text-[16px] disabled:opacity-40 transition-all hover:scale-105"
                 >
                   ›
                 </button>
@@ -461,7 +461,10 @@ const BrochuresAdminPage: React.FC = () => {
               <h3 className="text-[16px] text-white">Quick Actions</h3>
               <div className="grid grid-cols-2 gap-3">
                 {QUICK_ACTIONS.map(({ Icon, label }) => (
-                  <button key={label} className="bg-[#00558e] rounded-[8px] flex flex-col items-center gap-2 py-3 px-4 text-white hover:bg-[#006aad] transition-colors">
+                  <button
+                    key={label}
+                    className="bg-[#00558e] rounded-[8px] flex flex-col items-center gap-2 py-3 px-4 text-white hover:bg-[#006aad] transition-all hover:scale-105"
+                  >
                     <Icon size={16} />
                     <span className="text-[10px] uppercase tracking-[0.5px]">{label}</span>
                   </button>

@@ -15,9 +15,7 @@ const Cta: React.FC = () => {
       />
 
       <div className="relative max-w-200 mx-auto">
-        <h2 className="font-bold text-white text-[24px] md:text-[52px] leading-8 md:leading-[1.35] mb-4 md:mb-6">
-          Need Technical Guidance for Your Operation?
-        </h2>
+        <h2 className="font-bold text-white text-[24px] md:text-[52px] leading-8 md:leading-[1.35] mb-4 md:mb-6">Need Technical Guidance for Your Operation?</h2>
 
         <p className="text-[#cbd5e1] text-sm md:text-[16px] leading-5 md:leading-[1.75] max-w-172 mx-auto mb-4 md:mb-12">
           Our engineers are available for specialized consultations on your performance challenges.
@@ -25,7 +23,7 @@ const Cta: React.FC = () => {
 
         <button
           onClick={() => navigate(paths.contact)}
-          className="w-full md:w-auto md:h-17 md:px-12 h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-colors"
+          className="w-full md:w-auto md:h-17 md:px-12 h-14 bg-secondary text-white font-bold text-sm md:text-[15px] uppercase tracking-[1px] hover:bg-secondary/90 transition-all hover:scale-105"
         >
           Request Technical Consultation
         </button>

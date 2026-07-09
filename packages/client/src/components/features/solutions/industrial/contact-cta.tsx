@@ -19,13 +19,13 @@ const ContactCta: React.FC = () => (
       <div className="flex flex-col items-stretch gap-4 pt-4">
         <Link
           to={paths.contact}
-          className="flex items-center justify-center h-14 bg-secondary text-white font-bold text-xs uppercase tracking-[1.2px] hover:bg-secondary/90 transition-colors"
+          className="flex items-center justify-center h-14 bg-secondary text-white font-bold text-xs uppercase tracking-[1.2px] hover:bg-secondary/90 transition-all hover:scale-105"
         >
           Request Consultation
         </Link>
         <Link
           to={paths.contact}
-          className="flex items-center justify-center h-14 border border-white text-white font-bold text-xs uppercase tracking-[1.2px] hover:bg-white/10 transition-colors"
+          className="flex items-center justify-center h-14 border border-white text-white font-bold text-xs uppercase tracking-[1.2px] hover:bg-white/10 transition-all hover:scale-105"
         >
           Contact Sales
         </Link>
@@ -42,12 +42,12 @@ const ContactCta: React.FC = () => (
       <div className="flex items-center gap-4 pt-4">
         <Link
           to={paths.contact}
-          className="flex items-center gap-3 bg-secondary text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-secondary/90 transition-colors"
+          className="flex items-center gap-3 bg-secondary text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-secondary/90 transition-all hover:scale-105"
         >
           Request Technical Consultation
           <ArrowRightIcon size={12} />
         </Link>
-        <Link to={paths.contact} className="border border-white text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-colors">
+        <Link to={paths.contact} className="border border-white text-white font-bold text-sm uppercase tracking-[1.4px] px-8 py-4 hover:bg-white/10 transition-all hover:scale-105">
           Contact Our Sales Team
         </Link>
       </div>

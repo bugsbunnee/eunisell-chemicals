@@ -25,7 +25,7 @@ const ChemicalsCta: React.FC = () => {
 
         <button
           onClick={() => navigate(paths.contact)}
-          className="bg-secondary text-white font-bold text-[18px] leading-[27px] px-12 py-5 rounded-[4px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-secondary/90 transition-colors"
+          className="bg-secondary text-white font-bold text-[18px] leading-[27px] px-12 py-5 rounded-[4px] shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)] hover:bg-secondary/90 transition-all hover:scale-105"
         >
           Request Product Consultation
         </button>

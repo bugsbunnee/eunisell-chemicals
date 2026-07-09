@@ -11,6 +11,8 @@ import corporateProfilePdf from '../../../assets/documents/corporate-profile.pdf
 import chemicalServicesPdf from '../../../assets/documents/chemical-services-brochure.pdf';
 import oilGasWaterSolutionsPdf from '../../../assets/documents/oil-and-gas-water-solutions.pdf';
 import aluminiumCanPdf from '../../../assets/documents/aluminium-can-brochure.pdf';
+import foodBeveragePdf from '../../../assets/documents/food-beverage.pdf';
+import buildingConstructionPdf from '../../../assets/documents/building-construction.pdf';
 
 enum FilterCategory {
   All = 'all',
@@ -61,7 +63,7 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/food-beverage.jpg',
     title: 'Food & Beverage Chemical Solutions',
     description: 'Specialty chemicals and hygiene solutions engineered for food and beverage processing operations.',
-    file: '/brochures/files/process-chemicals-catalysts-catalog.pdf',
+    file: foodBeveragePdf,
     fileSize: 'PDF (4.2 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
@@ -85,7 +87,7 @@ const brochures: Brochure[] = [
     image: '/brochures/covers/building-construction.jpg',
     title: 'Building & Construction Solutions',
     description: 'Construction chemicals and admixtures supporting durable, efficient building projects.',
-    file: '/brochures/files/sustainable-manufacturing-additives.pdf',
+    file: buildingConstructionPdf,
     fileSize: 'PDF (4.2 MB)',
     updatedAt: 'Updated: Jan 2026',
   },
@@ -158,7 +160,7 @@ const BrochureLibrary: React.FC = () => {
                 key={filter.id}
                 onClick={() => selectFilter(filter.id)}
                 className={cn(
-                  'shrink-0 px-6 py-2 rounded-full text-[13px] font-medium transition-all whitespace-nowrap',
+                  'shrink-0 px-6 py-2 rounded-full text-[13px] font-medium transition-all hover:scale-105 whitespace-nowrap',
                   activeFilter === filter.id ? 'bg-secondary text-white font-semibold' : 'bg-card border border-input text-accent'
                 )}
               >
@@ -173,7 +175,7 @@ const BrochureLibrary: React.FC = () => {
                 key={filter.id}
                 onClick={() => selectFilter(filter.id)}
                 className={cn({
-                  'px-8 py-3 rounded-[4px] text-sm font-medium transition-all whitespace-nowrap': true,
+                  'px-8 py-3 rounded-[4px] text-sm font-medium transition-all hover:scale-105 whitespace-nowrap': true,
                   'bg-white drop-shadow-[0px_2px_2px_rgba(0,0,0,0.05)] text-secondary font-semibold': activeFilter === filter.id,
                   'text-accent': activeFilter !== filter.id,
                 })}
@@ -201,7 +203,7 @@ const BrochureLibrary: React.FC = () => {
             <div className="flex justify-center">
               <button
                 onClick={() => setVisibleCount((count) => count + PER_PAGE)}
-                className="w-full md:w-auto border-2 border-accent text-accent font-bold md:font-normal text-sm md:text-base py-4 md:px-12 rounded-[4px] leading-5 md:leading-6"
+                className="w-full md:w-auto border-2 border-accent text-accent font-bold md:font-normal text-sm md:text-base py-4 md:px-12 rounded-[4px] leading-5 md:leading-6 transition-all hover:scale-105"
               >
                 Load More Brochures
               </button>

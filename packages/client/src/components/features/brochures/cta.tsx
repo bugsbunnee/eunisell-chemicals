@@ -37,12 +37,12 @@ const Cta: React.FC = () => {
         </p>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch md:items-center w-full md:w-auto">
-          <Link to={paths.contact} className="bg-secondary text-white font-bold text-base text-center py-5 md:px-12 rounded-[4px] whitespace-nowrap">
+          <Link to={paths.contact} className="bg-secondary text-white font-bold text-base text-center py-5 md:px-12 rounded-[4px] whitespace-nowrap transition-all hover:scale-105">
             Request Consultation
           </Link>
           <Link
             to={paths.contact}
-            className="border border-white/30 text-white font-bold text-base text-center py-5 md:px-12 rounded-[4px] whitespace-nowrap"
+            className="border border-white/30 text-white font-bold text-base text-center py-5 md:px-12 rounded-[4px] whitespace-nowrap transition-all hover:scale-105"
           >
             Technical Support
           </Link>

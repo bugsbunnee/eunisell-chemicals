@@ -27,12 +27,15 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-3 pt-2">
-          <button onClick={() => navigate(paths.careers)} className="w-full h-13 bg-secondary text-white text-[14px] font-medium flex items-center justify-center rounded-xs">
+          <button
+            onClick={() => navigate(paths.careers)}
+            className="w-full h-13 bg-secondary text-white text-[14px] font-medium flex items-center justify-center rounded-xs transition-all hover:scale-105"
+          >
             Apply Now
           </button>
           <button
             onClick={() => navigate(paths.careers)}
-            className="w-full h-13 border border-white/30 backdrop-blur-[2px] text-white text-[14px] font-medium flex items-center justify-center rounded-xs"
+            className="w-full h-13 border border-white/30 backdrop-blur-[2px] text-white text-[14px] font-medium flex items-center justify-center rounded-xs transition-all hover:scale-105"
           >
             View Careers
           </button>
@@ -64,13 +67,13 @@ const Hero: React.FC = () => {
           <div className="flex items-start gap-4 pt-6">
             <button
               onClick={() => navigate(paths.careers)}
-              className="bg-secondary text-white text-[14px] font-medium px-10 py-4.25 rounded-xs hover:bg-secondary/90 transition-colors"
+              className="bg-secondary text-white text-[14px] font-medium px-10 py-4.25 rounded-xs hover:bg-secondary/90 transition-all hover:scale-105"
             >
               Apply Now
             </button>
             <button
               onClick={() => navigate(paths.careers)}
-              className="border border-white/30 backdrop-blur-[2px] text-white text-[14px] font-medium px-10 py-4 rounded-xs hover:bg-white/10 transition-colors"
+              className="border border-white/30 backdrop-blur-[2px] text-white text-[14px] font-medium px-10 py-4 rounded-xs hover:bg-white/10 transition-all hover:scale-105"
             >
               View Careers
             </button>
