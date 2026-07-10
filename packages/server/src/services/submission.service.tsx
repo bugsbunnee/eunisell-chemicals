@@ -3,7 +3,7 @@ import SubmissionEmail, { type SubmissionField } from '../infrastructure/emails/
 import emailService from './email.service';
 
 import { render } from '@react-email/components';
-import { ADMIN_EMAIL } from '../infrastructure/utils/constants';
+import { EMAILS } from '../infrastructure/utils/constants';
 
 interface Submission {
   subject: string;
@@ -19,7 +19,7 @@ class SubmissionService {
 
     await emailService.sendMail({
       from: Bun.env.EMAIL_USER!,
-      to: ADMIN_EMAIL,
+      to: EMAILS.HR,
       subject,
       html,
     });

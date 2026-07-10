@@ -3,7 +3,7 @@ import EnquiryEmail from '../infrastructure/emails/enquiry';
 import emailService from './email.service';
 
 import { render } from '@react-email/components';
-import { ADMIN_EMAIL } from '../infrastructure/utils/constants';
+import { EMAILS } from '../infrastructure/utils/constants';
 
 import type { Enquiry } from '../../prisma/generated/client';
 
@@ -28,7 +28,7 @@ class EnquiryService {
 
     await emailService.sendMail({
       from: Bun.env.EMAIL_USER!,
-      to: ADMIN_EMAIL,
+      to: EMAILS.ADMIN,
       subject: `New Enquiry: ${enquiry.fullName} — ${enquiry.company}`,
       html,
     });

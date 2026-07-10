@@ -25,7 +25,7 @@ const OpenPositions: React.FC = () => {
       <div className="md:hidden bg-white px-6 py-16 flex flex-col gap-10">
         <div className="flex flex-col gap-2">
           <h2 className="font-bold text-accent text-[28px] leading-10.5">Open Positions</h2>
-          <p className="text-[#606060] text-[15px] leading-[22.5px]">Find the role that matches your expertise.</p>
+          <p className="text-card-foreground text-[15px] leading-[22.5px]">Find the role that matches your expertise.</p>
         </div>
 
         <div className="flex flex-col gap-3">
@@ -42,7 +42,7 @@ const OpenPositions: React.FC = () => {
           <select
             value={department}
             onChange={(e) => setDepartment(e.target.value)}
-            className="w-full h-12 border border-[#e8e8e8] rounded-[4px] px-4 text-[14px] text-[#606060] bg-white outline-none appearance-none"
+            className="w-full h-12 border border-[#e8e8e8] rounded-[4px] px-4 text-[14px] text-card-foreground bg-white outline-none appearance-none"
           >
             {departments.map((d) => (
               <option key={d} value={d}>
@@ -58,11 +58,11 @@ const OpenPositions: React.FC = () => {
               <div className="flex flex-col gap-2">
                 <h4 className="font-bold text-accent text-[18px] leading-[27px]">{pos.title}</h4>
                 <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-1.5 text-[#606060] text-[13px]">
+                  <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
                     <MapPinIcon size={10} />
                     {pos.location}
                   </span>
-                  <span className="flex items-center gap-1.5 text-[#606060] text-[13px]">
+                  <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
                     <BriefcaseIcon size={12} />
                     {pos.type}
                   </span>
@@ -85,7 +85,7 @@ const OpenPositions: React.FC = () => {
           <div className="flex items-end justify-between mb-12">
             <div>
               <h2 className="font-bold text-accent text-[40px] leading-[60px]">Open Positions</h2>
-              <p className="text-[#606060] text-[16px] leading-[24px] mt-2">Find the role that matches your expertise.</p>
+              <p className="text-card-foreground text-[16px] leading-[24px] mt-2">Find the role that matches your expertise.</p>
             </div>
             <div className="flex gap-4 items-center">
               <div className="relative">
@@ -101,7 +101,7 @@ const OpenPositions: React.FC = () => {
               <select
                 value={department}
                 onChange={(e) => setDepartment(e.target.value)}
-                className="h-12 border border-[#e8e8e8] rounded-[4px] px-5 text-[16px] text-[#606060] bg-white outline-none appearance-none cursor-pointer focus:border-secondary/50 pr-10"
+                className="h-12 border border-[#e8e8e8] rounded-[4px] px-5 text-[16px] text-card-foreground bg-white outline-none appearance-none cursor-pointer focus:border-secondary/50 pr-10"
               >
                 {departments.map((d) => (
                   <option key={d} value={d}>
@@ -118,12 +118,12 @@ const OpenPositions: React.FC = () => {
                 <div className="flex flex-col gap-2">
                   <h4 className="font-bold text-accent text-[20px] leading-[30px]">{pos.title}</h4>
                   <div className="flex items-center gap-6">
-                    <span className="flex items-center gap-2 text-[#606060] text-sm">
-                      <MapPinIcon size={11} className="text-[#606060]" />
+                    <span className="flex items-center gap-2 text-card-foreground text-sm">
+                      <MapPinIcon size={11} className="text-card-foreground" />
                       {pos.location}
                     </span>
-                    <span className="flex items-center gap-2 text-[#606060] text-sm">
-                      <BriefcaseIcon size={14} className="text-[#606060]" />
+                    <span className="flex items-center gap-2 text-card-foreground text-sm">
+                      <BriefcaseIcon size={14} className="text-card-foreground" />
                       {pos.type}
                     </span>
                   </div>

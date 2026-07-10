@@ -2,4 +2,7 @@ export const ALPHANUMERIC = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy
 
 export const OTP_EXPIRY_MINUTES = 10;
 
-export const ADMIN_EMAIL = ['info@eunisell.com', 'marcel.chukwuma00@gmail.com'];
+export const EMAILS = {
+  ADMIN: ['info@eunisell.com', 'marcel.chukwuma00@gmail.com'],
+  HR: ['hr@eunisell.com', 'marcel.chukwuma00@gmail.com'],
+};
