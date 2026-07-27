@@ -23,7 +23,7 @@ class ApplicationController {
       message: { label: 'Professional Motivation', value: application.motivation },
     });
 
-    res.status(HttpStatusCode.Created).json({ message: 'Application received' });
+    res.status(HttpStatusCode.Created).json({ message: 'Application received.' });
   }
 }
 
