@@ -6,12 +6,18 @@ export enum ActivityAction {
   NewBlogPost = 'new-blog-post',
   UpdateBlogPost = 'update-blog-post',
   DeleteBlogPost = 'delete-blog-post',
+  NewCareerOpening = 'new-career-opening',
+  UpdateCareerOpening = 'update-career-opening',
+  DeleteCareerOpening = 'delete-career-opening',
+  UpdateApplicationStatus = 'update-application-status',
 }
 
 export enum ActivityCategory {
   Auth = 'auth',
   Enquiry = 'enquiry',
   Blog = 'blog',
+  Careers = 'careers',
+  Applications = 'applications',
 }
 
 export interface ActivityData {

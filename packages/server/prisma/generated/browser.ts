@@ -36,3 +36,13 @@ export type Enquiry = Prisma.EnquiryModel;
  *
  */
 export type BlogPost = Prisma.BlogPostModel;
+/**
+ * Model CareerOpening
+ *
+ */
+export type CareerOpening = Prisma.CareerOpeningModel;
+/**
+ * Model Application
+ *
+ */
+export type Application = Prisma.ApplicationModel;

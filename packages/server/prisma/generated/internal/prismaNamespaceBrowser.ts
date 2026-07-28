@@ -52,6 +52,8 @@ export const ModelName = {
   ActivityLog: 'ActivityLog',
   Enquiry: 'Enquiry',
   BlogPost: 'BlogPost',
+  CareerOpening: 'CareerOpening',
+  Application: 'Application',
 } as const;
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -131,6 +133,47 @@ export const BlogPostScalarFieldEnum = {
 } as const;
 
 export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum];
+
+export const CareerOpeningScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  department: 'department',
+  category: 'category',
+  location: 'location',
+  locationDetails: 'locationDetails',
+  jobType: 'jobType',
+  workMode: 'workMode',
+  level: 'level',
+  experienceRange: 'experienceRange',
+  reportingLine: 'reportingLine',
+  travelRequirement: 'travelRequirement',
+  postedDate: 'postedDate',
+  deadline: 'deadline',
+  status: 'status',
+  featured: 'featured',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type CareerOpeningScalarFieldEnum = (typeof CareerOpeningScalarFieldEnum)[keyof typeof CareerOpeningScalarFieldEnum];
+
+export const ApplicationScalarFieldEnum = {
+  id: 'id',
+  careerOpeningId: 'careerOpeningId',
+  jobTitle: 'jobTitle',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  phone: 'phone',
+  experience: 'experience',
+  motivation: 'motivation',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum];
 
 export const SortOrder = {
   asc: 'asc',

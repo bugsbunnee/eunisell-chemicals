@@ -10,6 +10,7 @@ import blog from '../routes/blog.routes';
 import activity from '../routes/activity.routes';
 import subscriptions from '../routes/subscription.routes';
 import applications from '../routes/application.routes';
+import careers from '../routes/career.routes';
 
 import error from '../middleware/error';
 
@@ -33,6 +34,7 @@ const registerRoutes = (app: Express) => {
   app.use('/api/v1/activity', activity);
   app.use('/api/v1/subscriptions', subscriptions);
   app.use('/api/v1/applications', applications);
+  app.use('/api/v1/careers', careers);
 
   app.use(error);
 };

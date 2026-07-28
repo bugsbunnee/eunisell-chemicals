@@ -344,6 +344,8 @@ export const ModelName = {
   ActivityLog: 'ActivityLog',
   Enquiry: 'Enquiry',
   BlogPost: 'BlogPost',
+  CareerOpening: 'CareerOpening',
+  Application: 'Application',
 } as const;
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName];
@@ -357,7 +359,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions;
   };
   meta: {
-    modelProps: 'admin' | 'activityLog' | 'enquiry' | 'blogPost';
+    modelProps: 'admin' | 'activityLog' | 'enquiry' | 'blogPost' | 'careerOpening' | 'application';
     txIsolationLevel: TransactionIsolationLevel;
   };
   model: {
@@ -657,6 +659,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         };
       };
     };
+    CareerOpening: {
+      payload: Prisma.$CareerOpeningPayload<ExtArgs>;
+      fields: Prisma.CareerOpeningFieldRefs;
+      operations: {
+        findUnique: {
+          args: Prisma.CareerOpeningFindUniqueArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload> | null;
+        };
+        findUniqueOrThrow: {
+          args: Prisma.CareerOpeningFindUniqueOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        findFirst: {
+          args: Prisma.CareerOpeningFindFirstArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload> | null;
+        };
+        findFirstOrThrow: {
+          args: Prisma.CareerOpeningFindFirstOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        findMany: {
+          args: Prisma.CareerOpeningFindManyArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>[];
+        };
+        create: {
+          args: Prisma.CareerOpeningCreateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        createMany: {
+          args: Prisma.CareerOpeningCreateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        createManyAndReturn: {
+          args: Prisma.CareerOpeningCreateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>[];
+        };
+        delete: {
+          args: Prisma.CareerOpeningDeleteArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        update: {
+          args: Prisma.CareerOpeningUpdateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        deleteMany: {
+          args: Prisma.CareerOpeningDeleteManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateMany: {
+          args: Prisma.CareerOpeningUpdateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateManyAndReturn: {
+          args: Prisma.CareerOpeningUpdateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>[];
+        };
+        upsert: {
+          args: Prisma.CareerOpeningUpsertArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CareerOpeningPayload>;
+        };
+        aggregate: {
+          args: Prisma.CareerOpeningAggregateArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCareerOpening>;
+        };
+        groupBy: {
+          args: Prisma.CareerOpeningGroupByArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.CareerOpeningGroupByOutputType>[];
+        };
+        count: {
+          args: Prisma.CareerOpeningCountArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.CareerOpeningCountAggregateOutputType> | number;
+        };
+      };
+    };
+    Application: {
+      payload: Prisma.$ApplicationPayload<ExtArgs>;
+      fields: Prisma.ApplicationFieldRefs;
+      operations: {
+        findUnique: {
+          args: Prisma.ApplicationFindUniqueArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload> | null;
+        };
+        findUniqueOrThrow: {
+          args: Prisma.ApplicationFindUniqueOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        findFirst: {
+          args: Prisma.ApplicationFindFirstArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload> | null;
+        };
+        findFirstOrThrow: {
+          args: Prisma.ApplicationFindFirstOrThrowArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        findMany: {
+          args: Prisma.ApplicationFindManyArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>[];
+        };
+        create: {
+          args: Prisma.ApplicationCreateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        createMany: {
+          args: Prisma.ApplicationCreateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        createManyAndReturn: {
+          args: Prisma.ApplicationCreateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>[];
+        };
+        delete: {
+          args: Prisma.ApplicationDeleteArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        update: {
+          args: Prisma.ApplicationUpdateArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        deleteMany: {
+          args: Prisma.ApplicationDeleteManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateMany: {
+          args: Prisma.ApplicationUpdateManyArgs<ExtArgs>;
+          result: BatchPayload;
+        };
+        updateManyAndReturn: {
+          args: Prisma.ApplicationUpdateManyAndReturnArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>[];
+        };
+        upsert: {
+          args: Prisma.ApplicationUpsertArgs<ExtArgs>;
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ApplicationPayload>;
+        };
+        aggregate: {
+          args: Prisma.ApplicationAggregateArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.AggregateApplication>;
+        };
+        groupBy: {
+          args: Prisma.ApplicationGroupByArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.ApplicationGroupByOutputType>[];
+        };
+        count: {
+          args: Prisma.ApplicationCountArgs<ExtArgs>;
+          result: runtime.Types.Utils.Optional<Prisma.ApplicationCountAggregateOutputType> | number;
+        };
+      };
+    };
   };
 } & {
   other: {
@@ -758,6 +908,47 @@ export const BlogPostScalarFieldEnum = {
 
 export type BlogPostScalarFieldEnum = (typeof BlogPostScalarFieldEnum)[keyof typeof BlogPostScalarFieldEnum];
 
+export const CareerOpeningScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  slug: 'slug',
+  department: 'department',
+  category: 'category',
+  location: 'location',
+  locationDetails: 'locationDetails',
+  jobType: 'jobType',
+  workMode: 'workMode',
+  level: 'level',
+  experienceRange: 'experienceRange',
+  reportingLine: 'reportingLine',
+  travelRequirement: 'travelRequirement',
+  postedDate: 'postedDate',
+  deadline: 'deadline',
+  status: 'status',
+  featured: 'featured',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type CareerOpeningScalarFieldEnum = (typeof CareerOpeningScalarFieldEnum)[keyof typeof CareerOpeningScalarFieldEnum];
+
+export const ApplicationScalarFieldEnum = {
+  id: 'id',
+  careerOpeningId: 'careerOpeningId',
+  jobTitle: 'jobTitle',
+  firstName: 'firstName',
+  lastName: 'lastName',
+  email: 'email',
+  phone: 'phone',
+  experience: 'experience',
+  motivation: 'motivation',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+} as const;
+
+export type ApplicationScalarFieldEnum = (typeof ApplicationScalarFieldEnum)[keyof typeof ApplicationScalarFieldEnum];
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc',
@@ -837,6 +1028,26 @@ export type ListEnumBlogStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$P
  * Reference to a field of type 'Boolean'
  */
 export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>;
+
+/**
+ * Reference to a field of type 'CareerStatus'
+ */
+export type EnumCareerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CareerStatus'>;
+
+/**
+ * Reference to a field of type 'CareerStatus[]'
+ */
+export type ListEnumCareerStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'CareerStatus[]'>;
+
+/**
+ * Reference to a field of type 'ApplicationStatus'
+ */
+export type EnumApplicationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ApplicationStatus'>;
+
+/**
+ * Reference to a field of type 'ApplicationStatus[]'
+ */
+export type ListEnumApplicationStatusFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'ApplicationStatus[]'>;
 
 /**
  * Reference to a field of type 'Int'
@@ -965,6 +1176,8 @@ export type GlobalOmitConfig = {
   activityLog?: Prisma.ActivityLogOmit;
   enquiry?: Prisma.EnquiryOmit;
   blogPost?: Prisma.BlogPostOmit;
+  careerOpening?: Prisma.CareerOpeningOmit;
+  application?: Prisma.ApplicationOmit;
 };
 
 /* Types for Logging */

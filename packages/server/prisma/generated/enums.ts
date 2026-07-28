@@ -33,3 +33,20 @@ export const BlogStatus = {
 } as const;
 
 export type BlogStatus = (typeof BlogStatus)[keyof typeof BlogStatus];
+
+export const CareerStatus = {
+  OPEN: 'OPEN',
+  DRAFT: 'DRAFT',
+  CLOSED: 'CLOSED',
+} as const;
+
+export type CareerStatus = (typeof CareerStatus)[keyof typeof CareerStatus];
+
+export const ApplicationStatus = {
+  NEW: 'NEW',
+  REVIEWED: 'REVIEWED',
+  SHORTLISTED: 'SHORTLISTED',
+  REJECTED: 'REJECTED',
+} as const;
+
+export type ApplicationStatus = (typeof ApplicationStatus)[keyof typeof ApplicationStatus];

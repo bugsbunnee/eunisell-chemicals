@@ -1,6 +1,6 @@
 import { MoreVerticalIcon, StarIcon, TrendingUpIcon, TrendingDownIcon } from 'lucide-react';
-import type { Column } from '../enquiries/table';
-import type { CareerRole, CareerStatus } from './types';
+import type { Column } from '../../enquiries/table';
+import type { CareerRole, CareerStatus } from '../model/types';
 
 const STATUS_STYLE: Record<CareerStatus, { bg: string; text: string }> = {
   OPEN: { bg: 'rgba(31,193,107,0.1)', text: '#1fc16b' },
@@ -36,7 +36,7 @@ export const COLUMNS: Column<CareerRole>[] = [
     render: (row) => (
       <div>
         <p className="text-[12px] text-accent leading-4">{row.postedDate}</p>
-        <p className="text-[10px] text-[#a4a4a4] leading-[15px]">Ends: {row.endDate}</p>
+        <p className="text-[10px] text-[#a4a4a4] leading-[15px]">Ends: {row.deadline}</p>
       </div>
     ),
   },

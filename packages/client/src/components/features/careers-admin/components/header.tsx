@@ -1,4 +1,7 @@
+import { useState } from 'react';
 import { BellIcon, PlusIcon, SearchIcon } from 'lucide-react';
+
+import CreateCareerModal from './create-career-modal';
 
 interface Props {
   search: string;
@@ -6,6 +9,8 @@ interface Props {
 }
 
 export default function CareerHeader({ search, onSearch }: Props) {
+  const [isCreateOpen, setCreateOpen] = useState(false);
+
   return (
     <div className="bg-white border-b border-[#e8e8e8] px-8 h-20 flex items-center justify-between shrink-0">
       <div>
@@ -27,11 +32,16 @@ export default function CareerHeader({ search, onSearch }: Props) {
           <BellIcon size={16} className="text-accent" />
           <span className="absolute top-2 right-2 size-2 bg-[#ef4444] rounded-full border-2 border-white" />
         </div>
-        <button className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px] transition-all hover:scale-105">
+        <button
+          onClick={() => setCreateOpen(true)}
+          className="bg-secondary text-white flex items-center gap-2 px-5 py-[10px] rounded-[6px] text-[14px] transition-all hover:scale-105"
+        >
           <PlusIcon size={14} />
           Add Career Opening
         </button>
       </div>
+
+      <CreateCareerModal open={isCreateOpen} onOpenChange={setCreateOpen} />
     </div>
   );
 }

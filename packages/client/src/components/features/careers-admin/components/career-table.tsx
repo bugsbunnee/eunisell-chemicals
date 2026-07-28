@@ -1,6 +1,6 @@
-import Table from '../enquiries/table';
+import Table from '../../enquiries/table';
 import { COLUMNS } from './columns';
-import type { CareerRole } from './types';
+import type { CareerRole } from '../model/types';
 
 interface Props {
   data: CareerRole[];
@@ -8,12 +8,13 @@ interface Props {
   page: number;
   totalPages: number;
   onPage: (p: number) => void;
+  loading?: boolean;
 }
 
-export default function CareerTable({ data, total, page, totalPages, onPage }: Props) {
+export default function CareerTable({ data, total, page, totalPages, onPage, loading = false }: Props) {
   return (
     <div className="bg-white border border-[#e5e8ec] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.01)] rounded-[6px] overflow-hidden">
-      <Table columns={COLUMNS} data={data} keyExtractor={(r) => r.id} loading={false} />
+      <Table columns={COLUMNS} data={data} keyExtractor={(r) => r.id} loading={loading} />
       <div className="bg-[#f6f9fc] border-t border-[#e8e8e8] flex items-center justify-between px-5 py-4">
         <p className="text-[12px] text-[#777]">
           Showing {data.length} of {total} roles

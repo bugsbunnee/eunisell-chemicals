@@ -97,3 +97,67 @@ model BlogPost {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+enum CareerStatus {
+  OPEN
+  DRAFT
+  CLOSED
+}
+
+model CareerOpening {
+  id    String @id @default(cuid())
+  title String
+  slug  String @unique
+
+  department String
+  category   String
+
+  location        String
+  locationDetails String
+
+  jobType         String
+  workMode        String
+  level           String
+  experienceRange String
+
+  reportingLine     String
+  travelRequirement String
+
+  postedDate DateTime
+  deadline   DateTime
+
+  status   CareerStatus @default(DRAFT)
+  featured Boolean      @default(false)
+
+  applications Application[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum ApplicationStatus {
+  NEW
+  REVIEWED
+  SHORTLISTED
+  REJECTED
+}
+
+model Application {
+  id String @id @default(cuid())
+
+  careerOpening   CareerOpening? @relation(fields: [careerOpeningId], references: [id])
+  careerOpeningId String?
+
+  jobTitle   String
+  firstName  String
+  lastName   String
+  email      String
+  phone      String
+  experience String
+  motivation String @db.Text
+
+  status ApplicationStatus @default(NEW)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
