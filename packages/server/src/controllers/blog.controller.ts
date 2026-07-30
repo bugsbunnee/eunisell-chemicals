@@ -2,9 +2,9 @@ import { HttpStatusCode } from 'axios';
 
 import type { Request, Response } from 'express';
 
-import { blogQuerySchema, createBlogPostSchema, updateBlogPostSchema } from '../infrastructure/schemas';
-import { blogRepository } from '../repositories/blog.repository';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
+import { blogQuerySchema, createBlogPostSchema, updateBlogPostSchema } from '../infrastructure/schemas/index.js';
+import { blogRepository } from '../repositories/blog.repository.js';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.js';
 
 const adminId = (req: Request) => (req as any).user?.id ?? '';
 

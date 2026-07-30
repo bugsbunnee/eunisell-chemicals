@@ -1,16 +1,16 @@
 import React from 'react';
 
-import WelcomeEmail from '../infrastructure/emails/welcome';
-import RecentLoginEmail from '../infrastructure/emails/recent-login';
+import WelcomeEmail from '../infrastructure/emails/welcome.js';
+import RecentLoginEmail from '../infrastructure/emails/recent-login.js';
 
 import _ from 'lodash';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
-import emailService from './email.service';
-import logger from '../startup/logger';
+import emailService from './email.service.js';
+import logger from '../startup/logger.js';
 
-import type { Admin } from '../../prisma/generated/client';
+import type { Admin } from '../../prisma/generated/client.js';
 import { render } from '@react-email/components';
 
 export interface LoginContext {

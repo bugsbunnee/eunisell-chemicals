@@ -1,8 +1,8 @@
 import { Router } from 'express';
 
-import auth from '../middleware/auth';
-import blog from '../controllers/blog.controller';
-import paginate from '../middleware/paginate';
+import auth from '../middleware/auth.js';
+import blog from '../controllers/blog.controller.js';
+import paginate from '../middleware/paginate.js';
 
 const router = Router();
 

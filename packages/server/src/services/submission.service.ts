@@ -1,9 +1,9 @@
 import React from 'react';
-import SubmissionEmail, { type SubmissionField } from '../infrastructure/emails/submission';
-import emailService from './email.service';
+import SubmissionEmail, { type SubmissionField } from '../infrastructure/emails/submission.js';
+import emailService from './email.service.js';
 
 import { render } from '@react-email/components';
-import { EMAILS } from '../infrastructure/utils/constants';
+import { EMAILS } from '../infrastructure/utils/constants.js';
 
 interface Submission {
   subject: string;

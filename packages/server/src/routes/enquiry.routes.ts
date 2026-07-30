@@ -1,10 +1,10 @@
 import { Router } from 'express';
-import { createEnquirySchema, enquiryQuerySchema } from '../infrastructure/schemas';
+import { createEnquirySchema, enquiryQuerySchema } from '../infrastructure/schemas/index.js';
 
-import auth from '../middleware/auth';
-import enquiry from '../controllers/enquiry.controller';
-import validate from '../middleware/validate';
-import paginate from '../middleware/paginate';
+import auth from '../middleware/auth.js';
+import enquiry from '../controllers/enquiry.controller.js';
+import validate from '../middleware/validate.js';
+import paginate from '../middleware/paginate.js';
 
 const router = Router();
 

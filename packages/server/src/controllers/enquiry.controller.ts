@@ -1,10 +1,10 @@
 import { HttpStatusCode } from 'axios';
-import { enquiryRepository } from '../repositories/enquiry.repository';
-import { enquiryQuerySchema } from '../infrastructure/schemas';
+import { enquiryRepository } from '../repositories/enquiry.repository.js';
+import { enquiryQuerySchema } from '../infrastructure/schemas/index.js';
 
 import type { Request, Response } from 'express';
-import enquiryService from '../services/enquiry.service';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
+import enquiryService from '../services/enquiry.service.js';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.js';
 
 class EnquiryController {
   async create(req: Request, res: Response) {

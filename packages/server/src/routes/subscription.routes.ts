@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { createSubscriptionSchema } from '../infrastructure/schemas';
+import { createSubscriptionSchema } from '../infrastructure/schemas/index.js';
 
-import subscription from '../controllers/subscription.controller';
-import validate from '../middleware/validate';
+import subscription from '../controllers/subscription.controller.js';
+import validate from '../middleware/validate.js';
 
 const router = Router();
 

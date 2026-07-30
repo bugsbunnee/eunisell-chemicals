@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import bcrypt from 'bcryptjs';
-import authService from '../services/auth.service';
+import authService from '../services/auth.service.js';
 
 import { HttpStatusCode } from 'axios';
-import { authRepository } from '../repositories/auth.repository';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
+import { authRepository } from '../repositories/auth.repository.js';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.js';
 
 import type { Request, Response } from 'express';
-import type { IRegister } from '../infrastructure/schemas';
+import type { IRegister } from '../infrastructure/schemas/index.js';
 
 class AuthController {
   async login(req: Request, res: Response) {

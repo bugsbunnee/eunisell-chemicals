@@ -1,9 +1,9 @@
 import { Router } from 'express';
-import { createApplicationSchema, updateApplicationStatusSchema } from '../infrastructure/schemas';
+import { createApplicationSchema, updateApplicationStatusSchema } from '../infrastructure/schemas/index.js';
 
-import auth from '../middleware/auth';
-import application from '../controllers/application.controller';
-import validate from '../middleware/validate';
+import auth from '../middleware/auth.js';
+import application from '../controllers/application.controller.js';
+import validate from '../middleware/validate.js';
 
 const router = Router();
 
