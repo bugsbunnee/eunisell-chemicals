@@ -1,4 +1,4 @@
-const requiredEnv = ['DATABASE_URL', 'JWT_SECRET', 'RESEND_API_KEY'] as const;
+const requiredEnv = ['DATABASE_URL', 'JWT_SECRET', 'RESEND_API_KEY', 'EMAIL_NAME', 'EMAIL_USER'] as const;
 
 const registerConfig = () => {
   const missing = requiredEnv.filter((key) => !Bun.env[key]);
