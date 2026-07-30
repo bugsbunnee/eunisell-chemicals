@@ -1,6 +1,6 @@
 import express from 'express';
-import logger from './startup/logger.ts';
-import registerApp from './startup/index.ts';
+import logger from './startup/logger';
+import registerApp from './startup';
 
 import 'dotenv/config';
 

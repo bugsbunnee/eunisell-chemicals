@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import bcrypt from 'bcryptjs';
-import authService from '../services/auth.service.tsx';
+import authService from '../services/auth.service';
 
 import { HttpStatusCode } from 'axios';
-import { authRepository } from '../repositories/auth.repository.ts';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.ts';
+import { authRepository } from '../repositories/auth.repository';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
 
 import type { Request, Response } from 'express';
 import type { IRegister } from '../infrastructure/schemas';
