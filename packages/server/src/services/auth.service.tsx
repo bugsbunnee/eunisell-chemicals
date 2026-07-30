@@ -41,7 +41,6 @@ class AuthService {
 
     try {
       await emailService.sendMail({
-        from: `"${Bun.env.EMAIL_NAME ?? 'Eunisell'}" <${Bun.env.EMAIL_USER}>`,
         to: admin.email,
         subject: 'Welcome to Eunisell Admin Dashboard',
         html,
@@ -65,7 +64,6 @@ class AuthService {
 
     try {
       await emailService.sendMail({
-        from: `"${Bun.env.EMAIL_NAME ?? 'Eunisell'}" <${Bun.env.EMAIL_USER}>`,
         to: admin.email,
         subject: 'New Login Detected — Eunisell Admin',
         html,

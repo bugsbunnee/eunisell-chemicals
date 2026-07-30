@@ -27,7 +27,6 @@ class EnquiryService {
     const html = await render(element);
 
     await emailService.sendMail({
-      from: Bun.env.EMAIL_USER!,
       to: EMAILS.ADMIN,
       subject: `New Enquiry: ${enquiry.fullName} — ${enquiry.company}`,
       html,

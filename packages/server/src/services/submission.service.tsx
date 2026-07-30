@@ -18,7 +18,6 @@ class SubmissionService {
     const html = await render(React.createElement(SubmissionEmail, content));
 
     await emailService.sendMail({
-      from: Bun.env.EMAIL_USER!,
       to: EMAILS.HR,
       subject,
       html,
