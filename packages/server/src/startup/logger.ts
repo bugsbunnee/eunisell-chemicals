@@ -13,24 +13,26 @@ const logger = winston.createLogger({
     winston.format.printf((info) => `[${info.timestamp}]:[${info.level}]:[${info.message}]`)
   ),
   defaultMeta: { service: 'eunisell' },
-  transports: [
-    new winston.transports.DailyRotateFile({
-      level: 'info',
-      filename: `src/logs/eunisell-%DATE%.log`,
-      datePattern: 'YYYY-MM-DD',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
-    }),
-  ],
+  transports: [],
 });
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.VERCEL) {
   const consoleTransport = new winston.transports.Console({
     format: winston.format.combine(winston.format.json(), winston.format.colorize()),
   });
 
   logger.add(consoleTransport);
+} else {
+  const fileRotationTransport = new winston.transports.DailyRotateFile({
+    level: 'info',
+    filename: `src/logs/eunisell-%DATE%.log`,
+    datePattern: 'YYYY-MM-DD',
+    zippedArchive: true,
+    maxSize: '20m',
+    maxFiles: '14d',
+  });
+
+  logger.add(fileRotationTransport);
 }
 
 process.on('unhandledRejection', (ex) => {
