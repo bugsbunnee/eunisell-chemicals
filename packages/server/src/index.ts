@@ -1,8 +1,8 @@
-import 'dotenv/config';
-
 import express from 'express';
 import logger from './startup/logger.ts';
 import registerApp from './startup/index.ts';
+
+import 'dotenv/config';
 
 const app = registerApp();
 const port = Number(process.env.PORT) || 8080;
