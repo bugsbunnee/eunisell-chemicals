@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { activityRepository } from '../repositories/activity.repository.js';
+import { activityRepository } from '../repositories/activity.repository';
 
 class ActivityController {
   async findRecent(req: Request, res: Response) {

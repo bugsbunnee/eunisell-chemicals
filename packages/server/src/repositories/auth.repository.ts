@@ -1,7 +1,7 @@
 import _ from 'lodash';
-import prisma from '../../prisma/index.js';
+import prisma from '../../prisma';
 
-import type { IRegister } from '../infrastructure/schemas/index.js';
+import type { IRegister } from '../infrastructure/schemas';
 
 export const authRepository = {
   getAdminByEmail(email: string) {

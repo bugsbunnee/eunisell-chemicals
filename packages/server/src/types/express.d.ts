@@ -1,5 +1,5 @@
-import type { Admin } from '../../prisma/generated/client.js';
-import type { Pagination } from '../infrastructure/utils/entities.js';
+import type { Admin } from '../../prisma/generated/client';
+import type { Pagination } from '../infrastructure/utils/entities';
 
 export type {};
 

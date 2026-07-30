@@ -1,8 +1,8 @@
 import { HttpStatusCode } from 'axios';
-import submissionService from '../services/submission.service.js';
+import submissionService from '../services/submission.service';
 
 import type { Request, Response } from 'express';
-import type { ICreateSubscription } from '../infrastructure/schemas/index.js';
+import type { ICreateSubscription } from '../infrastructure/schemas';
 
 class SubscriptionController {
   async create(req: Request, res: Response) {

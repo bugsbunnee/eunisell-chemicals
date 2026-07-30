@@ -1,6 +1,6 @@
 import express from 'express';
-import registerConfig from './config.js';
-import registerRoutes from './routes.js';
+import registerConfig from './config';
+import registerRoutes from './routes';
 
 const registerApp = () => {
   const app = express();

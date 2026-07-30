@@ -1,11 +1,11 @@
 import React from 'react';
-import EnquiryEmail from '../infrastructure/emails/enquiry.js';
-import emailService from './email.service.js';
+import EnquiryEmail from '../infrastructure/emails/enquiry';
+import emailService from './email.service';
 
 import { render } from '@react-email/components';
-import { EMAILS } from '../infrastructure/utils/constants.js';
+import { EMAILS } from '../infrastructure/utils/constants';
 
-import type { Enquiry } from '../../prisma/generated/client.js';
+import type { Enquiry } from '../../prisma/generated/client';
 
 class EnquiryService {
   async sendEnquiryMail(enquiry: Enquiry) {

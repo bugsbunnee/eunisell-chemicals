@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
-import prisma from '../../prisma/index.js';
+import prisma from '../../prisma';
 
-import type { Pagination } from '../infrastructure/utils/entities.js';
-import type { ICareerQuery, ICreateCareerOpening, IUpdateCareerOpening } from '../infrastructure/schemas/index.js';
+import type { Pagination } from '../infrastructure/utils/entities';
+import type { ICareerQuery, ICreateCareerOpening, IUpdateCareerOpening } from '../infrastructure/schemas';
 
 export const careerRepository = {
   create(data: ICreateCareerOpening) {

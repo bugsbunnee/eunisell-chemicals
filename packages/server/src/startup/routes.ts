@@ -4,15 +4,15 @@ import cors from 'cors';
 import compression from 'compression';
 import helmet from 'helmet';
 
-import auth from '../routes/auth.routes.js';
-import enquiries from '../routes/enquiry.routes.js';
-import blog from '../routes/blog.routes.js';
-import activity from '../routes/activity.routes.js';
-import subscriptions from '../routes/subscription.routes.js';
-import applications from '../routes/application.routes.js';
-import careers from '../routes/career.routes.js';
+import auth from '../routes/auth.routes';
+import enquiries from '../routes/enquiry.routes';
+import blog from '../routes/blog.routes';
+import activity from '../routes/activity.routes';
+import subscriptions from '../routes/subscription.routes';
+import applications from '../routes/application.routes';
+import careers from '../routes/career.routes';
 
-import error from '../middleware/error.js';
+import error from '../middleware/error';
 
 const registerRoutes = (app: Express) => {
   app.use(

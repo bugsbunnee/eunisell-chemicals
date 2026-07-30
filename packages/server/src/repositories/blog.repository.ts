@@ -1,8 +1,8 @@
-import prisma from '../../prisma/index.js';
+import prisma from '../../prisma';
 
-import type { BlogStatus } from '../../prisma/generated/client.js';
-import type { Pagination } from '../infrastructure/utils/entities.js';
-import type { IBlogQuery, ICreateBlogPost, IUpdateBlogPost } from '../infrastructure/schemas/index.js';
+import type { BlogStatus } from '../../prisma/generated/client';
+import type { Pagination } from '../infrastructure/utils/entities';
+import type { IBlogQuery, ICreateBlogPost, IUpdateBlogPost } from '../infrastructure/schemas';
 
 export const blogRepository = {
   create(data: ICreateBlogPost) {

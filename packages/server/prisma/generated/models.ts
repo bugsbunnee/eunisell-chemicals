@@ -7,10 +7,10 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Admin.js';
-export type * from './models/ActivityLog.js';
-export type * from './models/Enquiry.js';
-export type * from './models/BlogPost.js';
-export type * from './models/CareerOpening.js';
-export type * from './models/Application.js';
-export type * from './commonInputTypes.js';
+export type * from './models/Admin.ts';
+export type * from './models/ActivityLog.ts';
+export type * from './models/Enquiry.ts';
+export type * from './models/BlogPost.ts';
+export type * from './models/CareerOpening.ts';
+export type * from './models/Application.ts';
+export type * from './commonInputTypes.ts';

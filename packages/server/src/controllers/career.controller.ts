@@ -2,10 +2,10 @@ import { HttpStatusCode } from 'axios';
 
 import type { Request, Response } from 'express';
 
-import { careerQuerySchema, createCareerOpeningSchema, updateCareerOpeningSchema } from '../infrastructure/schemas/index.js';
-import { careerRepository } from '../repositories/career.repository.js';
-import { applicationRepository } from '../repositories/application.repository.js';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.js';
+import { careerQuerySchema, createCareerOpeningSchema, updateCareerOpeningSchema } from '../infrastructure/schemas';
+import { careerRepository } from '../repositories/career.repository';
+import { applicationRepository } from '../repositories/application.repository';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
 
 class CareerController {
   async create(req: Request, res: Response) {

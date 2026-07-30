@@ -1,8 +1,8 @@
-import prisma from '../../prisma/index.js';
+import prisma from '../../prisma';
 
-import type { EnquiryPriority, EnquiryStatus } from '../../prisma/generated/client.js';
-import type { Pagination } from '../infrastructure/utils/entities.js';
-import type { ICreateEnquiry, IEnquiryQuery, IUpdateEnquiry } from '../infrastructure/schemas/index.js';
+import type { EnquiryPriority, EnquiryStatus } from '../../prisma/generated/client';
+import type { Pagination } from '../infrastructure/utils/entities';
+import type { ICreateEnquiry, IEnquiryQuery, IUpdateEnquiry } from '../infrastructure/schemas';
 
 export const enquiryRepository = {
   create(data: ICreateEnquiry) {

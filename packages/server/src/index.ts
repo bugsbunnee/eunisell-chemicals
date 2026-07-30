@@ -1,6 +1,6 @@
 import express from 'express';
-import logger from './startup/logger.js';
-import registerApp from './startup/index.js';
+import logger from './startup/logger';
+import registerApp from './startup';
 
 import 'dotenv/config';
 
