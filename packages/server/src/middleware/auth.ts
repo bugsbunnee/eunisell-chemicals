@@ -1,9 +1,9 @@
 import { HttpStatusCode } from 'axios';
 
 import type { NextFunction, Request, Response } from 'express';
-import type { Admin } from '../../prisma/generated/client';
+import type { Admin } from '../../prisma/generated/client.js';
 
-import authService from '../services/auth.service';
+import authService from '../services/auth.service.js';
 
 const auth = (req: Request, res: Response, next: NextFunction) => {
   const token = req.header('x-auth-token');

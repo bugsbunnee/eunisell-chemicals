@@ -1,8 +1,8 @@
 import dayjs from 'dayjs';
-import prisma from '../../prisma';
+import prisma from '../../prisma/index.js';
 
-import type { ApplicationStatus } from '../../prisma/generated/client';
-import type { ICreateApplication } from '../infrastructure/schemas';
+import type { ApplicationStatus } from '../../prisma/generated/client.js';
+import type { ICreateApplication } from '../infrastructure/schemas/index.js';
 
 export const applicationRepository = {
   create(data: ICreateApplication) {

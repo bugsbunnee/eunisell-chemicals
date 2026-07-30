@@ -1,11 +1,11 @@
 import { HttpStatusCode } from 'axios';
-import { applicationRepository } from '../repositories/application.repository';
-import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository';
+import { applicationRepository } from '../repositories/application.repository.js';
+import { ActivityAction, ActivityCategory, activityRepository } from '../repositories/activity.repository.js';
 
-import submissionService from '../services/submission.service';
+import submissionService from '../services/submission.service.js';
 
 import type { Request, Response } from 'express';
-import type { ICreateApplication, IUpdateApplicationStatus } from '../infrastructure/schemas';
+import type { ICreateApplication, IUpdateApplicationStatus } from '../infrastructure/schemas/index.js';
 
 class ApplicationController {
   async create(req: Request, res: Response) {
