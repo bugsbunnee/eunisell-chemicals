@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRightIcon } from 'lucide-react';
 import { paths } from '../../../lib/data';
 
-const offshoreImg = 'https://www.figma.com/api/mcp/asset/9732b44e-e8d9-43ca-85b1-2cf12a4df1ad';
-const avatarImg = 'https://www.figma.com/api/mcp/asset/baa10243-4b00-4492-a2d6-7f36a3d61382';
+const offshoreImg = '/technical-services/offshore.svg';
 
 const BlogFeatured: React.FC = () => {
   return (
@@ -21,18 +20,16 @@ const BlogFeatured: React.FC = () => {
             </div>
           </div>
 
-          <h2 className="font-bold text-accent text-[26px] leading-[32.5px] md:text-[32px] md:leading-10">
-            Improving Industrial Performance Through Tailored Chemical Programmes
-          </h2>
+          <h2 className="font-bold text-accent text-[26px] leading-[32.5px] md:text-[32px] md:leading-10">Improving Industrial Performance Through Tailored Chemical Programmes</h2>
 
           <p className="text-[#777] text-[15px] leading-6 md:text-[16px] md:leading-6.5">
-            Efficiency in industrial processes is often hindered by generic chemical applications. This paper explores how customized chemical
-            engineering solutions optimize output and reduce downtime in high-stress environments.
+            Efficiency in industrial processes is often hindered by generic chemical applications. This paper explores how customized chemical engineering solutions optimize output
+            and reduce downtime in high-stress environments.
           </p>
 
           <div className="flex items-center gap-4 flex-wrap">
             <div className="flex items-center gap-2">
-              <img src={avatarImg} alt="Dr. Samuel Adeyemi" className="w-10 h-10 md:w-8 md:h-8 rounded-full object-cover" />
+              <span className="size-10 md:size-8 rounded-full bg-secondary/20 text-secondary font-bold text-sm md:text-xs flex items-center justify-center shrink-0">SA</span>
               <div className="flex flex-col">
                 <span className="font-semibold text-accent text-sm leading-5.25">Dr. Samuel Adeyemi</span>
                 <span className="text-muted text-[12px] uppercase tracking-[0.3px]">8 min read • May 12, 2024</span>

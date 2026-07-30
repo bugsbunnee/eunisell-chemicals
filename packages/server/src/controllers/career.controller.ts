@@ -57,6 +57,15 @@ class CareerController {
     return res.json(opening);
   }
 
+  async findBySlug(req: Request, res: Response) {
+    const { slug } = req.params as { slug: string };
+
+    const opening = await careerRepository.findBySlug(slug);
+    if (!opening) return res.status(HttpStatusCode.NotFound).json({ error: 'Career opening not found' });
+
+    return res.json(opening);
+  }
+
   async update(req: Request, res: Response) {
     const { id } = req.params as { id: string };
     const data = updateCareerOpeningSchema.parse(req.body);

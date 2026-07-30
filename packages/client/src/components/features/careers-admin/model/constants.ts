@@ -1,4 +1,4 @@
-export const DEPARTMENTS = ['Technical Services', 'Laboratory Services', 'QHSE', 'Graduate Trainee', 'Supply Chain & Logistics', 'Commercial'];
+export const DEPARTMENTS = ['Technical Services', 'Laboratory Services', 'QHSE', 'Graduate Trainee', 'Supply Chain & Logistics', 'Commercial', 'Business Development'];
 export const CATEGORIES = ['Technical', 'Commercial', 'Operations', 'Corporate', 'Field Services'];
 export const EMPLOYMENT_TYPES = ['Full-time', 'Part-time', 'Contract', 'Trainee', 'Internship'];
 export const WORK_MODES = ['Onsite', 'Hybrid', 'Remote'];
@@ -10,4 +10,4 @@ export const STATUS_OPTIONS = [
   { label: 'Closed', value: 'CLOSED' },
 ];
 
-export const CREATE_CAREER_TABS = ['Job Information', 'Role Content', 'Requirements & Benefits', 'Application Form', 'SEO & Publishing'];
+export const CREATE_CAREER_TABS = ['Job Information', 'Role Content', 'Requirements & Benefits'];

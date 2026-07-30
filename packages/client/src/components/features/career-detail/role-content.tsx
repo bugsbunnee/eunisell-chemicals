@@ -1,9 +1,9 @@
 import React from 'react';
 import { ZapIcon } from 'lucide-react';
 
-interface Responsibility {
+interface ResponsibilityGroup {
   title: string;
-  description: string;
+  items: string[];
 }
 
 interface WhyPoint {
@@ -12,7 +12,7 @@ interface WhyPoint {
 
 interface RoleContentProps {
   aboutText: string[];
-  responsibilities: Responsibility[];
+  responsibilities: ResponsibilityGroup[];
   whyPoints: WhyPoint[];
 }
 
@@ -34,16 +34,23 @@ const RoleContent: React.FC<RoleContentProps> = ({ aboutText, responsibilities, 
         <div>
           <h2 className="font-bold text-accent text-[30px] leading-9 mb-8">What You Will Do</h2>
           <div className="flex flex-col gap-6">
-            {responsibilities.map((item) => (
-              <div key={item.title} className="flex gap-4 items-start">
+            {responsibilities.map((group) => (
+              <div key={group.title} className="flex gap-4 items-start">
                 <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center shrink-0 mt-0.5">
                   <svg width="9" height="10" viewBox="0 0 9 10" fill="none">
                     <path d="M1.5 5L3.5 7.5L7.5 2.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </div>
-                <div className="flex flex-col gap-2">
-                  <h4 className="font-bold text-accent text-[18px] leading-7">{item.title}</h4>
-                  <p className="text-muted-foreground text-[16px] leading-6">{item.description}</p>
+                <div className="flex flex-col gap-3">
+                  <h4 className="font-bold text-accent text-[18px] leading-7">{group.title}</h4>
+                  <ul className="flex flex-col gap-2">
+                    {group.items.map((item) => (
+                      <li key={item} className="flex gap-2.5 text-muted-foreground text-[16px] leading-6">
+                        <span className="w-1 h-1 rounded-full bg-secondary/60 shrink-0 mt-2.5" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
             ))}
@@ -62,8 +69,8 @@ const RoleContent: React.FC<RoleContentProps> = ({ aboutText, responsibilities, 
           </div>
 
           <p className="text-white/70 text-[16px] leading-6.5">
-            This position is critical to Eunisell's mission of ensuring operational efficiency for Africa's industrial giants. You will be the face of
-            our technical excellence on the field.
+            This position is critical to Eunisell's mission of ensuring operational efficiency for Africa's industrial giants. You will be the face of our technical excellence on
+            the field.
           </p>
 
           <div className="flex flex-col gap-4 pt-4">

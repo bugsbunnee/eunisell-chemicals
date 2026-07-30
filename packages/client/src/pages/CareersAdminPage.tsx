@@ -9,6 +9,7 @@ import CareerStatSection from '../components/features/careers-admin/components/s
 import CareerFilterBar from '../components/features/careers-admin/components/filter-bar';
 import CareerTable from '../components/features/careers-admin/components/career-table';
 import CareerActivity from '../components/features/careers-admin/components/activity';
+import CreateCareerModal from '../components/features/careers-admin/components/create-career-modal';
 
 const PER_PAGE = 5;
 const EMPTY_FILTERS: CareerFilters = { dept: '', jobType: '', level: '', status: '', featured: '' };
@@ -17,6 +18,7 @@ const CareersAdminPage: React.FC = () => {
   const [search, setSearch] = useState('');
   const [filters, setFilters] = useState<CareerFilters>(EMPTY_FILTERS);
   const [page, setPage] = useState(1);
+  const [modal, setModal] = useState<{ open: boolean; careerId?: string }>({ open: false });
 
   const { data: stats } = useCareerStats();
   const { data: openings, isLoading } = useCareerOpenings({
@@ -43,6 +45,7 @@ const CareersAdminPage: React.FC = () => {
           setSearch(v);
           setPage(1);
         }}
+        onCreate={() => setModal({ open: true, careerId: undefined })}
       />
 
       <div className="flex flex-col gap-8 p-10">
@@ -65,6 +68,7 @@ const CareersAdminPage: React.FC = () => {
               page={page}
               totalPages={openings?.meta.totalPages ?? 1}
               onPage={setPage}
+              onEdit={(id) => setModal({ open: true, careerId: id })}
               loading={isLoading}
             />
           </div>
@@ -76,6 +80,8 @@ const CareersAdminPage: React.FC = () => {
           </div>
         </div>
       </div>
+
+      <CreateCareerModal open={modal.open} careerId={modal.careerId} onOpenChange={(open) => setModal((m) => ({ ...m, open }))} />
     </main>
   );
 };

@@ -17,7 +17,7 @@ import error from '../middleware/error';
 const registerRoutes = (app: Express) => {
   app.use(
     cors({
-      origin: ['https://eunisell-chemicals-client.vercel.app', 'http://localhost:5173'],
+      origin: ['https://eunisell.com', 'https://eunisell-chemicals-client.vercel.app', 'http://localhost:5173'],
       methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     })
   );

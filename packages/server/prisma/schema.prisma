@@ -129,6 +129,16 @@ model CareerOpening {
   status   CareerStatus @default(DRAFT)
   featured Boolean      @default(false)
 
+  aboutText        String[] @default([])
+  responsibilities Json     @default("[]")
+  highlights       String[] @default([])
+  kpis             String[] @default([])
+
+  educationRequirement  String @default("")
+  experienceRequirement String @default("")
+  skillsRequirement     String @default("")
+  advantageRequirement  String @default("")
+
   applications Application[]
 
   createdAt DateTime @default(now())

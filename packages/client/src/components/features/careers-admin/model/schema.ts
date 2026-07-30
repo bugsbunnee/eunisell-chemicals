@@ -1,6 +1,14 @@
 import { z } from 'zod';
+import type { Job } from '../../../../lib/entities';
 
-export const careerOpeningSchema = z.object({
+export type CareerOpeningInput = Omit<Job, 'id'>;
+
+const responsibilityGroupShape = z.object({
+  title: z.string(),
+  items: z.array(z.string()),
+});
+
+export const careerOpeningShape = {
   title: z.string().min(2, 'Job title is required'),
   slug: z
     .string()
@@ -9,7 +17,7 @@ export const careerOpeningSchema = z.object({
   department: z.string().min(1, 'Please select a department'),
   category: z.string().min(1, 'Please select a job category'),
   location: z.string().min(2, 'Location is required'),
-  workLocationDetails: z.string(),
+  locationDetails: z.string(),
   jobType: z.string().min(1, 'Please select an employment type'),
   workMode: z.string().min(1, 'Please select a work mode'),
   level: z.string().min(1, 'Please select an experience level'),
@@ -17,12 +25,20 @@ export const careerOpeningSchema = z.object({
   reportingLine: z.string(),
   travelRequirement: z.string(),
   postedDate: z.string().min(1, 'Posted date is required'),
-  closingDate: z.string().min(1, 'Closing date is required'),
+  deadline: z.string().min(1, 'Closing date is required'),
   status: z.enum(['OPEN', 'DRAFT', 'CLOSED']),
   featured: z.boolean(),
-});
+  aboutText: z.array(z.string()),
+  responsibilities: z.array(responsibilityGroupShape),
+  highlights: z.array(z.string()),
+  kpis: z.array(z.string()),
+  educationRequirement: z.string(),
+  experienceRequirement: z.string(),
+  skillsRequirement: z.string(),
+  advantageRequirement: z.string(),
+} satisfies { [K in keyof CareerOpeningInput]: z.ZodType<CareerOpeningInput[K]> };
 
-export type CareerOpeningInput = z.infer<typeof careerOpeningSchema>;
+export const careerOpeningSchema = z.object(careerOpeningShape);
 
 export const careerOpeningDefaultValues: CareerOpeningInput = {
   title: '',
@@ -30,7 +46,7 @@ export const careerOpeningDefaultValues: CareerOpeningInput = {
   department: '',
   category: '',
   location: '',
-  workLocationDetails: '',
+  locationDetails: '',
   jobType: '',
   workMode: '',
   level: '',
@@ -38,7 +54,15 @@ export const careerOpeningDefaultValues: CareerOpeningInput = {
   reportingLine: '',
   travelRequirement: '',
   postedDate: '',
-  closingDate: '',
+  deadline: '',
   status: 'DRAFT',
   featured: false,
+  aboutText: [],
+  responsibilities: [],
+  highlights: [],
+  kpis: [],
+  educationRequirement: '',
+  experienceRequirement: '',
+  skillsRequirement: '',
+  advantageRequirement: '',
 };

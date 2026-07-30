@@ -313,7 +313,7 @@ export const team = [
         Iain Fraser is an Engineering and Sales professional with over
         30 years hands-on experience within the oil & gas and
         specialty chemical industry. He holds a B.Sc. in Mechanical
-        Engineering from the Harriot-Watt University, Edinburg.
+        Engineering from the Heriot-Watt University, Edinburg.
       `,
       `
       Iain is responsible for developing key international businesses
@@ -327,7 +327,7 @@ export const team = [
   {
     src: '/management/odekina.svg',
     name: 'Philip Odekina',
-    title: 'Head, Finance & Accounts',
+    title: 'Chief Accountant',
     url: '',
     description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
     paragraphs: [

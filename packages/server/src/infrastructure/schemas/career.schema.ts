@@ -1,11 +1,24 @@
 import z from 'zod';
 
 export const CAREER_STATUSES = ['OPEN', 'DRAFT', 'CLOSED'] as const;
-export const CAREER_DEPARTMENTS = ['Technical Services', 'Laboratory Services', 'QHSE', 'Graduate Trainee', 'Supply Chain & Logistics', 'Commercial'] as const;
+export const CAREER_DEPARTMENTS = [
+  'Technical Services',
+  'Laboratory Services',
+  'QHSE',
+  'Graduate Trainee',
+  'Supply Chain & Logistics',
+  'Commercial',
+  'Business Development',
+] as const;
 export const CAREER_CATEGORIES = ['Technical', 'Commercial', 'Operations', 'Corporate', 'Field Services'] as const;
 export const CAREER_EMPLOYMENT_TYPES = ['Full-time', 'Part-time', 'Contract', 'Trainee', 'Internship'] as const;
 export const CAREER_WORK_MODES = ['Onsite', 'Hybrid', 'Remote'] as const;
 export const CAREER_EXPERIENCE_LEVELS = ['Entry Level', 'Mid Level', 'Senior Level'] as const;
+
+const careerResponsibilityGroupSchema = z.object({
+  title: z.string(),
+  items: z.array(z.string()),
+});
 
 const careerOpeningShape = z.object({
   title: z.string().min(2),
@@ -27,6 +40,14 @@ const careerOpeningShape = z.object({
   deadline: z.coerce.date(),
   status: z.enum(CAREER_STATUSES).optional(),
   featured: z.boolean().optional(),
+  aboutText: z.array(z.string()).default([]),
+  responsibilities: z.array(careerResponsibilityGroupSchema).default([]),
+  highlights: z.array(z.string()).default([]),
+  kpis: z.array(z.string()).default([]),
+  educationRequirement: z.string().default(''),
+  experienceRequirement: z.string().default(''),
+  skillsRequirement: z.string().default(''),
+  advantageRequirement: z.string().default(''),
 });
 
 export const createCareerOpeningSchema = careerOpeningShape.refine((data) => data.deadline > data.postedDate, {

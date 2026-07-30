@@ -8,7 +8,7 @@ const STATUS_STYLE: Record<CareerStatus, { bg: string; text: string }> = {
   CLOSED: { bg: 'rgba(208,4,22,0.1)', text: '#d00416' },
 };
 
-export const COLUMNS: Column<CareerRole>[] = [
+export const getColumns = (onEdit: (id: string) => void): Column<CareerRole>[] => [
   {
     key: 'title',
     label: 'Job Title',
@@ -87,8 +87,8 @@ export const COLUMNS: Column<CareerRole>[] = [
     label: 'Actions',
     headerClassName: 'text-right',
     cellClassName: '!py-[14px] !pr-[20px] text-right',
-    render: () => (
-      <button className="inline-flex items-center justify-center size-8 rounded-full hover:bg-[#f6f9fc] transition-all text-[#777] hover:scale-105">
+    render: (row) => (
+      <button onClick={() => onEdit(row.id)} className="inline-flex items-center justify-center size-8 rounded-full hover:bg-[#f6f9fc] transition-all text-[#777] hover:scale-105">
         <MoreVerticalIcon size={14} />
       </button>
     ),

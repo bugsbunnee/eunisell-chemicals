@@ -3,12 +3,12 @@ import { Link } from 'react-router-dom';
 import { ArrowLeftIcon, ArrowRightIcon, RefreshCwIcon } from 'lucide-react';
 import { paths } from '../../../lib/data';
 
-const img1 = 'https://www.figma.com/api/mcp/asset/08c4f6bf-5249-4020-b9e1-f7a3231e68de';
-const img2 = 'https://www.figma.com/api/mcp/asset/5523c26b-d50f-4413-a605-dd308a5da4fb';
-const img3 = 'https://www.figma.com/api/mcp/asset/b439ab0a-8e48-442c-8700-928f391dd6e3';
-const img4 = 'https://www.figma.com/api/mcp/asset/c6711c7d-4a02-4ed7-b527-0f70cf898ace';
-const img5 = 'https://www.figma.com/api/mcp/asset/8e6e0794-9fd2-4d16-9779-29b1864c4aa2';
-const img6 = 'https://www.figma.com/api/mcp/asset/e5de676c-31e5-479d-92b3-d114e4106b3b';
+const img1 = '/water-solutions/cooling.svg';
+const img2 = '/oilfield-chemicals/reservoir.svg';
+const img3 = '/industrial-manufacturing/overview.svg';
+const img4 = '/technical-services/field-excellence.svg';
+const img5 = '/solutions/supply.svg';
+const img6 = '/about/hero.svg';
 
 const articles = [
   {

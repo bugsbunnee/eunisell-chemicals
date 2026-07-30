@@ -41,6 +41,10 @@ export type CareerOpeningMinAggregateOutputType = {
   deadline: Date | null;
   status: $Enums.CareerStatus | null;
   featured: boolean | null;
+  educationRequirement: string | null;
+  experienceRequirement: string | null;
+  skillsRequirement: string | null;
+  advantageRequirement: string | null;
   createdAt: Date | null;
   updatedAt: Date | null;
 };
@@ -63,6 +67,10 @@ export type CareerOpeningMaxAggregateOutputType = {
   deadline: Date | null;
   status: $Enums.CareerStatus | null;
   featured: boolean | null;
+  educationRequirement: string | null;
+  experienceRequirement: string | null;
+  skillsRequirement: string | null;
+  advantageRequirement: string | null;
   createdAt: Date | null;
   updatedAt: Date | null;
 };
@@ -85,6 +93,14 @@ export type CareerOpeningCountAggregateOutputType = {
   deadline: number;
   status: number;
   featured: number;
+  aboutText: number;
+  responsibilities: number;
+  highlights: number;
+  kpis: number;
+  educationRequirement: number;
+  experienceRequirement: number;
+  skillsRequirement: number;
+  advantageRequirement: number;
   createdAt: number;
   updatedAt: number;
   _all: number;
@@ -108,6 +124,10 @@ export type CareerOpeningMinAggregateInputType = {
   deadline?: true;
   status?: true;
   featured?: true;
+  educationRequirement?: true;
+  experienceRequirement?: true;
+  skillsRequirement?: true;
+  advantageRequirement?: true;
   createdAt?: true;
   updatedAt?: true;
 };
@@ -130,6 +150,10 @@ export type CareerOpeningMaxAggregateInputType = {
   deadline?: true;
   status?: true;
   featured?: true;
+  educationRequirement?: true;
+  experienceRequirement?: true;
+  skillsRequirement?: true;
+  advantageRequirement?: true;
   createdAt?: true;
   updatedAt?: true;
 };
@@ -152,6 +176,14 @@ export type CareerOpeningCountAggregateInputType = {
   deadline?: true;
   status?: true;
   featured?: true;
+  aboutText?: true;
+  responsibilities?: true;
+  highlights?: true;
+  kpis?: true;
+  educationRequirement?: true;
+  experienceRequirement?: true;
+  skillsRequirement?: true;
+  advantageRequirement?: true;
   createdAt?: true;
   updatedAt?: true;
   _all?: true;
@@ -244,6 +276,14 @@ export type CareerOpeningGroupByOutputType = {
   deadline: Date;
   status: $Enums.CareerStatus;
   featured: boolean;
+  aboutText: string[];
+  responsibilities: runtime.JsonValue;
+  highlights: string[];
+  kpis: string[];
+  educationRequirement: string;
+  experienceRequirement: string;
+  skillsRequirement: string;
+  advantageRequirement: string;
   createdAt: Date;
   updatedAt: Date;
   _count: CareerOpeningCountAggregateOutputType | null;
@@ -284,6 +324,14 @@ export type CareerOpeningWhereInput = {
   deadline?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
   status?: Prisma.EnumCareerStatusFilter<'CareerOpening'> | $Enums.CareerStatus;
   featured?: Prisma.BoolFilter<'CareerOpening'> | boolean;
+  aboutText?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  responsibilities?: Prisma.JsonFilter<'CareerOpening'>;
+  highlights?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  kpis?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  educationRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+  experienceRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+  skillsRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+  advantageRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
   createdAt?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
   updatedAt?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
   applications?: Prisma.ApplicationListRelationFilter;
@@ -307,6 +355,14 @@ export type CareerOpeningOrderByWithRelationInput = {
   deadline?: Prisma.SortOrder;
   status?: Prisma.SortOrder;
   featured?: Prisma.SortOrder;
+  aboutText?: Prisma.SortOrder;
+  responsibilities?: Prisma.SortOrder;
+  highlights?: Prisma.SortOrder;
+  kpis?: Prisma.SortOrder;
+  educationRequirement?: Prisma.SortOrder;
+  experienceRequirement?: Prisma.SortOrder;
+  skillsRequirement?: Prisma.SortOrder;
+  advantageRequirement?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
   applications?: Prisma.ApplicationOrderByRelationAggregateInput;
@@ -334,6 +390,14 @@ export type CareerOpeningWhereUniqueInput = Prisma.AtLeast<
     deadline?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
     status?: Prisma.EnumCareerStatusFilter<'CareerOpening'> | $Enums.CareerStatus;
     featured?: Prisma.BoolFilter<'CareerOpening'> | boolean;
+    aboutText?: Prisma.StringNullableListFilter<'CareerOpening'>;
+    responsibilities?: Prisma.JsonFilter<'CareerOpening'>;
+    highlights?: Prisma.StringNullableListFilter<'CareerOpening'>;
+    kpis?: Prisma.StringNullableListFilter<'CareerOpening'>;
+    educationRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+    experienceRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+    skillsRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
+    advantageRequirement?: Prisma.StringFilter<'CareerOpening'> | string;
     createdAt?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
     updatedAt?: Prisma.DateTimeFilter<'CareerOpening'> | Date | string;
     applications?: Prisma.ApplicationListRelationFilter;
@@ -359,6 +423,14 @@ export type CareerOpeningOrderByWithAggregationInput = {
   deadline?: Prisma.SortOrder;
   status?: Prisma.SortOrder;
   featured?: Prisma.SortOrder;
+  aboutText?: Prisma.SortOrder;
+  responsibilities?: Prisma.SortOrder;
+  highlights?: Prisma.SortOrder;
+  kpis?: Prisma.SortOrder;
+  educationRequirement?: Prisma.SortOrder;
+  experienceRequirement?: Prisma.SortOrder;
+  skillsRequirement?: Prisma.SortOrder;
+  advantageRequirement?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
   _count?: Prisma.CareerOpeningCountOrderByAggregateInput;
@@ -387,6 +459,14 @@ export type CareerOpeningScalarWhereWithAggregatesInput = {
   deadline?: Prisma.DateTimeWithAggregatesFilter<'CareerOpening'> | Date | string;
   status?: Prisma.EnumCareerStatusWithAggregatesFilter<'CareerOpening'> | $Enums.CareerStatus;
   featured?: Prisma.BoolWithAggregatesFilter<'CareerOpening'> | boolean;
+  aboutText?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  responsibilities?: Prisma.JsonWithAggregatesFilter<'CareerOpening'>;
+  highlights?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  kpis?: Prisma.StringNullableListFilter<'CareerOpening'>;
+  educationRequirement?: Prisma.StringWithAggregatesFilter<'CareerOpening'> | string;
+  experienceRequirement?: Prisma.StringWithAggregatesFilter<'CareerOpening'> | string;
+  skillsRequirement?: Prisma.StringWithAggregatesFilter<'CareerOpening'> | string;
+  advantageRequirement?: Prisma.StringWithAggregatesFilter<'CareerOpening'> | string;
   createdAt?: Prisma.DateTimeWithAggregatesFilter<'CareerOpening'> | Date | string;
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<'CareerOpening'> | Date | string;
 };
@@ -409,6 +489,14 @@ export type CareerOpeningCreateInput = {
   deadline: Date | string;
   status?: $Enums.CareerStatus;
   featured?: boolean;
+  aboutText?: Prisma.CareerOpeningCreateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningCreatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningCreatekpisInput | string[];
+  educationRequirement?: string;
+  experienceRequirement?: string;
+  skillsRequirement?: string;
+  advantageRequirement?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
   applications?: Prisma.ApplicationCreateNestedManyWithoutCareerOpeningInput;
@@ -432,6 +520,14 @@ export type CareerOpeningUncheckedCreateInput = {
   deadline: Date | string;
   status?: $Enums.CareerStatus;
   featured?: boolean;
+  aboutText?: Prisma.CareerOpeningCreateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningCreatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningCreatekpisInput | string[];
+  educationRequirement?: string;
+  experienceRequirement?: string;
+  skillsRequirement?: string;
+  advantageRequirement?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
   applications?: Prisma.ApplicationUncheckedCreateNestedManyWithoutCareerOpeningInput;
@@ -455,6 +551,14 @@ export type CareerOpeningUpdateInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   applications?: Prisma.ApplicationUpdateManyWithoutCareerOpeningNestedInput;
@@ -478,6 +582,14 @@ export type CareerOpeningUncheckedUpdateInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   applications?: Prisma.ApplicationUncheckedUpdateManyWithoutCareerOpeningNestedInput;
@@ -501,6 +613,14 @@ export type CareerOpeningCreateManyInput = {
   deadline: Date | string;
   status?: $Enums.CareerStatus;
   featured?: boolean;
+  aboutText?: Prisma.CareerOpeningCreateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningCreatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningCreatekpisInput | string[];
+  educationRequirement?: string;
+  experienceRequirement?: string;
+  skillsRequirement?: string;
+  advantageRequirement?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
 };
@@ -523,6 +643,14 @@ export type CareerOpeningUpdateManyMutationInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -545,8 +673,24 @@ export type CareerOpeningUncheckedUpdateManyInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
+};
+
+export type StringNullableListFilter<$PrismaModel = never> = {
+  equals?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel> | null;
+  has?: string | Prisma.StringFieldRefInput<$PrismaModel> | null;
+  hasEvery?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>;
+  hasSome?: string[] | Prisma.ListStringFieldRefInput<$PrismaModel>;
+  isEmpty?: boolean;
 };
 
 export type CareerOpeningCountOrderByAggregateInput = {
@@ -567,6 +711,14 @@ export type CareerOpeningCountOrderByAggregateInput = {
   deadline?: Prisma.SortOrder;
   status?: Prisma.SortOrder;
   featured?: Prisma.SortOrder;
+  aboutText?: Prisma.SortOrder;
+  responsibilities?: Prisma.SortOrder;
+  highlights?: Prisma.SortOrder;
+  kpis?: Prisma.SortOrder;
+  educationRequirement?: Prisma.SortOrder;
+  experienceRequirement?: Prisma.SortOrder;
+  skillsRequirement?: Prisma.SortOrder;
+  advantageRequirement?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
@@ -589,6 +741,10 @@ export type CareerOpeningMaxOrderByAggregateInput = {
   deadline?: Prisma.SortOrder;
   status?: Prisma.SortOrder;
   featured?: Prisma.SortOrder;
+  educationRequirement?: Prisma.SortOrder;
+  experienceRequirement?: Prisma.SortOrder;
+  skillsRequirement?: Prisma.SortOrder;
+  advantageRequirement?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
@@ -611,6 +767,10 @@ export type CareerOpeningMinOrderByAggregateInput = {
   deadline?: Prisma.SortOrder;
   status?: Prisma.SortOrder;
   featured?: Prisma.SortOrder;
+  educationRequirement?: Prisma.SortOrder;
+  experienceRequirement?: Prisma.SortOrder;
+  skillsRequirement?: Prisma.SortOrder;
+  advantageRequirement?: Prisma.SortOrder;
   createdAt?: Prisma.SortOrder;
   updatedAt?: Prisma.SortOrder;
 };
@@ -620,8 +780,35 @@ export type CareerOpeningNullableScalarRelationFilter = {
   isNot?: Prisma.CareerOpeningWhereInput | null;
 };
 
+export type CareerOpeningCreateaboutTextInput = {
+  set: string[];
+};
+
+export type CareerOpeningCreatehighlightsInput = {
+  set: string[];
+};
+
+export type CareerOpeningCreatekpisInput = {
+  set: string[];
+};
+
 export type EnumCareerStatusFieldUpdateOperationsInput = {
   set?: $Enums.CareerStatus;
+};
+
+export type CareerOpeningUpdateaboutTextInput = {
+  set?: string[];
+  push?: string | string[];
+};
+
+export type CareerOpeningUpdatehighlightsInput = {
+  set?: string[];
+  push?: string | string[];
+};
+
+export type CareerOpeningUpdatekpisInput = {
+  set?: string[];
+  push?: string | string[];
 };
 
 export type CareerOpeningCreateNestedOneWithoutApplicationsInput = {
@@ -661,6 +848,14 @@ export type CareerOpeningCreateWithoutApplicationsInput = {
   deadline: Date | string;
   status?: $Enums.CareerStatus;
   featured?: boolean;
+  aboutText?: Prisma.CareerOpeningCreateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningCreatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningCreatekpisInput | string[];
+  educationRequirement?: string;
+  experienceRequirement?: string;
+  skillsRequirement?: string;
+  advantageRequirement?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
 };
@@ -683,6 +878,14 @@ export type CareerOpeningUncheckedCreateWithoutApplicationsInput = {
   deadline: Date | string;
   status?: $Enums.CareerStatus;
   featured?: boolean;
+  aboutText?: Prisma.CareerOpeningCreateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningCreatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningCreatekpisInput | string[];
+  educationRequirement?: string;
+  experienceRequirement?: string;
+  skillsRequirement?: string;
+  advantageRequirement?: string;
   createdAt?: Date | string;
   updatedAt?: Date | string;
 };
@@ -721,6 +924,14 @@ export type CareerOpeningUpdateWithoutApplicationsInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -743,6 +954,14 @@ export type CareerOpeningUncheckedUpdateWithoutApplicationsInput = {
   deadline?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   status?: Prisma.EnumCareerStatusFieldUpdateOperationsInput | $Enums.CareerStatus;
   featured?: Prisma.BoolFieldUpdateOperationsInput | boolean;
+  aboutText?: Prisma.CareerOpeningUpdateaboutTextInput | string[];
+  responsibilities?: Prisma.JsonNullValueInput | runtime.InputJsonValue;
+  highlights?: Prisma.CareerOpeningUpdatehighlightsInput | string[];
+  kpis?: Prisma.CareerOpeningUpdatekpisInput | string[];
+  educationRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  experienceRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  skillsRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
+  advantageRequirement?: Prisma.StringFieldUpdateOperationsInput | string;
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string;
 };
@@ -795,6 +1014,14 @@ export type CareerOpeningSelect<ExtArgs extends runtime.Types.Extensions.Interna
     deadline?: boolean;
     status?: boolean;
     featured?: boolean;
+    aboutText?: boolean;
+    responsibilities?: boolean;
+    highlights?: boolean;
+    kpis?: boolean;
+    educationRequirement?: boolean;
+    experienceRequirement?: boolean;
+    skillsRequirement?: boolean;
+    advantageRequirement?: boolean;
     createdAt?: boolean;
     updatedAt?: boolean;
     applications?: boolean | Prisma.CareerOpening$applicationsArgs<ExtArgs>;
@@ -823,6 +1050,14 @@ export type CareerOpeningSelectCreateManyAndReturn<ExtArgs extends runtime.Types
       deadline?: boolean;
       status?: boolean;
       featured?: boolean;
+      aboutText?: boolean;
+      responsibilities?: boolean;
+      highlights?: boolean;
+      kpis?: boolean;
+      educationRequirement?: boolean;
+      experienceRequirement?: boolean;
+      skillsRequirement?: boolean;
+      advantageRequirement?: boolean;
       createdAt?: boolean;
       updatedAt?: boolean;
     },
@@ -849,6 +1084,14 @@ export type CareerOpeningSelectUpdateManyAndReturn<ExtArgs extends runtime.Types
       deadline?: boolean;
       status?: boolean;
       featured?: boolean;
+      aboutText?: boolean;
+      responsibilities?: boolean;
+      highlights?: boolean;
+      kpis?: boolean;
+      educationRequirement?: boolean;
+      experienceRequirement?: boolean;
+      skillsRequirement?: boolean;
+      advantageRequirement?: boolean;
       createdAt?: boolean;
       updatedAt?: boolean;
     },
@@ -873,6 +1116,14 @@ export type CareerOpeningSelectScalar = {
   deadline?: boolean;
   status?: boolean;
   featured?: boolean;
+  aboutText?: boolean;
+  responsibilities?: boolean;
+  highlights?: boolean;
+  kpis?: boolean;
+  educationRequirement?: boolean;
+  experienceRequirement?: boolean;
+  skillsRequirement?: boolean;
+  advantageRequirement?: boolean;
   createdAt?: boolean;
   updatedAt?: boolean;
 };
@@ -895,6 +1146,14 @@ export type CareerOpeningOmit<ExtArgs extends runtime.Types.Extensions.InternalA
   | 'deadline'
   | 'status'
   | 'featured'
+  | 'aboutText'
+  | 'responsibilities'
+  | 'highlights'
+  | 'kpis'
+  | 'educationRequirement'
+  | 'experienceRequirement'
+  | 'skillsRequirement'
+  | 'advantageRequirement'
   | 'createdAt'
   | 'updatedAt',
   ExtArgs['result']['careerOpening']
@@ -930,6 +1189,14 @@ export type $CareerOpeningPayload<ExtArgs extends runtime.Types.Extensions.Inter
       deadline: Date;
       status: $Enums.CareerStatus;
       featured: boolean;
+      aboutText: string[];
+      responsibilities: runtime.JsonValue;
+      highlights: string[];
+      kpis: string[];
+      educationRequirement: string;
+      experienceRequirement: string;
+      skillsRequirement: string;
+      advantageRequirement: string;
       createdAt: Date;
       updatedAt: Date;
     },
@@ -1407,6 +1674,14 @@ export interface CareerOpeningFieldRefs {
   readonly deadline: Prisma.FieldRef<'CareerOpening', 'DateTime'>;
   readonly status: Prisma.FieldRef<'CareerOpening', 'CareerStatus'>;
   readonly featured: Prisma.FieldRef<'CareerOpening', 'Boolean'>;
+  readonly aboutText: Prisma.FieldRef<'CareerOpening', 'String[]'>;
+  readonly responsibilities: Prisma.FieldRef<'CareerOpening', 'Json'>;
+  readonly highlights: Prisma.FieldRef<'CareerOpening', 'String[]'>;
+  readonly kpis: Prisma.FieldRef<'CareerOpening', 'String[]'>;
+  readonly educationRequirement: Prisma.FieldRef<'CareerOpening', 'String'>;
+  readonly experienceRequirement: Prisma.FieldRef<'CareerOpening', 'String'>;
+  readonly skillsRequirement: Prisma.FieldRef<'CareerOpening', 'String'>;
+  readonly advantageRequirement: Prisma.FieldRef<'CareerOpening', 'String'>;
   readonly createdAt: Prisma.FieldRef<'CareerOpening', 'DateTime'>;
   readonly updatedAt: Prisma.FieldRef<'CareerOpening', 'DateTime'>;
 }

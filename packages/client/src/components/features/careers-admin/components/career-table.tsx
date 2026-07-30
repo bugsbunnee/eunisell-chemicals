@@ -1,5 +1,6 @@
+import { BriefcaseIcon } from 'lucide-react';
 import Table from '../../enquiries/table';
-import { COLUMNS } from './columns';
+import { getColumns } from './columns';
 import type { CareerRole } from '../model/types';
 
 interface Props {
@@ -8,13 +9,28 @@ interface Props {
   page: number;
   totalPages: number;
   onPage: (p: number) => void;
+  onEdit: (id: string) => void;
   loading?: boolean;
 }
 
-export default function CareerTable({ data, total, page, totalPages, onPage, loading = false }: Props) {
+export default function CareerTable({ data, total, page, totalPages, onPage, onEdit, loading = false }: Props) {
+  const isEmpty = !loading && data.length === 0;
+
   return (
     <div className="bg-white border border-[#e5e8ec] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.01)] rounded-[6px] overflow-hidden">
-      <Table columns={COLUMNS} data={data} keyExtractor={(r) => r.id} loading={loading} />
+      {isEmpty ? (
+        <div className="flex flex-col items-center gap-3 py-16 px-6 text-center">
+          <div className="size-12 rounded-full bg-[#f6f9fc] flex items-center justify-center">
+            <BriefcaseIcon size={20} className="text-[#94a3b8]" />
+          </div>
+          <div className="flex flex-col gap-1">
+            <p className="text-[14px] text-accent">No career openings found</p>
+            <p className="text-[12px] text-[#777]">{total === 0 ? 'Create your first career opening to get started.' : 'Try adjusting your search or filters.'}</p>
+          </div>
+        </div>
+      ) : (
+        <Table columns={getColumns(onEdit)} data={data} keyExtractor={(r) => r.id} loading={loading} />
+      )}
       <div className="bg-[#f6f9fc] border-t border-[#e8e8e8] flex items-center justify-between px-5 py-4">
         <p className="text-[12px] text-[#777]">
           Showing {data.length} of {total} roles

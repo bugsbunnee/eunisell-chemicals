@@ -129,3 +129,38 @@ export interface CmsFilter {
   onChange: (value: string) => void;
   options: string[];
 }
+
+export type CareerStatus = 'OPEN' | 'DRAFT' | 'CLOSED';
+
+export interface JobResponsibility {
+  title: string;
+  items: string[];
+}
+
+export interface Job {
+  id: string;
+  title: string;
+  slug: string;
+  department: string;
+  category: string;
+  location: string;
+  locationDetails: string;
+  jobType: string;
+  workMode: string;
+  level: string;
+  experienceRange: string;
+  reportingLine: string;
+  travelRequirement: string;
+  postedDate: string;
+  deadline: string;
+  status: CareerStatus;
+  featured: boolean;
+  aboutText: string[];
+  responsibilities: JobResponsibility[];
+  highlights: string[];
+  kpis: string[];
+  educationRequirement: string;
+  experienceRequirement: string;
+  skillsRequirement: string;
+  advantageRequirement: string;
+}

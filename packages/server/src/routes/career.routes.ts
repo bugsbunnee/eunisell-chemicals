@@ -8,6 +8,7 @@ const router = Router();
 
 router.get('/stats', [auth], career.stats);
 router.get('/activity', [auth], career.activity);
+router.get('/slug/:slug', career.findBySlug);
 router.get('/', [paginate], career.findAll);
 router.get('/:id', career.findById);
 router.post('/', [auth], career.create);

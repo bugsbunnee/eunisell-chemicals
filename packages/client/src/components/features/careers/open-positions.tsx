@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MapPinIcon, BriefcaseIcon, SearchIcon } from 'lucide-react';
+import { MapPinIcon, BriefcaseIcon, SearchIcon, InboxIcon } from 'lucide-react';
 import { paths } from '../../../lib/data';
-
-const positions = [
-  { title: 'Technical Services Specialist', location: 'Lagos, Nigeria', type: 'Full-time', slug: 'technical-services-specialist' },
-  { title: 'Laboratory Analyst', location: 'Port Harcourt', type: 'Full-time', slug: 'laboratory-analyst' },
-  { title: 'Graduate Trainee - Engineering', location: 'Abuja', type: 'Contract', slug: 'graduate-trainee-engineering' },
-  { title: 'QHSE Lead', location: 'Lagos, Nigeria', type: 'Full-time', slug: 'qhse-lead' },
-];
-
-const departments = ['All Departments', 'Technical Services', 'Laboratory', 'Engineering', 'QHSE'];
+import { useOpenCareerOpenings } from '../../../hooks/use-career-openings';
 
 const OpenPositions: React.FC = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
   const [department, setDepartment] = useState('All Departments');
 
-  const filtered = positions.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()));
+  const { data: openings, isLoading } = useOpenCareerOpenings();
+  const positions = useMemo(
+    () => (openings ?? []).map((role) => ({ title: role.title, location: role.location, type: role.jobType, slug: role.slug, department: role.department })),
+    [openings]
+  );
+  const departments = useMemo(() => ['All Departments', ...Array.from(new Set(positions.map((p) => p.department)))], [positions]);
+
+  const filtered = positions.filter((p) => p.title.toLowerCase().includes(search.toLowerCase()) && (department === 'All Departments' || p.department === department));
 
   return (
     <section id="open-positions">
@@ -53,29 +52,56 @@ const OpenPositions: React.FC = () => {
         </div>
 
         <div className="flex flex-col gap-4 text-left">
-          {filtered.map((pos) => (
-            <div key={pos.title} className="bg-white border border-[#e8e8e8] rounded-[4px] p-6 flex flex-col gap-6 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
-              <div className="flex flex-col gap-2">
-                <h4 className="font-bold text-accent text-[18px] leading-[27px]">{pos.title}</h4>
-                <div className="flex items-center gap-4">
-                  <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
-                    <MapPinIcon size={10} />
-                    {pos.location}
-                  </span>
-                  <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
-                    <BriefcaseIcon size={12} />
-                    {pos.type}
-                  </span>
+          {isLoading
+            ? Array.from({ length: 2 }, (_, i) => (
+                <div key={i} className="animate-pulse bg-white border border-[#e8e8e8] rounded-[4px] p-6 flex flex-col gap-6 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
+                  <div className="flex flex-col gap-3">
+                    <div className="h-5 w-2/3 bg-[#f0f0f0] rounded" />
+                    <div className="flex items-center gap-4">
+                      <div className="h-3.5 w-24 bg-[#f0f0f0] rounded" />
+                      <div className="h-3.5 w-16 bg-[#f0f0f0] rounded" />
+                    </div>
+                  </div>
+                  <div className="w-full h-11 bg-[#f0f0f0] rounded-[4px]" />
                 </div>
+              ))
+            : filtered.map((pos) => (
+                <div key={pos.title} className="bg-white border border-[#e8e8e8] rounded-[4px] p-6 flex flex-col gap-6 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
+                  <div className="flex flex-col gap-2">
+                    <h4 className="font-bold text-accent text-[18px] leading-[27px]">{pos.title}</h4>
+                    <div className="flex items-center gap-4">
+                      <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
+                        <MapPinIcon size={10} />
+                        {pos.location}
+                      </span>
+                      <span className="flex items-center gap-1.5 text-card-foreground text-[13px]">
+                        <BriefcaseIcon size={12} />
+                        {pos.type}
+                      </span>
+                    </div>
+                  </div>
+                  <button
+                    onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
+                    className="w-full h-11 bg-[#f6f9fc] border border-[#e8e8e8] text-secondary font-bold text-[16px] rounded-[4px] transition-all hover:scale-105"
+                  >
+                    View Role
+                  </button>
+                </div>
+              ))}
+
+          {!isLoading && filtered.length === 0 && (
+            <div className="flex flex-col items-center gap-3 py-12 px-6 text-center bg-[#f9fafb] border border-dashed border-[#e8e8e8] rounded-[4px]">
+              <div className="size-12 rounded-full bg-white border border-[#e8e8e8] flex items-center justify-center">
+                <InboxIcon size={20} className="text-sidebar-foreground" />
               </div>
-              <button
-                onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
-                className="w-full h-11 bg-[#f6f9fc] border border-[#e8e8e8] text-secondary font-bold text-[16px] rounded-[4px] transition-all hover:scale-105"
-              >
-                View Role
-              </button>
+              <div className="flex flex-col gap-1">
+                <p className="font-bold text-accent text-[16px]">No open positions right now</p>
+                <p className="text-card-foreground text-[13px]">
+                  {positions.length === 0 ? "We don't have any open roles at the moment. Check back soon." : 'Try a different search term or department.'}
+                </p>
+              </div>
             </div>
-          ))}
+          )}
         </div>
       </div>
 
@@ -113,30 +139,57 @@ const OpenPositions: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-2 gap-6">
-            {filtered.map((pos) => (
-              <div key={pos.title} className="flex items-center justify-between bg-white border border-[#e8e8e8] rounded-[4px] p-8 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
-                <div className="flex flex-col gap-2">
-                  <h4 className="font-bold text-accent text-[20px] leading-[30px]">{pos.title}</h4>
-                  <div className="flex items-center gap-6">
-                    <span className="flex items-center gap-2 text-card-foreground text-sm">
-                      <MapPinIcon size={11} className="text-card-foreground" />
-                      {pos.location}
-                    </span>
-                    <span className="flex items-center gap-2 text-card-foreground text-sm">
-                      <BriefcaseIcon size={14} className="text-card-foreground" />
-                      {pos.type}
-                    </span>
+            {isLoading
+              ? Array.from({ length: 4 }, (_, i) => (
+                  <div key={i} className="animate-pulse flex items-center justify-between bg-white border border-[#e8e8e8] rounded-[4px] p-8 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
+                    <div className="flex flex-col gap-3">
+                      <div className="h-6 w-48 bg-[#f0f0f0] rounded" />
+                      <div className="flex items-center gap-6">
+                        <div className="h-4 w-28 bg-[#f0f0f0] rounded" />
+                        <div className="h-4 w-20 bg-[#f0f0f0] rounded" />
+                      </div>
+                    </div>
+                    <div className="h-11 w-32 bg-[#f0f0f0] rounded-[4px] shrink-0" />
                   </div>
-                </div>
-                <button
-                  onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
-                  className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-all shrink-0 hover:scale-105"
-                >
-                  View Role
-                </button>
-              </div>
-            ))}
+                ))
+              : filtered.map((pos) => (
+                  <div key={pos.title} className="flex items-center justify-between bg-white border border-[#e8e8e8] rounded-[4px] p-8 shadow-[0px_1px_1px_rgba(0,0,0,0.05)]">
+                    <div className="flex flex-col gap-2">
+                      <h4 className="font-bold text-accent text-[20px] leading-[30px]">{pos.title}</h4>
+                      <div className="flex items-center gap-6">
+                        <span className="flex items-center gap-2 text-card-foreground text-sm">
+                          <MapPinIcon size={11} className="text-card-foreground" />
+                          {pos.location}
+                        </span>
+                        <span className="flex items-center gap-2 text-card-foreground text-sm">
+                          <BriefcaseIcon size={14} className="text-card-foreground" />
+                          {pos.type}
+                        </span>
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => navigate(paths.careerDetail.replace(':slug', pos.slug))}
+                      className="bg-card border border-[#e8e8e8] text-secondary font-bold text-[16px] px-6 py-3 rounded-[4px] hover:bg-card/70 transition-all shrink-0 hover:scale-105"
+                    >
+                      View Role
+                    </button>
+                  </div>
+                ))}
           </div>
+
+          {!isLoading && filtered.length === 0 && (
+            <div className="flex flex-col items-center gap-4 py-20 px-6 text-center bg-[#f9fafb] border border-dashed border-[#e8e8e8] rounded-[4px]">
+              <div className="size-16 rounded-full bg-white border border-[#e8e8e8] flex items-center justify-center">
+                <InboxIcon size={28} className="text-sidebar-foreground" />
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="font-bold text-accent text-[20px]">No open positions right now</p>
+                <p className="text-card-foreground text-[15px]">
+                  {positions.length === 0 ? "We don't have any open roles at the moment. Check back soon." : 'Try a different search term or department.'}
+                </p>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>
