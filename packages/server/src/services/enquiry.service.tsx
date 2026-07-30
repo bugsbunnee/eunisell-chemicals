@@ -21,7 +21,7 @@ class EnquiryService {
       solutionArea: enquiry.solutionArea,
       message: enquiry.message,
       referenceId: enquiry.id,
-      dashboardUrl: `${Bun.env.DASHBOARD_URL ?? 'http://localhost:3000'}/enquiries`,
+      dashboardUrl: `${process.env.DASHBOARD_URL ?? 'http://localhost:3000'}/enquiries`,
     });
 
     const html = await render(element);

@@ -23,11 +23,11 @@ export interface LoginContext {
 
 class AuthService {
   decodeToken(token: string) {
-    return jwt.verify(token, Bun.env.JWT_SECRET!);
+    return jwt.verify(token, process.env.JWT_SECRET!);
   }
 
   signPayload(payload: object, options?: jwt.SignOptions) {
-    return jwt.sign(payload, Bun.env.JWT_SECRET!, options);
+    return jwt.sign(payload, process.env.JWT_SECRET!, options);
   }
 
   async hashPassword(password: string) {
@@ -36,7 +36,7 @@ class AuthService {
   }
 
   async sendOnboardingEmail(admin: Admin, tempPassword: string) {
-    const loginUrl = `${Bun.env.CLIENT_URL}/admin/login`;
+    const loginUrl = `${process.env.CLIENT_URL}/admin/login`;
     const html = await render(React.createElement(WelcomeEmail, { firstName: admin.firstName, tempPassword, loginUrl }));
 
     try {
@@ -56,8 +56,8 @@ class AuthService {
       loginTime: ctx.loginTime,
       location: ctx.location,
       device: ctx.device,
-      activityUrl: ctx.activityUrl ?? `${Bun.env.CLIENT_URL}/admin/activity`,
-      secureAccountUrl: ctx.secureAccountUrl ?? `${Bun.env.CLIENT_URL}/admin/security`,
+      activityUrl: ctx.activityUrl ?? `${process.env.CLIENT_URL}/admin/activity`,
+      secureAccountUrl: ctx.secureAccountUrl ?? `${process.env.CLIENT_URL}/admin/security`,
     });
 
     const html = await render(element);
