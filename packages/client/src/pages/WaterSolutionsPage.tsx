@@ -35,7 +35,7 @@ const WaterSolutionsPage: React.FC = () => {
         title="Boiler Water Chemicals"
         description="Used to protect boilers and steam systems from corrosion, scaling, and fouling."
         items={['Oxygen scavengers', 'Corrosion inhibitors', 'Scale inhibitors', 'Alkalinity builders', 'Antimicrobial cleaners', 'Condensate treatment chemicals']}
-        image="/water-solutions/boiler.svg"
+        image="/water-solutions/boiler-water.svg"
         imageAlt="Chemist in a high-tech laboratory using advanced analytical equipment"
       />
 

@@ -21,7 +21,7 @@ const applications = [
 
 const WellInterventionChemicals: React.FC = () => {
   return (
-    <section className="bg-background">
+    <section id="well-intervention" className="bg-background">
       {/* Mobile */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-8 text-left">
         <div className="flex flex-col gap-2 text-center">

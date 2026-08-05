@@ -5,7 +5,7 @@ const chemicals = ['Demulsifiers', 'Deoilers', 'Corrosion Inhibitors', 'Scale In
 
 const ProductionChemicals: React.FC = () => {
   return (
-    <section className="bg-card text-left">
+    <section id="production-chemicals" className="bg-card text-left">
       {/* Mobile */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
         <h2 className="text-[28px] leading-9 text-accent">Production Chemicals</h2>

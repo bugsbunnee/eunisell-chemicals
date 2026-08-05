@@ -14,9 +14,9 @@ const ContactPage: React.FC = () => {
     <React.Fragment>
       <NavBar />
       <Hero />
+      <RegionalOperations />
       <SpecializedDepartments />
       <SolutionRequest />
-      <RegionalOperations />
       <GeographicPresence />
       <FAQ />
       <CTA />

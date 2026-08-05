@@ -33,16 +33,6 @@ const mobileNavItems: MobileNavItem[] = [
     ],
   },
   {
-    label: 'Solutions',
-    items: [
-      { label: 'Our Solutions', path: paths.solutions },
-      { label: 'Industrial & Manufacturing Chemicals', path: paths.industrial },
-      { label: 'Oilfield Chemicals', path: paths.oilfield },
-      { label: 'Technical Services', path: paths.technical },
-      { label: 'Laboratory Services', path: paths.technical },
-    ],
-  },
-  {
     label: 'Our Chemicals',
     items: [
       { label: 'All Chemicals', path: paths.chemicals },
@@ -51,6 +41,16 @@ const mobileNavItems: MobileNavItem[] = [
       { label: 'Cleaning & Hygiene', path: paths.cleaningHygiene },
       { label: 'Water Solutions', path: paths.waterSolutions },
       { label: 'Fluid Condition Monitoring', path: paths.fluidMonitoring },
+    ],
+  },
+  {
+    label: 'Solutions',
+    items: [
+      { label: 'Other Solutions', path: paths.solutions },
+      { label: 'Industrial & Manufacturing Chemicals', path: paths.industrial },
+      { label: 'Oilfield Chemicals', path: paths.oilfield },
+      { label: 'Technical Services', path: paths.technical },
+      { label: 'Laboratory Services', path: paths.technical },
     ],
   },
   {

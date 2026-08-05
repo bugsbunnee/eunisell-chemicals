@@ -22,7 +22,7 @@ const treatments = [
 
 const TechnicalSupport: React.FC = () => {
   return (
-    <section className="bg-card text-left">
+    <section id="water-treatment" className="bg-card text-left">
       {/* Mobile */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
         <div className="flex flex-col gap-3">

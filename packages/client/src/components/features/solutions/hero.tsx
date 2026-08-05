@@ -44,7 +44,7 @@ const Hero: React.FC = () => {
       {/* Desktop */}
       <div className="hidden md:block px-20 py-37.75 bg-[url(/solutions/solution-hero.svg)] w-screen bg-cover bg-no-repeat relative">
         <div className="absolute z-10 bg-linear-to-r from-accent from-60% to-transparent w-screen h-full top-0 left-0 right-0 bottom-0" />
-        <div className="relative w-full text-left z-50">
+        <div className="relative w-full text-left z-30">
           <div className="flex items-center justify-start mb-6 gap-x-6">
             <div className="h-0.5 w-10 bg-secondary" />
             <div className="uppercase text-secondary tracking-[3px] text-xs">Engineering Excellence</div>

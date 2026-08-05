@@ -28,7 +28,7 @@ const SignatureCard: React.FC<{ className?: string }> = ({ className }) => (
 
     <div className="border-t border-muted pt-6 flex flex-col items-center">
       <div className="font-bold text-[20px] leading-7 text-accent text-center">Chika Ikenga</div>
-      <div className="font-medium text-[16px] leading-6 text-primary-light text-center">Group Managing Director</div>
+      <div className="font-medium text-[16px] leading-6 text-primary-light text-center">Founder</div>
       <div className="pt-2 text-[14px] leading-5 text-muted text-center">6th January 2025</div>
     </div>
   </div>

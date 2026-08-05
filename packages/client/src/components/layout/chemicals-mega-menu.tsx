@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { paths, chemicalsPrimaryLinks, chemicalsSecondaryLinks } from '../../lib/data';
+import { paths, chemicalsPrimaryLinks, chemicalsSecondaryLinks, oilfieldChemicalLinks } from '../../lib/data';
 
 const TRANSITION = { duration: 0.2, ease: [0.4, 0, 0.2, 1] } as const;
-const allChemicalsLinks = [chemicalsSecondaryLinks[0], ...chemicalsPrimaryLinks, chemicalsSecondaryLinks[1]];
+const allChemicalsLinks = [...chemicalsPrimaryLinks, chemicalsSecondaryLinks[1]];
 
 interface Props {
   onClose: () => void;
@@ -16,12 +16,28 @@ const ChemicalsMegaMenu: React.FC<Props> = ({ onClose }) => (
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, y: -16 }}
     transition={TRANSITION}
-    className="absolute text-left left-0 right-0 top-full z-40 bg-white border-b border-border shadow-[0px_16px_40px_-12px_rgba(0,0,0,0.12)]"
+    className="absolute text-left left-0 right-0 top-full z-50 bg-white border-b border-border shadow-[0px_16px_40px_-12px_rgba(0,0,0,0.12)]"
     role="dialog"
     aria-label="Our Chemicals menu"
   >
     <div className="pt-12 pb-16 px-30">
-      <div className="grid grid-cols-3 gap-12 max-w-[1560px]">
+      <div className="grid grid-cols-4 gap-12 max-w-[1560px]">
+        <div className="flex flex-col gap-6">
+          <p className="text-[11px] font-bold uppercase tracking-[3px] text-secondary">Oilfield Chemicals</p>
+          <nav className="flex flex-col gap-3.75">
+            {oilfieldChemicalLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.path}
+                onClick={onClose}
+                className="text-[15px] text-[#6b7280] leading-[22.5px] hover:text-secondary hover:underline transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
         <div className="flex flex-col gap-6">
           <p className="text-[11px] font-bold uppercase tracking-[3px] text-secondary">Our Chemicals</p>
           <nav className="flex flex-col gap-3.75">

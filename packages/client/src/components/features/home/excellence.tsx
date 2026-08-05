@@ -95,6 +95,7 @@ const TechnicalExcellence: React.FC = () => {
               <div className="text-accent font-bold text-sm">{marker.value}</div>
             </div>
           ))}
+
           <img src="/home/technical.svg" alt="Technical" className="w-full h-full object-cover" />
         </div>
 

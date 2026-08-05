@@ -160,7 +160,7 @@ export const reasons = [
 
 export enum NavDropdown {
   Company = 'Company',
-  Solutions = 'Our Solutions',
+  Solutions = 'Other Solutions',
   KnowledgeCentre = 'Knowledge Centre',
   OurChemicals = 'Our Chemicals',
 }
@@ -224,8 +224,75 @@ export const chemicalsSecondaryLinks: NavLink[] = [
   { label: 'Fluid Condition Monitoring', path: paths.fluidMonitoring },
 ];
 
+export const oilfieldChemicalLinks = [
+  {
+    label: 'Production Chemicals',
+    path: `${paths.oilfield}#production-chemicals`,
+  },
+  {
+    label: 'Subsea Fluids',
+    path: `${paths.oilfield}#flow-assurance`,
+  },
+  {
+    label: 'Drilling & Completion Chemicals',
+    path: `${paths.oilfield}#well-intervention`,
+  },
+  {
+    label: 'Dewaxing Services',
+    path: `${paths.oilfield}#flow-assurance`,
+  },
+  {
+    label: 'Descaling Services',
+    path: `${paths.oilfield}#production-chemicals`,
+  },
+  {
+    label: 'Water Filtration & Purification',
+    path: `${paths.oilfield}#water-treatment`,
+  },
+  {
+    label: 'Produced Water Treatment Chemicals & Technology',
+    path: `${paths.oilfield}#water-treatment`,
+  },
+  {
+    label: 'Gas Treatment Chemicals',
+    path: `${paths.oilfield}#production-chemicals`,
+  },
+  {
+    label: 'Stimulation Chemicals',
+    path: `${paths.oilfield}#well-intervention`,
+  },
+  {
+    label: 'Process & Pipeline Chemicals',
+    path: `${paths.oilfield}#flow-assurance`,
+  },
+  {
+    label: 'Workover Fluids',
+    path: `${paths.oilfield}#well-intervention`,
+  },
+  {
+    label: 'Cleaning & Hygiene Chemicals',
+    path: paths.cleaningHygiene,
+  },
+  {
+    label: '⁠Heat Transfer Fluids',
+    path: paths.chemicals,
+  },
+  {
+    label: '⁠Specialty Lubricants',
+    path: paths.chemicals,
+  },
+  {
+    label: 'General Chemicals',
+    path: paths.chemicals,
+  },
+];
+
 export const dropdownNav = [
   { label: NavDropdown.Company, items: companyLinks },
+  {
+    label: NavDropdown.OurChemicals,
+    items: [{ label: 'View All Chemicals', path: paths.chemicals }],
+  },
   {
     label: NavDropdown.Solutions,
     items: [
@@ -233,10 +300,6 @@ export const dropdownNav = [
       { label: 'Oilfield Chemicals', path: paths.oilfield },
       { label: 'All Solutions', path: paths.solutions },
     ],
-  },
-  {
-    label: NavDropdown.OurChemicals,
-    items: [{ label: 'View All Chemicals', path: paths.chemicals }],
   },
   { label: 'Industries Served', path: paths.industries, items: [] },
   { label: 'Technical Services', path: paths.technical, items: [] },
@@ -254,7 +317,7 @@ export const team = [
   {
     src: '/management/director.svg',
     name: 'Chika Ikenga',
-    title: 'Group Managing Director',
+    title: 'Founder',
     url: '',
     description: 'Visionary founder with deep expertise in chemical specialty and energy sectors.',
     paragraphs: [
@@ -300,45 +363,7 @@ export const team = [
         financial institutions globally.
       `,
     ],
-    highlights: [],
-  },
-  {
-    src: '/management/lain.svg',
-    name: 'Iain Fraiser',
-    title: 'Head of International Business',
-    url: '',
-    description: 'Specialist in complex industrial engineering and large-scale facility management.',
-    paragraphs: [
-      `
-        Iain Fraser is an Engineering and Sales professional with over
-        30 years hands-on experience within the oil & gas and
-        specialty chemical industry. He holds a B.Sc. in Mechanical
-        Engineering from the Heriot-Watt University, Edinburg.
-      `,
-      `
-      Iain is responsible for developing key international businesses
-      and relationships for the company. He has worked with
-      notable global companies including St. Helena Gold Mine,
-      Shell, the Lubrizol Corporation.
-      `,
-    ],
-    highlights: [],
-  },
-  {
-    src: '/management/odekina.svg',
-    name: 'Philip Odekina',
-    title: 'Chief Accountant',
-    url: '',
-    description: 'Ensures fiscal discipline and strategic financial planning for long-term growth.',
-    paragraphs: [
-      `
-      Philip is a core accounting professional with 30 years
-      experience in the financial sector. He holds an MBA in
-      Financial Management. Prior to joining Eunisell, he worked as
-      Financial Accountant at KPMG Professional Service.
-      `,
-    ],
-    highlights: [],
+    highlights: ['20+ Years of Experience'],
   },
 ];
 

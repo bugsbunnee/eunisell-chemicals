@@ -1,8 +1,8 @@
 import type React from 'react';
 
 const images = [
-  { src: '/industries-served/oil.svg', title: 'oil & gas' },
   { src: '/industries-served/manufacture.svg', title: 'manufacturing' },
+  { src: '/industries-served/oil.svg', title: 'oil & gas' },
   { src: '/industries-served/utils.svg', title: 'utilities' },
   { src: '/industries-served/infra.svg', title: 'infrastructure' },
   { src: '/industries-served/marine.svg', title: 'marine' },

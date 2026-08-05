@@ -11,9 +11,7 @@ const GroupManagingDirector: React.FC = () => {
       </div>
 
       <div>
-        <div className="mb-1 uppercase font-black text-[12px] md:text-[15px] tracking-[1.2px] md:tracking-[3px] text-secondary">
-          Group Managing Director
-        </div>
+        <div className="mb-1 uppercase font-black text-[12px] md:text-[15px] tracking-[1.2px] md:tracking-[3px] text-secondary">Founder</div>
         <div className="text-[36px] md:text-[56px] text-accent leading-[54px] md:leading-21 font-bold">Chika Ikenga</div>
 
         <div className="flex flex-wrap items-center my-6 md:my-8 gap-2 md:gap-x-3">
@@ -29,8 +27,8 @@ const GroupManagingDirector: React.FC = () => {
 
         <div className="space-y-4 md:space-y-6">
           <p className="text-[16px] md:text-lg font-normal text-card-foreground leading-[26px] md:leading-[29.3px]">
-            Chika Ikenga is the visionary founder and Group Managing Director of Eunisell. With over three decades of experience, he has steered
-            Eunisell into Africa's leading chemical specialty company.
+            Chika Ikenga is the visionary founder and Founder of Eunisell. With over three decades of experience, he has steered Eunisell into Africa's leading chemical specialty
+            company.
           </p>
 
           <p className="text-[16px] md:text-lg font-normal text-card-foreground leading-[26px] md:leading-[29.3px]">

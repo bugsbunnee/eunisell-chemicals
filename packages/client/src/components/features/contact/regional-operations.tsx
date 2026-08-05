@@ -3,7 +3,7 @@ import React from 'react';
 
 const operations = [
   {
-    src: '/contact/head-office.svg',
+    src: '/contact/steel.svg',
     badge: 'Lagos HQ',
     title: 'Head Office (Lagos)',
     description: '209, Muri Okunola Street, Victoia Island. Lagos',

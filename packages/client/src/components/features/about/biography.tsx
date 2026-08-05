@@ -9,12 +9,13 @@ const Biography: React.FC = () => {
         </div>
 
         <p className="text-[16px] md:text-lg text-primary mt-6 md:mt-[31.1px] leading-[27.2px] md:leading-8">
-          Eunisell Chemicals is a leading provider of specialty chemical solutions and technical services across Africa's manufacturing, industrial, and energy sectors.
+          Eunisell designs, manufactures and markets specialty chemicals. Since 1996, Eunisell has been a leading chemical and specialty fluid management company, supplying key
+          products and solutions to a wide base of customers operating in Africa.
         </p>
 
         <p className="text-[16px] md:text-lg text-primary mt-4 md:mt-6 leading-[27.2px] md:leading-8">
-          Our approach combines world-class chemical technologies with deep local market knowledge. We engineer complete programs that include performance monitoring and on-site
-          technical support.
+          We combine world-class chemical technologies with deep local market knowledge and engineer complete programs that include performance monitoring and on-site technical
+          support.
         </p>
 
         <p className="font-bold italic text-[16px] md:text-lg leading-[27.2px] md:leading-8 text-secondary mt-4 md:mt-6">"Behind every problem is a solution you can trust."</p>

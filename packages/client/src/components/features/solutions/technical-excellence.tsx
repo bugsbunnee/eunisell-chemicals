@@ -1,8 +1,6 @@
 import React from 'react';
 import { FlaskConicalIcon, TestTube2Icon, ShieldAlertIcon, DropletsIcon, type LucideIcon } from 'lucide-react';
 
-const labImage = 'https://www.figma.com/api/mcp/asset/a0558705-1495-44b6-9008-2a3a592db39a';
-
 const capabilities: { icon: LucideIcon; title: string; description: string }[] = [
   {
     icon: FlaskConicalIcon,
@@ -68,7 +66,7 @@ const TechnicalExcellence: React.FC = () => (
 
       <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:items-center">
         <div className="relative h-72 md:h-125 rounded-[8px] overflow-hidden shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
-          <img src={labImage} alt="Chemical analysis laboratory equipment" className="absolute inset-0 w-full h-full object-cover" />
+          <img src="/solutions/solutions-excellence.svg" alt="Chemical analysis laboratory equipment" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute top-4 right-4 md:top-8 md:right-8 w-56 md:w-75 bg-white/95 border border-border rounded-[4px] p-4 md:p-6 flex flex-col gap-3 md:gap-4 shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
             <p className="font-bold text-accent text-sm leading-5">Real-time Analysis Data</p>
             <div className="h-24 md:h-37.5 w-full">

@@ -20,7 +20,7 @@ const flows = [
 
 const FlowAssurance: React.FC = () => {
   return (
-    <section className="bg-accent text-left">
+    <section id="flow-assurance" className="bg-accent text-left">
       {/* Mobile */}
       <div className="md:hidden px-6 py-16 flex flex-col gap-6">
         <h2 className="text-[28px] leading-9 text-white">Flow Assurance</h2>

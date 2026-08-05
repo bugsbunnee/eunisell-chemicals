@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { paths } from '../../lib/data';
+import { ChevronDownIcon } from 'lucide-react';
+import { paths, oilfieldChemicalLinks } from '../../lib/data';
+import { cn } from '../../lib/utils';
 
 const navColumns = [
   {
@@ -17,7 +19,7 @@ const navColumns = [
     heading: 'Our Chemicals',
     muted: true,
     links: [
-      { label: 'Oilfield Chemicals', path: paths.oilfield },
+      { label: 'Oilfield Chemicals', path: paths.oilfield, sublinks: oilfieldChemicalLinks },
       { label: 'Industrial Process Fluids', path: paths.processFluids },
       { label: 'Cleaning & Hygiene', path: paths.cleaningHygiene },
       { label: 'Water Solutions', path: paths.waterSolutions },
@@ -58,6 +60,12 @@ const navColumns = [
 ];
 
 const Footer: React.FC = () => {
+  const [openLink, setOpenLink] = useState<string | null>(null);
+
+  const toggleLink = (label: string) => {
+    setOpenLink((prev) => (prev === label ? null : label));
+  };
+
   return (
     <footer className="bg-[#001525] w-full shrink-0">
       <div className="px-6 py-8 md:px-30 md:py-2.75 border-b border-[#1e293b] md:border-white/10 flex items-center justify-center">
@@ -115,20 +123,55 @@ const Footer: React.FC = () => {
               {col.heading}
             </span>
             <ul className="flex flex-col gap-2.75 md:gap-3">
-              {col.links.map((link) => (
-                <li key={link.label}>
-                  <Link
-                    to={link.path}
-                    className={
-                      col.muted
-                        ? 'text-[13px] font-normal text-popover-foreground md:text-muted-foreground leading-[19.5px] md:leading-[22.5px] hover:text-white transition-colors'
-                        : 'text-[13px] font-normal text-popover-foreground md:text-[rgba(255,255,255,0.55)] leading-[19.5px] hover:text-white transition-colors'
-                    }
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+              {col.links.map((link) =>
+                'sublinks' in link && link.sublinks ? (
+                  <li key={link.label}>
+                    <button
+                      type="button"
+                      onClick={() => toggleLink(link.label)}
+                      aria-expanded={openLink === link.label}
+                      aria-haspopup="true"
+                      className={cn(
+                        'flex items-center gap-1.5 text-[13px] font-normal leading-[19.5px] md:leading-[22.5px] hover:text-white transition-colors',
+                        col.muted ? 'text-popover-foreground md:text-muted-foreground' : 'text-popover-foreground md:text-[rgba(255,255,255,0.55)]',
+                        openLink === link.label && 'text-white'
+                      )}
+                    >
+                      {link.label}
+                      <ChevronDownIcon size={12} className={cn('transition-transform duration-200', openLink === link.label && 'rotate-180')} />
+                    </button>
+
+                    {openLink === link.label && (
+                      <ul className="flex flex-col gap-2.5 md:gap-2.25 mt-2.75 md:mt-3 pl-3 border-l border-white/10">
+                        {link.sublinks.map((sublink) => (
+                          <li key={sublink.label}>
+                            <Link
+                              to={sublink.path}
+                              onClick={() => setOpenLink(null)}
+                              className="text-[12.5px] font-normal text-popover-foreground/80 md:text-muted-foreground/80 leading-4.5 hover:text-white transition-colors"
+                            >
+                              {sublink.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ) : (
+                  <li key={link.label}>
+                    <Link
+                      to={link.path}
+                      className={
+                        col.muted
+                          ? 'text-[13px] font-normal text-popover-foreground md:text-muted-foreground leading-[19.5px] md:leading-[22.5px] hover:text-white transition-colors'
+                          : 'text-[13px] font-normal text-popover-foreground md:text-[rgba(255,255,255,0.55)] leading-[19.5px] hover:text-white transition-colors'
+                      }
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         ))}

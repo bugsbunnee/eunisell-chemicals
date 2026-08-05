@@ -99,12 +99,12 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <motion.div
-            className="h-0.5 w-8 md:w-10 bg-secondary shrink-0 origin-left"
+            className="h-0.5 w-8 md:w-10 bg-primary-foreground shrink-0 origin-left"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 0.6, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
           />
-          <div className="uppercase text-secondary tracking-[3px] text-[10px] md:text-[11px]">AFRICA'S LEADING INDUSTRIAL CHEMICAL SOLUTIONS PROVIDER</div>
+          <div className="uppercase text-primary-foreground tracking-[3px] text-[10px] md:text-[11px]">AFRICA'S LEADING INDUSTRIAL CHEMICAL SOLUTIONS PROVIDER</div>
         </motion.div>
 
         <motion.h1

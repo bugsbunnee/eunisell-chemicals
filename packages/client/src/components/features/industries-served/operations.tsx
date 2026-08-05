@@ -49,6 +49,10 @@ const Operations: React.FC = () => {
 
       {/* Desktop layout */}
       <div className="hidden md:block px-30 py-24">
+        <div className="mb-30">
+          <IndustriesServed />
+        </div>
+
         <div className="grid grid-cols-2 gap-x-18">
           <div>
             <div className="text-[48px] font-bold text-accent leading-[57.6px]">Supporting Operations Across Essential Industrial Sectors</div>
@@ -71,10 +75,6 @@ const Operations: React.FC = () => {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="mt-30">
-          <IndustriesServed />
         </div>
       </div>
     </section>

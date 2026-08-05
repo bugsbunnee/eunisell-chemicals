@@ -63,8 +63,8 @@ const Hero: React.FC = () => {
       </div>
 
       <div className="relative h-60 md:min-h-125 md:h-full w-full">
-        <div className="h-full w-full rounded-[2px] overflow-hidden shadow-[0px_16px_32px_rgba(0,0,0,0.08)]">
-          <img src="/contact/hero.svg" alt="Contact" className="w-full h-full object-cover" />
+        <div className="h-full w-full rounded-[8px] overflow-hidden shadow-[0px_16px_32px_rgba(0,0,0,0.08)]">
+          <img src="/contact/steel.svg" alt="Contact" className="w-full h-full object-cover" />
         </div>
 
         {/* ISO badge — desktop only */}
